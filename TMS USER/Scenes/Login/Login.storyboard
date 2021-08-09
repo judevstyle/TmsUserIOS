@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet-Bold.ttf">
+            <string>SukhumvitSet-Bold</string>
+        </array>
+        <array key="SukhumvitSet-Text.ttf">
+            <string>SukhumvitSet-Text</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="LoginViewController" customModule="TMS_USER" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wg8-ve-gtb">
+                                <rect key="frame" x="20" y="0.0" width="394" height="570"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_authentication" translatesAutoresizingMaskIntoConstraints="NO" id="mv9-tg-hyY">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="570"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="ColorTopViewIntro"/>
+                                <constraints>
+                                    <constraint firstItem="mv9-tg-hyY" firstAttribute="leading" secondItem="Wg8-ve-gtb" secondAttribute="leading" id="4bH-3x-VhG"/>
+                                    <constraint firstItem="mv9-tg-hyY" firstAttribute="top" secondItem="Wg8-ve-gtb" secondAttribute="top" id="BW1-aV-oEY"/>
+                                    <constraint firstAttribute="bottom" secondItem="mv9-tg-hyY" secondAttribute="bottom" id="E1o-4k-UE3"/>
+                                    <constraint firstAttribute="trailing" secondItem="mv9-tg-hyY" secondAttribute="trailing" id="r1c-8X-dd6"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สั่งซื้อของผ่านแอพ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95O-39-64J">
+                                <rect key="frame" x="20" y="586" width="374" height="23.5"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mx0-bz-U0z">
+                                <rect key="frame" x="0.0" y="635.5" width="414" height="260.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntR-72-Qi5">
+                                        <rect key="frame" x="194.5" y="16" width="25.5" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By singing up your view be agreenin on our team and confition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-ju-1q6">
+                                        <rect key="frame" x="84.5" y="186" width="245" height="44.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7aa-gq-qsT">
+                                        <rect key="frame" x="20" y="64" width="374" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sS-wm-SGT">
+                                        <rect key="frame" x="20" y="125" width="374" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="Primary"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                        <state key="normal" title="เข้าสู่ระบบ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260.5" id="ggg-nq-3jV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="Primary"/>
+                        <constraints>
+                            <constraint firstItem="95O-39-64J" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="0RF-fL-7tn"/>
+                            <constraint firstItem="Mx0-bz-U0z" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Anq-mI-cNR"/>
+                            <constraint firstItem="Mx0-bz-U0z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FAE-VC-AXj"/>
+                            <constraint firstAttribute="bottom" secondItem="Mx0-bz-U0z" secondAttribute="bottom" id="PT4-jj-DOC"/>
+                            <constraint firstItem="Wg8-ve-gtb" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="R4w-x7-HLP"/>
+                            <constraint firstItem="Wg8-ve-gtb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Wpi-Xh-pWE"/>
+                            <constraint firstItem="Wg8-ve-gtb" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="b1u-dD-Ryr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="95O-39-64J" secondAttribute="trailing" constant="20" id="gRk-fq-Fbv"/>
+                            <constraint firstItem="95O-39-64J" firstAttribute="top" secondItem="Wg8-ve-gtb" secondAttribute="bottom" constant="16" id="i2a-TR-IR1"/>
+                            <constraint firstItem="95O-39-64J" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="iJP-UF-ylo"/>
+                            <constraint firstItem="Mx0-bz-U0z" firstAttribute="top" secondItem="Wg8-ve-gtb" secondAttribute="bottom" constant="65.5" id="jS2-3p-kv8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="PT4-jj-DOC" id="gMp-wX-0az"/>
+                        <outlet property="bottomView" destination="Mx0-bz-U0z" id="YO5-gV-cgp"/>
+                        <outlet property="btnLogin" destination="5sS-wm-SGT" id="YjU-le-RQi"/>
+                        <outlet property="inputPhone" destination="7aa-gq-qsT" id="HU8-5n-sup"/>
+                        <outlet property="topView" destination="Wg8-ve-gtb" id="h8H-Ry-h2z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28.985507246376812" y="64.955357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_authentication" width="1166" height="805"/>
+        <namedColor name="ColorTopViewIntro">
+            <color red="1" green="0.58823529411764708" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="1" green="0.3411764705882353" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

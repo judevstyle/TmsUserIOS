@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet-SemiBold.ttf">
+            <string>SukhumvitSet-SemiBold</string>
+        </array>
+        <array key="SukhumvitSet-Text.ttf">
+            <string>SukhumvitSet-Text</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCollectionViewCell" customModule="TMS_USER" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="195" height="276"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="195" height="276"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJX-xE-jcB">
+                        <rect key="frame" x="0.0" y="0.0" width="195" height="276"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drink" translatesAutoresizingMaskIntoConstraints="NO" id="vhV-6N-LbZ">
+                                <rect key="frame" x="0.0" y="0.0" width="195" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vhV-6N-LbZ" secondAttribute="height" multiplier="1:1" id="AuG-gs-P8S"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eir-l5-5qD">
+                                <rect key="frame" x="8" y="203" width="179" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASx-uR-db5">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="KHd-rt-Nyf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สินค้า สินค้า สินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op6-zD-lXZ">
+                                        <rect key="frame" x="0.0" y="19" width="179" height="21"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="10"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ASx-uR-db5" firstAttribute="leading" secondItem="eir-l5-5qD" secondAttribute="leading" id="1nA-5d-ADe"/>
+                                    <constraint firstItem="op6-zD-lXZ" firstAttribute="leading" secondItem="eir-l5-5qD" secondAttribute="leading" id="6O1-Yg-Bzr"/>
+                                    <constraint firstAttribute="trailing" secondItem="ASx-uR-db5" secondAttribute="trailing" id="6TE-p3-1Mb"/>
+                                    <constraint firstItem="op6-zD-lXZ" firstAttribute="top" secondItem="ASx-uR-db5" secondAttribute="bottom" id="7wg-6c-oIK"/>
+                                    <constraint firstAttribute="bottom" secondItem="op6-zD-lXZ" secondAttribute="bottom" id="RSq-t0-med"/>
+                                    <constraint firstItem="ASx-uR-db5" firstAttribute="leading" secondItem="eir-l5-5qD" secondAttribute="leading" id="aCK-AK-FsW"/>
+                                    <constraint firstItem="ASx-uR-db5" firstAttribute="top" secondItem="eir-l5-5qD" secondAttribute="top" id="dXL-Tn-nsZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="op6-zD-lXZ" secondAttribute="trailing" id="eOi-jS-FDA"/>
+                                    <constraint firstAttribute="height" constant="40" id="u0y-ee-Nhs"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXc-ki-dx4">
+                                <rect key="frame" x="8" y="247" width="179" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="บาท" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntl-xX-7Rd">
+                                        <rect key="frame" x="153" y="4.5" width="18" height="12"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-8S-Qjr">
+                                        <rect key="frame" x="136" y="0.0" width="14" height="21"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="12"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N4-fa-WwR">
+                                        <rect key="frame" x="122.5" y="5.5" width="10.5" height="10.5"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="LIy-8S-Qjr" firstAttribute="top" secondItem="MXc-ki-dx4" secondAttribute="top" id="2YG-yL-MY2"/>
+                                    <constraint firstItem="LIy-8S-Qjr" firstAttribute="leading" secondItem="0N4-fa-WwR" secondAttribute="trailing" constant="3" id="2Yx-Yt-N7h"/>
+                                    <constraint firstItem="ntl-xX-7Rd" firstAttribute="leading" secondItem="LIy-8S-Qjr" secondAttribute="trailing" constant="3" id="76Z-v0-A4W"/>
+                                    <constraint firstItem="0N4-fa-WwR" firstAttribute="centerY" secondItem="LIy-8S-Qjr" secondAttribute="centerY" id="Cy4-tu-urW"/>
+                                    <constraint firstItem="ntl-xX-7Rd" firstAttribute="centerY" secondItem="LIy-8S-Qjr" secondAttribute="centerY" id="OMW-aF-mf5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ntl-xX-7Rd" secondAttribute="trailing" constant="8" id="V9Z-38-ECd"/>
+                                    <constraint firstAttribute="height" constant="21" id="dX0-JY-UQe"/>
+                                    <constraint firstAttribute="bottom" secondItem="LIy-8S-Qjr" secondAttribute="bottom" id="gvE-yc-S8U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MXc-ki-dx4" firstAttribute="top" secondItem="eir-l5-5qD" secondAttribute="bottom" constant="4" id="FbE-Db-B2j"/>
+                            <constraint firstAttribute="trailing" secondItem="MXc-ki-dx4" secondAttribute="trailing" constant="8" id="Hl7-Dq-7Hb"/>
+                            <constraint firstItem="vhV-6N-LbZ" firstAttribute="top" secondItem="UJX-xE-jcB" secondAttribute="top" id="Wjp-A1-TAh"/>
+                            <constraint firstAttribute="bottom" secondItem="MXc-ki-dx4" secondAttribute="bottom" constant="8" id="aty-LR-rgF"/>
+                            <constraint firstItem="MXc-ki-dx4" firstAttribute="leading" secondItem="UJX-xE-jcB" secondAttribute="leading" constant="8" id="b6r-aX-Qe6"/>
+                            <constraint firstItem="vhV-6N-LbZ" firstAttribute="leading" secondItem="UJX-xE-jcB" secondAttribute="leading" id="ipP-fN-VKo"/>
+                            <constraint firstItem="eir-l5-5qD" firstAttribute="top" secondItem="vhV-6N-LbZ" secondAttribute="bottom" constant="8" id="qGH-52-EKT"/>
+                            <constraint firstAttribute="trailing" secondItem="eir-l5-5qD" secondAttribute="trailing" constant="8" id="t0m-sv-HZq"/>
+                            <constraint firstItem="eir-l5-5qD" firstAttribute="leading" secondItem="UJX-xE-jcB" secondAttribute="leading" constant="8" id="vNx-cL-TLJ"/>
+                            <constraint firstAttribute="trailing" secondItem="vhV-6N-LbZ" secondAttribute="trailing" id="xYW-ZJ-07n"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UJX-xE-jcB" secondAttribute="trailing" id="0xD-vu-xC5"/>
+                <constraint firstItem="UJX-xE-jcB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1UB-TL-7qg"/>
+                <constraint firstItem="UJX-xE-jcB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mKp-vH-oyX"/>
+                <constraint firstAttribute="bottom" secondItem="UJX-xE-jcB" secondAttribute="bottom" id="vJb-Q5-cnV"/>
+            </constraints>
+            <size key="customSize" width="195" height="296"/>
+            <connections>
+                <outlet property="bgView" destination="UJX-xE-jcB" id="eyY-TD-b9h"/>
+                <outlet property="descText" destination="op6-zD-lXZ" id="hD6-8i-dJz"/>
+                <outlet property="imageThumbnail" destination="vhV-6N-LbZ" id="6Q2-x2-odB"/>
+                <outlet property="priceNew" destination="LIy-8S-Qjr" id="8Qq-uG-Nnl"/>
+                <outlet property="priceOld" destination="0N4-fa-WwR" id="1YV-IB-dXb"/>
+                <outlet property="titleText" destination="ASx-uR-db5" id="WC5-Md-73K"/>
+                <outlet property="viewBoxPrice" destination="MXc-ki-dx4" id="Did-Jn-h9c"/>
+            </connections>
+            <point key="canvasLocation" x="145.6521739130435" y="102.45535714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="drink" width="68" height="68"/>
+        <namedColor name="Primary">
+            <color red="1" green="0.3411764705882353" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
