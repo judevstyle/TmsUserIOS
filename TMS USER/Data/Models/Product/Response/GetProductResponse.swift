@@ -24,7 +24,7 @@ public struct GetProductResponse: Codable, Hashable  {
 
 public struct ProductData: Codable, Hashable  {
     
-    public var items: [Product]?
+    public var items: [ProductItems]?
     public var meta: MetaObject?
     
     public init() {}
@@ -36,7 +36,7 @@ public struct ProductData: Codable, Hashable  {
 }
 
 
-public struct Product: Codable, Hashable  {
+public struct ProductItems: Codable, Hashable  {
     
     public var productId: Int?
     public var compId: Int?
@@ -52,6 +52,9 @@ public struct Product: Codable, Hashable  {
     public var productCountPerPoint: Int?
     public var productImg: String?
     public var productType: ProductType?
+    
+    //Discount
+    public var productDiscount: ProductDiscount?
     
     public init() {}
     
@@ -69,5 +72,20 @@ public struct Product: Codable, Hashable  {
         try productCountPerPoint   <- decoder["product_count_per_point"]
         try productImg             <- decoder["product_img"]
         try productType            <- decoder["productType"]
+        try productDiscount        <- decoder["discount"]
+    }
+}
+
+
+public struct ProductDiscount: Codable, Hashable  {
+    
+    public var typeUserId: Int?
+    public var newPrice: Int?
+    
+    public init() {}
+    
+    public init(from decoder: Decoder) throws {
+        try typeUserId              <- decoder["type_user_id"]
+        try newPrice                 <- decoder["new_price"]
     }
 }

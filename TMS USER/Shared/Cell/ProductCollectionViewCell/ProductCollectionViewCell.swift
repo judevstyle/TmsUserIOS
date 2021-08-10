@@ -23,7 +23,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet var viewBoxPrice: UIView!
     
     
-    var itemsProduct: Product? {
+    var itemsProduct: ProductItems? {
         didSet {
             setupValueProduct()
         }
@@ -46,8 +46,20 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func setupValueProduct() {
         titleText.text = itemsProduct?.productName ?? ""
         descText.text = itemsProduct?.productDesc ?? ""
-        self.priceOld.isHidden = true
-        self.priceNew.text = "\(itemsProduct?.productPrice ?? 0)"
+        
+        if let discount = itemsProduct?.productDiscount {
+            let attributeString =  NSMutableAttributedString(string: "\(itemsProduct?.productPrice ?? 0)")
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+            attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: NSMakeRange(0, attributeString.length))
+            self.priceOld.attributedText = attributeString
+            self.priceNew.text = "\(discount.newPrice ?? 0)"
+        } else {
+            priceOld.isHidden = true
+            priceNew.text = "\(itemsProduct?.productPrice ?? 0)"
+        }
+        
+        priceNew.sizeToFit()
+        priceOld.sizeToFit()
         setImage(url: itemsProduct?.productImg)
     }
     

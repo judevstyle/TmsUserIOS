@@ -55,6 +55,7 @@ class IntroViewModel: IntroProtocol, IntroProtocolOutput {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.didAuthSuccess?()
             }
+            debugPrint("AccessToken \(accessToken)")
         }
     }
 }

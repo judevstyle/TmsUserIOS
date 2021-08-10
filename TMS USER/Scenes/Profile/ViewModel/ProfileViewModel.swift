@@ -86,7 +86,7 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
         let type: MenuProfileType = self.listMenu[indexPath.item]
         switch type {
         case .logout:
-            profileViewController.showAlertComfirm(titleText: "คุณต้องการออกจากระบบ ใช่หรือไม่ ?", messageText: "", dismissAction: {
+            profileViewController.showAlertComfirm(titleText: "คุณต้องการออกจากระบบ\nใช่หรือไม่ ?", messageText: "", dismissAction: {
             }, confirmAction: {
                 self.handleLogout()
             })

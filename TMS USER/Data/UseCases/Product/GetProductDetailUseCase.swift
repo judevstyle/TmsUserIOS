@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol GetProductDetailUseCase {
-    func execute(productId: Int) -> AnyPublisher<Product?, Error>
+    func execute(productId: Int) -> AnyPublisher<ProductItems?, Error>
 }
 
 struct GetProductDetailUseCaseImpl: GetProductDetailUseCase {
@@ -20,7 +20,7 @@ struct GetProductDetailUseCaseImpl: GetProductDetailUseCase {
         self.repository = repository
     }
     
-    func execute(productId: Int) -> AnyPublisher<Product?, Error> {
+    func execute(productId: Int) -> AnyPublisher<ProductItems?, Error> {
         return self.repository
             .getProductDetail(productId: productId)
             .map { $0.data }

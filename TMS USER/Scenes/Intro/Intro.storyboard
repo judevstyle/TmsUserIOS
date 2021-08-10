@@ -21,14 +21,13 @@
         <!--Intro View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Y6W-OH-hqX" customClass="IntroViewController" customModule="TMS_USER" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สั่งซื้อของผ่านแอพ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5Q-hC-42x">
-                                <rect key="frame" x="133" y="603" width="148.5" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สั่งซื้อของผ่านแอพ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5Q-hC-42x">
+                                <rect key="frame" x="8" y="603" width="398" height="32"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -96,11 +95,12 @@
                             <constraint firstItem="Hoc-al-x7W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Agx-oq-f4X"/>
                             <constraint firstAttribute="bottom" secondItem="kDG-AU-gTB" secondAttribute="bottom" id="Ezi-U3-Ryv"/>
                             <constraint firstItem="kDG-AU-gTB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Mdu-lT-OtX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E5Q-hC-42x" secondAttribute="trailing" constant="8" id="Ptl-xc-lHn"/>
                             <constraint firstItem="kDG-AU-gTB" firstAttribute="top" secondItem="Hoc-al-x7W" secondAttribute="bottom" constant="64.5" id="QyP-vk-bfp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Hoc-al-x7W" secondAttribute="trailing" constant="20" id="YhD-LB-35w"/>
                             <constraint firstItem="E5Q-hC-42x" firstAttribute="top" secondItem="Hoc-al-x7W" secondAttribute="bottom" constant="16" id="bEd-gA-nWY"/>
                             <constraint firstItem="Hoc-al-x7W" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="etC-Sx-jNu"/>
-                            <constraint firstItem="E5Q-hC-42x" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="vup-VN-bcb"/>
+                            <constraint firstItem="E5Q-hC-42x" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="iNB-k1-Qar"/>
                             <constraint firstItem="kDG-AU-gTB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ybw-EO-wUB"/>
                         </constraints>
                     </view>
@@ -112,6 +112,7 @@
                         <outlet property="topView" destination="Hoc-al-x7W" id="pz4-Bw-kXK"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-28.985507246376812" y="64.955357142857139"/>
         </scene>
@@ -122,7 +123,7 @@
             <color red="1" green="0.58823529411764708" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Primary">
-            <color red="1" green="0.3411764705882353" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.34099999070167542" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

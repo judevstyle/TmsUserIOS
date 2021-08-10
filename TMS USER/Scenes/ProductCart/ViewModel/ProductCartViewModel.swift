@@ -39,7 +39,7 @@ class ProductCartViewModel: ProductCartProtocol, ProductCartProtocolOutput {
     private var productCartViewController: ProductCartViewController
     
     fileprivate var orderId: Int?
-    fileprivate var listProductCart: [Product]? = []
+    fileprivate var listProductCart: [ProductItems]? = []
 
     init(
         productCartViewController: ProductCartViewController

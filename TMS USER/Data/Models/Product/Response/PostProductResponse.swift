@@ -11,7 +11,7 @@ public struct PostProductResponse: Codable, Hashable  {
     
     public var statusCode: Int?
     public var success: Bool = false
-    public var data: Product?
+    public var data: ProductItems?
     
     public init() {}
     

@@ -24,6 +24,15 @@ public enum NavigationOpeningSender {
     //Cart
     case productCart
     
+    //Modal
+    case productDetailBottomSheet
+    
+    //OrderDetail
+    case orderDetail
+    
+    //OrderTracking
+    case orderTracking
+    
     public var storyboardName: String {
         switch self {
         case .splash:
@@ -44,6 +53,12 @@ public enum NavigationOpeningSender {
             return "Profile"
         case .productCart:
             return "ProductCart"
+        case .productDetailBottomSheet:
+            return "ProductDetailBottomSheet"
+        case .orderDetail:
+            return "OrderDetail"
+        case .orderTracking:
+            return "OrderTracking"
         }
     }
     
@@ -67,6 +82,12 @@ public enum NavigationOpeningSender {
             return "ProfileViewController"
         case .productCart:
             return "ProductCartViewController"
+        case .productDetailBottomSheet:
+            return "ProductDetailBottomSheetViewController"
+        case .orderDetail:
+            return "OrderDetailViewController"
+        case .orderTracking:
+            return "OrderTrackingViewController"
         }
     }
     
@@ -81,6 +102,8 @@ public enum NavigationOpeningSender {
         switch self {
         case .productCart:
             return "ตะกร้าสินค้า"
+        case .orderDetail:
+            return "รายละเอียดการสั่งซื้อ"
         default:
             return ""
         }

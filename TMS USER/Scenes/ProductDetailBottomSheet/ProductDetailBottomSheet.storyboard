@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet-Bold.ttf">
+            <string>SukhumvitSet-Bold</string>
+        </array>
+        <array key="SukhumvitSet-SemiBold.ttf">
+            <string>SukhumvitSet-SemiBold</string>
+        </array>
+        <array key="SukhumvitSet-Text.ttf">
+            <string>SukhumvitSet-Text</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Product Detail Bottom Sheet View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ProductDetailBottomSheetViewController" customModule="TMS_USER" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="665"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEN-uy-BLa">
+                                <rect key="frame" x="20" y="52" width="374" height="382"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drink" translatesAutoresizingMaskIntoConstraints="NO" id="Ky1-vd-cfL">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ky1-vd-cfL" secondAttribute="height" multiplier="1:1" id="rlv-Nv-6rn"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ky1-vd-cfL" firstAttribute="leading" secondItem="nEN-uy-BLa" secondAttribute="leading" id="5ar-zD-JxT"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ky1-vd-cfL" secondAttribute="trailing" id="aAa-Ib-7sJ"/>
+                                    <constraint firstItem="Ky1-vd-cfL" firstAttribute="top" secondItem="nEN-uy-BLa" secondAttribute="top" id="g4j-oA-tio"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ky1-vd-cfL" secondAttribute="bottom" constant="8" id="jvH-cJ-3KS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="น้ำดื่มถัง 10 ลิตร" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HH6-wr-zDc">
+                                <rect key="frame" x="20" y="442" width="374" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="OuU-y7-4w6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkL-h7-gq2">
+                                <rect key="frame" x="20" y="471" width="374" height="14"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhO-4R-fjm">
+                                <rect key="frame" x="20" y="493" width="374" height="23.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-fm-ktJ">
+                                        <rect key="frame" x="296.5" y="0.0" width="24" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="บาท" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyJ-qj-qkK">
+                                        <rect key="frame" x="348.5" y="0.0" width="25.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LG-v3-RRw">
+                                        <rect key="frame" x="328.5" y="0.0" width="12" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="XfJ-fm-ktJ" firstAttribute="top" secondItem="HhO-4R-fjm" secondAttribute="top" id="6rO-Mb-iVg"/>
+                                    <constraint firstAttribute="bottom" secondItem="XfJ-fm-ktJ" secondAttribute="bottom" id="CIK-sI-f0i"/>
+                                    <constraint firstAttribute="bottom" secondItem="GyJ-qj-qkK" secondAttribute="bottom" id="CR2-ax-ugX"/>
+                                    <constraint firstItem="7LG-v3-RRw" firstAttribute="top" secondItem="HhO-4R-fjm" secondAttribute="top" id="EDa-h5-ycx"/>
+                                    <constraint firstAttribute="bottom" secondItem="7LG-v3-RRw" secondAttribute="bottom" id="PnW-TU-gh2"/>
+                                    <constraint firstItem="GyJ-qj-qkK" firstAttribute="leading" secondItem="7LG-v3-RRw" secondAttribute="trailing" constant="8" id="R7L-x0-nn8"/>
+                                    <constraint firstItem="7LG-v3-RRw" firstAttribute="leading" secondItem="XfJ-fm-ktJ" secondAttribute="trailing" constant="8" id="WAw-dC-lGR"/>
+                                    <constraint firstAttribute="trailing" secondItem="GyJ-qj-qkK" secondAttribute="trailing" id="sLO-RR-5D1"/>
+                                    <constraint firstItem="GyJ-qj-qkK" firstAttribute="top" secondItem="HhO-4R-fjm" secondAttribute="top" id="uRb-W5-y11"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAj-pE-hpk">
+                                <rect key="frame" x="20" y="516.5" width="374" height="0.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="WLL-u7-IoN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRs-XH-9hP">
+                                <rect key="frame" x="20" y="600" width="374" height="45"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="PUp-me-U3W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <state key="normal" title="บันทึก">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBM-od-bSR">
+                                <rect key="frame" x="157" y="533" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5XZ-mm-YZk"/>
+                                    <constraint firstAttribute="width" constant="100" id="UCo-NJ-WcE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO1-ZU-06k">
+                                <rect key="frame" x="273" y="538" width="30" height="30"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="c38-Bz-LDd"/>
+                                    <constraint firstAttribute="width" constant="30" id="e8v-YV-GDR"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="plus" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOf-Js-Ywg">
+                                <rect key="frame" x="111" y="538" width="30" height="30"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="whW-lB-7lL"/>
+                                    <constraint firstAttribute="height" constant="30" id="xWb-cX-1W8"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="minus" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iRs-XH-9hP" secondAttribute="trailing" constant="20" id="10U-CK-Ro7"/>
+                            <constraint firstAttribute="trailing" secondItem="SkL-h7-gq2" secondAttribute="trailing" constant="20" id="5GC-oG-8y4"/>
+                            <constraint firstItem="iRs-XH-9hP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="AkT-U3-4jl"/>
+                            <constraint firstItem="HH6-wr-zDc" firstAttribute="top" secondItem="nEN-uy-BLa" secondAttribute="bottom" constant="8" id="Ap5-zE-oUB"/>
+                            <constraint firstItem="dO1-ZU-06k" firstAttribute="centerY" secondItem="FBM-od-bSR" secondAttribute="centerY" id="BNC-ay-V7r"/>
+                            <constraint firstAttribute="trailing" secondItem="HH6-wr-zDc" secondAttribute="trailing" constant="20" id="BU5-e0-fXU"/>
+                            <constraint firstItem="nEN-uy-BLa" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="D8R-Bo-rCW"/>
+                            <constraint firstAttribute="trailing" secondItem="HhO-4R-fjm" secondAttribute="trailing" constant="20" id="IMe-Dj-12S"/>
+                            <constraint firstItem="HAj-pE-hpk" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="aGx-Dv-BRt"/>
+                            <constraint firstItem="dO1-ZU-06k" firstAttribute="leading" secondItem="FBM-od-bSR" secondAttribute="trailing" constant="16" id="cVQ-iD-vwT"/>
+                            <constraint firstItem="HAj-pE-hpk" firstAttribute="top" secondItem="HhO-4R-fjm" secondAttribute="bottom" id="dy3-Xg-3sj"/>
+                            <constraint firstItem="FBM-od-bSR" firstAttribute="leading" secondItem="nOf-Js-Ywg" secondAttribute="trailing" constant="16" id="fSU-ds-rcD"/>
+                            <constraint firstItem="nEN-uy-BLa" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="gMq-Iq-BZF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iRs-XH-9hP" secondAttribute="bottom" constant="20" id="gQC-gW-beD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nEN-uy-BLa" secondAttribute="trailing" constant="20" id="gaj-8O-IwJ"/>
+                            <constraint firstItem="HH6-wr-zDc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="hHQ-FP-0Pv"/>
+                            <constraint firstItem="FBM-od-bSR" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="hmJ-gO-R8m"/>
+                            <constraint firstItem="HhO-4R-fjm" firstAttribute="top" secondItem="SkL-h7-gq2" secondAttribute="bottom" constant="8" id="jsD-Q1-Nkp"/>
+                            <constraint firstItem="SkL-h7-gq2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="kl7-d0-pFn"/>
+                            <constraint firstAttribute="trailing" secondItem="HAj-pE-hpk" secondAttribute="trailing" constant="20" id="qVV-WY-eHj"/>
+                            <constraint firstItem="HhO-4R-fjm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="sIQ-Fm-z6B"/>
+                            <constraint firstItem="nOf-Js-Ywg" firstAttribute="centerY" secondItem="FBM-od-bSR" secondAttribute="centerY" id="utN-6T-n8J"/>
+                            <constraint firstItem="SkL-h7-gq2" firstAttribute="top" secondItem="HH6-wr-zDc" secondAttribute="bottom" constant="5" id="xfS-tv-laP"/>
+                            <constraint firstItem="FBM-od-bSR" firstAttribute="top" secondItem="HAj-pE-hpk" secondAttribute="bottom" constant="16" id="zwH-gw-lDF"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="665"/>
+                    <connections>
+                        <outlet property="btnAdd" destination="dO1-ZU-06k" id="oCn-bv-HEt"/>
+                        <outlet property="btnDelete" destination="nOf-Js-Ywg" id="AS0-BP-GB4"/>
+                        <outlet property="btnSave" destination="iRs-XH-9hP" id="GUU-jN-DQm"/>
+                        <outlet property="descText" destination="SkL-h7-gq2" id="DtN-ve-e3r"/>
+                        <outlet property="duscountPrice" destination="XfJ-fm-ktJ" id="5kV-bA-1tS"/>
+                        <outlet property="posterImageView" destination="Ky1-vd-cfL" id="ABV-pY-3tj"/>
+                        <outlet property="priceBalance" destination="7LG-v3-RRw" id="bSt-3D-yi8"/>
+                        <outlet property="titleName" destination="HH6-wr-zDc" id="rm8-6D-cTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.028985507246382" y="43.526785714285715"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="drink" width="68" height="68"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="Primary">
+            <color red="1" green="0.34099999070167542" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

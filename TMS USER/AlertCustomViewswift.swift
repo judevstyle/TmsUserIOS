@@ -45,6 +45,7 @@ extension UIViewController {
         })
         actionConfirm.setValue(UIColor.Primary, forKey: "titleTextColor")
         alertController.addAction(actionConfirm)
+        alertController.view.sizeToFit()
         self.present(alertController, animated: true, completion: nil)
     }
 }

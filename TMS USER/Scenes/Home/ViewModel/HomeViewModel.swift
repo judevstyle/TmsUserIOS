@@ -24,7 +24,7 @@ protocol HomeProtocolOutput: class {
     var didGetProductSuccess: (() -> Void)? { get set }
     
     func getNumberOfCollection(type: TypeUserCollectionType) -> Int
-    func getItem(index: Int) -> Product?
+    func getItem(index: Int) -> ProductItems?
     func getItemViewCell(_ collectionView: UICollectionView, indexPath: IndexPath, type: TypeUserCollectionType) -> UICollectionViewCell
     
     func getTitleCategory(indexPath: IndexPath) -> String
@@ -63,7 +63,7 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     fileprivate var selectedIndex: Int = 0
     
     fileprivate var listCategory: [ProductType]? = []
-    fileprivate var listProduct: [Product]? = []
+    fileprivate var listProduct: [ProductItems]? = []
     
     func getCategory() {
         listCategory?.removeAll()
@@ -138,7 +138,7 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
         }
     }
     
-    func getItem(index: Int) -> Product? {
+    func getItem(index: Int) -> ProductItems? {
         guard let itemMenu = listProduct?[index] else { return nil }
         return itemMenu
     }
@@ -178,7 +178,8 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     }
     
     func didSelectProduct(index: Int) {
-        
+        NavigationManager.instance.pushVC(to: .productDetailBottomSheet, presentation: .BottomSheet(completion: {
+                                            }, height: 665))
 //        if self.itemTypeUser != nil {
 //            guard let itemTypeUser = self.itemTypeUser,
 //                  let itemProduct = self.listProduct?[index]  else { return }
