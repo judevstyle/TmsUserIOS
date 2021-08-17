@@ -53,6 +53,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
             attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: NSMakeRange(0, attributeString.length))
             self.priceOld.attributedText = attributeString
             self.priceNew.text = "\(discount.newPrice ?? 0)"
+            priceOld.isHidden = false
         } else {
             priceOld.isHidden = true
             priceNew.text = "\(itemsProduct?.productPrice ?? 0)"

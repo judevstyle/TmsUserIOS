@@ -124,6 +124,30 @@
 		EF0D54E726C1BE9E009FD5F0 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0D54E526C1BE9E009FD5F0 /* ProfileTableViewCell.xib */; };
 		EF0D54EB26C1BF11009FD5F0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54EA26C1BF11009FD5F0 /* ProfileViewModel.swift */; };
 		EF0D54ED26C1C45F009FD5F0 /* AlertCustomViewswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54EC26C1C45E009FD5F0 /* AlertCustomViewswift.swift */; };
+		EF0FE83A26C9074000DFCED4 /* CustomerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE83926C9074000DFCED4 /* CustomerAPI.swift */; };
+		EF0FE83D26C907C400DFCED4 /* CustomerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE83C26C907C400DFCED4 /* CustomerRepository.swift */; };
+		EF0FE84126C907F600DFCED4 /* GetCustomerMyUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE84026C907F600DFCED4 /* GetCustomerMyUserResponse.swift */; };
+		EF0FE84426C9086500DFCED4 /* GetCustomerMyUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE84326C9086500DFCED4 /* GetCustomerMyUserUseCase.swift */; };
+		EF0FE84626C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE84526C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift */; };
+		EF0FE84826C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE84726C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift */; };
+		EF0FE84A26C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE84926C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift */; };
+		EF314BBC26CABA95002B201C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF314BBB26CABA95002B201C /* ChatViewController.swift */; };
+		EF314BBE26CABA9B002B201C /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF314BBD26CABA9B002B201C /* Chat.storyboard */; };
+		EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2026C841FA003ED499 /* GetOrderDetailResponse.swift */; };
+		EF766F2326C84315003ED499 /* GetOrderDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */; };
+		EF766F2526C84DCF003ED499 /* GetReOrderCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */; };
+		EF766F2726C84E37003ED499 /* GetReOrderCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */; };
+		EFB47C0226C3D5A400170CD0 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */; };
+		EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */; };
+		EFB47C0726C3D5D500170CD0 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */; };
+		EFB47C0826C3D5D500170CD0 /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB47C0626C3D5D500170CD0 /* EmployeeTableViewCell.xib */; };
+		EFB47C0C26C3DA8F00170CD0 /* HeaderLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0B26C3DA8F00170CD0 /* HeaderLabelTableViewCell.swift */; };
+		EFB47C0F26C3DAC300170CD0 /* OrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0E26C3DAC300170CD0 /* OrderDetailViewModel.swift */; };
+		EFB47C1226C3E15600170CD0 /* OrderCartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C1126C3E15600170CD0 /* OrderCartManager.swift */; };
+		EFB47C1726C448B200170CD0 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C1626C448B200170CD0 /* Persistable.swift */; };
+		EFB47C1A26C4492000170CD0 /* DBLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C1926C4492000170CD0 /* DBLocal.swift */; };
+		EFBAF6A826CA2A190008DDF4 /* GetOrderDescriptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBAF6A726CA2A190008DDF4 /* GetOrderDescriptionResponse.swift */; };
+		EFBAF6AA26CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBAF6A926CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift */; };
 		EFBD719326C3064B0044216D /* GetFinishOrderCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBD719226C3064B0044216D /* GetFinishOrderCustomerResponse.swift */; };
 		EFBD719526C307D90044216D /* GetFinishOrderCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBD719426C307D90044216D /* GetFinishOrderCustomerUseCase.swift */; };
 		EFBD719826C313320044216D /* OrderDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBD719726C313320044216D /* OrderDetail.storyboard */; };
@@ -292,6 +316,30 @@
 		EF0D54E526C1BE9E009FD5F0 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		EF0D54EA26C1BF11009FD5F0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF0D54EC26C1C45E009FD5F0 /* AlertCustomViewswift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCustomViewswift.swift; sourceTree = "<group>"; };
+		EF0FE83926C9074000DFCED4 /* CustomerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAPI.swift; sourceTree = "<group>"; };
+		EF0FE83C26C907C400DFCED4 /* CustomerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRepository.swift; sourceTree = "<group>"; };
+		EF0FE84026C907F600DFCED4 /* GetCustomerMyUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCustomerMyUserResponse.swift; sourceTree = "<group>"; };
+		EF0FE84326C9086500DFCED4 /* GetCustomerMyUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCustomerMyUserUseCase.swift; sourceTree = "<group>"; };
+		EF0FE84526C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateOrderByUserRequest.swift; sourceTree = "<group>"; };
+		EF0FE84726C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateOrderByUserResponse.swift; sourceTree = "<group>"; };
+		EF0FE84926C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateOrderByUserUseCase.swift; sourceTree = "<group>"; };
+		EF314BBB26CABA95002B201C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		EF314BBD26CABA9B002B201C /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		EF766F2026C841FA003ED499 /* GetOrderDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDetailResponse.swift; sourceTree = "<group>"; };
+		EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDetailUseCase.swift; sourceTree = "<group>"; };
+		EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerResponse.swift; sourceTree = "<group>"; };
+		EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerUseCase.swift; sourceTree = "<group>"; };
+		EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
+		EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
+		EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		EFB47C0626C3D5D500170CD0 /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		EFB47C0B26C3DA8F00170CD0 /* HeaderLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderLabelTableViewCell.swift; sourceTree = "<group>"; };
+		EFB47C0E26C3DAC300170CD0 /* OrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewModel.swift; sourceTree = "<group>"; };
+		EFB47C1126C3E15600170CD0 /* OrderCartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCartManager.swift; sourceTree = "<group>"; };
+		EFB47C1626C448B200170CD0 /* Persistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		EFB47C1926C4492000170CD0 /* DBLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBLocal.swift; sourceTree = "<group>"; };
+		EFBAF6A726CA2A190008DDF4 /* GetOrderDescriptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDescriptionResponse.swift; sourceTree = "<group>"; };
+		EFBAF6A926CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDescriptionUseCase.swift; sourceTree = "<group>"; };
 		EFBD719226C3064B0044216D /* GetFinishOrderCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFinishOrderCustomerResponse.swift; sourceTree = "<group>"; };
 		EFBD719426C307D90044216D /* GetFinishOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFinishOrderCustomerUseCase.swift; sourceTree = "<group>"; };
 		EFBD719726C313320044216D /* OrderDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderDetail.storyboard; sourceTree = "<group>"; };
@@ -437,6 +485,7 @@
 		EF0D53D826C13EEC009FD5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EF314BBA26CABA88002B201C /* Chat */,
 				EFBD719B26C3180E0044216D /* OrderTracking */,
 				EFBD719626C313150044216D /* OrderDetail */,
 				EFC1C57626C2A23000ED64B1 /* ProductDetailBottomSheet */,
@@ -468,6 +517,7 @@
 		EF0D53DA26C13EFF009FD5F0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				EFB47C0926C3DA8400170CD0 /* CellHeader */,
 				EFBD71A326C319040044216D /* Components */,
 				EF0D54CA26C1A3DF009FD5F0 /* Cell */,
 			);
@@ -541,6 +591,8 @@
 		EF0D53F226C144F2009FD5F0 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				EFB47C1826C4490000170CD0 /* DBRealm */,
+				EFB47C1026C3E13F00170CD0 /* OrderCartManager */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -564,6 +616,7 @@
 		EF0D53F926C1451C009FD5F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EFB47C1626C448B200170CD0 /* Persistable.swift */,
 				EF0D53FA26C1451C009FD5F0 /* SocketManager */,
 				EF0D540526C1451C009FD5F0 /* Extensions */,
 			);
@@ -731,6 +784,7 @@
 		EF0D547526C18AB3009FD5F0 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				EF0FE83826C9072200DFCED4 /* Customer */,
 				EFC1C58626C2BAB300ED64B1 /* Order */,
 				EF0D549D26C1A197009FD5F0 /* ProductType */,
 				EF0D549C26C1A13D009FD5F0 /* Product */,
@@ -742,6 +796,7 @@
 		EF0D547626C18AB9009FD5F0 /* Repositorys */ = {
 			isa = PBXGroup;
 			children = (
+				EF0FE83B26C907B800DFCED4 /* Customer */,
 				EFC1C59026C2BE5500ED64B1 /* Order */,
 				EF0D54B426C1A237009FD5F0 /* Product */,
 				EF0D54A026C1A1B5009FD5F0 /* ProductType */,
@@ -753,6 +808,7 @@
 		EF0D547726C18AC0009FD5F0 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				EF0FE84226C9085500DFCED4 /* Customer */,
 				EFC1C59326C2BEA900ED64B1 /* Order */,
 				EF0D54AD26C1A22A009FD5F0 /* Product */,
 				EF0D54AA26C1A1F6009FD5F0 /* ProductType */,
@@ -764,6 +820,7 @@
 		EF0D547826C18ACA009FD5F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EF0FE83E26C907DA00DFCED4 /* Customer */,
 				EFC1C58926C2BBD600ED64B1 /* Order */,
 				EF0D54C726C1A2B9009FD5F0 /* Shared */,
 				EF0D54BA26C1A284009FD5F0 /* Product */,
@@ -977,6 +1034,8 @@
 		EF0D54CA26C1A3DF009FD5F0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EFB47C0426C3D5BC00170CD0 /* EmployeeTableViewCell */,
+				EFB47BFF26C3D57E00170CD0 /* ProductListTableViewCell */,
 				EFC1C59626C2C44E00ED64B1 /* HistoryTableViewCell */,
 				EFC1C57F26C2AE3200ED64B1 /* OrderTableViewCell */,
 				EF0D54D026C1A408009FD5F0 /* ProductCollectionViewCell */,
@@ -1048,9 +1107,117 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EF0FE83826C9072200DFCED4 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				EF0FE83926C9074000DFCED4 /* CustomerAPI.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		EF0FE83B26C907B800DFCED4 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				EF0FE83C26C907C400DFCED4 /* CustomerRepository.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		EF0FE83E26C907DA00DFCED4 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				EF0FE83F26C907E000DFCED4 /* Response */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		EF0FE83F26C907E000DFCED4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				EF0FE84026C907F600DFCED4 /* GetCustomerMyUserResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		EF0FE84226C9085500DFCED4 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				EF0FE84326C9086500DFCED4 /* GetCustomerMyUserUseCase.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		EF314BBA26CABA88002B201C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				EF314BBB26CABA95002B201C /* ChatViewController.swift */,
+				EF314BBD26CABA9B002B201C /* Chat.storyboard */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		EFB47BFF26C3D57E00170CD0 /* ProductListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */,
+				EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */,
+			);
+			path = ProductListTableViewCell;
+			sourceTree = "<group>";
+		};
+		EFB47C0426C3D5BC00170CD0 /* EmployeeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */,
+				EFB47C0626C3D5D500170CD0 /* EmployeeTableViewCell.xib */,
+			);
+			path = EmployeeTableViewCell;
+			sourceTree = "<group>";
+		};
+		EFB47C0926C3DA8400170CD0 /* CellHeader */ = {
+			isa = PBXGroup;
+			children = (
+				EFB47C0A26C3DA8F00170CD0 /* HeaderLabelTableViewCell */,
+			);
+			path = CellHeader;
+			sourceTree = "<group>";
+		};
+		EFB47C0A26C3DA8F00170CD0 /* HeaderLabelTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFB47C0B26C3DA8F00170CD0 /* HeaderLabelTableViewCell.swift */,
+			);
+			path = HeaderLabelTableViewCell;
+			sourceTree = "<group>";
+		};
+		EFB47C0D26C3DAB500170CD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFB47C0E26C3DAC300170CD0 /* OrderDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFB47C1026C3E13F00170CD0 /* OrderCartManager */ = {
+			isa = PBXGroup;
+			children = (
+				EFB47C1126C3E15600170CD0 /* OrderCartManager.swift */,
+			);
+			path = OrderCartManager;
+			sourceTree = "<group>";
+		};
+		EFB47C1826C4490000170CD0 /* DBRealm */ = {
+			isa = PBXGroup;
+			children = (
+				EFB47C1926C4492000170CD0 /* DBLocal.swift */,
+			);
+			path = DBRealm;
+			sourceTree = "<group>";
+		};
 		EFBD719626C313150044216D /* OrderDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EFB47C0D26C3DAB500170CD0 /* ViewModel */,
 				EFBD719726C313320044216D /* OrderDetail.storyboard */,
 				EFBD719926C313420044216D /* OrderDetailViewController.swift */,
 			);
@@ -1158,6 +1325,7 @@
 			isa = PBXGroup;
 			children = (
 				EFC1C58C26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift */,
+				EF0FE84526C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1167,6 +1335,10 @@
 			children = (
 				EFC1C58E26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift */,
 				EFBD719226C3064B0044216D /* GetFinishOrderCustomerResponse.swift */,
+				EF766F2026C841FA003ED499 /* GetOrderDetailResponse.swift */,
+				EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */,
+				EF0FE84726C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift */,
+				EFBAF6A726CA2A190008DDF4 /* GetOrderDescriptionResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1184,6 +1356,10 @@
 			children = (
 				EFC1C59426C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift */,
 				EFBD719426C307D90044216D /* GetFinishOrderCustomerUseCase.swift */,
+				EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */,
+				EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */,
+				EF0FE84926C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift */,
+				EFBAF6A926CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -1332,11 +1508,13 @@
 				EFC1C57826C2A26E00ED64B1 /* ProductDetailBottomSheet.storyboard in Resources */,
 				EF0D54D326C1A408009FD5F0 /* ProductCollectionViewCell.xib in Resources */,
 				EFBD71AD26C3190E0044216D /* MarkerMapView.xib in Resources */,
+				EF314BBE26CABA9B002B201C /* Chat.storyboard in Resources */,
 				EF0D54DE26C1B094009FD5F0 /* ProductCartTableViewCell.xib in Resources */,
 				EF0D545F26C169EE009FD5F0 /* Home.storyboard in Resources */,
 				EF0D53A626C12F2E009FD5F0 /* Assets.xcassets in Resources */,
 				EF0D53E326C13F73009FD5F0 /* Splash.storyboard in Resources */,
 				EFBD719826C313320044216D /* OrderDetail.storyboard in Resources */,
+				EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */,
 				EF0D53EB26C13FC3009FD5F0 /* SukhumvitSet-Light.ttf in Resources */,
 				EF0D53EF26C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf in Resources */,
 				EF0D53F026C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf in Resources */,
@@ -1346,6 +1524,7 @@
 				EF0D544526C145B0009FD5F0 /* Login.storyboard in Resources */,
 				EF0D544B26C145DD009FD5F0 /* Intro.storyboard in Resources */,
 				EF0D546426C16D51009FD5F0 /* Order.storyboard in Resources */,
+				EFB47C0826C3D5D500170CD0 /* EmployeeTableViewCell.xib in Resources */,
 				EF0D53EE26C13FC3009FD5F0 /* SukhumvitSet-Text.ttf in Resources */,
 				EFBD719D26C3181C0044216D /* OrderTracking.storyboard in Resources */,
 				EF0D54E726C1BE9E009FD5F0 /* ProfileTableViewCell.xib in Resources */,
@@ -1517,6 +1696,7 @@
 			files = (
 				EFC1C57A26C2A27D00ED64B1 /* ProductDetailBottomSheetViewController.swift in Sources */,
 				EF0D543F26C1452F009FD5F0 /* CustomTapGestureRecognizer.swift in Sources */,
+				EF766F2326C84315003ED499 /* GetOrderDetailUseCase.swift in Sources */,
 				EF0D542C26C1451D009FD5F0 /* Decoder+Extension.swift in Sources */,
 				EF0D54D926C1AFE8009FD5F0 /* ProductCartViewController.swift in Sources */,
 				EF0D542926C1451D009FD5F0 /* ImageBase64+Extension.swift in Sources */,
@@ -1526,9 +1706,11 @@
 				EFC1C59226C2BE6F00ED64B1 /* OrderRepository.swift in Sources */,
 				EF0D54DD26C1B094009FD5F0 /* ProductCartTableViewCell.swift in Sources */,
 				EFC1C59926C2C45E00ED64B1 /* HistoryTableViewCell.swift in Sources */,
+				EF766F2726C84E37003ED499 /* GetReOrderCustomerUseCase.swift in Sources */,
 				EF0D54C226C1A284009FD5F0 /* GetProductDetailResponse.swift in Sources */,
 				EF0D542526C1451D009FD5F0 /* UILabel+Extension.swift in Sources */,
 				EF0D542D26C1451D009FD5F0 /* Decodable+Extension.swift in Sources */,
+				EF314BBC26CABA95002B201C /* ChatViewController.swift in Sources */,
 				EF0D54AC26C1A1F6009FD5F0 /* GetProductTypeUseCase.swift in Sources */,
 				EF0D546B26C16D6F009FD5F0 /* HistoryViewController.swift in Sources */,
 				EF0D543C26C1452F009FD5F0 /* AnyKey.swift in Sources */,
@@ -1538,7 +1720,9 @@
 				EF0D548A26C18EF1009FD5F0 /* PostLogoutUseCase.swift in Sources */,
 				EF0D542226C1451D009FD5F0 /* UIFont+Extension.swift in Sources */,
 				EF0D545C26C1695E009FD5F0 /* MainAppViewController.swift in Sources */,
+				EF766F2526C84DCF003ED499 /* GetReOrderCustomerResponse.swift in Sources */,
 				EF0D54D426C1A408009FD5F0 /* ProductCollectionViewCell.swift in Sources */,
+				EFBAF6A826CA2A190008DDF4 /* GetOrderDescriptionResponse.swift in Sources */,
 				EF0D549F26C1A19D009FD5F0 /* ProductTypeAPI.swift in Sources */,
 				EF0D542A26C1451D009FD5F0 /* Encodable+Extension.swift in Sources */,
 				EFC1C59526C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift in Sources */,
@@ -1552,9 +1736,11 @@
 				EF0D541B26C1451D009FD5F0 /* SocketMarkerMapResponse.swift in Sources */,
 				EF0D54EB26C1BF11009FD5F0 /* ProfileViewModel.swift in Sources */,
 				EF0D54E626C1BE9E009FD5F0 /* ProfileTableViewCell.swift in Sources */,
+				EF0FE84A26C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift in Sources */,
 				EF0D547B26C18CCA009FD5F0 /* AuthCustomerAPI.swift in Sources */,
 				EF0D54C426C1A284009FD5F0 /* PostProductResponse.swift in Sources */,
 				EF0D543126C1451D009FD5F0 /* Encoder+Extension.swift in Sources */,
+				EF0FE84126C907F600DFCED4 /* GetCustomerMyUserResponse.swift in Sources */,
 				EF0D543E26C1452F009FD5F0 /* Utils.swift in Sources */,
 				EF0D542126C1451D009FD5F0 /* UIImageView+Extension.swift in Sources */,
 				EF0D543B26C1452F009FD5F0 /* CodableInfixOperator.swift in Sources */,
@@ -1564,6 +1750,7 @@
 				EF0D54B326C1A22A009FD5F0 /* GetProductDetailUseCase.swift in Sources */,
 				EF0D54C526C1A284009FD5F0 /* GetProductRequest.swift in Sources */,
 				EF0D542B26C1451D009FD5F0 /* UIViewController+Extension.swift in Sources */,
+				EFB47C0C26C3DA8F00170CD0 /* HeaderLabelTableViewCell.swift in Sources */,
 				EFC1C57D26C2A57000ED64B1 /* ProductDetailBottomSheetViewModel.swift in Sources */,
 				EFBD71AA26C3190E0044216D /* PopupMarkerMapView.swift in Sources */,
 				EF0D54E126C1B228009FD5F0 /* ProductCartViewModel.swift in Sources */,
@@ -1572,14 +1759,18 @@
 				EF0D548526C18E6D009FD5F0 /* AuthCustomerRepository.swift in Sources */,
 				EF0D545326C14633009FD5F0 /* DefaultsManager.swift in Sources */,
 				EF0D545526C14639009FD5F0 /* KeyedDecodingContainer+Extension.swift in Sources */,
+				EFB47C1226C3E15600170CD0 /* OrderCartManager.swift in Sources */,
 				EF0D542626C1451D009FD5F0 /* UIButton+Extension.swift in Sources */,
+				EFB47C1726C448B200170CD0 /* Persistable.swift in Sources */,
 				EFC1C59D26C2C46F00ED64B1 /* HistoryViewModel.swift in Sources */,
 				EF0D54B126C1A22A009FD5F0 /* GetProductUseCase.swift in Sources */,
 				EF0D53E126C13F6A009FD5F0 /* SplashViewController.swift in Sources */,
 				EF0D54C626C1A284009FD5F0 /* PostProductRequest.swift in Sources */,
+				EF0FE84626C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift in Sources */,
 				EFBD719326C3064B0044216D /* GetFinishOrderCustomerResponse.swift in Sources */,
 				EF0D541F26C1451D009FD5F0 /* SocketDashboardRequest.swift in Sources */,
 				EF0D53F726C1450F009FD5F0 /* Combine.swift in Sources */,
+				EFB47C0226C3D5A400170CD0 /* ProductListTableViewCell.swift in Sources */,
 				EF0D549B26C1A09E009FD5F0 /* HomeViewModel.swift in Sources */,
 				EF0D541C26C1451D009FD5F0 /* User.swift in Sources */,
 				EF0D545126C1462D009FD5F0 /* NavigationManager.swift in Sources */,
@@ -1589,6 +1780,8 @@
 				EF0D542326C1451D009FD5F0 /* UIColor+Extension.swift in Sources */,
 				EF0D544826C145CA009FD5F0 /* LoginViewController.swift in Sources */,
 				EF0D54CF26C1A3EB009FD5F0 /* ProductCategoryCollectionViewCell.swift in Sources */,
+				EF0FE83D26C907C400DFCED4 /* CustomerRepository.swift in Sources */,
+				EFBAF6AA26CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift in Sources */,
 				EF0D54ED26C1C45F009FD5F0 /* AlertCustomViewswift.swift in Sources */,
 				EF0D54A926C1A1E0009FD5F0 /* GetProductTypeRequest.swift in Sources */,
 				EF0D543026C1451D009FD5F0 /* Notification+Extension.swift in Sources */,
@@ -1602,6 +1795,8 @@
 				EFBD719A26C313420044216D /* OrderDetailViewController.swift in Sources */,
 				EF0D543D26C1452F009FD5F0 /* DateFormatter.swift in Sources */,
 				EF0D541E26C1451D009FD5F0 /* SocketDashboardResponse.swift in Sources */,
+				EF0FE84826C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift in Sources */,
+				EF0FE83A26C9074000DFCED4 /* CustomerAPI.swift in Sources */,
 				EF0D54B926C1A269009FD5F0 /* ProductAPI.swift in Sources */,
 				EFC1C58826C2BB1100ED64B1 /* OrderAPI.swift in Sources */,
 				EF0D541D26C1451D009FD5F0 /* SoketDashboardResponse.swift in Sources */,
@@ -1610,14 +1805,19 @@
 				EF0D543326C1451D009FD5F0 /* UITextField+Extension.swift in Sources */,
 				EF0D542426C1451D009FD5F0 /* NSUIColor+Hex.swift in Sources */,
 				EF0D539A26C12F2B009FD5F0 /* AppDelegate.swift in Sources */,
+				EF0FE84426C9086500DFCED4 /* GetCustomerMyUserUseCase.swift in Sources */,
+				EFB47C0726C3D5D500170CD0 /* EmployeeTableViewCell.swift in Sources */,
 				EF0D542026C1451D009FD5F0 /* SocketManager.swift in Sources */,
 				EF0D542F26C1451D009FD5F0 /* UserDefaults+Extension.swift in Sources */,
 				EF0D548826C18EE4009FD5F0 /* PostAuthenticateUseCase.swift in Sources */,
 				EF0D53A426C12F2B009FD5F0 /* TMS_USER.xcdatamodeld in Sources */,
 				EF0D543226C1451D009FD5F0 /* Dictionary+Extension.swift in Sources */,
+				EFB47C1A26C4492000170CD0 /* DBLocal.swift in Sources */,
 				EF0D543426C1451D009FD5F0 /* UITableView+Extension.swift in Sources */,
 				EFBD71A226C318770044216D /* OrderTrackingViewModel.swift in Sources */,
+				EFB47C0F26C3DAC300170CD0 /* OrderDetailViewModel.swift in Sources */,
 				EFC1C58F26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift in Sources */,
+				EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */,
 				EFC1C58D26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift in Sources */,
 				EF0D546626C16D58009FD5F0 /* OrderViewController.swift in Sources */,
 			);

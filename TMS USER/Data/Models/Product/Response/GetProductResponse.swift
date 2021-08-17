@@ -38,25 +38,49 @@ public struct ProductData: Codable, Hashable  {
 
 public struct ProductItems: Codable, Hashable  {
     
-    public var productId: Int?
-    public var compId: Int?
-    public var productTypeId: Int?
+    public var productId: Int? = nil
+    public var compId: Int? = nil
+    public var productTypeId: Int? = nil
     public var productSku: String = ""
-    public var productCode: String?
+    public var productCode: String? = nil
     
-    public var productName: String?
-    public var productDesc: String?
-    public var productDimension: String?
-    public var productPrice: Int?
-    public var productPoint: Int?
-    public var productCountPerPoint: Int?
-    public var productImg: String?
-    public var productType: ProductType?
+    public var productName: String? = nil
+    public var productDesc: String? = nil
+    public var productDimension: String? = nil
+    public var productPrice: Int? = nil
+    public var productPoint: Int? = nil
+    public var productCountPerPoint: Int? = nil
+    public var productImg: String? = nil
+    public var productType: ProductType? = nil
     
     //Discount
-    public var productDiscount: ProductDiscount?
+    public var productDiscount: ProductDiscount? = nil
+    
+    //ProductCart
+    public var productCartId: Int? = nil
+    public var productCartQty: Int? = nil
     
     public init() {}
+    
+    enum CodingKeys: String, CodingKey {
+        case productId = "product_id"
+        case compId                 = "comp_id"
+        case productTypeId          = "product_type_id"
+        case productSku             = "product_sku"
+        case productCode            = "product_code"
+        case productName            = "product_name"
+        case productDesc            = "product_desc"
+        case productDimension       = "product_dimension"
+        case productPrice           = "product_price"
+        case productPoint           = "product_point"
+        case productCountPerPoint   = "product_count_per_point"
+        case productImg             = "product_img"
+        case productType            = "productType"
+        case productDiscount        = "discount"
+        
+        case productCartId        = "productCartId"
+        case productCartQty        = "productCartQty"
+    }
     
     public init(from decoder: Decoder) throws {
         try productId              <- decoder["product_id"]
@@ -73,16 +97,23 @@ public struct ProductItems: Codable, Hashable  {
         try productImg             <- decoder["product_img"]
         try productType            <- decoder["productType"]
         try productDiscount        <- decoder["discount"]
+        try productCartId          <- decoder["productCartId"]
+        try productCartQty         <- decoder["productCartQty"]
     }
 }
 
 
 public struct ProductDiscount: Codable, Hashable  {
     
-    public var typeUserId: Int?
-    public var newPrice: Int?
+    public var typeUserId: Int? = nil
+    public var newPrice: Int? = nil
     
     public init() {}
+    
+    enum CodingKeys: String, CodingKey {
+        case typeUserId   = "type_user_id"
+        case newPrice     = "new_price"
+    }
     
     public init(from decoder: Decoder) throws {
         try typeUserId              <- decoder["type_user_id"]

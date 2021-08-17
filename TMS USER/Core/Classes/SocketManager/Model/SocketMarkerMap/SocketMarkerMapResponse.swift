@@ -30,6 +30,15 @@ public struct MarkerMapItems: Codable, Hashable  {
     
     public init() {}
     
+    enum CodingKeys: String, CodingKey {
+        case empAvatar = "emp_avatar"
+        case empName = "emp_name"
+        case lat = "lat"
+        case lng = "lng"
+        case shipmentId = "shipment_id"
+        case status = "status"
+    }
+    
     public init(from decoder: Decoder) throws {
         try empAvatar  <- decoder["emp_avatar"]
         try empName     <- decoder["emp_name"]

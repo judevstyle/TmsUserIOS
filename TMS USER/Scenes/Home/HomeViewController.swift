@@ -11,7 +11,6 @@ class HomeViewController: UIViewController {
     
     var searchBar: UISearchBar!
     var badgeCount: UILabel!
-    var countNotification: Int = 0
     
     @IBOutlet var topView: UIView!
     @IBOutlet var bgTopView: UIView!
@@ -43,6 +42,10 @@ class HomeViewController: UIViewController {
     func configure(_ interface: HomeProtocol) {
         self.viewModel = interface
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupValueBadge()
+    }
 }
 
 // MARK: - Binding
@@ -51,6 +54,7 @@ extension HomeViewController {
     func bindToViewModel() {
         viewModel.output.didGetCategorySuccess = didGetCategorySuccess()
         viewModel.output.didGetProductSuccess = didGetProductSuccess()
+        viewModel.output.didUpdateCartBadge = didUpdateCartBadge()
     }
     
     func didGetCategorySuccess() -> (() -> Void) {
@@ -66,6 +70,14 @@ extension HomeViewController {
         return { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.productCollectionView.reloadData()
+        }
+    }
+    
+    func didUpdateCartBadge() -> (() -> Void) {
+        return { [weak self] in
+            guard let weakSelf = self else { return }
+            let objs = OrderCartManager.sharedInstance.getProductCart()
+            weakSelf.badgeCount.text = "\(objs?.count ?? 0)"
         }
     }
 }
@@ -114,7 +126,6 @@ extension HomeViewController {
         badgeCount.textColor = .white
         badgeCount.font = badgeCount.font.withSize(12)
         badgeCount.backgroundColor = .red
-        badgeCount.text = "0"
         
         let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
         rightBarButton.setBackgroundImage(UIImage(systemName: "cart.fill"), for: .normal)
@@ -124,6 +135,11 @@ extension HomeViewController {
         
         let rightBarButtomItem = UIBarButtonItem(customView: rightBarButton)
         navigationItem.rightBarButtonItem = rightBarButtomItem
+    }
+    
+    func setupValueBadge() {
+        let objs = OrderCartManager.sharedInstance.getProductCart()
+        badgeCount.text = "\(objs?.count ?? 0)"
     }
     
     @objc func handleTapSearch(_ sender: UITapGestureRecognizer? = nil) {
@@ -160,7 +176,10 @@ extension HomeViewController {
 
 extension HomeViewController {
     @objc func addTapped() {
-        NavigationManager.instance.pushVC(to: .productCart, presentation: .ModelNav(completion: nil, isFullScreen: true))
+        NavigationManager.instance.pushVC(to: .productCart(dismiss: {
+            self.setupValueBadge()
+        }), presentation: .ModelNav(completion: {
+        }, isFullScreen: true))
     }
 }
 

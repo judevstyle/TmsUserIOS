@@ -37,13 +37,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="฿100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6F-Sv-Zys">
-                                                <rect key="frame" x="373" y="0.5" width="33" height="34.5"/>
+                                                <rect key="frame" x="374" y="0.5" width="32" height="34.5"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                                 <color key="textColor" name="Primary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รวม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s61-QS-PtJ">
-                                                <rect key="frame" x="347" y="0.0" width="23" height="35"/>
+                                                <rect key="frame" x="348" y="0.0" width="23" height="35"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                                 <color key="textColor" name="PrimaryUnselect"/>
                                                 <nil key="highlightedColor"/>
@@ -73,13 +73,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="฿20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrX-6k-HqT">
-                                                <rect key="frame" x="380.5" y="0.5" width="25.5" height="34.5"/>
+                                                <rect key="frame" x="382" y="0.5" width="24" height="34.5"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                                 <color key="textColor" name="Primary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ส่วนลด" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-1Y-Zp9">
-                                                <rect key="frame" x="336" y="0.0" width="41.5" height="35"/>
+                                                <rect key="frame" x="338.5" y="0.0" width="40.5" height="35"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                                 <color key="textColor" name="PrimaryUnselect"/>
                                                 <nil key="highlightedColor"/>
@@ -109,13 +109,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="฿80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly5-aC-GDo">
-                                                <rect key="frame" x="260.5" y="0.5" width="25.5" height="34.5"/>
+                                                <rect key="frame" x="262" y="0.5" width="24" height="34.5"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                                 <color key="textColor" name="Primary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รวมทั้งหมด :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7w-5q-qGA">
-                                                <rect key="frame" x="185" y="0.0" width="72.5" height="35"/>
+                                                <rect key="frame" x="187.5" y="0.0" width="71.5" height="35"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                                 <color key="textColor" name="PrimaryUnselect"/>
                                                 <nil key="highlightedColor"/>
@@ -153,21 +153,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e2D-HO-ZmP">
                                 <rect key="frame" x="0.0" y="44" width="414" height="713"/>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ยังไม่มีสินค้าในตะกร้า" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsV-8o-Rru">
+                                <rect key="frame" x="141.5" y="44" width="131.5" height="713"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="e2D-HO-ZmP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Pl-Vz-SXw"/>
                             <constraint firstItem="r4Z-8s-84X" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="DuK-bB-CvA"/>
+                            <constraint firstItem="HsV-8o-Rru" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Nqh-xv-JXX"/>
                             <constraint firstItem="e2D-HO-ZmP" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QFn-fh-tTt"/>
+                            <constraint firstItem="HsV-8o-Rru" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VHb-P3-sbe"/>
                             <constraint firstItem="r4Z-8s-84X" firstAttribute="top" secondItem="e2D-HO-ZmP" secondAttribute="bottom" id="WxO-Zg-Slz"/>
+                            <constraint firstItem="r4Z-8s-84X" firstAttribute="top" secondItem="HsV-8o-Rru" secondAttribute="bottom" id="ZpY-GG-8UE"/>
                             <constraint firstItem="r4Z-8s-84X" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="dc3-JP-zKW"/>
                             <constraint firstItem="r4Z-8s-84X" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ldl-2p-gNr"/>
                             <constraint firstItem="e2D-HO-ZmP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="uDD-XN-fA1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnConfirmOrder" destination="ao5-zU-A57" id="95a-N5-WWQ"/>
                         <outlet property="discountPrice" destination="PrX-6k-HqT" id="gk8-PV-Tdt"/>
+                        <outlet property="productLabelEmpty" destination="HsV-8o-Rru" id="iNC-nb-InJ"/>
                         <outlet property="sumOverAll" destination="Ly5-aC-GDo" id="Kxc-b8-A6h"/>
                         <outlet property="sumPrice" destination="c6F-Sv-Zys" id="3Vl-UT-zfn"/>
                         <outlet property="tableView" destination="e2D-HO-ZmP" id="CoQ-st-mhn"/>

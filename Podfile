@@ -13,6 +13,7 @@ target 'TMS USER' do
   pod 'MaterialComponents/BottomSheet'
   pod 'MessageKit'
   pod 'Toast-Swift'
+  pod 'RealmSwift'
 
   # Pods for Socket-Chat
   pod 'Socket.IO-Client-Swift', '~> 15.2.0'

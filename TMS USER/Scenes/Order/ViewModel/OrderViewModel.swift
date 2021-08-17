@@ -95,6 +95,7 @@ class OrderViewModel: OrderProtocol, OrderProtocolOutput {
     }
     
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath) {
-        NavigationManager.instance.pushVC(to: .orderTracking)
+        guard let orderId = listOrder?[indexPath.item].orderId else { return }
+        NavigationManager.instance.pushVC(to: .orderTracking(orderId: orderId))
     }
 }

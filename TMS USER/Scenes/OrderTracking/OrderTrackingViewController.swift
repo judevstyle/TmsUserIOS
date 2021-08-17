@@ -9,7 +9,31 @@ import UIKit
 import GoogleMaps
 
 class OrderTrackingViewController: UIViewController {
-
+    
+    @IBOutlet var imagePosterView: UIImageView!
+    @IBOutlet var titleNoText: UILabel!
+    @IBOutlet var descText: UILabel!
+    @IBOutlet var positionText: UILabel!
+    
+    @IBOutlet var btnChat: UIButton!
+    @IBOutlet var btnTel: UIButton!
+    
+    @IBOutlet var viewMapArea: UIView!
+    
+    @IBOutlet var topViewDetail: UIView!
+    @IBOutlet var bottomViewDetail: UIView!
+    
+    @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet var btnToggleProductView: UIButton!
+    
+    @IBOutlet var orderErrorDataText: UILabel!
+    
+    //Order Box2
+    @IBOutlet var orderTitleNoText: UILabel!
+    @IBOutlet var countOrderItemText: UILabel!
+    @IBOutlet var orderAllSumText: UILabel!
+    
     // ViewModel
     lazy var viewModel: OrderTrackingProtocol = {
         let vm = OrderTrackingViewModel(orderTrackingViewController: self)
@@ -24,7 +48,7 @@ class OrderTrackingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupMap()
+        registerCell()
         NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
     }
     
@@ -33,12 +57,12 @@ class OrderTrackingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setupMap()
         viewModel.input.getOrderTracking()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.input.fetchMapMarker()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -52,18 +76,48 @@ class OrderTrackingViewController: UIViewController {
 // MARK: - setupView
 extension OrderTrackingViewController {
     func setupUI(){
+        
+        imagePosterView.isHidden = true
+        titleNoText.isHidden = true
+        descText.isHidden = true
+        positionText.isHidden = true
+        orderErrorDataText.isHidden = true
+        
+        imagePosterView.setRounded(rounded: imagePosterView.frame.width/2)
+        imagePosterView.contentMode = .scaleAspectFill
+        
+        btnTel.setRounded(rounded: 5)
+        btnChat.setRounded(rounded: 5)
+        
+        btnChat.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        btnTel.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        
+        btnTel.imageEdgeInsets = UIEdgeInsets(top: 3, left: -3, bottom: 3, right: 3)
+        btnChat.imageEdgeInsets = UIEdgeInsets(top: 3, left: -3, bottom: 3, right: 3)
+        
+        topViewDetail.setRounded(rounded: 8)
+        topViewDetail.setShadowBoxView()
+        
+        bottomViewDetail.setRounded(rounded: 8)
+        bottomViewDetail.setShadowBoxView()
+        btnToggleProductView.addTarget(self, action: #selector(didToggleShowHideTableView), for: .touchUpInside)
+        
+        
+        btnChat.addTarget(self, action: #selector(didTapChat), for: .touchUpInside)
+        btnTel.addTarget(self, action: #selector(didTapTel), for: .touchUpInside)
     }
     
     func setupMap() {
         let camera = GMSCameraPosition.camera(withLatitude: 13.663491595353403, longitude: 100.6061463206966, zoom: 15.0)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         mapView.delegate = self
-        self.view.addSubview(mapView)
+        self.viewMapArea.isUserInteractionEnabled = true
+        self.viewMapArea.addSubview(mapView)
     }
     
     func fetchMarkerMap(markers: [MarkerMapItems]?){
         self.listMarker.removeAll()
-        
+        var locationMove: CLLocationCoordinate2D? = nil
         markers?.enumerated().forEach({ (index, item) in
             let position = CLLocationCoordinate2D(latitude: item.lat ?? 0.0, longitude: item.lng ?? 0.0)
             let marker = GMSMarker(position: position)
@@ -73,16 +127,84 @@ extension OrderTrackingViewController {
             marker.tracksViewChanges = true
             
             listMarker.append(marker)
+            
+            if index == ((markers?.count ?? 0) - 1) {
+                locationMove = CLLocationCoordinate2D(latitude: item.lat ?? 0.0, longitude: item.lng ?? 0.0)
+            }
         })
         
-        self.listMarker.forEach({ item in
+        self.listMarker.enumerated().forEach({ (index, item) in
             item.map = self.mapView
+            if index == (listMarker.count - 1), let location = locationMove {
+                self.mapView.animate(toLocation: location)
+            }
         })
+    }
+    
+    fileprivate func registerCell() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.separatorStyle = .none
+        tableView.registerCell(identifier: ProductListTableViewCell.identifier)
+    }
+    
+    @objc func didToggleShowHideTableView() {
         
-//        if let itemLast = markers?.last {
-//            let locationLast: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: itemLast.lat ?? 13.663491595353403, longitude: itemLast.lng ?? 100.6061463206966)
-//            mapView.animate(toLocation: locationLast)
-//        }
+        tableView.isHidden = !tableView.isHidden
+        
+        if tableView.isHidden == true {
+            btnToggleProductView.setImage(UIImage(systemName: "arrow.down.circle.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            btnToggleProductView.tintColor = UIColor.Primary
+        } else {
+            btnToggleProductView.setImage(UIImage(systemName: "arrow.up.circle.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            btnToggleProductView.tintColor = UIColor.Primary
+        }
+    }
+    
+    func setupBox1Value() {
+        guard let item = viewModel.output.getItemShipment() else {
+            imagePosterView.isHidden = true
+            titleNoText.isHidden = true
+            descText.isHidden = true
+            positionText.isHidden = true
+            orderErrorDataText.isHidden = false
+            return }
+        
+        titleNoText.text = "Shipment No : \(item.shipmentNo ?? "")"
+        
+        if let employee = item.employees, employee.count > 0 {
+            descText.text = "\(employee[0].empDisplayName ?? "")"
+            positionText.text = "ตำแหน่ง \(employee[0].jobPositionId ?? 0)"
+            setImage(url: employee[0].empAvatar)
+        }
+        
+        imagePosterView.isHidden = false
+        titleNoText.isHidden = false
+        descText.isHidden = false
+        positionText.isHidden = false
+        orderErrorDataText.isHidden = true
+        
+    }
+    
+    func setupBox2Value() {
+        orderTitleNoText.text = viewModel.output.getOrderId()
+        orderAllSumText.text = "฿\(viewModel.output.getSumAllPrice())"
+        countOrderItemText.text = "จำนวน Item \(viewModel.output.getCountOrder()) ชนิด"
+    }
+    
+    private func setImage(url: String?) {
+        guard let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(url ?? "")") else { return }
+        imagePosterView.kf.setImageDefault(with: urlImage)
+    }
+    
+    @objc func didTapChat() {
+        NavigationManager.instance.pushVC(to: .chat)
+    }
+
+    @objc func didTapTel() {
+        viewModel.input.callTelPhone()
     }
 }
 
@@ -91,6 +213,7 @@ extension OrderTrackingViewController {
     
     func bindToViewModel() {
         viewModel.output.didGetMapMarkerSuccess = didGetMapMarkerSuccess()
+        viewModel.output.didGetOrderTrackingSuccess = didGetOrderTrackingSuccess()
     }
     
     func didGetMapMarkerSuccess() -> (() -> Void) {
@@ -98,6 +221,15 @@ extension OrderTrackingViewController {
             guard let weakSelf = self else { return }
             let markers = weakSelf.viewModel.output.getMapMarkerResponse()
             weakSelf.fetchMarkerMap(markers: markers)
+        }
+    }
+    
+    func didGetOrderTrackingSuccess() -> (() -> Void) {
+        return { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.setupBox1Value()
+            weakSelf.setupBox2Value()
+            weakSelf.tableView.reloadData()
         }
     }
 }
@@ -112,14 +244,36 @@ extension OrderTrackingViewController : GMSMapViewDelegate {
         var lat = coordinate.latitude
         var lng = coordinate.longitude
         
-        DispatchQueue.global().async {
-            for i in 0...100 {
-                lat = lat + 0.001
-                lng = lng + 0.001
-                self.listMarker[0] .position = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-                Thread.sleep(forTimeInterval: 0.5)
-            }
-        }
+        debugPrint("DidTap")
+        
+//        DispatchQueue.global().async {
+//
+//        }
     }
     
+}
+
+extension OrderTrackingViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.input.didSelectRowAt(tableView, indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.output.getItemViewCellHeight(indexPath: indexPath)
+    }
+}
+
+extension OrderTrackingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let count = viewModel.output.getNumberOfRowsInSection(tableView, section: section)
+        return count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.output.getNumberOfSections(in: tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return viewModel.output.getItemViewCell(tableView, indexPath: indexPath)
+    }
 }

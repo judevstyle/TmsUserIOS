@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ProductCartTableViewCellDelegate {
+    func didUpdateQty()
+    func didRemoveProduct(item: ProductItems?)
+}
+
 class ProductCartTableViewCell: UITableViewCell {
 
     static let identifier = "ProductCartTableViewCell"
@@ -15,6 +20,9 @@ class ProductCartTableViewCell: UITableViewCell {
     @IBOutlet weak var imageThubnail: UIImageView!
     @IBOutlet weak var titleText: UILabel!
     @IBOutlet weak var descText: UILabel!
+    
+    @IBOutlet var priceOld: UILabel!
+    @IBOutlet var priceNew: UILabel!
     
     @IBOutlet weak var priceText: UILabel!
     
@@ -25,6 +33,14 @@ class ProductCartTableViewCell: UITableViewCell {
     
     @IBOutlet var removeCart: UIButton!
     
+    public var delegate: ProductCartTableViewCellDelegate!
+    
+    var itemsProduct: ProductItems? {
+        didSet {
+            setupValueProduct()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,7 +50,6 @@ class ProductCartTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     func setupUI() {
@@ -53,9 +68,10 @@ class ProductCartTableViewCell: UITableViewCell {
     @IBAction func DeleteQtyAction(_ sender: Any) {
         
         let number:Int? = Int(qytText.text ?? "")
-        if var numberNew = number, numberNew > 0 {
+        if var numberNew = number, numberNew > 1 {
             numberNew -= 1
             qytText.text = "\(numberNew)"
+            updateQty()
         }
     }
     
@@ -65,9 +81,57 @@ class ProductCartTableViewCell: UITableViewCell {
         if var numberNew = number {
             numberNew += 1
             qytText.text = "\(numberNew)"
+            updateQty()
+        }
+    }
+    
+    func updateQty() {
+        let qty:Int? = Int(qytText.text ?? "")
+        if let qty = qty, let item = self.itemsProduct {
+            OrderCartManager.sharedInstance.updateProductCart(item, qty: qty, completion: {
+                self.delegate.didUpdateQty()
+            })
         }
     }
     
     @IBAction func removeAction(_ sender: Any) {
+        self.delegate.didRemoveProduct(item: self.itemsProduct)
+    }
+    
+    func setupValueProduct() {
+        
+        titleText.text = itemsProduct?.productName ?? ""
+        descText.text = itemsProduct?.productDesc ?? ""
+        qytText.text = "\(itemsProduct?.productCartQty ?? 0)"
+        
+        if let discount = itemsProduct?.productDiscount {
+            let attributeString =  NSMutableAttributedString(string: "\(itemsProduct?.productPrice ?? 0)")
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+            attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: NSMakeRange(0, attributeString.length))
+            self.priceOld.attributedText = attributeString
+            self.priceNew.text = "\(discount.newPrice ?? 0)"
+            priceOld.isHidden = false
+        } else {
+            priceOld.isHidden = true
+            priceNew.text = "\(itemsProduct?.productPrice ?? 0)"
+        }
+
+        priceNew.sizeToFit()
+        priceOld.sizeToFit()
+        
+        setImage(url: itemsProduct?.productImg)
+        
+        let qty:Int? = Int(qytText.text ?? "")
+        let priceAll:Int? = Int(priceNew.text ?? "")
+        if let priceAll = priceAll, let qty = qty {
+            priceText.text = "รวม ฿\(priceAll*qty)"
+        } else {
+            priceText.text = "รวม ฿0"
+        }
+    }
+    
+    private func setImage(url: String?) {
+        guard let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(url ?? "")") else { return }
+        imageThubnail.kf.setImageDefault(with: urlImage)
     }
 }

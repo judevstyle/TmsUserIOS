@@ -16,7 +16,7 @@ protocol HistoryProtocolInput {
 
 protocol HistoryProtocolOutput: class {
     var didGetHistorySuccess: (() -> Void)? { get set }
-    var didNavigateOrderDetail: (() -> Void)? { get set }
+    var didNavigateOrderDetail: ((Int?) -> Void)? { get set }
     
     func getNumberOfSections(in tableView: UITableView) -> Int
     func getNumberOfRowsInSection(_ tableView: UITableView, section: Int) -> Int
@@ -35,6 +35,7 @@ class HistoryViewModel: HistoryProtocol, HistoryProtocolOutput {
     
     // MARK: - UseCase
     private var getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase
+    private var getReOrderCustomerUseCase: GetReOrderCustomerUseCase
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     // MARK: - Properties
@@ -42,15 +43,17 @@ class HistoryViewModel: HistoryProtocol, HistoryProtocolOutput {
     
     init(
         historyViewController: HistoryViewController,
-        getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase = GetFinishOrderCustomerUseCaseImpl()
+        getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase = GetFinishOrderCustomerUseCaseImpl(),
+        getReOrderCustomerUseCase: GetReOrderCustomerUseCase = GetReOrderCustomerUseCaseImpl()
     ) {
         self.historyViewController = historyViewController
         self.getFinishOrderCustomerUseCase = getFinishOrderCustomerUseCase
+        self.getReOrderCustomerUseCase = getReOrderCustomerUseCase
     }
     
     // MARK - Data-binding OutPut
     var didGetHistorySuccess: (() -> Void)?
-    var didNavigateOrderDetail: (() -> Void)?
+    var didNavigateOrderDetail: ((Int?) -> Void)?
     
     public var listOrder: [OrderItems]? = []
     
@@ -100,16 +103,64 @@ class HistoryViewModel: HistoryProtocol, HistoryProtocolOutput {
     
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath) {
 //        NavigationManager.instance.pushVC(to: .orderDetail)
-        didNavigateOrderDetail?()
+        didNavigateOrderDetail?(self.listOrder?[indexPath.item].orderId)
     }
 }
 
 
 extension HistoryViewModel: HistoryTableViewCellDelegate {
     func didCreateOrder(index: Int?) {
-        historyViewController.showAlertComfirm(titleText: "คุณต้องการเปลี่ยนแปลง\nตะกร้าสินค้า ใช่หรือไม่ ?", messageText: "", dismissAction: {
-        }, confirmAction: {
-            NavigationManager.instance.pushVC(to: .productCart, presentation: .ModelNav(completion: nil, isFullScreen: true))
-        })
+        let objs = OrderCartManager.sharedInstance.getProductCart()
+        if let objs = objs, objs.count > 0 {
+            historyViewController.showAlertComfirm(titleText: "คุณต้องการเปลี่ยนแปลง\nตะกร้าสินค้า ใช่หรือไม่ ?", messageText: "", dismissAction: {
+            }, confirmAction: {
+                OrderCartManager.sharedInstance.clearProductCart {
+                    self.addOrderToProductCart(index: index)
+                }
+            })
+        } else {
+            addOrderToProductCart(index: index)
+        }
+    }
+    
+    func addOrderToProductCart(index: Int?) {
+        getReOrderCsutomer(index: index) { items in
+            items.enumerated().forEach({ (index, item) in
+                if let itemProduct = item.product,
+                   let qty = item.qty {
+                    OrderCartManager.sharedInstance.addProductCart(itemProduct, qty: qty, completion: {
+                        if index == (items.count - 1) {
+                            NavigationManager.instance.pushVC(to: .productCart(),
+                                                              presentation: .ModelNav(completion: {}, isFullScreen: true))
+                        }
+                    })
+                }
+            })
+        }
+    }
+    
+    func getReOrderCsutomer(index: Int?, completion: @escaping ([ReOrderCustomer]) -> Void) {
+        guard let index = index,
+              let orderId = self.listOrder?[index].orderId else { return }
+        
+        self.historyViewController.startLoding()
+        self.getReOrderCustomerUseCase.execute(orderId: orderId).sink { completion in
+            debugPrint("GetReOrderCustomer \(completion)")
+            self.historyViewController.stopLoding()
+            
+            switch completion {
+            case .finished:
+                break
+            case .failure(_):
+                ToastManager.shared.toastCallAPI(title: "GetReOrderCustomer failure")
+                break
+            }
+            
+        } receiveValue: { resp in
+            if let items = resp {
+                ToastManager.shared.toastCallAPI(title: "GetReOrderCustomer finished")
+                completion(items)
+            }
+        }.store(in: &self.anyCancellable)
     }
 }

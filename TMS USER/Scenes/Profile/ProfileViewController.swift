@@ -38,12 +38,18 @@ class ProfileViewController: UIViewController {
         
         setupUI()
         registerCell()
+        
+        
+        viewModel.input.getProfile()
     }
     
     func configure(_ interface: ProfileProtocol) {
         self.viewModel = interface
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
+    }
     
     func getStatusBarHeight() -> CGFloat {
        var statusBarHeight: CGFloat = 0
@@ -70,6 +76,7 @@ extension ProfileViewController {
         return { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.tableView.reloadData()
+            weakSelf.setupValueUser()
         }
     }
     
@@ -83,7 +90,8 @@ extension ProfileViewController {
 
 extension ProfileViewController {
     func setupUI(){
-        
+        avatarImageView.setRounded(rounded: avatarImageView.frame.width/2)
+        avatarImageView.contentMode = .scaleAspectFill
     }
     
     fileprivate func registerCell() {
@@ -93,6 +101,19 @@ extension ProfileViewController {
         tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         tableView.separatorStyle = .none
         tableView.registerCell(identifier: ProfileTableViewCell.identifier)
+    }
+    
+    func setupValueUser() {
+        guard let user = viewModel.output.getMyUser() else { return }
+        nameText.text = user.displayName ?? "-"
+        telText.text = "เบอร์โทร : \(user.tel ?? "-")"
+        typeText.text = "ประเภทสมาชิก \( user.typeUser?.typeName ?? "-")"
+        setImage(url: user.avatar)
+    }
+    
+    private func setImage(url: String?) {
+        guard let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(url ?? "")") else { return }
+        avatarImageView.kf.setImageDefault(with: urlImage)
     }
 }
 

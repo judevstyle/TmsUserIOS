@@ -23,6 +23,8 @@ protocol HomeProtocolOutput: class {
     var didGetCategorySuccess: (() -> Void)? { get set }
     var didGetProductSuccess: (() -> Void)? { get set }
     
+    var didUpdateCartBadge: (() -> Void)? { get set }
+    
     func getNumberOfCollection(type: TypeUserCollectionType) -> Int
     func getItem(index: Int) -> ProductItems?
     func getItemViewCell(_ collectionView: UICollectionView, indexPath: IndexPath, type: TypeUserCollectionType) -> UICollectionViewCell
@@ -59,6 +61,7 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     // MARK - Data-binding OutPut
     var didGetCategorySuccess: (() -> Void)?
     var didGetProductSuccess: (() -> Void)?
+    var didUpdateCartBadge: (() -> Void)?
     
     fileprivate var selectedIndex: Int = 0
     
@@ -178,25 +181,12 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     }
     
     func didSelectProduct(index: Int) {
-        NavigationManager.instance.pushVC(to: .productDetailBottomSheet, presentation: .BottomSheet(completion: {
+
+        NavigationManager.instance.pushVC(to: .productDetailBottomSheet(
+                                            item: listProduct?[index],
+                                            delegate: self),
+                                          presentation: .BottomSheet(completion: {
                                             }, height: 665))
-//        if self.itemTypeUser != nil {
-//            guard let itemTypeUser = self.itemTypeUser,
-//                  let itemProduct = self.listProduct?[index]  else { return }
-//            NavigationManager.instance.pushVC(to: .typeUserProductDetail(
-//                                                itemTypeUser: itemTypeUser,
-//                                                itemProduct: itemProduct,
-//                                                itemProductSpecial: nil,
-//                                                typeAction: .create, delegate: self), presentation: .BottomSheet(completion: {
-//                                                }, height: 620))
-//        } else {
-//            guard let itemProduct = self.listProduct?[index]  else { return }
-//            NavigationManager.instance.pushVC(to: .productDetailQty(shipmentId: self.shipmentId,
-//                                                                    itemProduct: itemProduct,
-//                                                                    typeAction: .add,
-//                                                                    delegate: self), presentation: .BottomSheet(completion: {
-//                                                }, height: 588))
-//        }
         
     }
     
@@ -216,6 +206,13 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     
 }
 
+extension HomeViewModel: ProductDetailBottomSheetViewModelDelegate {
+    func didUpdateOrderCart() {
+        didUpdateCartBadge?()
+    }
+    
+    
+}
 
 enum TypeUserCollectionType {
     case category

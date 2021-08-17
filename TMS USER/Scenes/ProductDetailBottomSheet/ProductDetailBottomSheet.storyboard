@@ -66,7 +66,7 @@
                                 <rect key="frame" x="20" y="493" width="374" height="23.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-fm-ktJ">
-                                        <rect key="frame" x="296.5" y="0.0" width="24" height="23.5"/>
+                                        <rect key="frame" x="299.5" y="0.0" width="24" height="23.5"/>
                                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
                                     <constraint firstItem="7LG-v3-RRw" firstAttribute="top" secondItem="HhO-4R-fjm" secondAttribute="top" id="EDa-h5-ycx"/>
                                     <constraint firstAttribute="bottom" secondItem="7LG-v3-RRw" secondAttribute="bottom" id="PnW-TU-gh2"/>
                                     <constraint firstItem="GyJ-qj-qkK" firstAttribute="leading" secondItem="7LG-v3-RRw" secondAttribute="trailing" constant="8" id="R7L-x0-nn8"/>
-                                    <constraint firstItem="7LG-v3-RRw" firstAttribute="leading" secondItem="XfJ-fm-ktJ" secondAttribute="trailing" constant="8" id="WAw-dC-lGR"/>
+                                    <constraint firstItem="7LG-v3-RRw" firstAttribute="leading" secondItem="XfJ-fm-ktJ" secondAttribute="trailing" constant="5" id="WAw-dC-lGR"/>
                                     <constraint firstAttribute="trailing" secondItem="GyJ-qj-qkK" secondAttribute="trailing" id="sLO-RR-5D1"/>
                                     <constraint firstItem="GyJ-qj-qkK" firstAttribute="top" secondItem="HhO-4R-fjm" secondAttribute="top" id="uRb-W5-y11"/>
                                 </constraints>
@@ -181,6 +181,7 @@
                         <outlet property="btnSave" destination="iRs-XH-9hP" id="GUU-jN-DQm"/>
                         <outlet property="descText" destination="SkL-h7-gq2" id="DtN-ve-e3r"/>
                         <outlet property="duscountPrice" destination="XfJ-fm-ktJ" id="5kV-bA-1tS"/>
+                        <outlet property="inputQty" destination="FBM-od-bSR" id="R9h-HW-0ta"/>
                         <outlet property="posterImageView" destination="Ky1-vd-cfL" id="ABV-pY-3tj"/>
                         <outlet property="priceBalance" destination="7LG-v3-RRw" id="bSt-3D-yi8"/>
                         <outlet property="titleName" destination="HH6-wr-zDc" id="rm8-6D-cTO"/>

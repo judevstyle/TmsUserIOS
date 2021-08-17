@@ -22,16 +22,18 @@ public enum NavigationOpeningSender {
     case profile
     
     //Cart
-    case productCart
+    case productCart(dismiss: (() -> Void)? = nil)
     
     //Modal
-    case productDetailBottomSheet
+    case productDetailBottomSheet(item: ProductItems?, delegate: ProductDetailBottomSheetViewModelDelegate)
     
     //OrderDetail
-    case orderDetail
+    case orderDetail(orderId: Int?)
     
     //OrderTracking
-    case orderTracking
+    case orderTracking(orderId: Int?)
+    
+    case chat
     
     public var storyboardName: String {
         switch self {
@@ -59,6 +61,8 @@ public enum NavigationOpeningSender {
             return "OrderDetail"
         case .orderTracking:
             return "OrderTracking"
+        case .chat:
+            return "Chat"
         }
     }
     
@@ -88,6 +92,8 @@ public enum NavigationOpeningSender {
             return "OrderDetailViewController"
         case .orderTracking:
             return "OrderTrackingViewController"
+        case .chat:
+            return "ChatViewController"
         }
     }
     
@@ -104,6 +110,8 @@ public enum NavigationOpeningSender {
             return "ตะกร้าสินค้า"
         case .orderDetail:
             return "รายละเอียดการสั่งซื้อ"
+        case .orderTracking:
+            return "ติดตามคำสั่งซื้อ"
         default:
             return ""
         }
@@ -146,6 +154,27 @@ class NavigationManager {
         var viewController: UIViewController = UIViewController()
         
         switch to {
+        case .productDetailBottomSheet(let items, let delegate):
+            if let className = storyboard.instantiateInitialViewController() as? ProductDetailBottomSheetViewController {
+                className.viewModel.input.setProductItems(items: items)
+                className.viewModel.input.setDelegate(delegate: delegate)
+                viewController = className
+            }
+        case .productCart(let dismiss):
+            if let className = storyboard.instantiateInitialViewController() as? ProductCartViewController {
+                className.dismiss = dismiss
+                viewController = className
+            }
+        case .orderDetail(let orderId):
+            if let className = storyboard.instantiateInitialViewController() as? OrderDetailViewController {
+                className.viewModel.input.setOrderId(orderId: orderId)
+                viewController = className
+            }
+        case .orderTracking(let orderId):
+            if let className = storyboard.instantiateInitialViewController() as? OrderTrackingViewController {
+                className.viewModel.input.setOrderId(orderId: orderId)
+                viewController = className
+            }
         default:
             viewController = storyboard.instantiateInitialViewController() ?? to.viewController
         }

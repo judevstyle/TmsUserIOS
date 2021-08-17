@@ -30,6 +30,7 @@ class OrderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.input.getOrder()
+        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
     }
 }
 
@@ -52,7 +53,6 @@ extension OrderViewController {
 
 extension OrderViewController {
     func setupUI(){
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
     }
     
     fileprivate func registerCell() {

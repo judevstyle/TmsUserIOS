@@ -92,12 +92,88 @@ public struct OrderItems: Codable, Hashable  {
 public struct ShipmentItems: Codable, Hashable  {
     
     public var shipmentId: Int?
+    public var status: Int?
+    public var planId: Int?
+    public var employeeName: String?
+    public var employeeImg: String?
+    public var planName: String?
     public var shipmentNo: String?
+    public var truckRegistrationNumber: String?
+    public var planSeq: Int?
+    public var employees: [EmployeeItems]?
     
     public init() {}
     
     public init(from decoder: Decoder) throws {
-        try shipmentId    <- decoder["shipment_id"]
-        try shipmentNo    <- decoder["shipment_no"]
+        try shipmentId                 <- decoder["shipment_id"]
+        try status                     <- decoder["status"]
+        try planId                     <- decoder["plan_id"]
+        try employeeName               <- decoder["employee_name"]
+        try employeeImg                <- decoder["employee_img"]
+        try planName                   <- decoder["plan_name"]
+        try shipmentNo                 <- decoder["shipment_no"]
+        try truckRegistrationNumber    <- decoder["truck_registration_number"]
+        try planSeq                    <- decoder["plan_seq"]
+        try employees                  <- decoder["employees"]
+    }
+}
+
+
+public struct EmployeeItems: Codable, Hashable  {
+    
+    public var empId: Int?
+    public var compId: Int?
+    public var token: String?
+    public var jobPositionId: Int?
+    public var username: String?
+    public var password: String?
+    public var empCode: String?
+    public var empDisplayName: String?
+    public var empFname: String?
+    public var empLname: String?
+    public var empBirthday: String?
+    public var empTel1: String?
+    public var empTel2: String?
+    public var empAvatar: String?
+    public var empEmail: String?
+    public var attachFiles: [AttachFilesImage]?
+    
+    public init() {}
+    
+    public init(from decoder: Decoder) throws {
+        try empId           <- decoder["emp_id"]
+        try compId          <- decoder["comp_id"]
+        try token           <- decoder["token"]
+        try jobPositionId   <- decoder["job_position_id"]
+        try username        <- decoder["username"]
+        try password        <- decoder["password"]
+        try empCode         <- decoder["emp_code"]
+        try empDisplayName  <- decoder["emp_displayname"]
+        try empFname        <- decoder["emp_fname"]
+        try empLname        <- decoder["emp_lname"]
+        try empBirthday     <- decoder["emp_birthday"]
+        try empTel1         <- decoder["emp_tel1"]
+        try empTel2         <- decoder["emp_tel2"]
+        try empAvatar       <- decoder["emp_avatar"]
+        try empEmail        <- decoder["emp_email"]
+        try attachFiles     <- decoder["attach_files"]
+    }
+}
+
+public struct AttachFilesImage: Codable, Hashable {
+    
+    public var filePath: String?
+    public var del: Int = 0
+
+    public init() {}
+    
+    enum CodingKeys: String, CodingKey {
+        case filePath = "file_path"
+        case del = "del"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        try filePath         <- decoder["file_path"]
+        try del              <- decoder["del"]
     }
 }

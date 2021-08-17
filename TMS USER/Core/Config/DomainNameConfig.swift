@@ -14,6 +14,7 @@ public enum DomainNameConfig {
     case TMSProductType
     case TMSProductFinal
     case TMSOrder
+    case TMSCustomer
 }
 
 extension DomainNameConfig {
@@ -33,6 +34,8 @@ extension DomainNameConfig {
             return "\(HostURL)/productFinal"
         case .TMSOrder:
             return "\(HostURL)/orders"
+        case .TMSCustomer:
+            return "\(HostURL)/customer"
             
         case .TMSImagePath:
             return "\(HostURL)/" //+ path image url

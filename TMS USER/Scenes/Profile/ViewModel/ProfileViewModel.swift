@@ -24,6 +24,8 @@ protocol ProfileProtocolOutput: class {
     func getNumberOfProfile(_ tableView: UITableView, section: Int) -> Int
     func getItemViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
     func getItemViewCellHeight() -> CGFloat
+    
+    func getMyUser() -> CustomerItems?
 }
 
 protocol ProfileProtocol: ProfileProtocolInput, ProfileProtocolOutput {
@@ -37,20 +39,24 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
     
     // MARK: - UseCase
     private var postLogoutUseCase: PostLogoutUseCase
+    private var getCustomerMyUserUseCase: GetCustomerMyUserUseCase
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     // MARK: - Properties
     private var profileViewController: ProfileViewController
     
     fileprivate var orderId: Int?
+    fileprivate var itemMyUser: CustomerItems?
     fileprivate var listMenu: [MenuProfileType] = [.personalData, .pointAndReward, .historyOrder, .logout]
 
     init(
         profileViewController: ProfileViewController,
-        postLogoutUseCase: PostLogoutUseCase = PostLogoutUseCaseImpl()
+        postLogoutUseCase: PostLogoutUseCase = PostLogoutUseCaseImpl(),
+        getCustomerMyUserUseCase: GetCustomerMyUserUseCase = GetCustomerMyUserUseCaseImpl()
     ) {
         self.profileViewController = profileViewController
         self.postLogoutUseCase = postLogoutUseCase
+        self.getCustomerMyUserUseCase = getCustomerMyUserUseCase
     }
     
     // MARK - Data-binding OutPut
@@ -60,7 +66,26 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
     var didLogoutSuccess: (() -> Void)?
     
     func getProfile() {
-        didGetProfileSuccess?()
+        profileViewController.startLoding()
+        self.getCustomerMyUserUseCase.execute().sink { completion in
+            debugPrint("getCustomerMyUser \(completion)")
+            self.profileViewController.stopLoding()
+            
+            switch completion {
+            case .finished:
+                break
+            case .failure(_):
+                ToastManager.shared.toastCallAPI(title: "getCustomerMyUser failure")
+                break
+            }
+            
+        } receiveValue: { resp in
+            if let items = resp {
+                self.itemMyUser = items
+                ToastManager.shared.toastCallAPI(title: "getCustomerMyUser Success")
+                self.didGetProfileSuccess?()
+            }
+        }.store(in: &self.anyCancellable)
     }
 
     func getNumberOfSections(in tableView: UITableView) -> Int {
@@ -128,6 +153,11 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
             }
         }.store(in: &self.anyCancellable)
     }
+    
+    func getMyUser() -> CustomerItems? {
+        return self.itemMyUser
+    }
+    
 }
 
 

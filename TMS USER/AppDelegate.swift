@@ -9,6 +9,8 @@ import UIKit
 import CoreData
 import GoogleMaps
 import GooglePlaces
+import RealmSwift
+import Realm
 
 //@main
 @UIApplicationMain
@@ -23,6 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDg-bwviwDVeAhD_JPJt4mdCidS9dK4uvA")
         GMSPlacesClient.provideAPIKey("AIzaSyDg-bwviwDVeAhD_JPJt4mdCidS9dK4uvA")
         
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                }
+        })
+
+        Realm.Configuration.defaultConfiguration = config
         
         let loadingStoryBoard = "Splash"
         self.window = UIWindow(frame: UIScreen.main.bounds)

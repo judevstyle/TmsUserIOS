@@ -30,6 +30,7 @@ class HistoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.input.getHistory()
+        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
     }
 }
 
@@ -49,10 +50,9 @@ extension HistoryViewController {
         }
     }
     
-    func didNavigateOrderDetail() -> (() -> Void) {
-        return { [weak self] in
-            guard let weakSelf = self else { return }
-            NavigationManager.instance.pushVC(to: .orderDetail)
+    func didNavigateOrderDetail() -> ((Int?) -> Void) {
+        return { orderId in
+            NavigationManager.instance.pushVC(to: .orderDetail(orderId: orderId))
         }
     }
 }
@@ -60,7 +60,6 @@ extension HistoryViewController {
 
 extension HistoryViewController {
     func setupUI(){
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
     }
     
     fileprivate func registerCell() {

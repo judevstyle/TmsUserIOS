@@ -14,6 +14,11 @@ class ProductCartViewController: UIViewController {
     @IBOutlet var discountPrice: UILabel!
     @IBOutlet var sumOverAll: UILabel!
     
+    public var dismiss: (() -> Void?)? = nil
+    
+    @IBOutlet var btnConfirmOrder: UIButton!
+    @IBOutlet var productLabelEmpty: UILabel!
+    
     lazy var viewModel: ProductCartProtocol = {
         let vm = ProductCartViewModel(productCartViewController: self)
         self.configure(vm)
@@ -35,6 +40,10 @@ class ProductCartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //        viewModel.input.fetchOrderCart()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.dismiss?()
+    }
 }
 
 // MARK: - Binding
@@ -48,6 +57,7 @@ extension ProductCartViewController {
         return { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.tableView.reloadData()
+            weakSelf.setValueSumAll()
         }
     }
 }
@@ -55,6 +65,15 @@ extension ProductCartViewController {
 extension ProductCartViewController {
     func setupUI(){
         setupDismissItem()
+        
+        btnConfirmOrder.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
+                                     locations: [0.5, 1.0],
+                                     direction: .leftToRight,
+                                     cornerRadius: 0)
+        
+        btnConfirmOrder.addTarget(self, action: #selector(didConfirmOrder), for: .touchUpInside)
+        productLabelEmpty.isHidden = true
+        tableView.isHidden = false
     }
     
     fileprivate func registerCell() {
@@ -76,6 +95,16 @@ extension ProductCartViewController {
     @objc private func dissmissPage(){
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func setValueSumAll() {
+        sumPrice.text = "\(viewModel.output.getSumPrice())"
+        discountPrice.text = "\(viewModel.output.getDiscountPrice())"
+        sumOverAll.text = "\(viewModel.output.getOverAllPrice())"
+    }
+    
+    @objc private func didConfirmOrder(){
+        viewModel.input.didConfirmOrderCart()
+    }
 }
 
 extension ProductCartViewController: UITableViewDelegate {
@@ -89,7 +118,17 @@ extension ProductCartViewController: UITableViewDelegate {
 
 extension ProductCartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.output.getNumberOfProductCart(tableView, section: section)
+        let cont = viewModel.output.getNumberOfProductCart(tableView, section: section)
+        
+        if cont <= 0 {
+            productLabelEmpty.isHidden = false
+            tableView.isHidden = true
+        } else {
+            productLabelEmpty.isHidden = true
+            tableView.isHidden = false
+        }
+        
+        return cont
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
