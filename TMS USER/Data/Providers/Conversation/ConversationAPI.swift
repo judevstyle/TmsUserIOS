@@ -1,46 +1,44 @@
 //
-//  ProductAPI.swift
-//  TMSApp
+//  ConversationAPI.swift
+//  TMS USER
 //
-//  Created by Nontawat Kanboon on 27/6/2564 BE.
+//  Created by Nontawat Kanboon on 8/28/21.
 //
 
 import Foundation
 import Moya
 import UIKit
 
-public enum ProductAPI {
-    case getProduct(request: GetProductRequest)
-    case getProductDescForUser(productId: Int)
-    case createProduct(request: PostProductRequest)
+public enum ConversationAPI {
+    case getRoomChatCustomer(request: GetRoomChatCustomerRequest)
+    case getMessage(request: GetMessageRequest)
+    case sendMessage(request: PostMessageRequest)
 }
 
-extension ProductAPI: TargetType {
+extension ConversationAPI: TargetType {
     public var baseURL: URL {
         switch self {
-        case .getProduct, .createProduct(_):
-            return DomainNameConfig.TMSProductFinal.url
-        case .getProductDescForUser(_):
-            return DomainNameConfig.TNSProductDescForUser.url
+        case .getRoomChatCustomer, .getMessage, .sendMessage:
+            return DomainNameConfig.TMSConversation.url
         }
     }
     
     public var path: String {
         switch self {
-        case .getProduct:
-            return ""
-        case .getProductDescForUser(let productId):
-            return "/\(productId)"
-        case .createProduct(_):
-            return ""
+        case .getRoomChatCustomer:
+            return "/getRoomChatCustomer"
+        case .getMessage:
+            return "/message"
+        case .sendMessage:
+            return "/send-message"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .getProduct, .getProductDescForUser(_):
+        case .getRoomChatCustomer, .getMessage:
             return .get
-        case .createProduct(_):
+        case .sendMessage:
             return .post
         }
     }
@@ -51,11 +49,11 @@ extension ProductAPI: TargetType {
     
     public var task: Task {
         switch self {
-        case .getProduct(let request):
+        case .getRoomChatCustomer(let request):
             return .requestParameters(parameters: request.toJSON(), encoding: URLEncoding.queryString)
-        case .getProductDescForUser(_):
-            return .requestPlain
-        case .createProduct(let request):
+        case .getMessage(let request):
+            return .requestParameters(parameters: request.toJSON(), encoding: URLEncoding.queryString)
+        case let .sendMessage(request):
             return .requestCompositeParameters(bodyParameters: request.toJSON(), bodyEncoding: JSONEncoding.default, urlParameters: [:])
         }
     }
@@ -63,7 +61,7 @@ extension ProductAPI: TargetType {
     public var headers: [String : String]? {
         var authenToken = ""
         switch self {
-        case .getProduct:
+        case .getMessage:
             authenToken = UserDefaultsKey.AccessToken.string ?? ""
         default:
             authenToken = UserDefaultsKey.AccessToken.string ?? ""

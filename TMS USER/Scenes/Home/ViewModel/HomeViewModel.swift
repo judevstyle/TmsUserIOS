@@ -182,11 +182,15 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     
     func didSelectProduct(index: Int) {
 
-        NavigationManager.instance.pushVC(to: .productDetailBottomSheet(
-                                            item: listProduct?[index],
-                                            delegate: self),
-                                          presentation: .BottomSheet(completion: {
-                                            }, height: 665))
+//        NavigationManager.instance.pushVC(to: .productDetailBottomSheet(
+//                                            item: listProduct?[index],
+//                                            delegate: self),
+//                                          presentation: .BottomSheet(completion: {
+//                                            }, height: 665))
+//
+        NavigationManager.instance.pushVC(to: .productDetail(item: listProduct?[index], delegate: self), presentation: .ModalNoNav(completion: {
+            
+        }))
         
     }
     
@@ -196,7 +200,6 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
             var item = ProductType()
             item.productTypeName = "ทั้งหมด"
             return item.productTypeName ?? ""
-            break
         default:
             guard let items = self.listCategory, items.count != 0 else { return "" }
             let item = items[indexPath.item - 1]
@@ -206,7 +209,7 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     
 }
 
-extension HomeViewModel: ProductDetailBottomSheetViewModelDelegate {
+extension HomeViewModel: ProductDetailViewModelDelegate {
     func didUpdateOrderCart() {
         didUpdateCartBadge?()
     }

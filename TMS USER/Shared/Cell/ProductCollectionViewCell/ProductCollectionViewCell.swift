@@ -22,6 +22,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var viewBoxPrice: UIView!
     
+    @IBOutlet var promotionView: UIView!
+    @IBOutlet var promotionText: UILabel!
     
     var itemsProduct: ProductItems? {
         didSet {
@@ -62,6 +64,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
         priceNew.sizeToFit()
         priceOld.sizeToFit()
         setImage(url: itemsProduct?.productImg)
+        
+        if itemsProduct?.isPromotion == true {
+            promotionView.isHidden = false
+            promotionText.isHidden = false
+            promotionView.setRounded(rounded: 8)
+        } else {
+            promotionView.isHidden = true
+            promotionText.isHidden = true
+        }
     }
     
     private func setImage(url: String?) {

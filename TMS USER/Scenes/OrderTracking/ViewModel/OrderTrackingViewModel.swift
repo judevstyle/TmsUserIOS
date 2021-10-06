@@ -21,10 +21,15 @@ protocol OrderTrackingProtocolInput {
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath)
     
     func callTelPhone()
+    
+    //Flow ChatView
+    func didTapChat()
+    func getRoomChatCustomer()
 }
 
 protocol OrderTrackingProtocolOutput: class {
     var didGetOrderTrackingSuccess: (() -> Void)? { get set }
+    var didGetOrderTrackingError: (() -> Void)? { get set }
     var didGetShipmentDetailError: (() -> Void)? { get set }
     
     func getMapMarkerResponse() -> [MarkerMapItems]?
@@ -38,11 +43,15 @@ protocol OrderTrackingProtocolOutput: class {
     func getItemViewCellHeight(indexPath: IndexPath) -> CGFloat
     
     func getItemShipment() -> ShipmentItems?
+    func getItemCustomer() -> CustomerItems?
     
     //Box2
     func getSumAllPrice() -> Int
     func getCountOrder() -> Int
-    func getOrderId() -> String
+    func getOrderNo() -> String
+    
+    //OrderID
+    func getOrderId() -> Int?
 }
 
 protocol OrderTrackingProtocol: OrderTrackingProtocolInput, OrderTrackingProtocolOutput {
@@ -57,20 +66,27 @@ class OrderTrackingViewModel: OrderTrackingProtocol, OrderTrackingProtocolOutput
     
     // MARK: - Properties
     private var getOrderDescriptionUseCase: GetOrderDescriptionUseCase
+    private var getRoomChatCustomerUseCase: GetRoomChatCustomerUseCase
+    
+    // VC
     private var orderTrackingViewController: OrderTrackingViewController
     
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     init(
         orderTrackingViewController: OrderTrackingViewController,
-        getOrderDescriptionUseCase: GetOrderDescriptionUseCase = GetOrderDescriptionUseCaseImpl()
+        getOrderDescriptionUseCase: GetOrderDescriptionUseCase = GetOrderDescriptionUseCaseImpl(),
+        getRoomChatCustomerUseCase: GetRoomChatCustomerUseCase = GetRoomChatCustomerUseCaseImpl()
     ) {
         self.orderTrackingViewController = orderTrackingViewController
         self.getOrderDescriptionUseCase = getOrderDescriptionUseCase
+        self.getRoomChatCustomerUseCase = getRoomChatCustomerUseCase
     }
     
     // MARK - Data-binding OutPut
     var didGetOrderTrackingSuccess: (() -> Void)?
+    var didGetOrderTrackingError: (() -> Void)?
+    
     var didGetShipmentDetailError: (() -> Void)?
     
     var didGetMapMarkerSuccess: (() -> Void)?
@@ -98,6 +114,7 @@ class OrderTrackingViewModel: OrderTrackingProtocol, OrderTrackingProtocolOutput
                 break
             case .failure(_):
                 ToastManager.shared.toastCallAPI(title: "GetOrderDescription failure")
+                self.didGetOrderTrackingError?()
                 break
             }
             
@@ -136,6 +153,10 @@ class OrderTrackingViewModel: OrderTrackingProtocol, OrderTrackingProtocolOutput
     
     func getItemShipment() -> ShipmentItems? {
         return self.itemShipment
+    }
+    
+    func getItemCustomer() -> CustomerItems? {
+        return self.itemCustomer
     }
     
     func didSelectMarkerAt(_ mapView: GMSMapView, marker: GMSMarker) -> Bool {
@@ -177,7 +198,11 @@ class OrderTrackingViewModel: OrderTrackingProtocol, OrderTrackingProtocolOutput
         return self.listOrderD?.count ?? 0
     }
     
-    func getOrderId() -> String {
+    func getOrderId() -> Int? {
+        return self.orderId
+    }
+    
+    func getOrderNo() -> String {
         return self.itemOrderDetail?.orderNo ?? ""
     }
     
@@ -197,9 +222,10 @@ extension OrderTrackingViewModel {
     }
     
     func fetchMapMarker() {
-        SocketHelper.shared.fetchTrackingByComp { result in
+        SocketHelper.shared.fetchTrackingByShipment { result in
             switch result {
             case .success(let resp): break
+                debugPrint("resp: \(resp)")
 //                self.dataMapMarker = resp
 //                self.didGetMapMarkerSuccess?()
             case .failure(_ ):
@@ -211,8 +237,8 @@ extension OrderTrackingViewModel {
     
     private func emitMapMarker(){
         var request: SocketMarkerMapRequest = SocketMarkerMapRequest()
-        request.compId = 1
-        SocketHelper.shared.emitTrackingByComp(request: request) {
+        request.compId = 11
+        SocketHelper.shared.emitTrackingByShipment(request: request) {
             debugPrint("requestTrackingByComp\(request)")
         }
     }
@@ -248,5 +274,47 @@ extension OrderTrackingViewModel {
 extension OrderTrackingViewModel {
     @objc func dismissAlertController() {
         //        OrderTrackingViewController.dismiss(animated: true, completion: nil)
+    }
+}
+
+// Flow Prepare Chat View
+extension OrderTrackingViewModel {
+    
+    func didTapChat() {
+        getRoomChatCustomer()
+    }
+    
+    func getRoomChatCustomer() {
+        self.orderTrackingViewController.startLoding()
+        let request: GetRoomChatCustomerRequest = getRequestRoomChat()
+        self.getRoomChatCustomerUseCase.execute(request: request).sink { completion in
+            debugPrint("getRoomChatCustomer \(completion)")
+            self.orderTrackingViewController.stopLoding()
+
+            switch completion {
+            case .finished:
+                break
+            case .failure(_):
+                ToastManager.shared.toastCallAPI(title: "GetRoomChatCustomer failure")
+                break
+            }
+
+        } receiveValue: { resp in
+            
+            if let data = resp?.data {
+                guard let orderId = self.orderId else { return }
+                NavigationManager.instance.pushVC(to: .chat(orderId: orderId, items: data))
+            }
+
+        }.store(in: &self.anyCancellable)
+
+    }
+    
+    
+    private func getRequestRoomChat() -> GetRoomChatCustomerRequest {
+        var request: GetRoomChatCustomerRequest = GetRoomChatCustomerRequest()
+        guard let orderId = orderId else { return request }
+        request.empId = orderId
+        return request
     }
 }

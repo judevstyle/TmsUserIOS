@@ -63,6 +63,7 @@ class OrderTrackingViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        viewModel.input.fetchMapMarker()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -81,7 +82,9 @@ extension OrderTrackingViewController {
         titleNoText.isHidden = true
         descText.isHidden = true
         positionText.isHidden = true
-        orderErrorDataText.isHidden = true
+        btnTel.isHidden = true
+        btnChat.isHidden = true
+        orderErrorDataText.isHidden = false
         
         imagePosterView.setRounded(rounded: imagePosterView.frame.width/2)
         imagePosterView.contentMode = .scaleAspectFill
@@ -109,7 +112,7 @@ extension OrderTrackingViewController {
     
     func setupMap() {
         let camera = GMSCameraPosition.camera(withLatitude: 13.663491595353403, longitude: 100.6061463206966, zoom: 15.0)
-        mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+        mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: self.viewMapArea.frame.width, height: self.viewMapArea.frame.height), camera: camera)
         mapView.delegate = self
         self.viewMapArea.isUserInteractionEnabled = true
         self.viewMapArea.addSubview(mapView)
@@ -169,7 +172,9 @@ extension OrderTrackingViewController {
             titleNoText.isHidden = true
             descText.isHidden = true
             positionText.isHidden = true
-            orderErrorDataText.isHidden = false
+            btnTel.isHidden = true
+            btnChat.isHidden = false
+            orderErrorDataText.isHidden = true
             return }
         
         titleNoText.text = "Shipment No : \(item.shipmentNo ?? "")"
@@ -180,16 +185,18 @@ extension OrderTrackingViewController {
             setImage(url: employee[0].empAvatar)
         }
         
+        orderErrorDataText.isHidden = true
         imagePosterView.isHidden = false
         titleNoText.isHidden = false
         descText.isHidden = false
         positionText.isHidden = false
-        orderErrorDataText.isHidden = true
+        btnTel.isHidden = false
+        btnChat.isHidden = false
         
     }
     
     func setupBox2Value() {
-        orderTitleNoText.text = viewModel.output.getOrderId()
+        orderTitleNoText.text = viewModel.output.getOrderNo()
         orderAllSumText.text = "฿\(viewModel.output.getSumAllPrice())"
         countOrderItemText.text = "จำนวน Item \(viewModel.output.getCountOrder()) ชนิด"
     }
@@ -200,11 +207,16 @@ extension OrderTrackingViewController {
     }
     
     @objc func didTapChat() {
-        NavigationManager.instance.pushVC(to: .chat)
+        viewModel.input.didTapChat()
     }
 
     @objc func didTapTel() {
         viewModel.input.callTelPhone()
+    }
+    
+    func hideViewPopup() {
+        topViewDetail.isHidden = true
+        bottomViewDetail.isHidden = true
     }
 }
 
@@ -214,6 +226,7 @@ extension OrderTrackingViewController {
     func bindToViewModel() {
         viewModel.output.didGetMapMarkerSuccess = didGetMapMarkerSuccess()
         viewModel.output.didGetOrderTrackingSuccess = didGetOrderTrackingSuccess()
+        viewModel.output.didGetOrderTrackingError = didGetOrderTrackingError()
     }
     
     func didGetMapMarkerSuccess() -> (() -> Void) {
@@ -232,7 +245,15 @@ extension OrderTrackingViewController {
             weakSelf.tableView.reloadData()
         }
     }
+    
+    func didGetOrderTrackingError() -> (() -> Void) {
+        return { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.hideViewPopup()
+        }
+    }
 }
+
 extension OrderTrackingViewController : GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         guard let markerView = marker.iconView as? MarkerMapView else { return false }
@@ -243,8 +264,6 @@ extension OrderTrackingViewController : GMSMapViewDelegate {
         
         var lat = coordinate.latitude
         var lng = coordinate.longitude
-        
-        debugPrint("DidTap")
         
 //        DispatchQueue.global().async {
 //

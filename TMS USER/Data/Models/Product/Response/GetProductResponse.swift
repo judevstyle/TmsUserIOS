@@ -59,6 +59,10 @@ public struct ProductItems: Codable, Hashable  {
     //ProductCart
     public var productCartId: Int? = nil
     public var productCartQty: Int? = nil
+    public var productCartPrice: Int? = nil
+    
+    public var isPromotion: Bool = false
+    public var promotion: [PromotionItems]? = nil
     
     public init() {}
     
@@ -78,8 +82,12 @@ public struct ProductItems: Codable, Hashable  {
         case productType            = "productType"
         case productDiscount        = "discount"
         
-        case productCartId        = "productCartId"
-        case productCartQty        = "productCartQty"
+        case productCartId          = "productCartId"
+        case productCartQty         = "productCartQty"
+        case productCartPrice       = "productCartPrice"
+        
+        case isPromotion            = "isPromotion"
+        case promotion              = "promotion"
     }
     
     public init(from decoder: Decoder) throws {
@@ -99,6 +107,9 @@ public struct ProductItems: Codable, Hashable  {
         try productDiscount        <- decoder["discount"]
         try productCartId          <- decoder["productCartId"]
         try productCartQty         <- decoder["productCartQty"]
+        try productCartPrice       <- decoder["productCartPrice"]
+        try isPromotion            <- decoder["isPromotion"]
+        try promotion              <- decoder["promotion"]
     }
 }
 
@@ -118,5 +129,29 @@ public struct ProductDiscount: Codable, Hashable  {
     public init(from decoder: Decoder) throws {
         try typeUserId              <- decoder["type_user_id"]
         try newPrice                 <- decoder["new_price"]
+    }
+}
+
+public struct PromotionItems: Codable, Hashable  {
+    
+    public var promotionProductId: String? = nil
+    public var title: String? = nil
+    public var qty: Int? = nil
+    public var itemPrice: Int? = nil
+    
+    public init() {}
+    
+    enum CodingKeys: String, CodingKey {
+        case promotionProductId = "promotion_product_id"
+        case title = "title"
+        case qty = "qty"
+        case itemPrice = "item_price"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        try promotionProductId   <- decoder["promotion_product_id"]
+        try title                <- decoder["title"]
+        try qty                  <- decoder["qty"]
+        try itemPrice            <- decoder["item_price"]
     }
 }

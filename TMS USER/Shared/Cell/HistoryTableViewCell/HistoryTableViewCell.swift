@@ -88,7 +88,6 @@ class HistoryTableViewCell: UITableViewCell {
                 dateText.text = "\(dayStr) \(nameMount) \(yearStr)"
             }
         }
-
         
         orderNoText.sizeToFit()
         countOrder.sizeToFit()

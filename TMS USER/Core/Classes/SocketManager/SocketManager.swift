@@ -9,12 +9,12 @@ import SocketIO
 import UIKit
 
 let kHost = "http://43.229.149.79:3010"
-let kDashboard = "dashboard-balance"
-let kTrackingByComp = "trackingByComp"
+let kTrackingByShipment = "trackingByShipment"
+let kChat = "chat"
 
 typealias CompletionHandler = () -> Void
-typealias DashboardCompletionHandler = (Result<SocketDashboardResponse?, Error>) -> Void
 typealias MarkerCompletionHandler = (Result<SocketMarkerMapResponse?, Error>) -> Void
+typealias ChatCompletionHandler = (Result<SocketChatResponse?, Error>) -> Void
 
 extension Notification.Name {
     static let userTyping = Notification.Name("userTypingNotification")
@@ -43,42 +43,19 @@ final class SocketHelper: NSObject {
     func closeConnection() {
         _socket?.disconnect()
     }
+}
+
+// MARK: - kTrackingByShipment
+extension SocketHelper {
     
-    func emitDashboard(request: SocketDashboardRequest, completion: CompletionHandler) {
+    func emitTrackingByShipment(request: SocketMarkerMapRequest, completion: CompletionHandler) {
         let json = request.toJSON().convertToJSONString() ?? ""
-        _socket?.emit(kDashboard, json)
+        _socket?.emit(kTrackingByShipment, json)
         completion()
     }
     
-    func fetchDashboard(completion: @escaping DashboardCompletionHandler) {
-        _socket?.on(kDashboard) { [weak self] (result, ack) in
-            do {
-                guard result.count > 0, let data = Utils.jsonData(from: result) else {
-                    return
-                }
-                
-                let decode = try JSONDecoder().decode([SocketDashboardResponse].self, from: data)
-                if let item = decode[0] as? SocketDashboardResponse {
-                    completion(.success(item))
-                } else {
-                    completion(.success(nil))
-                }
-            } catch let error as NSError {
-                print("Failed to load: \(error.localizedDescription)")
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    
-    func emitTrackingByComp(request: SocketMarkerMapRequest, completion: CompletionHandler) {
-        let json = request.toJSON().convertToJSONString() ?? ""
-        _socket?.emit(kTrackingByComp, json)
-        completion()
-    }
-    
-    func fetchTrackingByComp(completion: @escaping MarkerCompletionHandler) {
-        _socket?.on(kTrackingByComp) { [weak self] (result, ack) in
+    func fetchTrackingByShipment(completion: @escaping MarkerCompletionHandler) {
+        _socket?.on(kTrackingByShipment) { [weak self] (result, ack) in
             do {
                 guard result.count > 0, let data = Utils.jsonData(from: result) else {
                     return
@@ -98,6 +75,35 @@ final class SocketHelper: NSObject {
     }
 }
 
+// MARK: - kChat
+extension SocketHelper {
+    
+    func emitChat(request: SocketChatRequest, completion: CompletionHandler) {
+        let json = request.toJSON().convertToJSONString() ?? ""
+        _socket?.emit(kChat, json)
+        completion()
+    }
+    
+    func fetchChat(completion: @escaping ChatCompletionHandler) {
+        _socket?.on(kChat) { [weak self] (result, ack) in
+            do {
+                guard result.count > 0, let data = Utils.jsonData(from: result) else {
+                    return
+                }
+                
+                let decode = try JSONDecoder().decode([SocketChatResponse].self, from: data)
+                if let item = decode[0] as? SocketChatResponse {
+                    completion(.success(item))
+                } else {
+                    completion(.success(nil))
+                }
+            } catch let error as NSError {
+                print("Failed to load: \(error.localizedDescription)")
+                completion(.failure(error))
+            }
+        }
+    }
+}
 
 extension Decodable {
     init(from any: Any) throws {
@@ -105,17 +111,3 @@ extension Decodable {
         self = try JSONDecoder().decode(Self.self, from: data)
     }
 }
-
-
-//struct Root: Codable {
-//    let  data: InnerItem?
-//}
-//struct InnerItem:Codable {
-//    let  total_balance: Int?
-//    let  total_cash: Int?
-//    let  total_credit: Int?
-//
-//    private enum CodingKeys : String, CodingKey {
-//        case total_balance = "total_balance", total_cash = "total_cash", total_credit = "total_credit"
-//    }
-//}

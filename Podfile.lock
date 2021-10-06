@@ -48,6 +48,11 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - Realm (10.12.0):
+    - Realm/Headers (= 10.12.0)
+  - Realm/Headers (10.12.0)
+  - RealmSwift (10.12.0):
+    - Realm (= 10.12.0)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
@@ -61,6 +66,7 @@ DEPENDENCIES:
   - MaterialComponents/BottomSheet
   - MessageKit
   - Moya
+  - RealmSwift
   - Socket.IO-Client-Swift (~> 15.2.0)
   - Toast-Swift
 
@@ -75,6 +81,8 @@ SPEC REPOS:
     - MaterialComponents
     - MessageKit
     - Moya
+    - Realm
+    - RealmSwift
     - Socket.IO-Client-Swift
     - Starscream
     - Toast-Swift
@@ -89,10 +97,12 @@ SPEC CHECKSUMS:
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MessageKit: d153fbbbcb12f3f4045a1ba8874298924dacfb62
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Realm: 32488213acb44660539c619d620cec1bac046166
+  RealmSwift: 0abdca6231d5ff8a4f84cef9c1121ef95a483faf
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 644b1922b79ace79d4a2bc99c6118882f6c7417a
+PODFILE CHECKSUM: d66c446a265988547239e7a76dce75a39dc74924
 
 COCOAPODS: 1.10.1

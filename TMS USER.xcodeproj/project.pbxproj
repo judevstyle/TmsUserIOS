@@ -102,7 +102,6 @@
 		EF0D54AC26C1A1F6009FD5F0 /* GetProductTypeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54AB26C1A1F6009FD5F0 /* GetProductTypeUseCase.swift */; };
 		EF0D54B126C1A22A009FD5F0 /* GetProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54AE26C1A22A009FD5F0 /* GetProductUseCase.swift */; };
 		EF0D54B226C1A22A009FD5F0 /* PostProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54AF26C1A22A009FD5F0 /* PostProductUseCase.swift */; };
-		EF0D54B326C1A22A009FD5F0 /* GetProductDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54B026C1A22A009FD5F0 /* GetProductDetailUseCase.swift */; };
 		EF0D54B626C1A243009FD5F0 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54B526C1A243009FD5F0 /* ProductRepository.swift */; };
 		EF0D54B926C1A269009FD5F0 /* ProductAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54B826C1A269009FD5F0 /* ProductAPI.swift */; };
 		EF0D54C226C1A284009FD5F0 /* GetProductDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D54BC26C1A284009FD5F0 /* GetProductDetailResponse.swift */; };
@@ -131,12 +130,28 @@
 		EF0FE84626C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE84526C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift */; };
 		EF0FE84826C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE84726C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift */; };
 		EF0FE84A26C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FE84926C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift */; };
+		EF2DD4D8270B4DC200756D96 /* SocketChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD4D7270B4DC200756D96 /* SocketChatResponse.swift */; };
+		EF2DD4DA270B4DCA00756D96 /* SocketChatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD4D9270B4DCA00756D96 /* SocketChatRequest.swift */; };
+		EF309E5E26DA1F4200CB7353 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF309E5D26DA1F4200CB7353 /* ChatViewModel.swift */; };
+		EF309E6126DA20B500CB7353 /* ConversationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF309E6026DA20B500CB7353 /* ConversationAPI.swift */; };
+		EF309E6626DA215900CB7353 /* GetMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF309E6526DA215900CB7353 /* GetMessageRequest.swift */; };
+		EF309E6826DA216100CB7353 /* GetMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF309E6726DA216100CB7353 /* GetMessageResponse.swift */; };
+		EF309E6B26DA231100CB7353 /* ConversationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF309E6A26DA231100CB7353 /* ConversationRepository.swift */; };
+		EF309E6E26DA237200CB7353 /* GetMessageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF309E6D26DA237200CB7353 /* GetMessageUseCase.swift */; };
 		EF314BBC26CABA95002B201C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF314BBB26CABA95002B201C /* ChatViewController.swift */; };
 		EF314BBE26CABA9B002B201C /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF314BBD26CABA9B002B201C /* Chat.storyboard */; };
+		EF7443F827095C6A00D18F60 /* GetProductDescForUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7443F727095C6A00D18F60 /* GetProductDescForUserUseCase.swift */; };
+		EF7443FA2709678300D18F60 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7443F92709678300D18F60 /* UIScrollView+Extension.swift */; };
 		EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2026C841FA003ED499 /* GetOrderDetailResponse.swift */; };
 		EF766F2326C84315003ED499 /* GetOrderDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */; };
 		EF766F2526C84DCF003ED499 /* GetReOrderCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */; };
 		EF766F2726C84E37003ED499 /* GetReOrderCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */; };
+		EF97F88C270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F88B270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift */; };
+		EF97F88E270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F88D270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift */; };
+		EF97F890270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F88F270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift */; };
+		EF97F892270B0FF900B2E2C7 /* PostMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F891270B0FF900B2E2C7 /* PostMessageRequest.swift */; };
+		EF97F894270B107700B2E2C7 /* PostMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F893270B107700B2E2C7 /* PostMessageResponse.swift */; };
+		EF97F896270B115200B2E2C7 /* PostMessageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F895270B115200B2E2C7 /* PostMessageUseCase.swift */; };
 		EFB47C0226C3D5A400170CD0 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */; };
 		EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */; };
 		EFB47C0726C3D5D500170CD0 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */; };
@@ -173,6 +188,9 @@
 		EFC1C59926C2C45E00ED64B1 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59726C2C45E00ED64B1 /* HistoryTableViewCell.swift */; };
 		EFC1C59A26C2C45E00ED64B1 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFC1C59826C2C45E00ED64B1 /* HistoryTableViewCell.xib */; };
 		EFC1C59D26C2C46F00ED64B1 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59C26C2C46F00ED64B1 /* HistoryViewModel.swift */; };
+		EFD9F03927061DB50072A3B1 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD9F03827061DB50072A3B1 /* ProductDetail.storyboard */; };
+		EFD9F03B27061DC60072A3B1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9F03A27061DC60072A3B1 /* ProductDetailViewController.swift */; };
+		EFD9F03E27061DFC0072A3B1 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9F03D27061DFC0072A3B1 /* ProductDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,7 +312,6 @@
 		EF0D54AB26C1A1F6009FD5F0 /* GetProductTypeUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProductTypeUseCase.swift; sourceTree = "<group>"; };
 		EF0D54AE26C1A22A009FD5F0 /* GetProductUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProductUseCase.swift; sourceTree = "<group>"; };
 		EF0D54AF26C1A22A009FD5F0 /* PostProductUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProductUseCase.swift; sourceTree = "<group>"; };
-		EF0D54B026C1A22A009FD5F0 /* GetProductDetailUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProductDetailUseCase.swift; sourceTree = "<group>"; };
 		EF0D54B526C1A243009FD5F0 /* ProductRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		EF0D54B826C1A269009FD5F0 /* ProductAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAPI.swift; sourceTree = "<group>"; };
 		EF0D54BC26C1A284009FD5F0 /* GetProductDetailResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProductDetailResponse.swift; sourceTree = "<group>"; };
@@ -323,12 +340,28 @@
 		EF0FE84526C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateOrderByUserRequest.swift; sourceTree = "<group>"; };
 		EF0FE84726C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateOrderByUserResponse.swift; sourceTree = "<group>"; };
 		EF0FE84926C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateOrderByUserUseCase.swift; sourceTree = "<group>"; };
+		EF2DD4D7270B4DC200756D96 /* SocketChatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketChatResponse.swift; sourceTree = "<group>"; };
+		EF2DD4D9270B4DCA00756D96 /* SocketChatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketChatRequest.swift; sourceTree = "<group>"; };
+		EF309E5D26DA1F4200CB7353 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		EF309E6026DA20B500CB7353 /* ConversationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationAPI.swift; sourceTree = "<group>"; };
+		EF309E6526DA215900CB7353 /* GetMessageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageRequest.swift; sourceTree = "<group>"; };
+		EF309E6726DA216100CB7353 /* GetMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageResponse.swift; sourceTree = "<group>"; };
+		EF309E6A26DA231100CB7353 /* ConversationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRepository.swift; sourceTree = "<group>"; };
+		EF309E6D26DA237200CB7353 /* GetMessageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageUseCase.swift; sourceTree = "<group>"; };
 		EF314BBB26CABA95002B201C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		EF314BBD26CABA9B002B201C /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		EF7443F727095C6A00D18F60 /* GetProductDescForUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDescForUserUseCase.swift; sourceTree = "<group>"; };
+		EF7443F92709678300D18F60 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		EF766F2026C841FA003ED499 /* GetOrderDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDetailResponse.swift; sourceTree = "<group>"; };
 		EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDetailUseCase.swift; sourceTree = "<group>"; };
 		EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerResponse.swift; sourceTree = "<group>"; };
 		EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerUseCase.swift; sourceTree = "<group>"; };
+		EF97F88B270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoomChatCustomerRequest.swift; sourceTree = "<group>"; };
+		EF97F88D270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoomChatCustomerResponse.swift; sourceTree = "<group>"; };
+		EF97F88F270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoomChatCustomerUseCase.swift; sourceTree = "<group>"; };
+		EF97F891270B0FF900B2E2C7 /* PostMessageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageRequest.swift; sourceTree = "<group>"; };
+		EF97F893270B107700B2E2C7 /* PostMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageResponse.swift; sourceTree = "<group>"; };
+		EF97F895270B115200B2E2C7 /* PostMessageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageUseCase.swift; sourceTree = "<group>"; };
 		EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
 		EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
@@ -365,6 +398,9 @@
 		EFC1C59726C2C45E00ED64B1 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		EFC1C59826C2C45E00ED64B1 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		EFC1C59C26C2C46F00ED64B1 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		EFD9F03827061DB50072A3B1 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
+		EFD9F03A27061DC60072A3B1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		EFD9F03D27061DFC0072A3B1 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		EFE81CC48976D61F7CF172F3 /* Pods-TMS USER-TMS USERUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USER-TMS USERUITests.release.xcconfig"; path = "Target Support Files/Pods-TMS USER-TMS USERUITests/Pods-TMS USER-TMS USERUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F7EA73E29250230955E9C2F9 /* Pods-TMS USER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USER.release.xcconfig"; path = "Target Support Files/Pods-TMS USER/Pods-TMS USER.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -485,6 +521,7 @@
 		EF0D53D826C13EEC009FD5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EFD9F03727061D9E0072A3B1 /* ProductDetail */,
 				EF314BBA26CABA88002B201C /* Chat */,
 				EFBD719B26C3180E0044216D /* OrderTracking */,
 				EFBD719626C313150044216D /* OrderDetail */,
@@ -635,6 +672,7 @@
 		EF0D53FB26C1451C009FD5F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF2DD4D5270B4DA600756D96 /* SocketChat */,
 				EF0D53FC26C1451C009FD5F0 /* SocketMarkerMap */,
 				EF0D53FF26C1451C009FD5F0 /* User.swift */,
 				EF0D540026C1451C009FD5F0 /* SoketDashboardResponse.swift */,
@@ -686,6 +724,7 @@
 				EF0D541926C1451C009FD5F0 /* UITableView+Extension.swift */,
 				EF0D547126C17796009FD5F0 /* UISearchBar+Extension.swift */,
 				EF0D549626C19841009FD5F0 /* Date+Extension.swift */,
+				EF7443F92709678300D18F60 /* UIScrollView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -784,6 +823,7 @@
 		EF0D547526C18AB3009FD5F0 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				EF309E5F26DA20A300CB7353 /* Conversation */,
 				EF0FE83826C9072200DFCED4 /* Customer */,
 				EFC1C58626C2BAB300ED64B1 /* Order */,
 				EF0D549D26C1A197009FD5F0 /* ProductType */,
@@ -796,6 +836,7 @@
 		EF0D547626C18AB9009FD5F0 /* Repositorys */ = {
 			isa = PBXGroup;
 			children = (
+				EF309E6926DA230600CB7353 /* Conversation */,
 				EF0FE83B26C907B800DFCED4 /* Customer */,
 				EFC1C59026C2BE5500ED64B1 /* Order */,
 				EF0D54B426C1A237009FD5F0 /* Product */,
@@ -808,6 +849,7 @@
 		EF0D547726C18AC0009FD5F0 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				EF309E6C26DA235C00CB7353 /* Conversation */,
 				EF0FE84226C9085500DFCED4 /* Customer */,
 				EFC1C59326C2BEA900ED64B1 /* Order */,
 				EF0D54AD26C1A22A009FD5F0 /* Product */,
@@ -820,6 +862,7 @@
 		EF0D547826C18ACA009FD5F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EF309E6226DA213100CB7353 /* Conversation */,
 				EF0FE83E26C907DA00DFCED4 /* Customer */,
 				EFC1C58926C2BBD600ED64B1 /* Order */,
 				EF0D54C726C1A2B9009FD5F0 /* Shared */,
@@ -982,7 +1025,7 @@
 			children = (
 				EF0D54AE26C1A22A009FD5F0 /* GetProductUseCase.swift */,
 				EF0D54AF26C1A22A009FD5F0 /* PostProductUseCase.swift */,
-				EF0D54B026C1A22A009FD5F0 /* GetProductDetailUseCase.swift */,
+				EF7443F727095C6A00D18F60 /* GetProductDescForUserUseCase.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -1147,9 +1190,82 @@
 			path = Customer;
 			sourceTree = "<group>";
 		};
+		EF2DD4D5270B4DA600756D96 /* SocketChat */ = {
+			isa = PBXGroup;
+			children = (
+				EF2DD4D7270B4DC200756D96 /* SocketChatResponse.swift */,
+				EF2DD4D9270B4DCA00756D96 /* SocketChatRequest.swift */,
+			);
+			path = SocketChat;
+			sourceTree = "<group>";
+		};
+		EF309E5C26DA1F3300CB7353 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF309E5D26DA1F4200CB7353 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF309E5F26DA20A300CB7353 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				EF309E6026DA20B500CB7353 /* ConversationAPI.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		EF309E6226DA213100CB7353 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				EF309E6426DA213C00CB7353 /* Request */,
+				EF309E6326DA213700CB7353 /* Response */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		EF309E6326DA213700CB7353 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				EF309E6726DA216100CB7353 /* GetMessageResponse.swift */,
+				EF97F88D270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift */,
+				EF97F893270B107700B2E2C7 /* PostMessageResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		EF309E6426DA213C00CB7353 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EF309E6526DA215900CB7353 /* GetMessageRequest.swift */,
+				EF97F88B270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift */,
+				EF97F891270B0FF900B2E2C7 /* PostMessageRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		EF309E6926DA230600CB7353 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				EF309E6A26DA231100CB7353 /* ConversationRepository.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		EF309E6C26DA235C00CB7353 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				EF309E6D26DA237200CB7353 /* GetMessageUseCase.swift */,
+				EF97F88F270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift */,
+				EF97F895270B115200B2E2C7 /* PostMessageUseCase.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
 		EF314BBA26CABA88002B201C /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				EF309E5C26DA1F3300CB7353 /* ViewModel */,
 				EF314BBB26CABA95002B201C /* ChatViewController.swift */,
 				EF314BBD26CABA9B002B201C /* Chat.storyboard */,
 			);
@@ -1381,6 +1497,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EFD9F03727061D9E0072A3B1 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EFD9F03C27061DE50072A3B1 /* ViewModel */,
+				EFD9F03827061DB50072A3B1 /* ProductDetail.storyboard */,
+				EFD9F03A27061DC60072A3B1 /* ProductDetailViewController.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		EFD9F03C27061DE50072A3B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFD9F03D27061DFC0072A3B1 /* ProductDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1505,6 +1639,7 @@
 				EF0D53A926C12F2E009FD5F0 /* LaunchScreen.storyboard in Resources */,
 				EFC1C58326C2AE4E00ED64B1 /* OrderTableViewCell.xib in Resources */,
 				EF0D53ED26C13FC3009FD5F0 /* SukhumvitSet-Thin.ttf in Resources */,
+				EFD9F03927061DB50072A3B1 /* ProductDetail.storyboard in Resources */,
 				EFC1C57826C2A26E00ED64B1 /* ProductDetailBottomSheet.storyboard in Resources */,
 				EF0D54D326C1A408009FD5F0 /* ProductCollectionViewCell.xib in Resources */,
 				EFBD71AD26C3190E0044216D /* MarkerMapView.xib in Resources */,
@@ -1710,11 +1845,13 @@
 				EF0D54C226C1A284009FD5F0 /* GetProductDetailResponse.swift in Sources */,
 				EF0D542526C1451D009FD5F0 /* UILabel+Extension.swift in Sources */,
 				EF0D542D26C1451D009FD5F0 /* Decodable+Extension.swift in Sources */,
+				EFD9F03B27061DC60072A3B1 /* ProductDetailViewController.swift in Sources */,
 				EF314BBC26CABA95002B201C /* ChatViewController.swift in Sources */,
 				EF0D54AC26C1A1F6009FD5F0 /* GetProductTypeUseCase.swift in Sources */,
 				EF0D546B26C16D6F009FD5F0 /* HistoryViewController.swift in Sources */,
 				EF0D543C26C1452F009FD5F0 /* AnyKey.swift in Sources */,
 				EF0D545726C1464C009FD5F0 /* ToolbarPickerView.swift in Sources */,
+				EF309E6626DA215900CB7353 /* GetMessageRequest.swift in Sources */,
 				EF0D544F26C14628009FD5F0 /* KeyboardListener.swift in Sources */,
 				EF0D54B626C1A243009FD5F0 /* ProductRepository.swift in Sources */,
 				EF0D548A26C18EF1009FD5F0 /* PostLogoutUseCase.swift in Sources */,
@@ -1725,6 +1862,7 @@
 				EFBAF6A826CA2A190008DDF4 /* GetOrderDescriptionResponse.swift in Sources */,
 				EF0D549F26C1A19D009FD5F0 /* ProductTypeAPI.swift in Sources */,
 				EF0D542A26C1451D009FD5F0 /* Encodable+Extension.swift in Sources */,
+				EF2DD4D8270B4DC200756D96 /* SocketChatResponse.swift in Sources */,
 				EFC1C59526C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift in Sources */,
 				EFBD719526C307D90044216D /* GetFinishOrderCustomerUseCase.swift in Sources */,
 				EF0D549726C19841009FD5F0 /* Date+Extension.swift in Sources */,
@@ -1734,9 +1872,14 @@
 				EF0D53F826C1450F009FD5F0 /* MoyaProvider+Combine.swift in Sources */,
 				EF0D548226C18DB6009FD5F0 /* PostAuthenticateResponse.swift in Sources */,
 				EF0D541B26C1451D009FD5F0 /* SocketMarkerMapResponse.swift in Sources */,
+				EF309E5E26DA1F4200CB7353 /* ChatViewModel.swift in Sources */,
+				EF309E6B26DA231100CB7353 /* ConversationRepository.swift in Sources */,
 				EF0D54EB26C1BF11009FD5F0 /* ProfileViewModel.swift in Sources */,
+				EF309E6E26DA237200CB7353 /* GetMessageUseCase.swift in Sources */,
 				EF0D54E626C1BE9E009FD5F0 /* ProfileTableViewCell.swift in Sources */,
 				EF0FE84A26C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift in Sources */,
+				EF309E6826DA216100CB7353 /* GetMessageResponse.swift in Sources */,
+				EF7443FA2709678300D18F60 /* UIScrollView+Extension.swift in Sources */,
 				EF0D547B26C18CCA009FD5F0 /* AuthCustomerAPI.swift in Sources */,
 				EF0D54C426C1A284009FD5F0 /* PostProductResponse.swift in Sources */,
 				EF0D543126C1451D009FD5F0 /* Encoder+Extension.swift in Sources */,
@@ -1747,24 +1890,30 @@
 				EF0D544D26C145E4009FD5F0 /* IntroViewController.swift in Sources */,
 				EF0D546126C169F5009FD5F0 /* HomeViewController.swift in Sources */,
 				EF0D547226C17796009FD5F0 /* UISearchBar+Extension.swift in Sources */,
-				EF0D54B326C1A22A009FD5F0 /* GetProductDetailUseCase.swift in Sources */,
 				EF0D54C526C1A284009FD5F0 /* GetProductRequest.swift in Sources */,
 				EF0D542B26C1451D009FD5F0 /* UIViewController+Extension.swift in Sources */,
 				EFB47C0C26C3DA8F00170CD0 /* HeaderLabelTableViewCell.swift in Sources */,
 				EFC1C57D26C2A57000ED64B1 /* ProductDetailBottomSheetViewModel.swift in Sources */,
 				EFBD71AA26C3190E0044216D /* PopupMarkerMapView.swift in Sources */,
 				EF0D54E126C1B228009FD5F0 /* ProductCartViewModel.swift in Sources */,
+				EF97F890270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift in Sources */,
+				EF2DD4DA270B4DCA00756D96 /* SocketChatRequest.swift in Sources */,
 				EF0D547026C16D82009FD5F0 /* ProfileViewController.swift in Sources */,
+				EFD9F03E27061DFC0072A3B1 /* ProductDetailViewModel.swift in Sources */,
 				EF0D54A226C1A1BD009FD5F0 /* ProductTypeRepository.swift in Sources */,
+				EF97F894270B107700B2E2C7 /* PostMessageResponse.swift in Sources */,
+				EF97F88E270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift in Sources */,
 				EF0D548526C18E6D009FD5F0 /* AuthCustomerRepository.swift in Sources */,
 				EF0D545326C14633009FD5F0 /* DefaultsManager.swift in Sources */,
 				EF0D545526C14639009FD5F0 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				EFB47C1226C3E15600170CD0 /* OrderCartManager.swift in Sources */,
 				EF0D542626C1451D009FD5F0 /* UIButton+Extension.swift in Sources */,
 				EFB47C1726C448B200170CD0 /* Persistable.swift in Sources */,
+				EF309E6126DA20B500CB7353 /* ConversationAPI.swift in Sources */,
 				EFC1C59D26C2C46F00ED64B1 /* HistoryViewModel.swift in Sources */,
 				EF0D54B126C1A22A009FD5F0 /* GetProductUseCase.swift in Sources */,
 				EF0D53E126C13F6A009FD5F0 /* SplashViewController.swift in Sources */,
+				EF97F896270B115200B2E2C7 /* PostMessageUseCase.swift in Sources */,
 				EF0D54C626C1A284009FD5F0 /* PostProductRequest.swift in Sources */,
 				EF0FE84626C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift in Sources */,
 				EFBD719326C3064B0044216D /* GetFinishOrderCustomerResponse.swift in Sources */,
@@ -1788,6 +1937,7 @@
 				EF0D542826C1451D009FD5F0 /* UIImageView+Kingfisher.swift in Sources */,
 				EF0D549526C196CD009FD5F0 /* IntroViewModel.swift in Sources */,
 				EF0D542726C1451D009FD5F0 /* UIView+Extension.swift in Sources */,
+				EF97F88C270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift in Sources */,
 				EF0D547426C17B0C009FD5F0 /* BadgeButton.swift in Sources */,
 				EF0D548D26C1909B009FD5F0 /* LoginViewModel.swift in Sources */,
 				EF0D54C326C1A284009FD5F0 /* GetProductResponse.swift in Sources */,
@@ -1798,6 +1948,7 @@
 				EF0FE84826C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift in Sources */,
 				EF0FE83A26C9074000DFCED4 /* CustomerAPI.swift in Sources */,
 				EF0D54B926C1A269009FD5F0 /* ProductAPI.swift in Sources */,
+				EF7443F827095C6A00D18F60 /* GetProductDescForUserUseCase.swift in Sources */,
 				EFC1C58826C2BB1100ED64B1 /* OrderAPI.swift in Sources */,
 				EF0D541D26C1451D009FD5F0 /* SoketDashboardResponse.swift in Sources */,
 				EF0D54C926C1A2B9009FD5F0 /* MetaObject.swift in Sources */,
@@ -1816,6 +1967,7 @@
 				EF0D543426C1451D009FD5F0 /* UITableView+Extension.swift in Sources */,
 				EFBD71A226C318770044216D /* OrderTrackingViewModel.swift in Sources */,
 				EFB47C0F26C3DAC300170CD0 /* OrderDetailViewModel.swift in Sources */,
+				EF97F892270B0FF900B2E2C7 /* PostMessageRequest.swift in Sources */,
 				EFC1C58F26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift in Sources */,
 				EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */,
 				EFC1C58D26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift in Sources */,

@@ -122,6 +122,19 @@ class ProductCartViewModel: ProductCartProtocol, ProductCartProtocolOutput {
                 let discount = (productPrice - newPrice)
                 discountPrice += (qty * discount)
             }
+            
+            if let promotions = item.promotion,
+               let qty = item.productCartQty,
+               let productPrice = item.productPrice {
+                for promotion in promotions {
+                    if qty >= promotion.qty ?? 0 {
+                        let discount = (productPrice - (promotion.itemPrice ?? 0))
+                        discountPrice += (qty * discount)
+                        break
+                    }
+                }
+            }
+            
         })
         return discountPrice
     }
@@ -132,6 +145,19 @@ class ProductCartViewModel: ProductCartProtocol, ProductCartProtocolOutput {
             if let qty = item.productCartQty {
                 if let discount = item.productDiscount {
                     overAllPrice += (qty * (discount.newPrice ?? 0))
+                } else if let promotions = item.promotion {
+                    var isPromotion: Bool = false
+                    for promotion in promotions {
+                        if qty >= promotion.qty ?? 0 {
+                            overAllPrice += (qty * (promotion.itemPrice ?? 0))
+                            isPromotion = true
+                            break
+                        }
+                    }
+                    
+                    if isPromotion == false {
+                        overAllPrice += (qty * (item.productPrice ?? 0))
+                    }
                 } else {
                     overAllPrice += (qty * (item.productPrice ?? 0))
                 }
@@ -148,7 +174,7 @@ class ProductCartViewModel: ProductCartProtocol, ProductCartProtocolOutput {
     }
     
     func postCreateOrderByUser() {
-        let request = getRequestModel()
+        let request = getRequestCreateOrderModel()
         self.productCartViewController.startLoding()
         self.postCreateOrderByUserUseCase.execute(request: request).sink { completion in
             debugPrint("postCreateOrderByUser \(completion)")
@@ -171,7 +197,7 @@ class ProductCartViewModel: ProductCartProtocol, ProductCartProtocolOutput {
         }.store(in: &self.anyCancellable)
     }
     
-    private func getRequestModel() -> PostCreateOrderByUserRequest {
+    private func getRequestCreateOrderModel() -> PostCreateOrderByUserRequest {
         var request: PostCreateOrderByUserRequest = PostCreateOrderByUserRequest()
         request.orderShipingStatus = "N"
         request.note = ""
@@ -179,11 +205,29 @@ class ProductCartViewModel: ProductCartProtocol, ProductCartProtocolOutput {
         self.listProductCart?.forEach({ item in
             var orderD: OrderD = OrderD()
             orderD.productId = item.productId
-            // Price and Discount
+
             if let discount = item.productDiscount {
+                // Case Discount
                 orderD.price = discount.newPrice
                 orderD.discountState = true
+            } else if let promotions = item.promotion {
+                // Case Pronotion
+                var isPromotion: Bool = false
+                for promotion in promotions {
+                    if item.productCartQty ?? 0 >= promotion.qty ?? 0 {
+                        orderD.price = promotion.itemPrice
+                        orderD.discountState = true
+                        isPromotion = true
+                        break
+                    }
+                }
+                if isPromotion == false {
+                    // Case Normal Price
+                    orderD.price = item.productPrice
+                    orderD.discountState = false
+                }
             } else {
+                // Case Normal Price
                 orderD.price = item.productPrice
                 orderD.discountState = false
             }

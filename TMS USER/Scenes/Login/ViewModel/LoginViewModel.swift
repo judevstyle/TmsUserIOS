@@ -75,6 +75,9 @@ class LoginViewModel: LoginProtocol, LoginProtocolOutput {
                 } else {
                     ToastManager.shared.toastCallAPI(title: "\(items.message ?? "")")
                 }
+            } else {
+                ToastManager.shared.toastCallAPI(title: "Login failure")
+                self.loginViewController.stopLoding()
             }
         }.store(in: &self.anyCancellable)
     }

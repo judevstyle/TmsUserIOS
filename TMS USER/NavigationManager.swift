@@ -26,6 +26,7 @@ public enum NavigationOpeningSender {
     
     //Modal
     case productDetailBottomSheet(item: ProductItems?, delegate: ProductDetailBottomSheetViewModelDelegate)
+    case productDetail(item: ProductItems?, delegate: ProductDetailViewModelDelegate)
     
     //OrderDetail
     case orderDetail(orderId: Int?)
@@ -33,7 +34,7 @@ public enum NavigationOpeningSender {
     //OrderTracking
     case orderTracking(orderId: Int?)
     
-    case chat
+    case chat(orderId: Int?, items: RoomChatCustomerData?)
     
     public var storyboardName: String {
         switch self {
@@ -63,6 +64,8 @@ public enum NavigationOpeningSender {
             return "OrderTracking"
         case .chat:
             return "Chat"
+        case .productDetail:
+            return "ProductDetail"
         }
     }
     
@@ -94,6 +97,8 @@ public enum NavigationOpeningSender {
             return "OrderTrackingViewController"
         case .chat:
             return "ChatViewController"
+        case .productDetail:
+            return "ProductDetailViewController"
         }
     }
     
@@ -106,6 +111,8 @@ public enum NavigationOpeningSender {
     
     public var titleNavigation: String {
         switch self {
+        case .order:
+            return "รอการจัดส่ง"
         case .productCart:
             return "ตะกร้าสินค้า"
         case .orderDetail:
@@ -160,6 +167,12 @@ class NavigationManager {
                 className.viewModel.input.setDelegate(delegate: delegate)
                 viewController = className
             }
+        case .productDetail(let items, let delegate):
+            if let className = storyboard.instantiateInitialViewController() as? ProductDetailViewController {
+                className.viewModel.input.setProductItems(items: items)
+                className.viewModel.input.setDelegate(delegate: delegate)
+                viewController = className
+            }
         case .productCart(let dismiss):
             if let className = storyboard.instantiateInitialViewController() as? ProductCartViewController {
                 className.dismiss = dismiss
@@ -173,6 +186,12 @@ class NavigationManager {
         case .orderTracking(let orderId):
             if let className = storyboard.instantiateInitialViewController() as? OrderTrackingViewController {
                 className.viewModel.input.setOrderId(orderId: orderId)
+                viewController = className
+            }
+        case .chat(let orderId, let items):
+            if let className = storyboard.instantiateInitialViewController() as? ChatViewController {
+                className.viewModel.input.setOrderId(orderId: orderId)
+                className.viewModel.input.setRoomChatCustomer(items: items)
                 viewController = className
             }
         default:
@@ -206,8 +225,8 @@ class NavigationManager {
             appDelegate.window?.rootViewController = initialViewController
             appDelegate.window?.makeKeyAndVisible()
         case .ModalNoNav(let completion):
-            let nav: UINavigationController = getNavigationController(vc: viewController, isTranslucent: true)
-            self.navigationController.present(nav, animated: true, completion: completion)
+            let vc: UIViewController = viewController
+            self.navigationController.present(vc, animated: true, completion: completion)
         case .Replace:
             var viewControllers = Array(self.navigationController.viewControllers.dropLast())
             viewControllers.append(viewController)

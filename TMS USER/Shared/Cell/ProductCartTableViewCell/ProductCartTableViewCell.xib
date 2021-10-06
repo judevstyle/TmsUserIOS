@@ -84,7 +84,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รวม ฿3000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eO-Ex-vcY">
-                                <rect key="frame" x="340" y="98.5" width="66" height="22.5"/>
+                                <rect key="frame" x="338.5" y="104.5" width="67.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                 <color key="textColor" name="Primary"/>
                                 <nil key="highlightedColor"/>

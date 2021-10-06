@@ -1,18 +1,18 @@
 //
-//  GetProductDetailUseCase.swift
-//  TMSApp
+//  GetProductDescForUserUseCase.swift
+//  TMS USER
 //
-//  Created by Nontawat Kanboon on 28/6/2564 BE.
+//  Created by Nontawat Kanboon on 10/3/21.
 //
 
 import Foundation
 import Combine
 
-protocol GetProductDetailUseCase {
+protocol GetProductDescForUserUseCase {
     func execute(productId: Int) -> AnyPublisher<ProductItems?, Error>
 }
 
-struct GetProductDetailUseCaseImpl: GetProductDetailUseCase {
+struct GetProductDescForUserUseCaseImpl: GetProductDescForUserUseCase {
     
     private let repository: ProductRepository
     
@@ -22,7 +22,7 @@ struct GetProductDetailUseCaseImpl: GetProductDetailUseCase {
     
     func execute(productId: Int) -> AnyPublisher<ProductItems?, Error> {
         return self.repository
-            .getProductDetail(productId: productId)
+            .getProductDescForUser(productId: productId)
             .map { $0.data }
             .eraseToAnyPublisher()
     }

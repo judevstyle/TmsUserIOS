@@ -18,7 +18,6 @@ public struct SocketMarkerMapResponse: Codable, Hashable  {
     }
 }
 
-
 public struct MarkerMapItems: Codable, Hashable  {
     
     public var empAvatar: String?

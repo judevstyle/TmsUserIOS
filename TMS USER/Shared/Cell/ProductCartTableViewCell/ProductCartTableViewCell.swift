@@ -92,6 +92,16 @@ class ProductCartTableViewCell: UITableViewCell {
                 self.delegate.didUpdateQty()
             })
         }
+        checkDisableDeleteButton()
+    }
+    
+    func checkDisableDeleteButton() {
+        let qty:Int? = Int(qytText.text ?? "")
+        if let qty = qty, qty <= 1 {
+            deleteButton.isEnabled = false
+        } else {
+            deleteButton.isEnabled = true
+        }
     }
     
     @IBAction func removeAction(_ sender: Any) {
@@ -104,17 +114,50 @@ class ProductCartTableViewCell: UITableViewCell {
         descText.text = itemsProduct?.productDesc ?? ""
         qytText.text = "\(itemsProduct?.productCartQty ?? 0)"
         
+        checkDisableDeleteButton()
+        
+//        if let discount = itemsProduct?.productDiscount {
+//            let attributeString =  NSMutableAttributedString(string: "\(itemsProduct?.productPrice ?? 0)")
+//            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+//            attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: NSMakeRange(0, attributeString.length))
+//            self.priceOld.attributedText = attributeString
+//            self.priceNew.text = "\(discount.newPrice ?? 0)"
+//            priceOld.isHidden = false
+//        } else {
+//            priceOld.isHidden = true
+//            priceNew.text = "\(itemsProduct?.productPrice ?? 0)"
+//        }
+        
+        //new Flow
+        
         if let discount = itemsProduct?.productDiscount {
             let attributeString =  NSMutableAttributedString(string: "\(itemsProduct?.productPrice ?? 0)")
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
             attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: NSMakeRange(0, attributeString.length))
             self.priceOld.attributedText = attributeString
-            self.priceNew.text = "\(discount.newPrice ?? 0)"
             priceOld.isHidden = false
         } else {
             priceOld.isHidden = true
-            priceNew.text = "\(itemsProduct?.productPrice ?? 0)"
         }
+        
+        if let promotions = itemsProduct?.promotion {
+            for item in promotions {
+                if itemsProduct?.productCartQty ?? 0 >= item.qty ?? 0 {
+                    let attributeString =  NSMutableAttributedString(string: "\(itemsProduct?.productPrice ?? 0)")
+                    attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+                    attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: NSMakeRange(0, attributeString.length))
+                    self.priceOld.attributedText = attributeString
+                    priceOld.isHidden = false
+                    break
+                } else {
+                    priceOld.isHidden = true
+                }
+            }
+        } else {
+            priceOld.isHidden = true
+        }
+        
+        priceNew.text = "\(itemsProduct?.productCartPrice ?? 0)"
 
         priceNew.sizeToFit()
         priceOld.sizeToFit()

@@ -39,19 +39,48 @@ struct OrderCartManager {
     }
     
     func addProductCart(_ items: ProductItems, qty: Int, completion: @escaping () -> Void) {
+        let productCartItems = getAddProductCartItems(items, qty: qty)
+        
+        try! self.realm.write({ () -> Void in
+            self.realm.add(productCartItems)
+            completion()
+        })
+    }
+    
+    func getAddProductCartItems(_ items: ProductItems, qty: Int) -> ProductCartItems {
         let productCartItems = ProductCartItems()
         productCartItems.id = productCartItems.incrementID()
         
         var productItems: ProductItems = items
         productItems.productCartId = productCartItems.id
         productItems.productCartQty = qty
+        
+        if let promotions = productItems.promotion {
+            for item in promotions {
+                if qty >= item.qty ?? 0 {
+                    productItems.productCartPrice = item.itemPrice
+                    break
+                } else {
+                    if let discount = productItems.productDiscount {
+                        productItems.productCartPrice = discount.newPrice
+                    } else {
+                        productItems.productCartPrice = productItems.productPrice
+                    }
+                }
+            }
+        } else {
+            if let discount = productItems.productDiscount {
+                productItems.productCartPrice = discount.newPrice
+            } else {
+                productItems.productCartPrice = productItems.productPrice
+            }
+        }
+        
+        
         //set productItems
         productCartItems.productItems = productItems
         
-        try! self.realm.write({ () -> Void in
-            self.realm.add(productCartItems)
-            completion()
-        })
+        return productCartItems
     }
     
     func getProductCart() -> [ProductItems?]? {
@@ -98,6 +127,27 @@ struct OrderCartManager {
                 var productItems: ProductItems = items
                 productItems.productCartId = productCartItems.id
                 productItems.productCartQty = qty
+                
+                if let promotions = productItems.promotion {
+                    for item in promotions {
+                        if qty >= item.qty ?? 0 {
+                            productItems.productCartPrice = item.itemPrice
+                            break
+                        } else {
+                            if let discount = productItems.productDiscount {
+                                productItems.productCartPrice = discount.newPrice
+                            } else {
+                                productItems.productCartPrice = productItems.productPrice
+                            }
+                        }
+                    }
+                } else {
+                    if let discount = productItems.productDiscount {
+                        productItems.productCartPrice = discount.newPrice
+                    } else {
+                        productItems.productCartPrice = productItems.productPrice
+                    }
+                }
                 
                 //set productItems
                 productCartItems.productItems = productItems

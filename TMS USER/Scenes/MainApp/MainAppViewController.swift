@@ -28,7 +28,7 @@ class MainAppViewController: UITabBarController {
         
         let homeVC = tabBarNavigation(unselectImage: UIImage(named: "home"), selectImage: UIImage(named: "home"), title: "สินค้าทั้งหมด", badgeValue: nil, navigationTitle: "", navigationOpeningSender: .home)
 
-        let orderVC = tabBarNavigation(unselectImage: UIImage(named: "delivery"), selectImage: UIImage(named: "delivery"), title: "ออเดอร์", badgeValue: nil, navigationTitle: "", navigationOpeningSender: .order)
+        let orderVC = tabBarNavigation(unselectImage: UIImage(named: "delivery"), selectImage: UIImage(named: "delivery"), title: "รอจัดส่ง", badgeValue: nil, navigationTitle: "", navigationOpeningSender: .order)
 
         let historyVC = tabBarNavigation(unselectImage: UIImage(named: "package"), selectImage: UIImage(named: "package"), title: "ประวัติการสั่งซื้อ", badgeValue: nil, navigationTitle: "", navigationOpeningSender: .history)
 
