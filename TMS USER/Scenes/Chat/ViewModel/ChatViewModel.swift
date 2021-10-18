@@ -122,6 +122,11 @@ class ChatViewModel: ChatProtocol, ChatProtocolOutput {
                 })
             }
             self.didGetChatSuccess?()
+            
+            
+            //Connect Chat Socket
+            self.fetchChat()
+            
         }.store(in: &self.anyCancellable)
     }
     
@@ -199,24 +204,28 @@ extension ChatViewModel {
 //        return self.listMapMarker
 //    }
 //
-//    func fetchMapMarker() {
-//        SocketHelper.shared.fetchTrackingByShipment { result in
-//            switch result {
-//            case .success(let resp): break
-//                debugPrint("resp: \(resp)")
-//            case .failure(_ ):
-//                break
-//            }
-//        }
-//        emitMapMarker()
-//    }
-//
-//    private func emitMapMarker(){
-//        var request: SocketMarkerMapRequest = SocketMarkerMapRequest()
-//        request.compId = 11
-//        SocketHelper.shared.emitTrackingByShipment(request: request) {
-//            debugPrint("requestTrackingByComp\(request)")
-//        }
-//    }
+    func fetchChat() {
+        SocketHelper.shared.fetchChat { result in
+            switch result {
+            case .success(let resp): break
+                debugPrint("resp: \(resp)")
+            case .failure(_ ):
+                break
+            }
+        }
+        emitChat()
+    }
+
+    private func emitChat(){
+        var request: SocketChatRequest = SocketChatRequest()
+        let accessToken = UserDefaultsKey.AccessToken.string
+        guard let cId = itemRoomChatCustomer?.cId else { return }
+        request.cId = cId
+        request.token = accessToken
+        request.status = "connect"
+        SocketHelper.shared.emitChat(request: request) {
+            debugPrint("request Chat \(request)")
+        }
+    }
 }
 

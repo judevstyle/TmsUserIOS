@@ -8,9 +8,9 @@
 import SocketIO
 import UIKit
 
-let kHost = "http://43.229.149.79:3010"
+let kHost = "http://185.78.165.78:3010"
 let kTrackingByShipment = "trackingByShipment"
-let kChat = "chat"
+let kChat = "conversation"
 
 typealias CompletionHandler = () -> Void
 typealias MarkerCompletionHandler = (Result<SocketMarkerMapResponse?, Error>) -> Void

@@ -173,8 +173,8 @@ extension OrderTrackingViewController {
             descText.isHidden = true
             positionText.isHidden = true
             btnTel.isHidden = true
-            btnChat.isHidden = false
-            orderErrorDataText.isHidden = true
+            btnChat.isHidden = true
+            orderErrorDataText.isHidden = false
             return }
         
         titleNoText.text = "Shipment No : \(item.shipmentNo ?? "")"

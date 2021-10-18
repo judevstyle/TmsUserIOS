@@ -148,6 +148,9 @@ class OrderTrackingViewModel: OrderTrackingProtocol, OrderTrackingProtocolOutput
             
             ToastManager.shared.toastCallAPI(title: "GetOrderDescription finished")
             self.didGetOrderTrackingSuccess?()
+            
+            self.fetchMapMarker()
+            
         }.store(in: &self.anyCancellable)
     }
     
@@ -222,7 +225,9 @@ extension OrderTrackingViewModel {
     }
     
     func fetchMapMarker() {
+        debugPrint("resp: fetchMapMarker")
         SocketHelper.shared.fetchTrackingByShipment { result in
+            debugPrint("resp: result \(result)")
             switch result {
             case .success(let resp): break
                 debugPrint("resp: \(resp)")
@@ -237,7 +242,7 @@ extension OrderTrackingViewModel {
     
     private func emitMapMarker(){
         var request: SocketMarkerMapRequest = SocketMarkerMapRequest()
-        request.compId = 11
+        request.shipmentId = itemShipment?.shipmentId
         SocketHelper.shared.emitTrackingByShipment(request: request) {
             debugPrint("requestTrackingByComp\(request)")
         }
@@ -313,8 +318,8 @@ extension OrderTrackingViewModel {
     
     private func getRequestRoomChat() -> GetRoomChatCustomerRequest {
         var request: GetRoomChatCustomerRequest = GetRoomChatCustomerRequest()
-        guard let orderId = orderId else { return request }
-        request.empId = orderId
+        guard let empId = itemShipment?.employees?[0].empId else { return request }
+        request.empId = empId
         return request
     }
 }

@@ -9,12 +9,12 @@ import Foundation
 
 public struct SocketMarkerMapRequest: Codable, Hashable {
     
-    public var compId: Int?
+    public var shipmentId: Int?
     
     public init() {}
     
     enum CodingKeys: String, CodingKey {
-        case compId = "comp_id"
+        case shipmentId = "shipment_id"
     }
 }
 

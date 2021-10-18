@@ -9,11 +9,15 @@ import Foundation
 
 public struct SocketChatRequest: Codable, Hashable {
     
-    public var compId: Int?
+    public var cId: String?
+    public var token: String?
+    public var status: String?
     
     public init() {}
     
     enum CodingKeys: String, CodingKey {
-        case compId = "comp_id"
+        case cId = "c_id"
+        case token = "token"
+        case status = "status"
     }
 }
