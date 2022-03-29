@@ -13,6 +13,7 @@ public enum NavigationOpeningSender {
     case splash
     case intro
     case login
+    case register
     
     //Main Tabbar
     case mainApp
@@ -36,6 +37,8 @@ public enum NavigationOpeningSender {
     
     case chat(orderId: Int?, items: RoomChatCustomerData?)
     
+    case selectCurrentLocation(delegate: SelectCurrentLocationViewControllerDelegate)
+    
     public var storyboardName: String {
         switch self {
         case .splash:
@@ -44,6 +47,8 @@ public enum NavigationOpeningSender {
             return "Intro"
         case .login:
             return "Login"
+        case .register:
+            return "Register"
         case .mainApp:
             return "MainApp"
         case .home:
@@ -66,6 +71,8 @@ public enum NavigationOpeningSender {
             return "Chat"
         case .productDetail:
             return "ProductDetail"
+        case .selectCurrentLocation:
+            return "SelectCurrentLocation"
         }
     }
     
@@ -77,6 +84,8 @@ public enum NavigationOpeningSender {
             return "IntroViewController"
         case .login:
             return "LoginViewController"
+        case .register:
+            return "RegisterViewController"
         case .mainApp:
             return "MainAppViewController"
         case .home:
@@ -99,6 +108,8 @@ public enum NavigationOpeningSender {
             return "ChatViewController"
         case .productDetail:
             return "ProductDetailViewController"
+        case .selectCurrentLocation:
+            return "SelectCurrentLocationViewController"
         }
     }
     
@@ -119,8 +130,19 @@ public enum NavigationOpeningSender {
             return "รายละเอียดการสั่งซื้อ"
         case .orderTracking:
             return "ติดตามคำสั่งซื้อ"
+        case .selectCurrentLocation:
+            return "เลือก Location"
         default:
             return ""
+        }
+    }
+    
+    public var navColor: UIColor {
+        switch self {
+        case .splash:
+            return .Primary
+        default:
+            return .clear
         }
     }
 }
@@ -139,7 +161,7 @@ class NavigationManager {
         case ModelNav(completion: (() -> Void)?, isFullScreen: Bool)
         case BottomSheet(completion: (() -> Void)?, height: CGFloat)
         case PopupSheet(completion: (() -> Void)?)
-        case presentFullSceen(completion: (() -> Void)?)
+        case presentFullScreen(completion: (() -> Void)?)
         
     }
     
@@ -194,6 +216,11 @@ class NavigationManager {
                 className.viewModel.input.setRoomChatCustomer(items: items)
                 viewController = className
             }
+        case .selectCurrentLocation(let delegate):
+            if let className = storyboard.instantiateInitialViewController() as? SelectCurrentLocationViewController {
+                className.delegate = delegate
+                viewController = className
+            }
         default:
             viewController = storyboard.instantiateInitialViewController() ?? to.viewController
         }
@@ -205,7 +232,7 @@ class NavigationManager {
         self.presentVC(viewController: viewController, presentation: presentation, isHiddenNavigationBar: isHiddenNavigationBar, to: to)
     }
     
-    private func presentVC(viewController: UIViewController, presentation: Presentation, isHiddenNavigationBar: Bool = false, to: NavigationOpeningSender) {
+    private func presentVC(viewController: UIViewController, presentation: Presentation, isHiddenNavigationBar: Bool = false, to: NavigationOpeningSender, animated: Bool = true) {
         if let nav = self.navigationController {
             nav.isNavigationBarHidden = isHiddenNavigationBar
         }
@@ -214,10 +241,7 @@ class NavigationManager {
             if (self.navigationController.tabBarController != nil) {
                 viewController.hidesBottomBarWhenPushed = true
             }
-            
-            self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            self.navigationController.pushViewController(viewController, animated: true)
-            
+            self.pushViewController(vc: viewController, animated: animated, to: to)
         case .Root:
             let storyboard = UIStoryboard(name: to.storyboardName, bundle: nil)
             let initialViewController = storyboard.instantiateInitialViewController()
@@ -245,20 +269,28 @@ class NavigationManager {
             viewController.modalPresentationStyle = .overFullScreen
             viewController.modalTransitionStyle = .crossDissolve
             self.navigationController.present(viewController, animated: true, completion: completion)
-        case .presentFullSceen(let completion):
-            
-            let nav: UINavigationController = UINavigationController(rootViewController: viewController)
-            nav.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            nav.navigationBar.shadowImage = UIImage()
-            nav.navigationBar.isTranslucent = true
-            
+        case .presentFullScreen(let completion):
+            let nav: UINavigationController = self.getNavigationController(vc: viewController, to: to)
             nav.view.backgroundColor = UIColor.black
             nav.modalPresentationStyle = .overFullScreen
             nav.modalTransitionStyle = .crossDissolve
-            
-            self.navigationController.present(nav, animated: true, completion: completion)
+            let topVC = UIApplication.getTopViewController()
+            topVC?.present(nav, animated: true, completion: completion)
         }
         self.currentPresentation = presentation
+    }
+    
+    func pushViewController(vc: UIViewController, animated: Bool, to: NavigationOpeningSender) {
+        let topVC = UIApplication.getTopViewController()
+        if let nav = topVC?.navigationController {
+            nav.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            nav.navigationBar.tintColor = .black
+            nav.pushViewController(vc, animated: animated)
+        } else {
+            self.navigationController.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            self.navigationController.navigationBar.tintColor = .black
+            self.navigationController.pushViewController(vc, animated: animated)
+        }
     }
     
     func setRootViewController(rootView: NavigationOpeningSender, withNav: Bool = true, isTranslucent: Bool = false, isAnimate: Bool = false, options: UIView.AnimationOptions = .curveEaseIn) {
@@ -295,17 +327,35 @@ class NavigationManager {
         }
     }
     
-    private func getNavigationController(vc: UIViewController, isTranslucent: Bool, isFullScreen: Bool = false) -> UINavigationController {
-        let nav: UINavigationController = UINavigationController(rootViewController: vc)
-        nav.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        nav.navigationBar.shadowImage = UIImage()
-        nav.navigationBar.isTranslucent = isTranslucent == true ? true : false
-        nav.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.PrimaryMedium(size: 18), NSAttributedString.Key.foregroundColor: UIColor.white]
-        nav.navigationBar.barTintColor = UIColor.Primary
+    private func getNavigationController(vc: UIViewController, isTranslucent: Bool = false, isFullScreen: Bool = false, to: NavigationOpeningSender = .home) -> UINavigationController {
         
-        if isFullScreen == true {
-            nav.modalPresentationStyle = .overFullScreen
+        let nav: UINavigationController = UINavigationController(rootViewController: vc)
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithTransparentBackground()
+            
+            appearance.backgroundColor = to.navColor
+            appearance.shadowColor = .clear
+            appearance.shadowImage = UIImage()
+            appearance.backgroundImage = UIImage()
+            appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.PrimaryBold(size: 18), NSAttributedString.Key.foregroundColor: UIColor.black]
+            
+            nav.navigationBar.scrollEdgeAppearance = appearance
+            nav.navigationBar.standardAppearance = appearance
+            nav.navigationBar.compactAppearance = appearance
+        } else {
+            
+            nav.navigationBar.barTintColor = to.navColor
+            nav.navigationBar.setBackgroundImage(UIImage(), for: UIBarPosition.bottom, barMetrics: .default)
+            nav.navigationBar.shadowImage = UIImage()
+            nav.navigationBar.isTranslucent = true
+            nav.navigationBar.isHidden = true
+            nav.navigationBar.barStyle = .black
+            nav.navigationBar.tintColor = .black
+            nav.navigationBar.layoutIfNeeded()
         }
+
         return nav
     }
     

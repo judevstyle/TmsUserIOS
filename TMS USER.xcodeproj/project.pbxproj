@@ -146,12 +146,46 @@
 		EF766F2326C84315003ED499 /* GetOrderDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */; };
 		EF766F2526C84DCF003ED499 /* GetReOrderCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */; };
 		EF766F2726C84E37003ED499 /* GetReOrderCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */; };
+		EF95764327F354FF00E59E12 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95764227F354FF00E59E12 /* UIApplication+Extension.swift */; };
+		EF95764627F3596800E59E12 /* SPPermissionsCamera in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764527F3596800E59E12 /* SPPermissionsCamera */; };
+		EF95764827F3596800E59E12 /* SPPermissionsLocationAlways in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764727F3596800E59E12 /* SPPermissionsLocationAlways */; };
+		EF95764A27F3596800E59E12 /* SPPermissionsLocationWhenInUse in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764927F3596800E59E12 /* SPPermissionsLocationWhenInUse */; };
+		EF95764C27F3596800E59E12 /* SPPermissionsPhotoLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764B27F3596800E59E12 /* SPPermissionsPhotoLibrary */; };
+		EF95764E27F3596800E59E12 /* SPPermissionsTracking in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764D27F3596800E59E12 /* SPPermissionsTracking */; };
+		EF95765027F359E700E59E12 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95764F27F359E700E59E12 /* ImagePicker.swift */; };
+		EF95765327F35B6600E59E12 /* BorderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765227F35B6600E59E12 /* BorderLineTextField.swift */; };
+		EF95765527F35E1300E59E12 /* HeadTitleTFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */; };
+		EF95765727F35FF400E59E12 /* BorderLineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765627F35FF400E59E12 /* BorderLineTextView.swift */; };
+		EF95765927F3614300E59E12 /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765827F3614300E59E12 /* ButtonCustomColor.swift */; };
+		EF95765B27F365A200E59E12 /* WarningUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765A27F365A200E59E12 /* WarningUILabel.swift */; };
+		EF95765E27F36D9000E59E12 /* SelectCurrentLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF95765D27F36D9000E59E12 /* SelectCurrentLocation.storyboard */; };
+		EF95766027F36D9D00E59E12 /* SelectCurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765F27F36D9D00E59E12 /* SelectCurrentLocationViewController.swift */; };
+		EF95766427F3747700E59E12 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF95766227F3747700E59E12 /* SearchResultTableViewCell.xib */; };
+		EF95766527F3747700E59E12 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95766327F3747700E59E12 /* SearchResultTableViewCell.swift */; };
+		EF95767227F374F700E59E12 /* GetPlaceDirectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95766927F374F700E59E12 /* GetPlaceDirectionResponse.swift */; };
+		EF95767327F374F700E59E12 /* GetGeocodePlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95766A27F374F700E59E12 /* GetGeocodePlaceResponse.swift */; };
+		EF95767427F374F700E59E12 /* GetPlaceAutoCompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95766B27F374F700E59E12 /* GetPlaceAutoCompleteResponse.swift */; };
+		EF95767527F374F700E59E12 /* GetPlaceDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95766C27F374F700E59E12 /* GetPlaceDetailResponse.swift */; };
+		EF95767627F374F700E59E12 /* GetPlaceDirectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95766E27F374F700E59E12 /* GetPlaceDirectionRequest.swift */; };
+		EF95767727F374F700E59E12 /* GetPlaceAutoCompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95766F27F374F700E59E12 /* GetPlaceAutoCompleteRequest.swift */; };
+		EF95767827F374F700E59E12 /* GetPlaceDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95767027F374F700E59E12 /* GetPlaceDetailRequest.swift */; };
+		EF95767927F374F700E59E12 /* GetGeocodePlaceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95767127F374F700E59E12 /* GetGeocodePlaceRequest.swift */; };
+		EF95767C27F3759200E59E12 /* SelectCurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95767B27F3759200E59E12 /* SelectCurrentLocationViewModel.swift */; };
+		EF95768327F3762200E59E12 /* GetPlaceDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95767F27F3762200E59E12 /* GetPlaceDetailUseCase.swift */; };
+		EF95768427F3762200E59E12 /* GetPlaceAutoCompleteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95768027F3762200E59E12 /* GetPlaceAutoCompleteUseCase.swift */; };
+		EF95768827F3762F00E59E12 /* GoogleMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95768727F3762F00E59E12 /* GoogleMapRepository.swift */; };
+		EF95768B27F3763900E59E12 /* GoogleMapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95768A27F3763900E59E12 /* GoogleMapAPI.swift */; };
+		EF95768D27F3776600E59E12 /* Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95768C27F3776600E59E12 /* Basic.swift */; };
+		EF95768F27F37D1100E59E12 /* GetGeocodePlaceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95768E27F37D1100E59E12 /* GetGeocodePlaceUseCase.swift */; };
 		EF97F88C270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F88B270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift */; };
 		EF97F88E270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F88D270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift */; };
 		EF97F890270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F88F270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift */; };
 		EF97F892270B0FF900B2E2C7 /* PostMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F891270B0FF900B2E2C7 /* PostMessageRequest.swift */; };
 		EF97F894270B107700B2E2C7 /* PostMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F893270B107700B2E2C7 /* PostMessageResponse.swift */; };
 		EF97F896270B115200B2E2C7 /* PostMessageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F895270B115200B2E2C7 /* PostMessageUseCase.swift */; };
+		EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E298D27F1FD1E008FBE5D /* Register.storyboard */; };
+		EF9E299027F1FD2E008FBE5D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */; };
+		EF9E299327F1FD3F008FBE5D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */; };
 		EFB47C0226C3D5A400170CD0 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */; };
 		EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */; };
 		EFB47C0726C3D5D500170CD0 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */; };
@@ -356,12 +390,41 @@
 		EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDetailUseCase.swift; sourceTree = "<group>"; };
 		EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerResponse.swift; sourceTree = "<group>"; };
 		EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerUseCase.swift; sourceTree = "<group>"; };
+		EF95764227F354FF00E59E12 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		EF95764F27F359E700E59E12 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		EF95765227F35B6600E59E12 /* BorderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLineTextField.swift; sourceTree = "<group>"; };
+		EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadTitleTFLabel.swift; sourceTree = "<group>"; };
+		EF95765627F35FF400E59E12 /* BorderLineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLineTextView.swift; sourceTree = "<group>"; };
+		EF95765827F3614300E59E12 /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
+		EF95765A27F365A200E59E12 /* WarningUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningUILabel.swift; sourceTree = "<group>"; };
+		EF95765D27F36D9000E59E12 /* SelectCurrentLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectCurrentLocation.storyboard; sourceTree = "<group>"; };
+		EF95765F27F36D9D00E59E12 /* SelectCurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCurrentLocationViewController.swift; sourceTree = "<group>"; };
+		EF95766227F3747700E59E12 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		EF95766327F3747700E59E12 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		EF95766927F374F700E59E12 /* GetPlaceDirectionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPlaceDirectionResponse.swift; sourceTree = "<group>"; };
+		EF95766A27F374F700E59E12 /* GetGeocodePlaceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGeocodePlaceResponse.swift; sourceTree = "<group>"; };
+		EF95766B27F374F700E59E12 /* GetPlaceAutoCompleteResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPlaceAutoCompleteResponse.swift; sourceTree = "<group>"; };
+		EF95766C27F374F700E59E12 /* GetPlaceDetailResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPlaceDetailResponse.swift; sourceTree = "<group>"; };
+		EF95766E27F374F700E59E12 /* GetPlaceDirectionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPlaceDirectionRequest.swift; sourceTree = "<group>"; };
+		EF95766F27F374F700E59E12 /* GetPlaceAutoCompleteRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPlaceAutoCompleteRequest.swift; sourceTree = "<group>"; };
+		EF95767027F374F700E59E12 /* GetPlaceDetailRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPlaceDetailRequest.swift; sourceTree = "<group>"; };
+		EF95767127F374F700E59E12 /* GetGeocodePlaceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGeocodePlaceRequest.swift; sourceTree = "<group>"; };
+		EF95767B27F3759200E59E12 /* SelectCurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCurrentLocationViewModel.swift; sourceTree = "<group>"; };
+		EF95767F27F3762200E59E12 /* GetPlaceDetailUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPlaceDetailUseCase.swift; sourceTree = "<group>"; };
+		EF95768027F3762200E59E12 /* GetPlaceAutoCompleteUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPlaceAutoCompleteUseCase.swift; sourceTree = "<group>"; };
+		EF95768727F3762F00E59E12 /* GoogleMapRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapRepository.swift; sourceTree = "<group>"; };
+		EF95768A27F3763900E59E12 /* GoogleMapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapAPI.swift; sourceTree = "<group>"; };
+		EF95768C27F3776600E59E12 /* Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic.swift; sourceTree = "<group>"; };
+		EF95768E27F37D1100E59E12 /* GetGeocodePlaceUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGeocodePlaceUseCase.swift; sourceTree = "<group>"; };
 		EF97F88B270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoomChatCustomerRequest.swift; sourceTree = "<group>"; };
 		EF97F88D270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoomChatCustomerResponse.swift; sourceTree = "<group>"; };
 		EF97F88F270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoomChatCustomerUseCase.swift; sourceTree = "<group>"; };
 		EF97F891270B0FF900B2E2C7 /* PostMessageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageRequest.swift; sourceTree = "<group>"; };
 		EF97F893270B107700B2E2C7 /* PostMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageResponse.swift; sourceTree = "<group>"; };
 		EF97F895270B115200B2E2C7 /* PostMessageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageUseCase.swift; sourceTree = "<group>"; };
+		EF9E298D27F1FD1E008FBE5D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
 		EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
@@ -410,11 +473,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF95764827F3596800E59E12 /* SPPermissionsLocationAlways in Frameworks */,
 				EF0D53D526C13EBB009FD5F0 /* NVActivityIndicatorView in Frameworks */,
 				EF0D53D226C13E9A009FD5F0 /* SnapKit in Frameworks */,
+				EF95764E27F3596800E59E12 /* SPPermissionsTracking in Frameworks */,
 				EF0D53CF26C13E85009FD5F0 /* Kingfisher in Frameworks */,
+				EF95764A27F3596800E59E12 /* SPPermissionsLocationWhenInUse in Frameworks */,
 				495BCDB6F97BBFE8F5CF35C5 /* Pods_TMS_USER.framework in Frameworks */,
 				EF0D53D726C13EBB009FD5F0 /* NVActivityIndicatorViewExtended in Frameworks */,
+				EF95764C27F3596800E59E12 /* SPPermissionsPhotoLibrary in Frameworks */,
+				EF95764627F3596800E59E12 /* SPPermissionsCamera in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +553,6 @@
 		EF0D539826C12F2B009FD5F0 /* TMS USER */ = {
 			isa = PBXGroup;
 			children = (
-				EF0D53F326C144FB009FD5F0 /* Utility */,
 				EF0D53F126C144E4009FD5F0 /* Helpers */,
 				EF0D53DC26C13F11009FD5F0 /* Core */,
 				EF0D53DB26C13F08009FD5F0 /* Resource */,
@@ -521,6 +588,8 @@
 		EF0D53D826C13EEC009FD5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EF95765C27F36D8200E59E12 /* SelectCurrentLocation */,
+				EF9E298C27F1FD10008FBE5D /* Register */,
 				EFD9F03727061D9E0072A3B1 /* ProductDetail */,
 				EF314BBA26CABA88002B201C /* Chat */,
 				EFBD719B26C3180E0044216D /* OrderTracking */,
@@ -615,12 +684,13 @@
 		EF0D53F126C144E4009FD5F0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EF95765127F35B4E00E59E12 /* Classes */,
 				EF0D54EC26C1C45E009FD5F0 /* AlertCustomViewswift.swift */,
 				EF0D545426C14639009FD5F0 /* KeyedDecodingContainer+Extension.swift */,
 				EF0D545226C14633009FD5F0 /* DefaultsManager.swift */,
-				EF0D545026C1462D009FD5F0 /* NavigationManager.swift */,
 				EF0D545626C1464C009FD5F0 /* ToolbarPickerView.swift */,
 				EF0D544E26C14628009FD5F0 /* KeyboardListener.swift */,
+				EF95764F27F359E700E59E12 /* ImagePicker.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -632,13 +702,6 @@
 				EFB47C1026C3E13F00170CD0 /* OrderCartManager */,
 			);
 			path = Store;
-			sourceTree = "<group>";
-		};
-		EF0D53F326C144FB009FD5F0 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		EF0D53F426C14506009FD5F0 /* Combine */ = {
@@ -725,6 +788,7 @@
 				EF0D547126C17796009FD5F0 /* UISearchBar+Extension.swift */,
 				EF0D549626C19841009FD5F0 /* Date+Extension.swift */,
 				EF7443F92709678300D18F60 /* UIScrollView+Extension.swift */,
+				EF95764227F354FF00E59E12 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -738,6 +802,7 @@
 				EF0D543926C1452F009FD5F0 /* Utils.swift */,
 				EF0D543A26C1452F009FD5F0 /* CustomTapGestureRecognizer.swift */,
 				EF0D547326C17B0C009FD5F0 /* BadgeButton.swift */,
+				EF95768C27F3776600E59E12 /* Basic.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -823,6 +888,7 @@
 		EF0D547526C18AB3009FD5F0 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				EF95768927F3763900E59E12 /* GoogleMap */,
 				EF309E5F26DA20A300CB7353 /* Conversation */,
 				EF0FE83826C9072200DFCED4 /* Customer */,
 				EFC1C58626C2BAB300ED64B1 /* Order */,
@@ -836,6 +902,7 @@
 		EF0D547626C18AB9009FD5F0 /* Repositorys */ = {
 			isa = PBXGroup;
 			children = (
+				EF95768627F3762F00E59E12 /* GoogleMap */,
 				EF309E6926DA230600CB7353 /* Conversation */,
 				EF0FE83B26C907B800DFCED4 /* Customer */,
 				EFC1C59026C2BE5500ED64B1 /* Order */,
@@ -849,6 +916,7 @@
 		EF0D547726C18AC0009FD5F0 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				EF95767D27F3762200E59E12 /* GoogleMap */,
 				EF309E6C26DA235C00CB7353 /* Conversation */,
 				EF0FE84226C9085500DFCED4 /* Customer */,
 				EFC1C59326C2BEA900ED64B1 /* Order */,
@@ -862,6 +930,7 @@
 		EF0D547826C18ACA009FD5F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EF95766727F374F700E59E12 /* GoogleMap */,
 				EF309E6226DA213100CB7353 /* Conversation */,
 				EF0FE83E26C907DA00DFCED4 /* Customer */,
 				EFC1C58926C2BBD600ED64B1 /* Order */,
@@ -934,6 +1003,7 @@
 		EF0D548E26C19136009FD5F0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				EF9E299427F1FDFA008FBE5D /* NavigationManager */,
 				EF0D548F26C19136009FD5F0 /* ToastManager */,
 			);
 			path = Manager;
@@ -1083,6 +1153,7 @@
 				EFC1C57F26C2AE3200ED64B1 /* OrderTableViewCell */,
 				EF0D54D026C1A408009FD5F0 /* ProductCollectionViewCell */,
 				EF0D54CB26C1A3EB009FD5F0 /* ProductCategoryCollectionViewCell */,
+				EF95766127F3747700E59E12 /* SearchResultTableViewCell */,
 				EF0D54DA26C1B07B009FD5F0 /* ProductCartTableViewCell */,
 			);
 			path = Cell;
@@ -1270,6 +1341,128 @@
 				EF314BBD26CABA9B002B201C /* Chat.storyboard */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		EF95765127F35B4E00E59E12 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EF95765227F35B6600E59E12 /* BorderLineTextField.swift */,
+				EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */,
+				EF95765627F35FF400E59E12 /* BorderLineTextView.swift */,
+				EF95765827F3614300E59E12 /* ButtonCustomColor.swift */,
+				EF95765A27F365A200E59E12 /* WarningUILabel.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		EF95765C27F36D8200E59E12 /* SelectCurrentLocation */ = {
+			isa = PBXGroup;
+			children = (
+				EF95767A27F3758400E59E12 /* ViewModel */,
+				EF95765D27F36D9000E59E12 /* SelectCurrentLocation.storyboard */,
+				EF95765F27F36D9D00E59E12 /* SelectCurrentLocationViewController.swift */,
+			);
+			path = SelectCurrentLocation;
+			sourceTree = "<group>";
+		};
+		EF95766127F3747700E59E12 /* SearchResultTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EF95766227F3747700E59E12 /* SearchResultTableViewCell.xib */,
+				EF95766327F3747700E59E12 /* SearchResultTableViewCell.swift */,
+			);
+			path = SearchResultTableViewCell;
+			sourceTree = "<group>";
+		};
+		EF95766727F374F700E59E12 /* GoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				EF95766827F374F700E59E12 /* Response */,
+				EF95766D27F374F700E59E12 /* Request */,
+			);
+			path = GoogleMap;
+			sourceTree = "<group>";
+		};
+		EF95766827F374F700E59E12 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				EF95766927F374F700E59E12 /* GetPlaceDirectionResponse.swift */,
+				EF95766A27F374F700E59E12 /* GetGeocodePlaceResponse.swift */,
+				EF95766B27F374F700E59E12 /* GetPlaceAutoCompleteResponse.swift */,
+				EF95766C27F374F700E59E12 /* GetPlaceDetailResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		EF95766D27F374F700E59E12 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EF95766E27F374F700E59E12 /* GetPlaceDirectionRequest.swift */,
+				EF95766F27F374F700E59E12 /* GetPlaceAutoCompleteRequest.swift */,
+				EF95767027F374F700E59E12 /* GetPlaceDetailRequest.swift */,
+				EF95767127F374F700E59E12 /* GetGeocodePlaceRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		EF95767A27F3758400E59E12 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF95767B27F3759200E59E12 /* SelectCurrentLocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF95767D27F3762200E59E12 /* GoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				EF95768E27F37D1100E59E12 /* GetGeocodePlaceUseCase.swift */,
+				EF95767F27F3762200E59E12 /* GetPlaceDetailUseCase.swift */,
+				EF95768027F3762200E59E12 /* GetPlaceAutoCompleteUseCase.swift */,
+			);
+			path = GoogleMap;
+			sourceTree = "<group>";
+		};
+		EF95768627F3762F00E59E12 /* GoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				EF95768727F3762F00E59E12 /* GoogleMapRepository.swift */,
+			);
+			path = GoogleMap;
+			sourceTree = "<group>";
+		};
+		EF95768927F3763900E59E12 /* GoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				EF95768A27F3763900E59E12 /* GoogleMapAPI.swift */,
+			);
+			path = GoogleMap;
+			sourceTree = "<group>";
+		};
+		EF9E298C27F1FD10008FBE5D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E299127F1FD32008FBE5D /* ViewModel */,
+				EF9E298D27F1FD1E008FBE5D /* Register.storyboard */,
+				EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		EF9E299127F1FD32008FBE5D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF9E299427F1FDFA008FBE5D /* NavigationManager */ = {
+			isa = PBXGroup;
+			children = (
+				EF0D545026C1462D009FD5F0 /* NavigationManager.swift */,
+			);
+			path = NavigationManager;
 			sourceTree = "<group>";
 		};
 		EFB47BFF26C3D57E00170CD0 /* ProductListTableViewCell */ = {
@@ -1539,6 +1732,11 @@
 				EF0D53D126C13E9A009FD5F0 /* SnapKit */,
 				EF0D53D426C13EBB009FD5F0 /* NVActivityIndicatorView */,
 				EF0D53D626C13EBB009FD5F0 /* NVActivityIndicatorViewExtended */,
+				EF95764527F3596800E59E12 /* SPPermissionsCamera */,
+				EF95764727F3596800E59E12 /* SPPermissionsLocationAlways */,
+				EF95764927F3596800E59E12 /* SPPermissionsLocationWhenInUse */,
+				EF95764B27F3596800E59E12 /* SPPermissionsPhotoLibrary */,
+				EF95764D27F3596800E59E12 /* SPPermissionsTracking */,
 			);
 			productName = "TMS USER";
 			productReference = EF0D539626C12F2B009FD5F0 /* TMS USER.app */;
@@ -1619,6 +1817,7 @@
 				EF0D53CD26C13E85009FD5F0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				EF0D53D026C13E9A009FD5F0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				EF0D53D326C13EBB009FD5F0 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				EF95764427F3596800E59E12 /* XCRemoteSwiftPackageReference "SPPermissions" */,
 			);
 			productRefGroup = EF0D539726C12F2B009FD5F0 /* Products */;
 			projectDirPath = "";
@@ -1647,12 +1846,15 @@
 				EF0D54DE26C1B094009FD5F0 /* ProductCartTableViewCell.xib in Resources */,
 				EF0D545F26C169EE009FD5F0 /* Home.storyboard in Resources */,
 				EF0D53A626C12F2E009FD5F0 /* Assets.xcassets in Resources */,
+				EF95766427F3747700E59E12 /* SearchResultTableViewCell.xib in Resources */,
 				EF0D53E326C13F73009FD5F0 /* Splash.storyboard in Resources */,
+				EF95765E27F36D9000E59E12 /* SelectCurrentLocation.storyboard in Resources */,
 				EFBD719826C313320044216D /* OrderDetail.storyboard in Resources */,
 				EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */,
 				EF0D53EB26C13FC3009FD5F0 /* SukhumvitSet-Light.ttf in Resources */,
 				EF0D53EF26C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf in Resources */,
 				EF0D53F026C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf in Resources */,
+				EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */,
 				EF0D546926C16D67009FD5F0 /* History.storyboard in Resources */,
 				EF0D53EC26C13FC3009FD5F0 /* SukhumvitSet-Bold.ttf in Resources */,
 				EF0D546E26C16D7A009FD5F0 /* Profile.storyboard in Resources */,
@@ -1832,6 +2034,8 @@
 				EFC1C57A26C2A27D00ED64B1 /* ProductDetailBottomSheetViewController.swift in Sources */,
 				EF0D543F26C1452F009FD5F0 /* CustomTapGestureRecognizer.swift in Sources */,
 				EF766F2326C84315003ED499 /* GetOrderDetailUseCase.swift in Sources */,
+				EF95766027F36D9D00E59E12 /* SelectCurrentLocationViewController.swift in Sources */,
+				EF95768327F3762200E59E12 /* GetPlaceDetailUseCase.swift in Sources */,
 				EF0D542C26C1451D009FD5F0 /* Decoder+Extension.swift in Sources */,
 				EF0D54D926C1AFE8009FD5F0 /* ProductCartViewController.swift in Sources */,
 				EF0D542926C1451D009FD5F0 /* ImageBase64+Extension.swift in Sources */,
@@ -1843,6 +2047,7 @@
 				EFC1C59926C2C45E00ED64B1 /* HistoryTableViewCell.swift in Sources */,
 				EF766F2726C84E37003ED499 /* GetReOrderCustomerUseCase.swift in Sources */,
 				EF0D54C226C1A284009FD5F0 /* GetProductDetailResponse.swift in Sources */,
+				EF95768F27F37D1100E59E12 /* GetGeocodePlaceUseCase.swift in Sources */,
 				EF0D542526C1451D009FD5F0 /* UILabel+Extension.swift in Sources */,
 				EF0D542D26C1451D009FD5F0 /* Decodable+Extension.swift in Sources */,
 				EFD9F03B27061DC60072A3B1 /* ProductDetailViewController.swift in Sources */,
@@ -1855,21 +2060,28 @@
 				EF0D544F26C14628009FD5F0 /* KeyboardListener.swift in Sources */,
 				EF0D54B626C1A243009FD5F0 /* ProductRepository.swift in Sources */,
 				EF0D548A26C18EF1009FD5F0 /* PostLogoutUseCase.swift in Sources */,
+				EF9E299327F1FD3F008FBE5D /* RegisterViewModel.swift in Sources */,
 				EF0D542226C1451D009FD5F0 /* UIFont+Extension.swift in Sources */,
+				EF95764327F354FF00E59E12 /* UIApplication+Extension.swift in Sources */,
+				EF9E299027F1FD2E008FBE5D /* RegisterViewController.swift in Sources */,
 				EF0D545C26C1695E009FD5F0 /* MainAppViewController.swift in Sources */,
 				EF766F2526C84DCF003ED499 /* GetReOrderCustomerResponse.swift in Sources */,
 				EF0D54D426C1A408009FD5F0 /* ProductCollectionViewCell.swift in Sources */,
 				EFBAF6A826CA2A190008DDF4 /* GetOrderDescriptionResponse.swift in Sources */,
 				EF0D549F26C1A19D009FD5F0 /* ProductTypeAPI.swift in Sources */,
 				EF0D542A26C1451D009FD5F0 /* Encodable+Extension.swift in Sources */,
+				EF95768827F3762F00E59E12 /* GoogleMapRepository.swift in Sources */,
 				EF2DD4D8270B4DC200756D96 /* SocketChatResponse.swift in Sources */,
 				EFC1C59526C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift in Sources */,
 				EFBD719526C307D90044216D /* GetFinishOrderCustomerUseCase.swift in Sources */,
 				EF0D549726C19841009FD5F0 /* Date+Extension.swift in Sources */,
 				EF0D548026C18DAC009FD5F0 /* PostAuthenticateRequest.swift in Sources */,
 				EF0D542E26C1451D009FD5F0 /* UICollectionView+Extension.swift in Sources */,
+				EF95767927F374F700E59E12 /* GetGeocodePlaceRequest.swift in Sources */,
+				EF95767427F374F700E59E12 /* GetPlaceAutoCompleteResponse.swift in Sources */,
 				EF0D549126C19136009FD5F0 /* ToastManager.swift in Sources */,
 				EF0D53F826C1450F009FD5F0 /* MoyaProvider+Combine.swift in Sources */,
+				EF95768427F3762200E59E12 /* GetPlaceAutoCompleteUseCase.swift in Sources */,
 				EF0D548226C18DB6009FD5F0 /* PostAuthenticateResponse.swift in Sources */,
 				EF0D541B26C1451D009FD5F0 /* SocketMarkerMapResponse.swift in Sources */,
 				EF309E5E26DA1F4200CB7353 /* ChatViewModel.swift in Sources */,
@@ -1881,9 +2093,11 @@
 				EF309E6826DA216100CB7353 /* GetMessageResponse.swift in Sources */,
 				EF7443FA2709678300D18F60 /* UIScrollView+Extension.swift in Sources */,
 				EF0D547B26C18CCA009FD5F0 /* AuthCustomerAPI.swift in Sources */,
+				EF95766527F3747700E59E12 /* SearchResultTableViewCell.swift in Sources */,
 				EF0D54C426C1A284009FD5F0 /* PostProductResponse.swift in Sources */,
 				EF0D543126C1451D009FD5F0 /* Encoder+Extension.swift in Sources */,
 				EF0FE84126C907F600DFCED4 /* GetCustomerMyUserResponse.swift in Sources */,
+				EF95767627F374F700E59E12 /* GetPlaceDirectionRequest.swift in Sources */,
 				EF0D543E26C1452F009FD5F0 /* Utils.swift in Sources */,
 				EF0D542126C1451D009FD5F0 /* UIImageView+Extension.swift in Sources */,
 				EF0D543B26C1452F009FD5F0 /* CodableInfixOperator.swift in Sources */,
@@ -1892,8 +2106,10 @@
 				EF0D547226C17796009FD5F0 /* UISearchBar+Extension.swift in Sources */,
 				EF0D54C526C1A284009FD5F0 /* GetProductRequest.swift in Sources */,
 				EF0D542B26C1451D009FD5F0 /* UIViewController+Extension.swift in Sources */,
+				EF95765027F359E700E59E12 /* ImagePicker.swift in Sources */,
 				EFB47C0C26C3DA8F00170CD0 /* HeaderLabelTableViewCell.swift in Sources */,
 				EFC1C57D26C2A57000ED64B1 /* ProductDetailBottomSheetViewModel.swift in Sources */,
+				EF95768B27F3763900E59E12 /* GoogleMapAPI.swift in Sources */,
 				EFBD71AA26C3190E0044216D /* PopupMarkerMapView.swift in Sources */,
 				EF0D54E126C1B228009FD5F0 /* ProductCartViewModel.swift in Sources */,
 				EF97F890270B084400B2E2C7 /* GetRoomChatCustomerUseCase.swift in Sources */,
@@ -1904,10 +2120,12 @@
 				EF97F894270B107700B2E2C7 /* PostMessageResponse.swift in Sources */,
 				EF97F88E270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift in Sources */,
 				EF0D548526C18E6D009FD5F0 /* AuthCustomerRepository.swift in Sources */,
+				EF95767C27F3759200E59E12 /* SelectCurrentLocationViewModel.swift in Sources */,
 				EF0D545326C14633009FD5F0 /* DefaultsManager.swift in Sources */,
 				EF0D545526C14639009FD5F0 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				EFB47C1226C3E15600170CD0 /* OrderCartManager.swift in Sources */,
 				EF0D542626C1451D009FD5F0 /* UIButton+Extension.swift in Sources */,
+				EF95765327F35B6600E59E12 /* BorderLineTextField.swift in Sources */,
 				EFB47C1726C448B200170CD0 /* Persistable.swift in Sources */,
 				EF309E6126DA20B500CB7353 /* ConversationAPI.swift in Sources */,
 				EFC1C59D26C2C46F00ED64B1 /* HistoryViewModel.swift in Sources */,
@@ -1915,9 +2133,11 @@
 				EF0D53E126C13F6A009FD5F0 /* SplashViewController.swift in Sources */,
 				EF97F896270B115200B2E2C7 /* PostMessageUseCase.swift in Sources */,
 				EF0D54C626C1A284009FD5F0 /* PostProductRequest.swift in Sources */,
+				EF95765727F35FF400E59E12 /* BorderLineTextView.swift in Sources */,
 				EF0FE84626C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift in Sources */,
 				EFBD719326C3064B0044216D /* GetFinishOrderCustomerResponse.swift in Sources */,
 				EF0D541F26C1451D009FD5F0 /* SocketDashboardRequest.swift in Sources */,
+				EF95765927F3614300E59E12 /* ButtonCustomColor.swift in Sources */,
 				EF0D53F726C1450F009FD5F0 /* Combine.swift in Sources */,
 				EFB47C0226C3D5A400170CD0 /* ProductListTableViewCell.swift in Sources */,
 				EF0D549B26C1A09E009FD5F0 /* HomeViewModel.swift in Sources */,
@@ -1934,10 +2154,13 @@
 				EF0D54ED26C1C45F009FD5F0 /* AlertCustomViewswift.swift in Sources */,
 				EF0D54A926C1A1E0009FD5F0 /* GetProductTypeRequest.swift in Sources */,
 				EF0D543026C1451D009FD5F0 /* Notification+Extension.swift in Sources */,
+				EF95767727F374F700E59E12 /* GetPlaceAutoCompleteRequest.swift in Sources */,
+				EF95767327F374F700E59E12 /* GetGeocodePlaceResponse.swift in Sources */,
 				EF0D542826C1451D009FD5F0 /* UIImageView+Kingfisher.swift in Sources */,
 				EF0D549526C196CD009FD5F0 /* IntroViewModel.swift in Sources */,
 				EF0D542726C1451D009FD5F0 /* UIView+Extension.swift in Sources */,
 				EF97F88C270B06EF00B2E2C7 /* GetRoomChatCustomerRequest.swift in Sources */,
+				EF95768D27F3776600E59E12 /* Basic.swift in Sources */,
 				EF0D547426C17B0C009FD5F0 /* BadgeButton.swift in Sources */,
 				EF0D548D26C1909B009FD5F0 /* LoginViewModel.swift in Sources */,
 				EF0D54C326C1A284009FD5F0 /* GetProductResponse.swift in Sources */,
@@ -1945,25 +2168,30 @@
 				EFBD719A26C313420044216D /* OrderDetailViewController.swift in Sources */,
 				EF0D543D26C1452F009FD5F0 /* DateFormatter.swift in Sources */,
 				EF0D541E26C1451D009FD5F0 /* SocketDashboardResponse.swift in Sources */,
+				EF95765B27F365A200E59E12 /* WarningUILabel.swift in Sources */,
 				EF0FE84826C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift in Sources */,
 				EF0FE83A26C9074000DFCED4 /* CustomerAPI.swift in Sources */,
 				EF0D54B926C1A269009FD5F0 /* ProductAPI.swift in Sources */,
 				EF7443F827095C6A00D18F60 /* GetProductDescForUserUseCase.swift in Sources */,
 				EFC1C58826C2BB1100ED64B1 /* OrderAPI.swift in Sources */,
+				EF95767227F374F700E59E12 /* GetPlaceDirectionResponse.swift in Sources */,
 				EF0D541D26C1451D009FD5F0 /* SoketDashboardResponse.swift in Sources */,
 				EF0D54C926C1A2B9009FD5F0 /* MetaObject.swift in Sources */,
 				EFBD71AC26C3190E0044216D /* MarkerMapView.swift in Sources */,
 				EF0D543326C1451D009FD5F0 /* UITextField+Extension.swift in Sources */,
 				EF0D542426C1451D009FD5F0 /* NSUIColor+Hex.swift in Sources */,
 				EF0D539A26C12F2B009FD5F0 /* AppDelegate.swift in Sources */,
+				EF95765527F35E1300E59E12 /* HeadTitleTFLabel.swift in Sources */,
 				EF0FE84426C9086500DFCED4 /* GetCustomerMyUserUseCase.swift in Sources */,
 				EFB47C0726C3D5D500170CD0 /* EmployeeTableViewCell.swift in Sources */,
 				EF0D542026C1451D009FD5F0 /* SocketManager.swift in Sources */,
+				EF95767527F374F700E59E12 /* GetPlaceDetailResponse.swift in Sources */,
 				EF0D542F26C1451D009FD5F0 /* UserDefaults+Extension.swift in Sources */,
 				EF0D548826C18EE4009FD5F0 /* PostAuthenticateUseCase.swift in Sources */,
 				EF0D53A426C12F2B009FD5F0 /* TMS_USER.xcdatamodeld in Sources */,
 				EF0D543226C1451D009FD5F0 /* Dictionary+Extension.swift in Sources */,
 				EFB47C1A26C4492000170CD0 /* DBLocal.swift in Sources */,
+				EF95767827F374F700E59E12 /* GetPlaceDetailRequest.swift in Sources */,
 				EF0D543426C1451D009FD5F0 /* UITableView+Extension.swift in Sources */,
 				EFBD71A226C318770044216D /* OrderTrackingViewModel.swift in Sources */,
 				EFB47C0F26C3DAC300170CD0 /* OrderDetailViewModel.swift in Sources */,
@@ -2140,8 +2368,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2DY57Q85QG;
+				DEVELOPMENT_TEAM = Y46GLN8894;
 				INFOPLIST_FILE = "TMS USER/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2150,6 +2379,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssoft.tmsuser.TMS-USER";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2161,8 +2391,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2DY57Q85QG;
+				DEVELOPMENT_TEAM = Y46GLN8894;
 				INFOPLIST_FILE = "TMS USER/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2171,6 +2402,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ssoft.tmsuser.TMS-USER";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2330,6 +2562,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		EF95764427F3596800E59E12 /* XCRemoteSwiftPackageReference "SPPermissions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPPermissions";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2352,6 +2592,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF0D53D326C13EBB009FD5F0 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
+		};
+		EF95764527F3596800E59E12 /* SPPermissionsCamera */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF95764427F3596800E59E12 /* XCRemoteSwiftPackageReference "SPPermissions" */;
+			productName = SPPermissionsCamera;
+		};
+		EF95764727F3596800E59E12 /* SPPermissionsLocationAlways */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF95764427F3596800E59E12 /* XCRemoteSwiftPackageReference "SPPermissions" */;
+			productName = SPPermissionsLocationAlways;
+		};
+		EF95764927F3596800E59E12 /* SPPermissionsLocationWhenInUse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF95764427F3596800E59E12 /* XCRemoteSwiftPackageReference "SPPermissions" */;
+			productName = SPPermissionsLocationWhenInUse;
+		};
+		EF95764B27F3596800E59E12 /* SPPermissionsPhotoLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF95764427F3596800E59E12 /* XCRemoteSwiftPackageReference "SPPermissions" */;
+			productName = SPPermissionsPhotoLibrary;
+		};
+		EF95764D27F3596800E59E12 /* SPPermissionsTracking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF95764427F3596800E59E12 /* XCRemoteSwiftPackageReference "SPPermissions" */;
+			productName = SPPermissionsTracking;
 		};
 /* End XCSwiftPackageProductDependency section */
 

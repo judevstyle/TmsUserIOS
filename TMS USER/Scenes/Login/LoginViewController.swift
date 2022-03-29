@@ -85,6 +85,13 @@ extension LoginViewController {
         request.tel = tel
         viewModel.input.authLogin(request: request)
     }
+    
+    @objc func handleRegister() {
+        guard let tel = self.inputPhone.text, tel != "" else { return }
+        var request: PostAuthenticateRequest = PostAuthenticateRequest()
+        request.tel = tel
+        viewModel.input.authLogin(request: request)
+    }
 }
 
 extension LoginViewController : KeyboardListener {

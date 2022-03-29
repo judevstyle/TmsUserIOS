@@ -28,6 +28,7 @@ extension UIColor {
     static let PrimaryUnselectTabbar = UIColor(named: "PrimaryUnselect")!
     static let PrimaryBGTabbar = UIColor(named: "PrimaryBGTabbar")!
     static let PrimaryAlpha = UIColor(named: "PrimaryAlpha")!
+    static var baseTextGray = UIColor(named: "baseTextGray")!
     
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)

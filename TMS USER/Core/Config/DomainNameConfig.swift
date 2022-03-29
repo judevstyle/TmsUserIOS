@@ -17,6 +17,7 @@ public enum DomainNameConfig {
     case TMSCustomer
     case TMSConversation
     case TNSProductDescForUser
+    case googleMap
 }
 
 extension DomainNameConfig {
@@ -24,6 +25,7 @@ extension DomainNameConfig {
     public var urlString: String {
         
         let HostURL = "http://185.78.165.78:3010"
+        let googleMapURL: String = "https://maps.googleapis.com/maps/api"
         
         switch self {
         case .TMSDashboard:
@@ -45,6 +47,8 @@ extension DomainNameConfig {
             
         case .TMSImagePath:
             return "\(HostURL)/" //+ path image url
+        case .googleMap:
+            return "\(googleMapURL)"
         }
     }
     

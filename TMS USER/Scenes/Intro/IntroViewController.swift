@@ -60,17 +60,21 @@ extension IntroViewController {
         bottomView.roundedTop(radius: 20)
         
         
-        btnRegister.setRounded(rounded: 8)
         btnLogin.setRounded(rounded: 8)
-        
         btnLogin.setBorder(width: 1.0, color: UIColor.Primary)
-        
         btnLogin.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        
+        btnRegister.setRounded(rounded: 8)
+        btnRegister.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
     }
 }
 
 extension IntroViewController {
     @objc func handleLogin() {
         NavigationManager.instance.pushVC(to: .login, presentation: .ModalNoNav(completion: nil))
+    }
+    
+    @objc func handleRegister() {
+        NavigationManager.instance.pushVC(to: .register, presentation: .Push)
     }
 }
