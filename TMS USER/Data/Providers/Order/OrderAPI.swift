@@ -24,7 +24,7 @@ extension OrderAPI: TargetType {
     public var baseURL: URL {
         switch self {
         case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail, .getReOrderCustomer, .createOrderByUser, .getOrderDescription:
-            return DomainNameConfig.TMSOrder.url
+            return DomainNameConfig.order.url
         }
     }
     

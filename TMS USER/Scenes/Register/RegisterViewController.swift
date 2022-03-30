@@ -28,6 +28,8 @@ class RegisterViewController: UIViewController {
     var imagePicker: ImagePicker!
     fileprivate var imageAttachFilesBase64: String?
     
+    private var locationAddressCoordinate: CLLocationCoordinate2D? = nil
+    
     lazy var viewModel: RegisterProtocol = {
         let vm = RegisterViewModel(vc: self)
         self.configure(vm)
@@ -45,12 +47,21 @@ class RegisterViewController: UIViewController {
        removeObserver()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .darkContent
+        self.navigationController?.navigationBar.tintColor = .Primary
+    }
+    
+    
     func configure(_ interface: RegisterProtocol) {
         self.viewModel = interface
     }
     
     func setupUI() {
         thumbnailImageView.setRounded(rounded: thumbnailImageView.frame.width/2)
+        
+        inputTel.keyboardType = .numberPad
+        
         btnChooseImage.setRounded(rounded: btnChooseImage.frame.width/2)
         btnChooseImage.addTarget(self, action: #selector(handleChooseImage), for: .touchUpInside)
         btnSave.setBackgroundColor(.Primary)
@@ -68,6 +79,16 @@ extension RegisterViewController {
     }
     
     @objc func handleSave() {
+        guard let displayName = inputDisplayName.text, !displayName.isEmpty,
+        let displayShop = inputShopName.text, !displayShop.isEmpty,
+        let tel = inputTel.text, !tel.isEmpty,
+        let location = self.locationAddressCoordinate,
+        let address = inputAddress.text, !address.isEmpty,
+              let base64 = self.imageAttachFilesBase64, !base64.isEmpty else {
+            ToastManager.shared.toastCallAPI(title: "กรอกข้อมูลไม่ครบถ้วน!")
+            return
+        }
+        viewModel.input.register(displayName: displayName, displayShop: displayShop, tel: tel, address: address, location: location, imageBase64: base64)
     }
     
     @objc func handleChooseLocation() {
@@ -80,11 +101,19 @@ extension RegisterViewController {
     
     func bindToViewModel() {
         viewModel.output.didGetGeoCodeSuccess = didGetGeoCodeSuccess()
+        viewModel.output.didRegisterSuccess = didRegisterSuccess()
     }
     
     func didGetGeoCodeSuccess() -> ((String?) -> Void) {
         return { location in
             self.inputAddress.text = location
+        }
+    }
+    
+    func didRegisterSuccess() -> (() -> Void) {
+        return { [weak self] in
+            guard let weakSelf = self else { return }
+            NavigationManager.instance.setRootViewController(rootView: .mainApp, withNav: false, isTranslucent: true)
         }
     }
 }
@@ -105,6 +134,7 @@ extension RegisterViewController : KeyboardListener {
 
 extension RegisterViewController: SelectCurrentLocationViewControllerDelegate {
     func didSubmitEditLocation(centerMapCoordinate: CLLocationCoordinate2D) {
+        self.locationAddressCoordinate = centerMapCoordinate
         viewModel.input.didSelectLocation(centerMapCoordinate: centerMapCoordinate)
     }
 }

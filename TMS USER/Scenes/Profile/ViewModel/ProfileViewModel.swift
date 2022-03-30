@@ -12,13 +12,13 @@ import Combine
 protocol ProfileProtocolInput {
     func getProfile()
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath)
+    func getCustomerPoint()
 }
 
 protocol ProfileProtocolOutput: class {
     var didGetProfileSuccess: (() -> Void)? { get set }
-    var didGetProfileError: (() -> Void)? { get set }
-    
     var didLogoutSuccess: (() -> Void)? { get set }
+    var didGetCustomerPointSuccess: ((Int) -> Void)? { get set }
     
     func getNumberOfSections(in tableView: UITableView) -> Int
     func getNumberOfProfile(_ tableView: UITableView, section: Int) -> Int
@@ -40,51 +40,55 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
     // MARK: - UseCase
     private var postLogoutUseCase: PostLogoutUseCase
     private var getCustomerMyUserUseCase: GetCustomerMyUserUseCase
+    private var pointRepository: PointRepository
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     // MARK: - Properties
-    private var profileViewController: ProfileViewController
+    private var vc: ProfileViewController
     
     fileprivate var orderId: Int?
     fileprivate var itemMyUser: CustomerItems?
     fileprivate var listMenu: [MenuProfileType] = [.personalData, .pointAndReward, .historyOrder, .logout]
 
     init(
-        profileViewController: ProfileViewController,
+        vc: ProfileViewController,
         postLogoutUseCase: PostLogoutUseCase = PostLogoutUseCaseImpl(),
-        getCustomerMyUserUseCase: GetCustomerMyUserUseCase = GetCustomerMyUserUseCaseImpl()
+        getCustomerMyUserUseCase: GetCustomerMyUserUseCase = GetCustomerMyUserUseCaseImpl(),
+        pointRepository: PointRepository = PointRepositoryImpl()
     ) {
-        self.profileViewController = profileViewController
+        self.vc = vc
         self.postLogoutUseCase = postLogoutUseCase
         self.getCustomerMyUserUseCase = getCustomerMyUserUseCase
+        self.pointRepository = pointRepository
     }
     
     // MARK - Data-binding OutPut
     var didGetProfileSuccess: (() -> Void)?
-    var didGetProfileError: (() -> Void)?
+    var didGetCustomerPointSuccess: ((Int) -> Void)?
     
     var didLogoutSuccess: (() -> Void)?
     
     func getProfile() {
-        profileViewController.startLoding()
+        vc.startLoding()
         self.getCustomerMyUserUseCase.execute().sink { completion in
             debugPrint("getCustomerMyUser \(completion)")
-            self.profileViewController.stopLoding()
-            
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "getCustomerMyUser failure")
-                break
-            }
-            
+            self.vc.stopLoding()
         } receiveValue: { resp in
             if let items = resp {
                 self.itemMyUser = items
-                ToastManager.shared.toastCallAPI(title: "getCustomerMyUser Success")
                 self.didGetProfileSuccess?()
             }
+        }.store(in: &self.anyCancellable)
+    }
+    
+    func getCustomerPoint() {
+        vc.startLoding()
+        self.pointRepository.customerPoint().sink { completion in
+            debugPrint("customerPoint \(completion)")
+            self.vc.stopLoding()
+        } receiveValue: { resp in
+            let total = resp.data?.totalPoint ?? 0
+            self.didGetCustomerPointSuccess?(total)
         }.store(in: &self.anyCancellable)
     }
 
@@ -110,8 +114,10 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath) {
         let type: MenuProfileType = self.listMenu[indexPath.item]
         switch type {
+        case .personalData:
+            NavigationManager.instance.pushVC(to: .manageProfile)
         case .logout:
-            profileViewController.showAlertComfirm(titleText: "คุณต้องการออกจากระบบ\nใช่หรือไม่ ?", messageText: "", dismissAction: {
+            vc.showAlertComfirm(titleText: "คุณต้องการออกจากระบบ\nใช่หรือไม่ ?", messageText: "", dismissAction: {
             }, confirmAction: {
                 self.handleLogout()
             })
@@ -122,30 +128,19 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
     }
     
     private func handleLogout() {
-        profileViewController.startLoding()
+        vc.startLoding()
         self.postLogoutUseCase.execute().sink { completion in
             debugPrint("postLogout \(completion)")
-            self.profileViewController.stopLoding()
-            
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "Logout failure")
-                break
-            }
-            
+            self.vc.stopLoding()
         } receiveValue: { resp in
             if let items = resp {
                 if  items.success == true {
                     UserDefaultsKey.AccessToken.remove()
                     UserDefaultsKey.ExpireAccessToken.remove()
                     self.didLogoutSuccess?()
-                    ToastManager.shared.toastCallAPI(title: "Logout success")
                 } else {
                     UserDefaultsKey.AccessToken.remove()
                     UserDefaultsKey.ExpireAccessToken.remove()
-                    ToastManager.shared.toastCallAPI(title: "\(items.message ?? "")")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.didLogoutSuccess?()
                     }

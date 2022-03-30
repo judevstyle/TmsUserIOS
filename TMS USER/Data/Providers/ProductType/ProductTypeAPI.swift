@@ -17,7 +17,7 @@ extension ProductTypeAPI: TargetType {
     public var baseURL: URL {
         switch self {
         case .getProductType:
-            return DomainNameConfig.TMSProductType.url
+            return DomainNameConfig.productType.url
         }
     }
     

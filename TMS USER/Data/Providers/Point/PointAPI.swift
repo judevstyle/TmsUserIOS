@@ -1,36 +1,36 @@
 //
-//  CustomerAPI.swift
+//  PointAPI.swift
 //  TMS USER
 //
-//  Created by Nontawat Kanboon on 8/15/21.
+//  Created by Nontawat Kanboon on 31/3/2565 BE.
 //
 
 import Foundation
 import Moya
 import UIKit
 
-public enum CustomerAPI {
-    case getMyUser
+public enum PointAPI {
+    case customerPoint
 }
 
-extension CustomerAPI: TargetType {
+extension PointAPI: TargetType {
     public var baseURL: URL {
         switch self {
-        case .getMyUser:
-            return DomainNameConfig.customer.url
+        case .customerPoint:
+            return DomainNameConfig.point.url
         }
     }
     
     public var path: String {
         switch self {
-        case .getMyUser:
-            return "/myUser"
+        case .customerPoint:
+            return "/customerPoint"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .getMyUser:
+        case .customerPoint:
             return .get
         }
     }
@@ -41,19 +41,14 @@ extension CustomerAPI: TargetType {
     
     public var task: Task {
         switch self {
-        case .getMyUser:
+        case .customerPoint:
             return .requestPlain
         }
     }
     
     public var headers: [String : String]? {
         var authenToken = ""
-        switch self {
-        case .getMyUser:
-            authenToken = UserDefaultsKey.AccessToken.string ?? ""
-        default:
-            authenToken = UserDefaultsKey.AccessToken.string ?? ""
-        }
+        authenToken = UserDefaultsKey.AccessToken.string ?? ""
         
         if authenToken.isEmpty {
             return ["Content-Type": "application/json"]

@@ -79,15 +79,6 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
         self.getOrderDetailUseCase.execute(orderId: orderId).sink { completion in
             debugPrint("getOrderDetail \(completion)")
             self.orderDetailViewController.stopLoding()
-            
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetOrderDetail failure")
-                break
-            }
-            
         } receiveValue: { resp in
             
             if let item = resp {
@@ -102,7 +93,6 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
                 self.listCustomer = [items]
             }
             
-            ToastManager.shared.toastCallAPI(title: "GetOrderDetail finished")
             self.didGetOrderDetailSuccess?()
         }.store(in: &self.anyCancellable)
     }
@@ -208,18 +198,8 @@ extension OrderDetailViewModel {
         self.getReOrderCustomerUseCase.execute(orderId: orderId).sink { completion in
             debugPrint("GetReOrderCustomer \(completion)")
             self.orderDetailViewController.stopLoding()
-            
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetReOrderCustomer failure")
-                break
-            }
-            
         } receiveValue: { resp in
             if let items = resp {
-                ToastManager.shared.toastCallAPI(title: "GetReOrderCustomer finished")
                 completion(items)
             }
         }.store(in: &self.anyCancellable)

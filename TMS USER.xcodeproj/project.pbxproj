@@ -153,7 +153,6 @@
 		EF95764C27F3596800E59E12 /* SPPermissionsPhotoLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764B27F3596800E59E12 /* SPPermissionsPhotoLibrary */; };
 		EF95764E27F3596800E59E12 /* SPPermissionsTracking in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764D27F3596800E59E12 /* SPPermissionsTracking */; };
 		EF95765027F359E700E59E12 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95764F27F359E700E59E12 /* ImagePicker.swift */; };
-		EF95765327F35B6600E59E12 /* BorderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765227F35B6600E59E12 /* BorderLineTextField.swift */; };
 		EF95765527F35E1300E59E12 /* HeadTitleTFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */; };
 		EF95765727F35FF400E59E12 /* BorderLineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765627F35FF400E59E12 /* BorderLineTextView.swift */; };
 		EF95765927F3614300E59E12 /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765827F3614300E59E12 /* ButtonCustomColor.swift */; };
@@ -225,6 +224,17 @@
 		EFD9F03927061DB50072A3B1 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD9F03827061DB50072A3B1 /* ProductDetail.storyboard */; };
 		EFD9F03B27061DC60072A3B1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9F03A27061DC60072A3B1 /* ProductDetailViewController.swift */; };
 		EFD9F03E27061DFC0072A3B1 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9F03D27061DFC0072A3B1 /* ProductDetailViewModel.swift */; };
+		EFF4172927F4B8CD00ACF712 /* PostRegisterCustomerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4172827F4B8CD00ACF712 /* PostRegisterCustomerRequest.swift */; };
+		EFF4172D27F4BD9400ACF712 /* PostCheckTelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4172C27F4BD9400ACF712 /* PostCheckTelUseCase.swift */; };
+		EFF4172F27F4BDA900ACF712 /* PostRegisterCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4172E27F4BDA900ACF712 /* PostRegisterCustomerUseCase.swift */; };
+		EFF4173227F4E12400ACF712 /* PointAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173127F4E12400ACF712 /* PointAPI.swift */; };
+		EFF4173527F4E2C100ACF712 /* PointRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173427F4E2C100ACF712 /* PointRepository.swift */; };
+		EFF4173927F4E30A00ACF712 /* GetCustomerPointResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173827F4E30A00ACF712 /* GetCustomerPointResponse.swift */; };
+		EFF4173C27F4E60500ACF712 /* ManageProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF4173B27F4E60500ACF712 /* ManageProfile.storyboard */; };
+		EFF4173E27F4E60E00ACF712 /* ManageProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173D27F4E60E00ACF712 /* ManageProfileViewController.swift */; };
+		EFF4174027F4E7DE00ACF712 /* TextFieldCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173F27F4E7DE00ACF712 /* TextFieldCustomClass.swift */; };
+		EFF4174227F4E80600ACF712 /* LabelCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4174127F4E80600ACF712 /* LabelCustomClass.swift */; };
+		EFF4174527F4EDC800ACF712 /* ManageProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4174427F4EDC800ACF712 /* ManageProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -392,7 +402,6 @@
 		EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerUseCase.swift; sourceTree = "<group>"; };
 		EF95764227F354FF00E59E12 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		EF95764F27F359E700E59E12 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		EF95765227F35B6600E59E12 /* BorderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLineTextField.swift; sourceTree = "<group>"; };
 		EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadTitleTFLabel.swift; sourceTree = "<group>"; };
 		EF95765627F35FF400E59E12 /* BorderLineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLineTextView.swift; sourceTree = "<group>"; };
 		EF95765827F3614300E59E12 /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
@@ -465,6 +474,17 @@
 		EFD9F03A27061DC60072A3B1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		EFD9F03D27061DFC0072A3B1 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		EFE81CC48976D61F7CF172F3 /* Pods-TMS USER-TMS USERUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USER-TMS USERUITests.release.xcconfig"; path = "Target Support Files/Pods-TMS USER-TMS USERUITests/Pods-TMS USER-TMS USERUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EFF4172827F4B8CD00ACF712 /* PostRegisterCustomerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegisterCustomerRequest.swift; sourceTree = "<group>"; };
+		EFF4172C27F4BD9400ACF712 /* PostCheckTelUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCheckTelUseCase.swift; sourceTree = "<group>"; };
+		EFF4172E27F4BDA900ACF712 /* PostRegisterCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegisterCustomerUseCase.swift; sourceTree = "<group>"; };
+		EFF4173127F4E12400ACF712 /* PointAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAPI.swift; sourceTree = "<group>"; };
+		EFF4173427F4E2C100ACF712 /* PointRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRepository.swift; sourceTree = "<group>"; };
+		EFF4173827F4E30A00ACF712 /* GetCustomerPointResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCustomerPointResponse.swift; sourceTree = "<group>"; };
+		EFF4173B27F4E60500ACF712 /* ManageProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageProfile.storyboard; sourceTree = "<group>"; };
+		EFF4173D27F4E60E00ACF712 /* ManageProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageProfileViewController.swift; sourceTree = "<group>"; };
+		EFF4173F27F4E7DE00ACF712 /* TextFieldCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustomClass.swift; sourceTree = "<group>"; };
+		EFF4174127F4E80600ACF712 /* LabelCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustomClass.swift; sourceTree = "<group>"; };
+		EFF4174427F4EDC800ACF712 /* ManageProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageProfileViewModel.swift; sourceTree = "<group>"; };
 		F7EA73E29250230955E9C2F9 /* Pods-TMS USER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USER.release.xcconfig"; path = "Target Support Files/Pods-TMS USER/Pods-TMS USER.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -588,6 +608,7 @@
 		EF0D53D826C13EEC009FD5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EFF4173A27F4E5EE00ACF712 /* ManageProfile */,
 				EF95765C27F36D8200E59E12 /* SelectCurrentLocation */,
 				EF9E298C27F1FD10008FBE5D /* Register */,
 				EFD9F03727061D9E0072A3B1 /* ProductDetail */,
@@ -888,6 +909,7 @@
 		EF0D547526C18AB3009FD5F0 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				EFF4173027F4E11800ACF712 /* Point */,
 				EF95768927F3763900E59E12 /* GoogleMap */,
 				EF309E5F26DA20A300CB7353 /* Conversation */,
 				EF0FE83826C9072200DFCED4 /* Customer */,
@@ -902,6 +924,7 @@
 		EF0D547626C18AB9009FD5F0 /* Repositorys */ = {
 			isa = PBXGroup;
 			children = (
+				EFF4173327F4E2AE00ACF712 /* Point */,
 				EF95768627F3762F00E59E12 /* GoogleMap */,
 				EF309E6926DA230600CB7353 /* Conversation */,
 				EF0FE83B26C907B800DFCED4 /* Customer */,
@@ -930,6 +953,7 @@
 		EF0D547826C18ACA009FD5F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EFF4173627F4E2EE00ACF712 /* Point */,
 				EF95766727F374F700E59E12 /* GoogleMap */,
 				EF309E6226DA213100CB7353 /* Conversation */,
 				EF0FE83E26C907DA00DFCED4 /* Customer */,
@@ -971,6 +995,7 @@
 			isa = PBXGroup;
 			children = (
 				EF0D547F26C18DAC009FD5F0 /* PostAuthenticateRequest.swift */,
+				EFF4172827F4B8CD00ACF712 /* PostRegisterCustomerRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -988,6 +1013,8 @@
 			children = (
 				EF0D548726C18EE4009FD5F0 /* PostAuthenticateUseCase.swift */,
 				EF0D548926C18EF1009FD5F0 /* PostLogoutUseCase.swift */,
+				EFF4172C27F4BD9400ACF712 /* PostCheckTelUseCase.swift */,
+				EFF4172E27F4BDA900ACF712 /* PostRegisterCustomerUseCase.swift */,
 			);
 			path = AuthCustomer;
 			sourceTree = "<group>";
@@ -1346,11 +1373,12 @@
 		EF95765127F35B4E00E59E12 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EF95765227F35B6600E59E12 /* BorderLineTextField.swift */,
 				EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */,
 				EF95765627F35FF400E59E12 /* BorderLineTextView.swift */,
 				EF95765827F3614300E59E12 /* ButtonCustomColor.swift */,
 				EF95765A27F365A200E59E12 /* WarningUILabel.swift */,
+				EFF4173F27F4E7DE00ACF712 /* TextFieldCustomClass.swift */,
+				EFF4174127F4E80600ACF712 /* LabelCustomClass.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1708,6 +1736,56 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EFF4173027F4E11800ACF712 /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				EFF4173127F4E12400ACF712 /* PointAPI.swift */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
+		EFF4173327F4E2AE00ACF712 /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				EFF4173427F4E2C100ACF712 /* PointRepository.swift */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
+		EFF4173627F4E2EE00ACF712 /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				EFF4173727F4E2F300ACF712 /* Response */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
+		EFF4173727F4E2F300ACF712 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				EFF4173827F4E30A00ACF712 /* GetCustomerPointResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		EFF4173A27F4E5EE00ACF712 /* ManageProfile */ = {
+			isa = PBXGroup;
+			children = (
+				EFF4174327F4EDB800ACF712 /* ViewModel */,
+				EFF4173B27F4E60500ACF712 /* ManageProfile.storyboard */,
+				EFF4173D27F4E60E00ACF712 /* ManageProfileViewController.swift */,
+			);
+			path = ManageProfile;
+			sourceTree = "<group>";
+		};
+		EFF4174327F4EDB800ACF712 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFF4174427F4EDC800ACF712 /* ManageProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1852,6 +1930,7 @@
 				EFBD719826C313320044216D /* OrderDetail.storyboard in Resources */,
 				EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */,
 				EF0D53EB26C13FC3009FD5F0 /* SukhumvitSet-Light.ttf in Resources */,
+				EFF4173C27F4E60500ACF712 /* ManageProfile.storyboard in Resources */,
 				EF0D53EF26C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf in Resources */,
 				EF0D53F026C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf in Resources */,
 				EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */,
@@ -2053,14 +2132,17 @@
 				EFD9F03B27061DC60072A3B1 /* ProductDetailViewController.swift in Sources */,
 				EF314BBC26CABA95002B201C /* ChatViewController.swift in Sources */,
 				EF0D54AC26C1A1F6009FD5F0 /* GetProductTypeUseCase.swift in Sources */,
+				EFF4174227F4E80600ACF712 /* LabelCustomClass.swift in Sources */,
 				EF0D546B26C16D6F009FD5F0 /* HistoryViewController.swift in Sources */,
 				EF0D543C26C1452F009FD5F0 /* AnyKey.swift in Sources */,
+				EFF4174527F4EDC800ACF712 /* ManageProfileViewModel.swift in Sources */,
 				EF0D545726C1464C009FD5F0 /* ToolbarPickerView.swift in Sources */,
 				EF309E6626DA215900CB7353 /* GetMessageRequest.swift in Sources */,
 				EF0D544F26C14628009FD5F0 /* KeyboardListener.swift in Sources */,
 				EF0D54B626C1A243009FD5F0 /* ProductRepository.swift in Sources */,
 				EF0D548A26C18EF1009FD5F0 /* PostLogoutUseCase.swift in Sources */,
 				EF9E299327F1FD3F008FBE5D /* RegisterViewModel.swift in Sources */,
+				EFF4172F27F4BDA900ACF712 /* PostRegisterCustomerUseCase.swift in Sources */,
 				EF0D542226C1451D009FD5F0 /* UIFont+Extension.swift in Sources */,
 				EF95764327F354FF00E59E12 /* UIApplication+Extension.swift in Sources */,
 				EF9E299027F1FD2E008FBE5D /* RegisterViewController.swift in Sources */,
@@ -2084,6 +2166,7 @@
 				EF95768427F3762200E59E12 /* GetPlaceAutoCompleteUseCase.swift in Sources */,
 				EF0D548226C18DB6009FD5F0 /* PostAuthenticateResponse.swift in Sources */,
 				EF0D541B26C1451D009FD5F0 /* SocketMarkerMapResponse.swift in Sources */,
+				EFF4173527F4E2C100ACF712 /* PointRepository.swift in Sources */,
 				EF309E5E26DA1F4200CB7353 /* ChatViewModel.swift in Sources */,
 				EF309E6B26DA231100CB7353 /* ConversationRepository.swift in Sources */,
 				EF0D54EB26C1BF11009FD5F0 /* ProfileViewModel.swift in Sources */,
@@ -2101,6 +2184,7 @@
 				EF0D543E26C1452F009FD5F0 /* Utils.swift in Sources */,
 				EF0D542126C1451D009FD5F0 /* UIImageView+Extension.swift in Sources */,
 				EF0D543B26C1452F009FD5F0 /* CodableInfixOperator.swift in Sources */,
+				EFF4172D27F4BD9400ACF712 /* PostCheckTelUseCase.swift in Sources */,
 				EF0D544D26C145E4009FD5F0 /* IntroViewController.swift in Sources */,
 				EF0D546126C169F5009FD5F0 /* HomeViewController.swift in Sources */,
 				EF0D547226C17796009FD5F0 /* UISearchBar+Extension.swift in Sources */,
@@ -2119,13 +2203,14 @@
 				EF0D54A226C1A1BD009FD5F0 /* ProductTypeRepository.swift in Sources */,
 				EF97F894270B107700B2E2C7 /* PostMessageResponse.swift in Sources */,
 				EF97F88E270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift in Sources */,
+				EFF4174027F4E7DE00ACF712 /* TextFieldCustomClass.swift in Sources */,
 				EF0D548526C18E6D009FD5F0 /* AuthCustomerRepository.swift in Sources */,
+				EFF4173927F4E30A00ACF712 /* GetCustomerPointResponse.swift in Sources */,
 				EF95767C27F3759200E59E12 /* SelectCurrentLocationViewModel.swift in Sources */,
 				EF0D545326C14633009FD5F0 /* DefaultsManager.swift in Sources */,
 				EF0D545526C14639009FD5F0 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				EFB47C1226C3E15600170CD0 /* OrderCartManager.swift in Sources */,
 				EF0D542626C1451D009FD5F0 /* UIButton+Extension.swift in Sources */,
-				EF95765327F35B6600E59E12 /* BorderLineTextField.swift in Sources */,
 				EFB47C1726C448B200170CD0 /* Persistable.swift in Sources */,
 				EF309E6126DA20B500CB7353 /* ConversationAPI.swift in Sources */,
 				EFC1C59D26C2C46F00ED64B1 /* HistoryViewModel.swift in Sources */,
@@ -2153,6 +2238,7 @@
 				EFBAF6AA26CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift in Sources */,
 				EF0D54ED26C1C45F009FD5F0 /* AlertCustomViewswift.swift in Sources */,
 				EF0D54A926C1A1E0009FD5F0 /* GetProductTypeRequest.swift in Sources */,
+				EFF4172927F4B8CD00ACF712 /* PostRegisterCustomerRequest.swift in Sources */,
 				EF0D543026C1451D009FD5F0 /* Notification+Extension.swift in Sources */,
 				EF95767727F374F700E59E12 /* GetPlaceAutoCompleteRequest.swift in Sources */,
 				EF95767327F374F700E59E12 /* GetGeocodePlaceResponse.swift in Sources */,
@@ -2173,6 +2259,7 @@
 				EF0FE83A26C9074000DFCED4 /* CustomerAPI.swift in Sources */,
 				EF0D54B926C1A269009FD5F0 /* ProductAPI.swift in Sources */,
 				EF7443F827095C6A00D18F60 /* GetProductDescForUserUseCase.swift in Sources */,
+				EFF4173227F4E12400ACF712 /* PointAPI.swift in Sources */,
 				EFC1C58826C2BB1100ED64B1 /* OrderAPI.swift in Sources */,
 				EF95767227F374F700E59E12 /* GetPlaceDirectionResponse.swift in Sources */,
 				EF0D541D26C1451D009FD5F0 /* SoketDashboardResponse.swift in Sources */,
@@ -2200,6 +2287,7 @@
 				EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */,
 				EFC1C58D26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift in Sources */,
 				EF0D546626C16D58009FD5F0 /* OrderViewController.swift in Sources */,
+				EFF4173E27F4E60E00ACF712 /* ManageProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

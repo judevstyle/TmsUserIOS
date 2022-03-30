@@ -35,7 +35,7 @@ class OrderDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.input.getOrderDetail()
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
+        NavigationManager.instance.setupWithNavigationController(self.navigationController)
     }
 }
 

@@ -8,16 +8,17 @@
 import Foundation
 
 public enum DomainNameConfig {
-    case TMSDashboard
-    case TMSImagePath
-    case TMSAuthCustomer
-    case TMSProductType
-    case TMSProductFinal
-    case TMSOrder
-    case TMSCustomer
-    case TMSConversation
-    case TNSProductDescForUser
+    case dashboard
+    case imagePath
+    case authCustomer
+    case productType
+    case productFinal
+    case order
+    case customer
+    case conversation
+    case productDescForUser
     case googleMap
+    case point
 }
 
 extension DomainNameConfig {
@@ -28,27 +29,28 @@ extension DomainNameConfig {
         let googleMapURL: String = "https://maps.googleapis.com/maps/api"
         
         switch self {
-        case .TMSDashboard:
+        case .dashboard:
             return "\(HostURL)/dashboard"
-        case .TMSAuthCustomer:
+        case .authCustomer:
             return "\(HostURL)/auth"
-        case .TMSProductType:
+        case .productType:
             return "\(HostURL)/product-type"
-        case .TMSProductFinal:
+        case .productFinal:
             return "\(HostURL)/productFinal"
-        case .TMSOrder:
+        case .order:
             return "\(HostURL)/orders"
-        case .TMSCustomer:
+        case .customer:
             return "\(HostURL)/customer"
-        case .TMSConversation:
+        case .conversation:
             return "\(HostURL)/conversation"
-        case .TNSProductDescForUser:
+        case .productDescForUser:
             return "\(HostURL)/productDescForUser"
-            
-        case .TMSImagePath:
+        case .imagePath:
             return "\(HostURL)/" //+ path image url
         case .googleMap:
             return "\(googleMapURL)"
+        case .point:
+            return "\(HostURL)/point"
         }
     }
     

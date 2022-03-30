@@ -19,9 +19,9 @@ extension ProductAPI: TargetType {
     public var baseURL: URL {
         switch self {
         case .getProduct, .createProduct(_):
-            return DomainNameConfig.TMSProductFinal.url
+            return DomainNameConfig.productFinal.url
         case .getProductDescForUser(_):
-            return DomainNameConfig.TNSProductDescForUser.url
+            return DomainNameConfig.productDescForUser.url
         }
     }
     

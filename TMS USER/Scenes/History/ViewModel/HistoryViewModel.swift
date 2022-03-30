@@ -62,19 +62,9 @@ class HistoryViewModel: HistoryProtocol, HistoryProtocolOutput {
         self.getFinishOrderCustomerUseCase.execute().sink { completion in
             debugPrint("getFinishOrderCustomer \(completion)")
             self.historyViewController.stopLoding()
-            
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetOrder failure")
-                break
-            }
-            
         } receiveValue: { resp in
             if let items = resp?.items {
                 self.listOrder = items
-                ToastManager.shared.toastCallAPI(title: "GetOrder finished")
             }
             self.didGetHistorySuccess?()
         }.store(in: &self.anyCancellable)
@@ -147,18 +137,8 @@ extension HistoryViewModel: HistoryTableViewCellDelegate {
         self.getReOrderCustomerUseCase.execute(orderId: orderId).sink { completion in
             debugPrint("GetReOrderCustomer \(completion)")
             self.historyViewController.stopLoding()
-            
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetReOrderCustomer failure")
-                break
-            }
-            
         } receiveValue: { resp in
             if let items = resp {
-                ToastManager.shared.toastCallAPI(title: "GetReOrderCustomer finished")
                 completion(items)
             }
         }.store(in: &self.anyCancellable)

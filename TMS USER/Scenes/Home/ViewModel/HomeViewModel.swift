@@ -74,16 +74,6 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
         self.getProductTypeUseCase.execute().sink { completion in
             debugPrint("getProductType \(completion)")
             self.homeViewController.stopLoding()
-            
-            switch completion {
-            case .finished:
-                ToastManager.shared.toastCallAPI(title: "GetProductType finished")
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetProductType failure")
-                break
-            }
-            
         } receiveValue: { resp in
             if let items = resp {
                 self.listCategory = items
@@ -102,16 +92,6 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
         self.getProductUseCase.execute(request: request).sink { completion in
             debugPrint("getProduct \(completion)")
             self.homeViewController.stopLoding()
-    
-            switch completion {
-            case .finished:
-                ToastManager.shared.toastCallAPI(title: "GetProduct finished")
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetProduct failure")
-                break
-            }
-            
         } receiveValue: { resp in
             if let items = resp?.items {
                 self.listProduct = items

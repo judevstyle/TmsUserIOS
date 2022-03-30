@@ -30,7 +30,7 @@ class OrderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.input.getOrder()
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
+        NavigationManager.instance.setupWithNavigationController(self.navigationController)
     }
 }
 

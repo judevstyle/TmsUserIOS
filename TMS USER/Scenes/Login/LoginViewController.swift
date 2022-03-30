@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     // ViewModel
     lazy var viewModel: LoginProtocol = {
-        let vm = LoginViewModel(loginViewController: self)
+        let vm = LoginViewModel(vc: self)
         self.configure(vm)
         self.bindToViewModel()
         return vm
@@ -74,7 +74,7 @@ extension LoginViewController {
         
         btnLogin.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         
-        inputPhone.text = "088889889"
+        inputPhone.text = "0626532245"
     }
 }
 

@@ -77,16 +77,6 @@ class ProductDetailViewModel: ProductDetailProtocol, ProductDetailProtocolOutput
         self.getProductDescForUserUseCase.execute(productId: productId).sink { completion in
             debugPrint("getProductDescForUserUseCase \(completion)")
             self.productDetailViewController.stopLoding()
-    
-            switch completion {
-            case .finished:
-                ToastManager.shared.toastCallAPI(title: "GetProductDescForUser finished")
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetProductDescForUser failure")
-                break
-            }
-            
         } receiveValue: { resp in
             self.productItems = resp
             self.didGetProductDetailSuccess?()

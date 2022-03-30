@@ -46,6 +46,10 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupValueBadge()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        hideKeyboardWhenSearch()
+    }
 }
 
 // MARK: - Binding
@@ -84,7 +88,8 @@ extension HomeViewController {
 
 extension HomeViewController {
     func setupUI() {
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
+        hideKeyboardWhenTappedAround()
+        NavigationManager.instance.setupWithNavigationController(self)
         //searchBar
         let customFrame = CGRect(x: 0, y: 0, width: 0, height: 44.0)
         searchBar = UISearchBar(frame: customFrame)
@@ -92,11 +97,11 @@ extension HomeViewController {
         searchBar.placeholder = "ค้นหาสินค้า ... "
         searchBar.compatibleSearchTextField.textColor = UIColor.Primary
         searchBar.compatibleSearchTextField.backgroundColor = UIColor.white
-        searchBar.searchTextField.isEnabled = false
+        searchBar.searchTextField.isEnabled = true
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTapSearch(_:)))
-        searchBar.addGestureRecognizer(tap)
-        searchBar.isUserInteractionEnabled = true
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTapSearch(_:)))
+//        searchBar.addGestureRecognizer(tap)
+//        searchBar.isUserInteractionEnabled = true
         
         UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.PrimaryText(size: 17)
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.PrimaryText(size: 17)
@@ -113,7 +118,6 @@ extension HomeViewController {
         
         registerHeaderCell()
         registerProductCell()
-        
     }
     
     func setupBadge() {
@@ -144,7 +148,6 @@ extension HomeViewController {
     
     @objc func handleTapSearch(_ sender: UITapGestureRecognizer? = nil) {
         // handling code
-        debugPrint("handleTapSearch")
     }
     
     fileprivate func registerHeaderCell() {
@@ -185,6 +188,8 @@ extension HomeViewController {
 
 extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        debugPrint("searchBarSearchButtonClicked")
+        self.searchBar.text = ""
         self.searchBar.endEditing(true)
     }
 }
@@ -282,5 +287,19 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout{
         default:
             return CGSize(width: itemWidth, height: itemWidth + 85)
         }
+    }
+}
+
+//Handle KeyBoard SearchEditing
+extension HomeViewController {
+    
+    func hideKeyboardWhenSearch() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissSearchKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissSearchKeyboard() {
+        searchBar.endEditing(true)
     }
 }

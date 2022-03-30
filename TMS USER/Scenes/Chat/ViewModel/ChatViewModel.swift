@@ -102,16 +102,7 @@ class ChatViewModel: ChatProtocol, ChatProtocolOutput {
         self.getMessageUseCase.execute(request: request).sink { completion in
             debugPrint("getMessage \(completion)")
             self.chatViewController.stopLoding()
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "getMessage failure")
-                break
-            }
-
         } receiveValue: { resp in
-            ToastManager.shared.toastCallAPI(title: "getMessage finished")
             if let messages = resp?.data?.items {
                 messages.forEach({ item in
                     if item.sender == "\(self.itemRoomChatCustomer?.cusId ?? 0)" {
@@ -181,16 +172,7 @@ extension ChatViewModel {
         self.postMessageUseCase.execute(request: request).sink { completion in
             debugPrint("postMessage \(completion)")
             self.chatViewController.stopLoding()
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "SendMessage failure")
-                break
-            }
-
         } receiveValue: { resp in
-            ToastManager.shared.toastCallAPI(title: "SendMessage finished")
             self.listMessages.append(self.setMessageModel(sender: self.currentUser, text: text))
             self.didGetChatSuccess?()
         }.store(in: &self.anyCancellable)

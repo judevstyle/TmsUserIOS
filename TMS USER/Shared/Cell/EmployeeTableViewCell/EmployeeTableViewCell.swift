@@ -51,7 +51,7 @@ class EmployeeTableViewCell: UITableViewCell {
     }
     
     private func setImage(url: String?) {
-        guard let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(url ?? "")") else { return }
+        guard let urlImage = URL(string: "\(DomainNameConfig.imagePath.urlString)\(url ?? "")") else { return }
         imagePoster.kf.setImageDefault(with: urlImage)
     }
 }

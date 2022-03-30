@@ -65,6 +65,7 @@ class SelectCurrentLocationViewController: UIViewController {
         setupTableView()
         setupSearchBar()
         
+        btnSelectLocation.setBackgroundColor(.Primary)
         btnSelectLocation.addTarget(self, action: #selector(handleSelectLocation), for: .touchUpInside)
     }
     

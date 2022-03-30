@@ -134,7 +134,7 @@ extension ProductDetailViewController {
         
         priceBalance.sizeToFit()
         
-        guard let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(item.productImg ?? "")") else { return }
+        guard let urlImage = URL(string: "\(DomainNameConfig.imagePath.urlString)\(item.productImg ?? "")") else { return }
         posterImageView.kf.setImageDefault(with: urlImage)
         
         //Badge

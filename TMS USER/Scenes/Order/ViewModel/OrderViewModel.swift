@@ -57,19 +57,9 @@ class OrderViewModel: OrderProtocol, OrderProtocolOutput {
         self.getApprovedOrderCustomerUseCase.execute().sink { completion in
             debugPrint("getApprovedOrderCustomer \(completion)")
             self.orderViewController.stopLoding()
-    
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetOrder failure")
-                break
-            }
-            
         } receiveValue: { resp in
             if let items = resp?.items {
                 self.listOrder = items
-                ToastManager.shared.toastCallAPI(title: "GetOrder finished")
             }
             self.didGetOrderSuccess?()
         }.store(in: &self.anyCancellable)

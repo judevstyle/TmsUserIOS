@@ -19,8 +19,10 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var pointText: UILabel!
+    
     lazy var viewModel: ProfileProtocol = {
-        let vm = ProfileViewModel(profileViewController: self)
+        let vm = ProfileViewModel(vc: self)
         self.configure(vm)
         self.bindToViewModel()
         return vm
@@ -38,9 +40,6 @@ class ProfileViewController: UIViewController {
         
         setupUI()
         registerCell()
-        
-        
-        viewModel.input.getProfile()
     }
     
     func configure(_ interface: ProfileProtocol) {
@@ -48,7 +47,10 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
+        NavigationManager.instance.setupWithNavigationController(self)
+        
+        viewModel.input.getProfile()
+        viewModel.input.getCustomerPoint()
     }
     
     func getStatusBarHeight() -> CGFloat {
@@ -70,6 +72,7 @@ extension ProfileViewController {
     func bindToViewModel() {
         viewModel.output.didGetProfileSuccess = didGetProfileSuccess()
         viewModel.output.didLogoutSuccess = didLogoutSuccess()
+        viewModel.output.didGetCustomerPointSuccess = didGetCustomerPointSuccess()
     }
     
     func didGetProfileSuccess() -> (() -> Void) {
@@ -85,6 +88,12 @@ extension ProfileViewController {
             NavigationManager.instance.setRootViewController(rootView: .intro, isTranslucent: true)
         }
     }
+    
+    func didGetCustomerPointSuccess() -> ((Int) -> Void) {
+        return { total in
+            self.pointText.text = "\(total) คะแนน"
+        }
+    }
 }
 
 
@@ -92,6 +101,7 @@ extension ProfileViewController {
     func setupUI(){
         avatarImageView.setRounded(rounded: avatarImageView.frame.width/2)
         avatarImageView.contentMode = .scaleAspectFill
+        avatarImageView.setBorder(width: 1, color: .white)
     }
     
     fileprivate func registerCell() {
@@ -106,13 +116,13 @@ extension ProfileViewController {
     func setupValueUser() {
         guard let user = viewModel.output.getMyUser() else { return }
         nameText.text = user.displayName ?? "-"
-        telText.text = "เบอร์โทร : \(user.tel ?? "-")"
+        telText.text = "เบอร์โทร \(user.tel ?? "-")"
         typeText.text = "ประเภทสมาชิก \( user.typeUser?.typeName ?? "-")"
         setImage(url: user.avatar)
     }
     
     private func setImage(url: String?) {
-        guard let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(url ?? "")") else { return }
+        guard let urlImage = URL(string: "\(DomainNameConfig.imagePath.urlString)\(url ?? "")") else { return }
         avatarImageView.kf.setImageDefault(with: urlImage)
     }
 }

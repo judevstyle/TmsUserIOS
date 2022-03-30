@@ -108,16 +108,6 @@ class OrderTrackingViewModel: OrderTrackingProtocol, OrderTrackingProtocolOutput
         self.getOrderDescriptionUseCase.execute(orderId: orderId).sink { completion in
             debugPrint("getOrderDescription \(completion)")
             self.orderTrackingViewController.stopLoding()
-            
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetOrderDescription failure")
-                self.didGetOrderTrackingError?()
-                break
-            }
-            
         } receiveValue: { resp in
             
             if let dataDetail = resp?.data {
@@ -146,7 +136,6 @@ class OrderTrackingViewModel: OrderTrackingProtocol, OrderTrackingProtocolOutput
                 self.listOrderD = listOrderD
             }
             
-            ToastManager.shared.toastCallAPI(title: "GetOrderDescription finished")
             self.didGetOrderTrackingSuccess?()
             
             self.fetchMapMarker()
@@ -295,15 +284,6 @@ extension OrderTrackingViewModel {
         self.getRoomChatCustomerUseCase.execute(request: request).sink { completion in
             debugPrint("getRoomChatCustomer \(completion)")
             self.orderTrackingViewController.stopLoding()
-
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "GetRoomChatCustomer failure")
-                break
-            }
-
         } receiveValue: { resp in
             
             if let data = resp?.data {

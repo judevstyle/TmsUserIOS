@@ -39,6 +39,8 @@ public enum NavigationOpeningSender {
     
     case selectCurrentLocation(delegate: SelectCurrentLocationViewControllerDelegate)
     
+    case manageProfile
+    
     public var storyboardName: String {
         switch self {
         case .splash:
@@ -73,6 +75,8 @@ public enum NavigationOpeningSender {
             return "ProductDetail"
         case .selectCurrentLocation:
             return "SelectCurrentLocation"
+        case .manageProfile:
+            return "ManageProfile"
         }
     }
     
@@ -110,6 +114,8 @@ public enum NavigationOpeningSender {
             return "ProductDetailViewController"
         case .selectCurrentLocation:
             return "SelectCurrentLocationViewController"
+        case .manageProfile:
+            return "ManageProfileViewController"
         }
     }
     
@@ -132,17 +138,79 @@ public enum NavigationOpeningSender {
             return "ติดตามคำสั่งซื้อ"
         case .selectCurrentLocation:
             return "เลือก Location"
+        case .history:
+            return "ประวัติการสั่งซื้อ"
         default:
             return ""
         }
     }
     
+    public var navController: UINavigationController {
+        
+        let loadingStoryBoard = self.storyboardName
+        let storyboard = UIStoryboard(name: loadingStoryBoard, bundle: nil)
+        let rootViewcontroller = storyboard.instantiateInitialViewController()
+        let navController = UINavigationController(rootViewController: rootViewcontroller ?? UIViewController())
+        rootViewcontroller?.navigationItem.title = titleNavigation
+        rootViewcontroller?.hideKeyboardWhenTappedAround()
+        
+        if let vc = rootViewcontroller {
+            NavigationManager.instance.setupWithNavigationController(vc)
+        }
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithTransparentBackground()
+            
+            switch self {
+            case .profile, .manageProfile:
+                appearance.backgroundColor = .clear
+            default:
+                appearance.backgroundColor = .Primary
+            }
+            appearance.shadowColor = .clear
+            appearance.shadowImage = UIImage()
+            appearance.backgroundImage = UIImage()
+            appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.PrimaryText(size: 16), NSAttributedString.Key.foregroundColor: UIColor.white]
+            
+            rootViewcontroller?.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            rootViewcontroller?.navigationController?.navigationBar.standardAppearance = appearance
+            rootViewcontroller?.navigationController?.navigationBar.compactAppearance = appearance
+        } else {
+            
+            rootViewcontroller?.navigationController?.navigationBar.barTintColor = UIColor.Primary
+            rootViewcontroller?.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarPosition.bottom, barMetrics: .default)
+            rootViewcontroller?.navigationController?.navigationBar.shadowImage = UIImage()
+            rootViewcontroller?.navigationController?.navigationBar.isTranslucent = true
+            rootViewcontroller?.navigationController?.navigationBar.isHidden = true
+            rootViewcontroller?.navigationController?.navigationBar.barStyle = .black
+            rootViewcontroller?.navigationController?.navigationBar.tintColor = .white
+            rootViewcontroller?.navigationController?.navigationBar.layoutIfNeeded()
+        }
+        
+        rootViewcontroller?.navigationController?.navigationBar.tintColor = .white
+        
+        switch self {
+        default:
+            return navController
+        }
+    }
+    
     public var navColor: UIColor {
         switch self {
-        case .splash:
+        case .splash, .selectCurrentLocation:
             return .Primary
         default:
             return .clear
+        }
+    }
+    
+    public var tintColorBackButton: UIColor {
+        switch self {
+        case .register:
+            return .Primary
+        default:
+            return .white
         }
     }
 }
@@ -151,7 +219,11 @@ class NavigationManager {
     static let instance:NavigationManager = NavigationManager()
     
     var navigationController: UINavigationController!
+    var rootViewController: UIViewController!
     var currentPresentation: Presentation = .Root
+    var mainTabBarController: UITabBarController!
+    public var lastIndexTabbar: Int = 0
+    public var selectedIndexTabbar: Int = 0
     
     enum Presentation {
         case Root
@@ -162,6 +234,7 @@ class NavigationManager {
         case BottomSheet(completion: (() -> Void)?, height: CGFloat)
         case PopupSheet(completion: (() -> Void)?)
         case presentFullScreen(completion: (() -> Void)?)
+        case switchTabbar(index: Int)
         
     }
     
@@ -170,11 +243,47 @@ class NavigationManager {
     }
 
     
-    func setupWithNavigationController(navigationController: UINavigationController?) {
-        if let nav = navigationController {
+    func setupWithNavigationController(_ vc: UIViewController?) {
+        if let nav = vc?.navigationController {
             self.navigationController = nav
         }
+        
+        if let vc = vc {
+            self.rootViewController = vc
+        }
     }
+    
+    func setupTabbarController(_ tabbar: UITabBarController?) {
+        self.mainTabBarController = tabbar
+    }
+    
+    func refreshTabbar() {
+        let homeVC = getTabbarNavigation(logoImage: "home", title: "สินค้าทั้งหมด", sender: .home)
+        let orderVC = getTabbarNavigation(logoImage: "delivery", title: "รอจัดส่ง", sender: .order)
+        let historyVC = getTabbarNavigation(logoImage: "package", title: "ประวัติการสั่งซื้อ", sender: .history)
+        let profileVC = getTabbarNavigation(logoImage: "rating", title: "โปรไฟล์", sender: .profile)
+
+        self.mainTabBarController.viewControllers = [homeVC, orderVC, historyVC, profileVC]
+    }
+    
+    private func getTabbarNavigation(logoImage: String, title: String, sender: NavigationOpeningSender) -> UINavigationController {
+      return  tabBarNavigation(unselectImage: UIImage(named: logoImage), selectImage: UIImage(named: logoImage), title: title, badgeValue: nil, navigationTitle: "", navigationOpeningSender: sender)
+    }
+    
+    fileprivate func tabBarNavigation(unselectImage: UIImage?, selectImage: UIImage?, title: String?, badgeValue: String?,navigationTitle: String?, navigationOpeningSender: NavigationOpeningSender) -> UINavigationController {
+
+        let navController = navigationOpeningSender.navController
+        navController.tabBarItem.image = unselectImage
+        navController.tabBarItem.selectedImage =  selectImage
+        navController.tabBarItem.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: 2, right: 0)
+        navController.tabBarItem.title = title
+        navController.tabBarItem.badgeColor = .red
+        navController.tabBarItem.badgeValue = badgeValue
+        navController.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.PrimaryText(size: 16)], for: .normal)
+        return navController
+    }
+    
+    
     
     func pushVC(to: NavigationOpeningSender, presentation: Presentation = .Push, isHiddenNavigationBar: Bool = false) {
         let loadingStoryBoard = to.storyboardName
@@ -276,19 +385,37 @@ class NavigationManager {
             nav.modalTransitionStyle = .crossDissolve
             let topVC = UIApplication.getTopViewController()
             topVC?.present(nav, animated: true, completion: completion)
+        case .switchTabbar(index: let index):
+            self.mainTabBarController.selectedIndex = index
         }
         self.currentPresentation = presentation
+    }
+    
+    func switchTabbar(index: Int) {
+        self.presentVC(viewController: UIViewController(), presentation: .switchTabbar(index: index), to: .splash)
+    }
+    
+    func switchLastTabbar() {
+        self.presentVC(viewController: UIViewController(), presentation: .switchTabbar(index: self.lastIndexTabbar), to: .splash)
+        didSelectTabbar(index: self.lastIndexTabbar)
+    }
+    
+    func didSelectTabbar(index: Int?) {
+        if let index = index {
+            lastIndexTabbar = selectedIndexTabbar
+            selectedIndexTabbar = index
+        }
     }
     
     func pushViewController(vc: UIViewController, animated: Bool, to: NavigationOpeningSender) {
         let topVC = UIApplication.getTopViewController()
         if let nav = topVC?.navigationController {
             nav.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            nav.navigationBar.tintColor = .black
+            nav.navigationBar.tintColor = to.tintColorBackButton
             nav.pushViewController(vc, animated: animated)
         } else {
             self.navigationController.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            self.navigationController.navigationBar.tintColor = .black
+            self.navigationController.navigationBar.tintColor = to.tintColorBackButton
             self.navigationController.pushViewController(vc, animated: animated)
         }
     }

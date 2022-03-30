@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,23 +36,23 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EbM-pA-PKd">
-                                        <rect key="frame" x="105" y="30" width="301" height="65"/>
+                                        <rect key="frame" x="105" y="20" width="301" height="86"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndI-0p-VA5">
                                                 <rect key="frame" x="0.0" y="0.0" width="301" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="WVB-fc-cuS"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เบอร์โทร : -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bne-en-6rn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เบอร์โทร -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bne-en-6rn">
                                                 <rect key="frame" x="0.0" y="23" width="301" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="9F3-ww-2O3"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -61,10 +61,42 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="HV2-Sy-378"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVc-Oc-8Zk">
+                                                <rect key="frame" x="0.0" y="65" width="301" height="21"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qLC-1T-MfG">
+                                                        <rect key="frame" x="0.0" y="0.5" width="21" height="20"/>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="21" id="ejI-bk-ilo"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 คะแนน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kct-LX-DU8">
+                                                        <rect key="frame" x="29" y="0.0" width="272" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="OQB-Sv-8tb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="qLC-1T-MfG" firstAttribute="leading" secondItem="DVc-Oc-8Zk" secondAttribute="leading" id="5gA-hy-tyT"/>
+                                                    <constraint firstItem="qLC-1T-MfG" firstAttribute="top" secondItem="DVc-Oc-8Zk" secondAttribute="top" id="Jce-hu-wXZ"/>
+                                                    <constraint firstItem="kct-LX-DU8" firstAttribute="leading" secondItem="qLC-1T-MfG" secondAttribute="trailing" constant="8" id="oP4-5a-AHy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qLC-1T-MfG" secondAttribute="bottom" id="r0s-LR-HUY"/>
+                                                    <constraint firstAttribute="height" constant="21" id="vFf-EC-TBm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="kct-LX-DU8" secondAttribute="bottom" id="x0r-EC-Sym"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kct-LX-DU8" secondAttribute="trailing" id="xda-XJ-c3U"/>
+                                                    <constraint firstItem="kct-LX-DU8" firstAttribute="top" secondItem="DVc-Oc-8Zk" secondAttribute="top" id="z3f-rE-HZ1"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -75,7 +107,7 @@
                                     <constraint firstItem="oOg-aF-EK4" firstAttribute="leading" secondItem="CqN-r0-gBa" secondAttribute="leading" constant="8" id="6WX-lA-Fmx"/>
                                     <constraint firstAttribute="trailing" secondItem="EbM-pA-PKd" secondAttribute="trailing" constant="8" id="LaT-cB-Gsw"/>
                                     <constraint firstItem="oOg-aF-EK4" firstAttribute="top" secondItem="CqN-r0-gBa" secondAttribute="top" constant="20" id="N1s-fw-9Ah"/>
-                                    <constraint firstItem="EbM-pA-PKd" firstAttribute="centerY" secondItem="oOg-aF-EK4" secondAttribute="centerY" id="Qje-19-3Oy"/>
+                                    <constraint firstItem="EbM-pA-PKd" firstAttribute="top" secondItem="oOg-aF-EK4" secondAttribute="top" id="iBP-mH-N5B"/>
                                     <constraint firstAttribute="bottom" secondItem="oOg-aF-EK4" secondAttribute="bottom" constant="20" id="pcP-0P-Tje"/>
                                 </constraints>
                             </view>
@@ -109,6 +141,7 @@
                     <connections>
                         <outlet property="avatarImageView" destination="oOg-aF-EK4" id="KRf-vC-hu0"/>
                         <outlet property="nameText" destination="ndI-0p-VA5" id="O6C-cZ-Nmr"/>
+                        <outlet property="pointText" destination="kct-LX-DU8" id="8X2-N5-Tmm"/>
                         <outlet property="statusBarHeight" destination="G70-6W-AZP" id="9Pf-5U-8qZ"/>
                         <outlet property="tableView" destination="459-TK-TiR" id="ylt-hN-02C"/>
                         <outlet property="telText" destination="bne-en-6rn" id="xOE-Sb-OjM"/>
@@ -121,12 +154,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="placeholder" width="1280" height="960"/>
         <namedColor name="Primary">
             <color red="1" green="0.34099999070167542" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

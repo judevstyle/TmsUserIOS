@@ -179,17 +179,8 @@ class ProductCartViewModel: ProductCartProtocol, ProductCartProtocolOutput {
         self.postCreateOrderByUserUseCase.execute(request: request).sink { completion in
             debugPrint("postCreateOrderByUser \(completion)")
             self.productCartViewController.stopLoding()
-            switch completion {
-            case .finished:
-                break
-            case .failure(_):
-                ToastManager.shared.toastCallAPI(title: "postCreateOrderByUser failure")
-                break
-            }
-
         } receiveValue: { resp in
             if resp?.success == true {
-                ToastManager.shared.toastCallAPI(title: "postCreateOrderByUser finished")
                 OrderCartManager.sharedInstance.clearProductCart {
                     self.productCartViewController.dismiss(animated: true, completion: nil)
                 }

@@ -28,11 +28,13 @@ public struct AuthenticateData: Codable, Hashable  {
     
     public var accessToken: String?
     public var expire: String?
+    public var msg: String?
     
     public init() {}
     
     public init(from decoder: Decoder) throws {
         try accessToken     <- decoder["access_token"]
         try expire          <- decoder["expire"]
+        try msg             <- decoder["msg"]
     }
 }

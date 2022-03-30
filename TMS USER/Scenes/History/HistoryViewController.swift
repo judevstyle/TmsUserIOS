@@ -30,7 +30,7 @@ class HistoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.input.getHistory()
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
+        NavigationManager.instance.setupWithNavigationController(self.navigationController)
     }
 }
 

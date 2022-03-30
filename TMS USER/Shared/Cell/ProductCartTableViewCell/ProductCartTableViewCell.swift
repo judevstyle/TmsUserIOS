@@ -174,7 +174,7 @@ class ProductCartTableViewCell: UITableViewCell {
     }
     
     private func setImage(url: String?) {
-        guard let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(url ?? "")") else { return }
+        guard let urlImage = URL(string: "\(DomainNameConfig.imagePath.urlString)\(url ?? "")") else { return }
         imageThubnail.kf.setImageDefault(with: urlImage)
     }
 }

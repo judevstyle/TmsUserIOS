@@ -49,7 +49,7 @@ class OrderTrackingViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         registerCell()
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
+        NavigationManager.instance.setupWithNavigationController(self.navigationController)
     }
     
     func configure(_ interface: OrderTrackingProtocol) {
@@ -202,7 +202,7 @@ extension OrderTrackingViewController {
     }
     
     private func setImage(url: String?) {
-        guard let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(url ?? "")") else { return }
+        guard let urlImage = URL(string: "\(DomainNameConfig.imagePath.urlString)\(url ?? "")") else { return }
         imagePosterView.kf.setImageDefault(with: urlImage)
     }
     

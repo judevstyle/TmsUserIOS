@@ -19,7 +19,7 @@ extension ConversationAPI: TargetType {
     public var baseURL: URL {
         switch self {
         case .getRoomChatCustomer, .getMessage, .sendMessage:
-            return DomainNameConfig.TMSConversation.url
+            return DomainNameConfig.conversation.url
         }
     }
     

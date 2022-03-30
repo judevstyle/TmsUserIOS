@@ -27,6 +27,7 @@ class IntroViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         viewModel.input.checkAuth()
+        NavigationManager.instance.setupWithNavigationController(self)
     }
     
     func configure(_ interface: IntroProtocol) {
@@ -52,7 +53,7 @@ extension IntroViewController {
 extension IntroViewController {
     func setupUI() {
         
-        NavigationManager.instance.setupWithNavigationController(navigationController: self.navigationController)
+        NavigationManager.instance.setupWithNavigationController(self.navigationController)
         
         topView.roundCorners(.topRight, radius: 20)
         topView.roundCorners(.bottomRight, radius: 20)

@@ -28,7 +28,7 @@ class MarkerMapView: UIView {
         
         view.imageAvatar.setRounded(rounded: view.imageAvatar.frame.width/2)
         view.imageAvatar.contentMode = .scaleAspectFill
-        if let urlImage = URL(string: "\(DomainNameConfig.TMSImagePath.urlString)\(imageUrl ?? "")") {
+        if let urlImage = URL(string: "\(DomainNameConfig.imagePath.urlString)\(imageUrl ?? "")") {
             view.imageAvatar.kf.setImageDefault(with: urlImage)
         } else {
             view.imageAvatar.image = UIImage(named: "placeholder")?.withRenderingMode(.alwaysOriginal)
