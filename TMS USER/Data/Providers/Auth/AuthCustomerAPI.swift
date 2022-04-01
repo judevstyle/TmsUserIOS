@@ -14,12 +14,13 @@ public enum AuthCustomerAPI {
     case logout
     case checkTel(_ request: PostAuthenticateRequest)
     case registerCustomer(_ request: PostRegisterCustomerRequest)
+    case updateProfile(_ request: PostRegisterCustomerRequest)
 }
 
 extension AuthCustomerAPI: TargetType {
     public var baseURL: URL {
         switch self {
-        case .authenticate(_), .logout, .checkTel, .registerCustomer:
+        case .authenticate(_), .logout, .checkTel, .registerCustomer, .updateProfile:
             return DomainNameConfig.authCustomer.url
         }
     }
@@ -34,6 +35,8 @@ extension AuthCustomerAPI: TargetType {
             return "/check-tel/\(request.tel ?? "")"
         case .registerCustomer:
             return "/registerCustomer"
+        case .updateProfile:
+            return "/profile"
         }
     }
     
@@ -41,6 +44,8 @@ extension AuthCustomerAPI: TargetType {
         switch self {
         case .authenticate, .logout, .checkTel, .registerCustomer:
             return .post
+        case .updateProfile:
+            return .put
         }
     }
     
@@ -58,6 +63,12 @@ extension AuthCustomerAPI: TargetType {
             return .requestPlain
         case let .registerCustomer(request):
             return .requestCompositeParameters(bodyParameters: request.toJSON(), bodyEncoding: JSONEncoding.default, urlParameters: [:])
+        case let .updateProfile(request):
+            var body = request.toJSON()
+            if request.addresses?.count == 0 {
+                body["addresses"] = []
+            }
+            return .requestCompositeParameters(bodyParameters: body, bodyEncoding: JSONEncoding.default, urlParameters: [:])
         }
     }
     

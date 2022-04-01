@@ -41,6 +41,8 @@ public enum NavigationOpeningSender {
     
     case manageProfile
     
+    case updateProfile(_ content: CustomerItems?, delegate: RegisterViewControllerDelegate?)
+    
     public var storyboardName: String {
         switch self {
         case .splash:
@@ -77,6 +79,8 @@ public enum NavigationOpeningSender {
             return "SelectCurrentLocation"
         case .manageProfile:
             return "ManageProfile"
+        case .updateProfile:
+            return "Register"
         }
     }
     
@@ -116,6 +120,8 @@ public enum NavigationOpeningSender {
             return "SelectCurrentLocationViewController"
         case .manageProfile:
             return "ManageProfileViewController"
+        case .updateProfile:
+            return "RegisterViewController"
         }
     }
     
@@ -140,6 +146,8 @@ public enum NavigationOpeningSender {
             return "เลือก Location"
         case .history:
             return "ประวัติการสั่งซื้อ"
+        case .updateProfile:
+            return "แก้ไขโปรไฟล์"
         default:
             return ""
         }
@@ -171,7 +179,7 @@ public enum NavigationOpeningSender {
             appearance.shadowColor = .clear
             appearance.shadowImage = UIImage()
             appearance.backgroundImage = UIImage()
-            appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.PrimaryText(size: 16), NSAttributedString.Key.foregroundColor: UIColor.white]
+            appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.PrimaryBold(size: 18), NSAttributedString.Key.foregroundColor: UIColor.white]
             
             rootViewcontroller?.navigationController?.navigationBar.scrollEdgeAppearance = appearance
             rootViewcontroller?.navigationController?.navigationBar.standardAppearance = appearance
@@ -198,7 +206,7 @@ public enum NavigationOpeningSender {
     
     public var navColor: UIColor {
         switch self {
-        case .splash, .selectCurrentLocation:
+        case .splash, .selectCurrentLocation, .updateProfile:
             return .Primary
         default:
             return .clear
@@ -330,6 +338,12 @@ class NavigationManager {
                 className.delegate = delegate
                 viewController = className
             }
+        case .updateProfile(let content, let delegate):
+            if let className = storyboard.instantiateInitialViewController() as? RegisterViewController {
+                className.viewModel.input.setContentUpdateProfile(content)
+                className.delegate = delegate
+                viewController = className
+            }
         default:
             viewController = storyboard.instantiateInitialViewController() ?? to.viewController
         }
@@ -412,11 +426,30 @@ class NavigationManager {
         if let nav = topVC?.navigationController {
             nav.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             nav.navigationBar.tintColor = to.tintColorBackButton
-            nav.pushViewController(vc, animated: animated)
+            
+            switch to {
+            case .updateProfile:
+                nav.setBarTintColor(color: .Primary, complete: {
+                    nav.pushViewController(vc, animated: animated)
+                })
+                break
+            default:
+                nav.pushViewController(vc, animated: animated)
+            }
+            
         } else {
             self.navigationController.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             self.navigationController.navigationBar.tintColor = to.tintColorBackButton
-            self.navigationController.pushViewController(vc, animated: animated)
+            
+            switch to {
+            case .updateProfile:
+                self.navigationController?.setBarTintColor(color: .Primary, complete: {
+                    self.navigationController.pushViewController(vc, animated: animated)
+                })
+                break
+            default:
+                self.navigationController.pushViewController(vc, animated: animated)
+            }
         }
     }
     

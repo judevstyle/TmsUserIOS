@@ -16,7 +16,7 @@ class BorderLineTextView: UITextView {
         self.layer.borderColor = defaultBorderineColor.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5
-        self.font = .PrimaryText(size: 16)
+        self.font = .PrimaryMedium(size: 16)
     }
 
     public func setBorderLineColor(color: UIColor) {

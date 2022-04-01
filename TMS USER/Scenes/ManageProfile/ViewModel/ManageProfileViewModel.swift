@@ -15,8 +15,6 @@ protocol ManageProfileProtocolInput {
 
 protocol ManageProfileProtocolOutput: class {
     var didGetProfileSuccess: (() -> Void)? { get set }
-    
-    func getMyUser() -> CustomerItems?
 }
 
 protocol ManageProfileProtocol: ManageProfileProtocolInput, ManageProfileProtocolOutput {
@@ -34,8 +32,6 @@ class ManageProfileViewModel: ManageProfileProtocol, ManageProfileProtocolOutput
     
     // MARK: - Properties
     private var vc: ManageProfileViewController
-    
-    fileprivate var itemMyUser: CustomerItems?
 
     init(
         vc: ManageProfileViewController,
@@ -55,13 +51,10 @@ class ManageProfileViewModel: ManageProfileProtocol, ManageProfileProtocolOutput
             self.vc.stopLoding()
         } receiveValue: { resp in
             if let items = resp {
-                self.itemMyUser = items
+                AppDelegate.shareDelegate.userProfile = items
                 self.didGetProfileSuccess?()
             }
         }.store(in: &self.anyCancellable)
     }
-    
-    func getMyUser() -> CustomerItems? {
-        return self.itemMyUser
-    }
+
 }

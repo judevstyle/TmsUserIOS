@@ -17,6 +17,7 @@ public struct PostRegisterCustomerRequest: Codable, Hashable {
     public var lat: Double?
     public var lng: Double?
     public var avatar: CustomerAvatar?
+    public var addresses: [AddressesData]?
 
     public init() {}
     
@@ -41,6 +42,29 @@ public struct CustomerAvatar: Codable, Hashable {
     
     enum CodingKeys: String, CodingKey {
         case url = "url"
+        case del = "del"
+    }
+}
+
+public struct AddressesData: Codable, Hashable {
+
+    public var address: String?
+    public var receiver: String?
+    public var tel: String?
+    public var lat: Double?
+    public var lng: Double?
+    public var Default: Int?
+    public var del: Int?
+    
+    public init() {}
+
+    enum CodingKeys: String, CodingKey {
+        case address = "address"
+        case receiver = "receiver"
+        case tel = "tel"
+        case lat = "lat"
+        case lng = "lng"
+        case Default = "default"
         case del = "del"
     }
 }

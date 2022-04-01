@@ -10,6 +10,7 @@ import UIKit
 class OrderViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var textEmptyData: TextEmptyData!
     
     lazy var viewModel: OrderProtocol = {
         let vm = OrderViewModel(orderViewController: self)
@@ -31,6 +32,8 @@ class OrderViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.input.getOrder()
         NavigationManager.instance.setupWithNavigationController(self.navigationController)
+        self.textEmptyData.isHidden = true
+        self.tableView.isHidden = false
     }
 }
 
@@ -44,12 +47,11 @@ extension OrderViewController {
     
     func didGetOrderSuccess() -> (() -> Void) {
         return { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.tableView.reloadData()
+            guard let self = self else { return }
+            self.checkEmptyData()
         }
     }
 }
-
 
 extension OrderViewController {
     func setupUI(){
@@ -63,6 +65,17 @@ extension OrderViewController {
         
         tableView.separatorStyle = .none
         tableView.registerCell(identifier: OrderTableViewCell.identifier)
+    }
+    
+    func checkEmptyData() {
+        if self.viewModel.output.getNumberOfRowsInSection(UITableView(), section: 1) == 0 {
+            self.textEmptyData.isHidden = false
+            self.tableView.isHidden = true
+        } else {
+            self.textEmptyData.isHidden = true
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
     }
 }
 

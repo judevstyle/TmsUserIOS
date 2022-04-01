@@ -12,7 +12,7 @@ class HeadSectionManageProfile: UILabel {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.font = .PrimaryText(size: 16)
+        self.font = .PrimaryMedium(size: 16)
         self.textColor = .Primary
     }
 }
@@ -21,7 +21,17 @@ class ValueManageProfile: UILabel {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.font = .PrimaryText(size: 18)
+        self.font = .PrimaryMedium(size: 18)
         self.textColor = .darkGray
+    }
+}
+
+class TextEmptyData: UILabel {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryMedium(size: 18)
+        self.textColor = .darkGray
+        self.text = "ไม่พบข้อมูล"
     }
 }

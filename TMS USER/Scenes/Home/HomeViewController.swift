@@ -87,6 +87,7 @@ extension HomeViewController {
 }
 
 extension HomeViewController {
+    
     func setupUI() {
         hideKeyboardWhenTappedAround()
         NavigationManager.instance.setupWithNavigationController(self)
@@ -98,10 +99,9 @@ extension HomeViewController {
         searchBar.compatibleSearchTextField.textColor = UIColor.Primary
         searchBar.compatibleSearchTextField.backgroundColor = UIColor.white
         searchBar.searchTextField.isEnabled = true
-        
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTapSearch(_:)))
-//        searchBar.addGestureRecognizer(tap)
-//        searchBar.isUserInteractionEnabled = true
+        searchBar.searchTextField.font = UIFont.PrimaryText(size: 17)
+        searchBar.tintColor = .Primary
+        searchBar.searchTextField.textColor = .Primary
         
         UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.PrimaryText(size: 17)
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.PrimaryText(size: 17)
@@ -143,7 +143,13 @@ extension HomeViewController {
     
     func setupValueBadge() {
         let objs = OrderCartManager.sharedInstance.getProductCart()
-        badgeCount.text = "\(objs?.count ?? 0)"
+        let count = Int("\(objs?.count ?? 0)") ?? 0
+        if count > 0 {
+            badgeCount.text = "\(objs?.count ?? 0)"
+            badgeCount.isHidden = false
+        } else {
+            badgeCount.isHidden = true
+        }
     }
     
     @objc func handleTapSearch(_ sender: UITapGestureRecognizer? = nil) {

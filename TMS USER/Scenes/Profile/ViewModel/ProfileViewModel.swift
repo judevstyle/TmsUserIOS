@@ -24,8 +24,6 @@ protocol ProfileProtocolOutput: class {
     func getNumberOfProfile(_ tableView: UITableView, section: Int) -> Int
     func getItemViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
     func getItemViewCellHeight() -> CGFloat
-    
-    func getMyUser() -> CustomerItems?
 }
 
 protocol ProfileProtocol: ProfileProtocolInput, ProfileProtocolOutput {
@@ -47,7 +45,6 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
     private var vc: ProfileViewController
     
     fileprivate var orderId: Int?
-    fileprivate var itemMyUser: CustomerItems?
     fileprivate var listMenu: [MenuProfileType] = [.personalData, .pointAndReward, .historyOrder, .logout]
 
     init(
@@ -75,7 +72,7 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
             self.vc.stopLoding()
         } receiveValue: { resp in
             if let items = resp {
-                self.itemMyUser = items
+                AppDelegate.shareDelegate.userProfile = items
                 self.didGetProfileSuccess?()
             }
         }.store(in: &self.anyCancellable)
@@ -148,11 +145,6 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
             }
         }.store(in: &self.anyCancellable)
     }
-    
-    func getMyUser() -> CustomerItems? {
-        return self.itemMyUser
-    }
-    
 }
 
 

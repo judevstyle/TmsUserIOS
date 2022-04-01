@@ -57,6 +57,12 @@ class OrderViewModel: OrderProtocol, OrderProtocolOutput {
         self.getApprovedOrderCustomerUseCase.execute().sink { completion in
             debugPrint("getApprovedOrderCustomer \(completion)")
             self.orderViewController.stopLoding()
+            switch completion {
+            case .failure:
+                self.didGetOrderSuccess?()
+            default:
+                break
+            }
         } receiveValue: { resp in
             if let items = resp?.items {
                 self.listOrder = items

@@ -10,6 +10,7 @@ import UIKit
 class HistoryViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var textEmptyData: TextEmptyData!
     
     lazy var viewModel: HistoryProtocol = {
         let vm = HistoryViewModel(historyViewController: self)
@@ -31,6 +32,8 @@ class HistoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.input.getHistory()
         NavigationManager.instance.setupWithNavigationController(self.navigationController)
+        self.textEmptyData.isHidden = true
+        self.tableView.isHidden = false
     }
 }
 
@@ -45,8 +48,8 @@ extension HistoryViewController {
     
     func didGetHistorySuccess() -> (() -> Void) {
         return { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.tableView.reloadData()
+            guard let self = self else { return }
+            self.checkEmptyData()
         }
     }
     
@@ -70,6 +73,17 @@ extension HistoryViewController {
         
         tableView.separatorStyle = .none
         tableView.registerCell(identifier: HistoryTableViewCell.identifier)
+    }
+    
+    func checkEmptyData() {
+        if self.viewModel.output.getNumberOfRowsInSection(UITableView(), section: 1) == 0 {
+            self.textEmptyData.isHidden = false
+            self.tableView.isHidden = true
+        } else {
+            self.textEmptyData.isHidden = true
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
     }
 }
 

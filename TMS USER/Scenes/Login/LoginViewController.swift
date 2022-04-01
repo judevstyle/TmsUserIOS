@@ -74,7 +74,7 @@ extension LoginViewController {
         
         btnLogin.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         
-        inputPhone.text = "0626532245"
+        inputPhone.text = "0910000003"
     }
 }
 

@@ -33,7 +33,9 @@ class ManageProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.tintColor = .white
         UIApplication.shared.statusBarStyle = .lightContent
+        viewModel.input.getProfile()
     }
+
 
     func configure(_ interface: ManageProfileProtocol) {
         self.viewModel = interface
@@ -50,7 +52,7 @@ class ManageProfileViewController: UIViewController {
     }
     
     func setupValueUser() {
-        guard let user = viewModel.output.getMyUser() else { return }
+        guard let user = AppDelegate.shareDelegate.userProfile else { return }
         nameText.text = user.displayName ?? "-"
         telText.text = user.tel ?? "-"
         typeUserText.text = user.typeUser?.typeName ?? "-"
@@ -65,7 +67,8 @@ class ManageProfileViewController: UIViewController {
     }
     
     @objc func handleEditUser() {
-        NavigationManager.instance.pushVC(to: .register)
+        guard let content = AppDelegate.shareDelegate.userProfile else { return }
+        NavigationManager.instance.pushVC(to: .updateProfile(content, delegate: self), presentation: .Push, isHiddenNavigationBar: false)
     }
     
 }
@@ -82,5 +85,12 @@ extension ManageProfileViewController {
             guard let weakSelf = self else { return }
             weakSelf.setupValueUser()
         }
+    }
+}
+
+// MARK: - Call Back For Update Profile
+extension ManageProfileViewController: RegisterViewControllerDelegate {
+    func updateProfileSuccess() {
+        viewModel.input.getProfile()
     }
 }

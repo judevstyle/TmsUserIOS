@@ -27,17 +27,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjB-xa-A70">
-                                        <rect key="frame" x="0.0" y="96" width="414" height="124"/>
+                                        <rect key="frame" x="0.0" y="91" width="414" height="134"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4gA-0F-uMo">
-                                                <rect key="frame" x="164.5" y="0.0" width="85" height="85"/>
+                                                <rect key="frame" x="159.5" y="0.0" width="95" height="95"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="07p-VS-igd"/>
-                                                    <constraint firstAttribute="width" constant="85" id="lla-5i-4wo"/>
+                                                    <constraint firstAttribute="height" constant="95" id="07p-VS-igd"/>
+                                                    <constraint firstAttribute="width" constant="95" id="lla-5i-4wo"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7O-mY-9Yo">
-                                                <rect key="frame" x="8" y="93" width="398" height="23"/>
+                                                <rect key="frame" x="8" y="103" width="398" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="aMB-w9-3XV"/>
                                                 </constraints>
@@ -59,7 +59,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="PjB-xa-A70" secondAttribute="bottom" constant="30" id="0rv-GQ-EKC"/>
+                                    <constraint firstAttribute="bottom" secondItem="PjB-xa-A70" secondAttribute="bottom" constant="25" id="0rv-GQ-EKC"/>
                                     <constraint firstItem="PjB-xa-A70" firstAttribute="leading" secondItem="3hp-WR-uNY" secondAttribute="leading" id="fdM-Qr-pcN"/>
                                     <constraint firstAttribute="height" constant="250" id="ki3-sC-vVA"/>
                                     <constraint firstAttribute="trailing" secondItem="PjB-xa-A70" secondAttribute="trailing" id="tcr-af-fxT"/>
@@ -99,13 +99,13 @@
                                         <rect key="frame" x="0.0" y="55" width="382" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ประเภทสมาชิก" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxy-EQ-K09" customClass="HeadSectionManageProfile" customModule="TMS_USER" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="29.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zc-F5-38g" customClass="ValueManageProfile" customModule="TMS_USER" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="29.5" width="382" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="382" height="29.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -126,13 +126,13 @@
                                         <rect key="frame" x="0.0" y="110" width="382" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เบอร์โทร" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNx-21-HGT" customClass="HeadSectionManageProfile" customModule="TMS_USER" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="29.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC0-Ms-4QI" customClass="ValueManageProfile" customModule="TMS_USER" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="29.5" width="382" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="382" height="29.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

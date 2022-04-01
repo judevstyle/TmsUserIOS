@@ -17,7 +17,7 @@ class BorderLineTextField: UITextField {
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5
         self.tintColor = .Primary
-        self.font = .PrimaryText(size: 16)
+        self.font = .PrimaryMedium(size: 16)
         self.backgroundColor = .clear
     }
 

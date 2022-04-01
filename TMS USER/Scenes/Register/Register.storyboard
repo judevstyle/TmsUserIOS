@@ -264,6 +264,7 @@
                         <outlet property="inputTel" destination="faF-o6-eJD" id="Pfb-ne-Km2"/>
                         <outlet property="scrollView" destination="VEL-no-g2e" id="aas-eI-d4X"/>
                         <outlet property="thumbnailImageView" destination="z6b-pL-cgI" id="9C9-22-9G7"/>
+                        <outlet property="viewTopHeight" destination="pcc-5M-g2Y" id="OYI-Jn-RhA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNl-gW-zzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

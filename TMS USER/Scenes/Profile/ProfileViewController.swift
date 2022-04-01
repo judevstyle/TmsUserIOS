@@ -48,7 +48,7 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         NavigationManager.instance.setupWithNavigationController(self)
-        
+        self.navigationController?.setBarTintColor(color: .clear)
         viewModel.input.getProfile()
         viewModel.input.getCustomerPoint()
     }
@@ -114,7 +114,7 @@ extension ProfileViewController {
     }
     
     func setupValueUser() {
-        guard let user = viewModel.output.getMyUser() else { return }
+        guard let user = AppDelegate.shareDelegate.userProfile else { return }
         nameText.text = user.displayName ?? "-"
         telText.text = "เบอร์โทร \(user.tel ?? "-")"
         typeText.text = "ประเภทสมาชิก \( user.typeUser?.typeName ?? "-")"

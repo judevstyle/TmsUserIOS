@@ -32,6 +32,11 @@ extension UIViewController {
         view.endEditing(true)
     }
     
+    func backToRoot() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     
 }
 

@@ -221,6 +221,9 @@
 		EFC1C59926C2C45E00ED64B1 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59726C2C45E00ED64B1 /* HistoryTableViewCell.swift */; };
 		EFC1C59A26C2C45E00ED64B1 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFC1C59826C2C45E00ED64B1 /* HistoryTableViewCell.xib */; };
 		EFC1C59D26C2C46F00ED64B1 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59C26C2C46F00ED64B1 /* HistoryViewModel.swift */; };
+		EFC8182F27F7501800CD64C8 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC8182E27F7501800CD64C8 /* UINavigationBar+Extension.swift */; };
+		EFC8183127F7570100CD64C8 /* PutUpdateProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC8183027F7570100CD64C8 /* PutUpdateProfileResponse.swift */; };
+		EFC8183327F7574A00CD64C8 /* PutUpdateProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC8183227F7574A00CD64C8 /* PutUpdateProfileUseCase.swift */; };
 		EFD9F03927061DB50072A3B1 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD9F03827061DB50072A3B1 /* ProductDetail.storyboard */; };
 		EFD9F03B27061DC60072A3B1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9F03A27061DC60072A3B1 /* ProductDetailViewController.swift */; };
 		EFD9F03E27061DFC0072A3B1 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9F03D27061DFC0072A3B1 /* ProductDetailViewModel.swift */; };
@@ -470,6 +473,9 @@
 		EFC1C59726C2C45E00ED64B1 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		EFC1C59826C2C45E00ED64B1 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		EFC1C59C26C2C46F00ED64B1 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		EFC8182E27F7501800CD64C8 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
+		EFC8183027F7570100CD64C8 /* PutUpdateProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUpdateProfileResponse.swift; sourceTree = "<group>"; };
+		EFC8183227F7574A00CD64C8 /* PutUpdateProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUpdateProfileUseCase.swift; sourceTree = "<group>"; };
 		EFD9F03827061DB50072A3B1 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
 		EFD9F03A27061DC60072A3B1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		EFD9F03D27061DFC0072A3B1 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
@@ -810,6 +816,7 @@
 				EF0D549626C19841009FD5F0 /* Date+Extension.swift */,
 				EF7443F92709678300D18F60 /* UIScrollView+Extension.swift */,
 				EF95764227F354FF00E59E12 /* UIApplication+Extension.swift */,
+				EFC8182E27F7501800CD64C8 /* UINavigationBar+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -987,6 +994,7 @@
 			isa = PBXGroup;
 			children = (
 				EF0D548126C18DB6009FD5F0 /* PostAuthenticateResponse.swift */,
+				EFC8183027F7570100CD64C8 /* PutUpdateProfileResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1015,6 +1023,7 @@
 				EF0D548926C18EF1009FD5F0 /* PostLogoutUseCase.swift */,
 				EFF4172C27F4BD9400ACF712 /* PostCheckTelUseCase.swift */,
 				EFF4172E27F4BDA900ACF712 /* PostRegisterCustomerUseCase.swift */,
+				EFC8183227F7574A00CD64C8 /* PutUpdateProfileUseCase.swift */,
 			);
 			path = AuthCustomer;
 			sourceTree = "<group>";
@@ -2123,6 +2132,7 @@
 				EFC1C58226C2AE4E00ED64B1 /* OrderTableViewCell.swift in Sources */,
 				EFC1C59226C2BE6F00ED64B1 /* OrderRepository.swift in Sources */,
 				EF0D54DD26C1B094009FD5F0 /* ProductCartTableViewCell.swift in Sources */,
+				EFC8183127F7570100CD64C8 /* PutUpdateProfileResponse.swift in Sources */,
 				EFC1C59926C2C45E00ED64B1 /* HistoryTableViewCell.swift in Sources */,
 				EF766F2726C84E37003ED499 /* GetReOrderCustomerUseCase.swift in Sources */,
 				EF0D54C226C1A284009FD5F0 /* GetProductDetailResponse.swift in Sources */,
@@ -2185,6 +2195,7 @@
 				EF0D542126C1451D009FD5F0 /* UIImageView+Extension.swift in Sources */,
 				EF0D543B26C1452F009FD5F0 /* CodableInfixOperator.swift in Sources */,
 				EFF4172D27F4BD9400ACF712 /* PostCheckTelUseCase.swift in Sources */,
+				EFC8183327F7574A00CD64C8 /* PutUpdateProfileUseCase.swift in Sources */,
 				EF0D544D26C145E4009FD5F0 /* IntroViewController.swift in Sources */,
 				EF0D546126C169F5009FD5F0 /* HomeViewController.swift in Sources */,
 				EF0D547226C17796009FD5F0 /* UISearchBar+Extension.swift in Sources */,
@@ -2232,6 +2243,7 @@
 				EF0D544226C1453F009FD5F0 /* DomainNameConfig.swift in Sources */,
 				EF0D54B226C1A22A009FD5F0 /* PostProductUseCase.swift in Sources */,
 				EF0D542326C1451D009FD5F0 /* UIColor+Extension.swift in Sources */,
+				EFC8182F27F7501800CD64C8 /* UINavigationBar+Extension.swift in Sources */,
 				EF0D544826C145CA009FD5F0 /* LoginViewController.swift in Sources */,
 				EF0D54CF26C1A3EB009FD5F0 /* ProductCategoryCollectionViewCell.swift in Sources */,
 				EF0FE83D26C907C400DFCED4 /* CustomerRepository.swift in Sources */,

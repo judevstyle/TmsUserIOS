@@ -14,6 +14,7 @@ protocol AuthCustomerRepository {
     func logout() -> AnyPublisher<PostAuthenticateResponse, Error>
     func checkTel(_ request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse, Error>
     func registerCustomer(_ request: PostRegisterCustomerRequest) -> AnyPublisher<PostAuthenticateResponse, Error>
+    func updateProfile(_ request: PostRegisterCustomerRequest) -> AnyPublisher<PutUpdateProfileResponse, Error>
 }
 
 final class AuthCustomerRepositoryImpl: TMS_USER.AuthCustomerRepository {
@@ -45,5 +46,12 @@ final class AuthCustomerRepositoryImpl: TMS_USER.AuthCustomerRepository {
             .cb
             .request(.registerCustomer(request))
             .map(PostAuthenticateResponse.self)
+    }
+    
+    func updateProfile(_ request: PostRegisterCustomerRequest) -> AnyPublisher<PutUpdateProfileResponse, Error> {
+        return self.provider
+            .cb
+            .request(.updateProfile(request))
+            .map(PutUpdateProfileResponse.self)
     }
 }
