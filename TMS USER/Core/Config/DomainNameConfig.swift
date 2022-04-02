@@ -19,6 +19,7 @@ public enum DomainNameConfig {
     case productDescForUser
     case googleMap
     case point
+    case collectibles
 }
 
 extension DomainNameConfig {
@@ -51,6 +52,8 @@ extension DomainNameConfig {
             return "\(googleMapURL)"
         case .point:
             return "\(HostURL)/point"
+        case .collectibles:
+            return "\(HostURL)/collectibles"
         }
     }
     

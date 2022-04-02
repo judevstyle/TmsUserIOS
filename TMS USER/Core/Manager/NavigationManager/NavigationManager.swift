@@ -43,6 +43,10 @@ public enum NavigationOpeningSender {
     
     case updateProfile(_ content: CustomerItems?, delegate: RegisterViewControllerDelegate?)
     
+    case customerPoint
+    
+    case collectibleExchange
+    
     public var storyboardName: String {
         switch self {
         case .splash:
@@ -81,6 +85,10 @@ public enum NavigationOpeningSender {
             return "ManageProfile"
         case .updateProfile:
             return "Register"
+        case .customerPoint:
+            return "CustomerPoint"
+        case .collectibleExchange:
+            return "CollectibleExchange"
         }
     }
     
@@ -122,6 +130,10 @@ public enum NavigationOpeningSender {
             return "ManageProfileViewController"
         case .updateProfile:
             return "RegisterViewController"
+        case .customerPoint:
+            return "CustomerPointViewController"
+        case .collectibleExchange:
+            return "CollectibleExchangeViewController"
         }
     }
     
@@ -148,6 +160,10 @@ public enum NavigationOpeningSender {
             return "ประวัติการสั่งซื้อ"
         case .updateProfile:
             return "แก้ไขโปรไฟล์"
+        case .customerPoint:
+            return "เหรียญสะสม"
+        case .collectibleExchange:
+            return "ของสะสม"
         default:
             return ""
         }
@@ -206,7 +222,7 @@ public enum NavigationOpeningSender {
     
     public var navColor: UIColor {
         switch self {
-        case .splash, .selectCurrentLocation, .updateProfile:
+        case .splash, .selectCurrentLocation, .updateProfile, .customerPoint:
             return .Primary
         default:
             return .clear

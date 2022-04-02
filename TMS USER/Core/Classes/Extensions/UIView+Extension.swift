@@ -13,11 +13,11 @@ extension UIView {
         self.layer.cornerRadius = rounded
     }
     
-    func setShadowBoxView()  {
+    func setShadowBoxView(shadowOpacity: Float = 0.3, shadowRadius: Double = 2)  {
         self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOpacity = shadowOpacity
         self.layer.shadowOffset = .zero
-        self.layer.shadowRadius = 2
+        self.layer.shadowRadius = shadowRadius
     }
     
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {

@@ -84,8 +84,8 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
             debugPrint("customerPoint \(completion)")
             self.vc.stopLoding()
         } receiveValue: { resp in
-            let total = resp.data?.totalPoint ?? 0
-            self.didGetCustomerPointSuccess?(total)
+            let balancePoint = resp.data?.balancePoint ?? 0
+            self.didGetCustomerPointSuccess?(balancePoint)
         }.store(in: &self.anyCancellable)
     }
 
@@ -113,6 +113,8 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
         switch type {
         case .personalData:
             NavigationManager.instance.pushVC(to: .manageProfile)
+        case .pointAndReward:
+            NavigationManager.instance.pushVC(to: .customerPoint)
         case .logout:
             vc.showAlertComfirm(titleText: "คุณต้องการออกจากระบบ\nใช่หรือไม่ ?", messageText: "", dismissAction: {
             }, confirmAction: {

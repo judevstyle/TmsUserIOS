@@ -19,11 +19,10 @@ extension Date {
 
 extension String {
     func convertToDate() -> Date? {
-        let formatter = DateFormatter()
+        let formatter = Foundation.DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = TimeZone(secondsFromGMT: 7)
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sss'Z'"
-        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let date = formatter.date(from: self)
         return date
     }

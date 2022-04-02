@@ -153,7 +153,6 @@
 		EF95764C27F3596800E59E12 /* SPPermissionsPhotoLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764B27F3596800E59E12 /* SPPermissionsPhotoLibrary */; };
 		EF95764E27F3596800E59E12 /* SPPermissionsTracking in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764D27F3596800E59E12 /* SPPermissionsTracking */; };
 		EF95765027F359E700E59E12 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95764F27F359E700E59E12 /* ImagePicker.swift */; };
-		EF95765527F35E1300E59E12 /* HeadTitleTFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */; };
 		EF95765727F35FF400E59E12 /* BorderLineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765627F35FF400E59E12 /* BorderLineTextView.swift */; };
 		EF95765927F3614300E59E12 /* ButtonCustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765827F3614300E59E12 /* ButtonCustomColor.swift */; };
 		EF95765B27F365A200E59E12 /* WarningUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95765A27F365A200E59E12 /* WarningUILabel.swift */; };
@@ -182,6 +181,12 @@
 		EF97F892270B0FF900B2E2C7 /* PostMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F891270B0FF900B2E2C7 /* PostMessageRequest.swift */; };
 		EF97F894270B107700B2E2C7 /* PostMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F893270B107700B2E2C7 /* PostMessageResponse.swift */; };
 		EF97F896270B115200B2E2C7 /* PostMessageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97F895270B115200B2E2C7 /* PostMessageUseCase.swift */; };
+		EF9BA36627F8C3850039D5CB /* CollectibleExchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9BA36527F8C3850039D5CB /* CollectibleExchange.storyboard */; };
+		EF9BA36827F8C3970039D5CB /* CollectibleExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9BA36727F8C3970039D5CB /* CollectibleExchangeViewController.swift */; };
+		EF9BA36C27F8CB050039D5CB /* CollectiblesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9BA36B27F8CB050039D5CB /* CollectiblesAPI.swift */; };
+		EF9BA36F27F8CC210039D5CB /* CollectiblesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9BA36E27F8CC210039D5CB /* CollectiblesRepository.swift */; };
+		EF9BA37427F8CC6D0039D5CB /* GetCollectiblesForUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9BA37327F8CC6D0039D5CB /* GetCollectiblesForUserRequest.swift */; };
+		EF9BA37627F8CC780039D5CB /* GetCollectiblesForUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9BA37527F8CC780039D5CB /* GetCollectiblesForUserResponse.swift */; };
 		EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E298D27F1FD1E008FBE5D /* Register.storyboard */; };
 		EF9E299027F1FD2E008FBE5D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */; };
 		EF9E299327F1FD3F008FBE5D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */; };
@@ -221,6 +226,14 @@
 		EFC1C59926C2C45E00ED64B1 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59726C2C45E00ED64B1 /* HistoryTableViewCell.swift */; };
 		EFC1C59A26C2C45E00ED64B1 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFC1C59826C2C45E00ED64B1 /* HistoryTableViewCell.xib */; };
 		EFC1C59D26C2C46F00ED64B1 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59C26C2C46F00ED64B1 /* HistoryViewModel.swift */; };
+		EFC39BF627F89DFA00F54C89 /* CustomerPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC39BF527F89DFA00F54C89 /* CustomerPoint.storyboard */; };
+		EFC39BF827F89E0400F54C89 /* CustomerPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC39BF727F89E0400F54C89 /* CustomerPointViewController.swift */; };
+		EFC39BFA27F8A33600F54C89 /* UIViewCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC39BF927F8A33600F54C89 /* UIViewCustomClass.swift */; };
+		EFC39BFC27F8A3E200F54C89 /* UIButtonCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC39BFB27F8A3E200F54C89 /* UIButtonCustomClass.swift */; };
+		EFC39BFE27F8A9A000F54C89 /* GetMyRewardPointResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC39BFD27F8A9A000F54C89 /* GetMyRewardPointResponse.swift */; };
+		EFC39C0127F8AD7D00F54C89 /* CustomerPointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC39C0027F8AD7D00F54C89 /* CustomerPointViewModel.swift */; };
+		EFC39C0527F8B5C500F54C89 /* MyRewardPointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC39C0327F8B5C500F54C89 /* MyRewardPointTableViewCell.swift */; };
+		EFC39C0627F8B5C500F54C89 /* MyRewardPointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFC39C0427F8B5C500F54C89 /* MyRewardPointTableViewCell.xib */; };
 		EFC8182F27F7501800CD64C8 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC8182E27F7501800CD64C8 /* UINavigationBar+Extension.swift */; };
 		EFC8183127F7570100CD64C8 /* PutUpdateProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC8183027F7570100CD64C8 /* PutUpdateProfileResponse.swift */; };
 		EFC8183327F7574A00CD64C8 /* PutUpdateProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC8183227F7574A00CD64C8 /* PutUpdateProfileUseCase.swift */; };
@@ -235,8 +248,8 @@
 		EFF4173927F4E30A00ACF712 /* GetCustomerPointResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173827F4E30A00ACF712 /* GetCustomerPointResponse.swift */; };
 		EFF4173C27F4E60500ACF712 /* ManageProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF4173B27F4E60500ACF712 /* ManageProfile.storyboard */; };
 		EFF4173E27F4E60E00ACF712 /* ManageProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173D27F4E60E00ACF712 /* ManageProfileViewController.swift */; };
-		EFF4174027F4E7DE00ACF712 /* TextFieldCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173F27F4E7DE00ACF712 /* TextFieldCustomClass.swift */; };
-		EFF4174227F4E80600ACF712 /* LabelCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4174127F4E80600ACF712 /* LabelCustomClass.swift */; };
+		EFF4174027F4E7DE00ACF712 /* UITextFieldCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4173F27F4E7DE00ACF712 /* UITextFieldCustomClass.swift */; };
+		EFF4174227F4E80600ACF712 /* UILabelCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4174127F4E80600ACF712 /* UILabelCustomClass.swift */; };
 		EFF4174527F4EDC800ACF712 /* ManageProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4174427F4EDC800ACF712 /* ManageProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -405,7 +418,6 @@
 		EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerUseCase.swift; sourceTree = "<group>"; };
 		EF95764227F354FF00E59E12 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		EF95764F27F359E700E59E12 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadTitleTFLabel.swift; sourceTree = "<group>"; };
 		EF95765627F35FF400E59E12 /* BorderLineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLineTextView.swift; sourceTree = "<group>"; };
 		EF95765827F3614300E59E12 /* ButtonCustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomColor.swift; sourceTree = "<group>"; };
 		EF95765A27F365A200E59E12 /* WarningUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningUILabel.swift; sourceTree = "<group>"; };
@@ -434,6 +446,12 @@
 		EF97F891270B0FF900B2E2C7 /* PostMessageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageRequest.swift; sourceTree = "<group>"; };
 		EF97F893270B107700B2E2C7 /* PostMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageResponse.swift; sourceTree = "<group>"; };
 		EF97F895270B115200B2E2C7 /* PostMessageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageUseCase.swift; sourceTree = "<group>"; };
+		EF9BA36527F8C3850039D5CB /* CollectibleExchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectibleExchange.storyboard; sourceTree = "<group>"; };
+		EF9BA36727F8C3970039D5CB /* CollectibleExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleExchangeViewController.swift; sourceTree = "<group>"; };
+		EF9BA36B27F8CB050039D5CB /* CollectiblesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectiblesAPI.swift; sourceTree = "<group>"; };
+		EF9BA36E27F8CC210039D5CB /* CollectiblesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectiblesRepository.swift; sourceTree = "<group>"; };
+		EF9BA37327F8CC6D0039D5CB /* GetCollectiblesForUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCollectiblesForUserRequest.swift; sourceTree = "<group>"; };
+		EF9BA37527F8CC780039D5CB /* GetCollectiblesForUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCollectiblesForUserResponse.swift; sourceTree = "<group>"; };
 		EF9E298D27F1FD1E008FBE5D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -473,6 +491,14 @@
 		EFC1C59726C2C45E00ED64B1 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		EFC1C59826C2C45E00ED64B1 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		EFC1C59C26C2C46F00ED64B1 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		EFC39BF527F89DFA00F54C89 /* CustomerPoint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerPoint.storyboard; sourceTree = "<group>"; };
+		EFC39BF727F89E0400F54C89 /* CustomerPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerPointViewController.swift; sourceTree = "<group>"; };
+		EFC39BF927F8A33600F54C89 /* UIViewCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCustomClass.swift; sourceTree = "<group>"; };
+		EFC39BFB27F8A3E200F54C89 /* UIButtonCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCustomClass.swift; sourceTree = "<group>"; };
+		EFC39BFD27F8A9A000F54C89 /* GetMyRewardPointResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyRewardPointResponse.swift; sourceTree = "<group>"; };
+		EFC39C0027F8AD7D00F54C89 /* CustomerPointViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerPointViewModel.swift; sourceTree = "<group>"; };
+		EFC39C0327F8B5C500F54C89 /* MyRewardPointTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRewardPointTableViewCell.swift; sourceTree = "<group>"; };
+		EFC39C0427F8B5C500F54C89 /* MyRewardPointTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRewardPointTableViewCell.xib; sourceTree = "<group>"; };
 		EFC8182E27F7501800CD64C8 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		EFC8183027F7570100CD64C8 /* PutUpdateProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUpdateProfileResponse.swift; sourceTree = "<group>"; };
 		EFC8183227F7574A00CD64C8 /* PutUpdateProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUpdateProfileUseCase.swift; sourceTree = "<group>"; };
@@ -488,8 +514,8 @@
 		EFF4173827F4E30A00ACF712 /* GetCustomerPointResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCustomerPointResponse.swift; sourceTree = "<group>"; };
 		EFF4173B27F4E60500ACF712 /* ManageProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageProfile.storyboard; sourceTree = "<group>"; };
 		EFF4173D27F4E60E00ACF712 /* ManageProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageProfileViewController.swift; sourceTree = "<group>"; };
-		EFF4173F27F4E7DE00ACF712 /* TextFieldCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustomClass.swift; sourceTree = "<group>"; };
-		EFF4174127F4E80600ACF712 /* LabelCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustomClass.swift; sourceTree = "<group>"; };
+		EFF4173F27F4E7DE00ACF712 /* UITextFieldCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldCustomClass.swift; sourceTree = "<group>"; };
+		EFF4174127F4E80600ACF712 /* UILabelCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelCustomClass.swift; sourceTree = "<group>"; };
 		EFF4174427F4EDC800ACF712 /* ManageProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageProfileViewModel.swift; sourceTree = "<group>"; };
 		F7EA73E29250230955E9C2F9 /* Pods-TMS USER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USER.release.xcconfig"; path = "Target Support Files/Pods-TMS USER/Pods-TMS USER.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -614,6 +640,8 @@
 		EF0D53D826C13EEC009FD5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EF9BA36427F8C3660039D5CB /* CollectibleExchange */,
+				EFC39BF427F89DE700F54C89 /* CustomerPoint */,
 				EFF4173A27F4E5EE00ACF712 /* ManageProfile */,
 				EF95765C27F36D8200E59E12 /* SelectCurrentLocation */,
 				EF9E298C27F1FD10008FBE5D /* Register */,
@@ -916,6 +944,7 @@
 		EF0D547526C18AB3009FD5F0 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				EF9BA36A27F8CAF60039D5CB /* Collectibles */,
 				EFF4173027F4E11800ACF712 /* Point */,
 				EF95768927F3763900E59E12 /* GoogleMap */,
 				EF309E5F26DA20A300CB7353 /* Conversation */,
@@ -931,6 +960,7 @@
 		EF0D547626C18AB9009FD5F0 /* Repositorys */ = {
 			isa = PBXGroup;
 			children = (
+				EF9BA36D27F8CC140039D5CB /* Collectibles */,
 				EFF4173327F4E2AE00ACF712 /* Point */,
 				EF95768627F3762F00E59E12 /* GoogleMap */,
 				EF309E6926DA230600CB7353 /* Conversation */,
@@ -960,6 +990,7 @@
 		EF0D547826C18ACA009FD5F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EF9BA37027F8CC490039D5CB /* Collectibles */,
 				EFF4173627F4E2EE00ACF712 /* Point */,
 				EF95766727F374F700E59E12 /* GoogleMap */,
 				EF309E6226DA213100CB7353 /* Conversation */,
@@ -1183,6 +1214,8 @@
 		EF0D54CA26C1A3DF009FD5F0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EF9BA36927F8CA7C0039D5CB /* CollectibleTableViewCell */,
+				EFC39C0227F8B5A300F54C89 /* MyRewardPointTableViewCell */,
 				EFB47C0426C3D5BC00170CD0 /* EmployeeTableViewCell */,
 				EFB47BFF26C3D57E00170CD0 /* ProductListTableViewCell */,
 				EFC1C59626C2C44E00ED64B1 /* HistoryTableViewCell */,
@@ -1382,12 +1415,13 @@
 		EF95765127F35B4E00E59E12 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EF95765427F35E1300E59E12 /* HeadTitleTFLabel.swift */,
 				EF95765627F35FF400E59E12 /* BorderLineTextView.swift */,
 				EF95765827F3614300E59E12 /* ButtonCustomColor.swift */,
 				EF95765A27F365A200E59E12 /* WarningUILabel.swift */,
-				EFF4173F27F4E7DE00ACF712 /* TextFieldCustomClass.swift */,
-				EFF4174127F4E80600ACF712 /* LabelCustomClass.swift */,
+				EFF4173F27F4E7DE00ACF712 /* UITextFieldCustomClass.swift */,
+				EFF4174127F4E80600ACF712 /* UILabelCustomClass.swift */,
+				EFC39BF927F8A33600F54C89 /* UIViewCustomClass.swift */,
+				EFC39BFB27F8A3E200F54C89 /* UIButtonCustomClass.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1474,6 +1508,63 @@
 				EF95768A27F3763900E59E12 /* GoogleMapAPI.swift */,
 			);
 			path = GoogleMap;
+			sourceTree = "<group>";
+		};
+		EF9BA36427F8C3660039D5CB /* CollectibleExchange */ = {
+			isa = PBXGroup;
+			children = (
+				EF9BA36527F8C3850039D5CB /* CollectibleExchange.storyboard */,
+				EF9BA36727F8C3970039D5CB /* CollectibleExchangeViewController.swift */,
+			);
+			path = CollectibleExchange;
+			sourceTree = "<group>";
+		};
+		EF9BA36927F8CA7C0039D5CB /* CollectibleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectibleTableViewCell;
+			sourceTree = "<group>";
+		};
+		EF9BA36A27F8CAF60039D5CB /* Collectibles */ = {
+			isa = PBXGroup;
+			children = (
+				EF9BA36B27F8CB050039D5CB /* CollectiblesAPI.swift */,
+			);
+			path = Collectibles;
+			sourceTree = "<group>";
+		};
+		EF9BA36D27F8CC140039D5CB /* Collectibles */ = {
+			isa = PBXGroup;
+			children = (
+				EF9BA36E27F8CC210039D5CB /* CollectiblesRepository.swift */,
+			);
+			path = Collectibles;
+			sourceTree = "<group>";
+		};
+		EF9BA37027F8CC490039D5CB /* Collectibles */ = {
+			isa = PBXGroup;
+			children = (
+				EF9BA37227F8CC550039D5CB /* Request */,
+				EF9BA37127F8CC4F0039D5CB /* Response */,
+			);
+			path = Collectibles;
+			sourceTree = "<group>";
+		};
+		EF9BA37127F8CC4F0039D5CB /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				EF9BA37527F8CC780039D5CB /* GetCollectiblesForUserResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		EF9BA37227F8CC550039D5CB /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EF9BA37327F8CC6D0039D5CB /* GetCollectiblesForUserRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		EF9E298C27F1FD10008FBE5D /* Register */ = {
@@ -1727,6 +1818,33 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EFC39BF427F89DE700F54C89 /* CustomerPoint */ = {
+			isa = PBXGroup;
+			children = (
+				EFC39BFF27F8AD6F00F54C89 /* ViewModel */,
+				EFC39BF527F89DFA00F54C89 /* CustomerPoint.storyboard */,
+				EFC39BF727F89E0400F54C89 /* CustomerPointViewController.swift */,
+			);
+			path = CustomerPoint;
+			sourceTree = "<group>";
+		};
+		EFC39BFF27F8AD6F00F54C89 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFC39C0027F8AD7D00F54C89 /* CustomerPointViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFC39C0227F8B5A300F54C89 /* MyRewardPointTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFC39C0327F8B5C500F54C89 /* MyRewardPointTableViewCell.swift */,
+				EFC39C0427F8B5C500F54C89 /* MyRewardPointTableViewCell.xib */,
+			);
+			path = MyRewardPointTableViewCell;
+			sourceTree = "<group>";
+		};
 		EFD9F03727061D9E0072A3B1 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1773,6 +1891,7 @@
 			isa = PBXGroup;
 			children = (
 				EFF4173827F4E30A00ACF712 /* GetCustomerPointResponse.swift */,
+				EFC39BFD27F8A9A000F54C89 /* GetMyRewardPointResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1922,6 +2041,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9BA36627F8C3850039D5CB /* CollectibleExchange.storyboard in Resources */,
 				EF0D53A926C12F2E009FD5F0 /* LaunchScreen.storyboard in Resources */,
 				EFC1C58326C2AE4E00ED64B1 /* OrderTableViewCell.xib in Resources */,
 				EF0D53ED26C13FC3009FD5F0 /* SukhumvitSet-Thin.ttf in Resources */,
@@ -1931,6 +2051,7 @@
 				EFBD71AD26C3190E0044216D /* MarkerMapView.xib in Resources */,
 				EF314BBE26CABA9B002B201C /* Chat.storyboard in Resources */,
 				EF0D54DE26C1B094009FD5F0 /* ProductCartTableViewCell.xib in Resources */,
+				EFC39C0627F8B5C500F54C89 /* MyRewardPointTableViewCell.xib in Resources */,
 				EF0D545F26C169EE009FD5F0 /* Home.storyboard in Resources */,
 				EF0D53A626C12F2E009FD5F0 /* Assets.xcassets in Resources */,
 				EF95766427F3747700E59E12 /* SearchResultTableViewCell.xib in Resources */,
@@ -1938,6 +2059,7 @@
 				EF95765E27F36D9000E59E12 /* SelectCurrentLocation.storyboard in Resources */,
 				EFBD719826C313320044216D /* OrderDetail.storyboard in Resources */,
 				EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */,
+				EFC39BF627F89DFA00F54C89 /* CustomerPoint.storyboard in Resources */,
 				EF0D53EB26C13FC3009FD5F0 /* SukhumvitSet-Light.ttf in Resources */,
 				EFF4173C27F4E60500ACF712 /* ManageProfile.storyboard in Resources */,
 				EF0D53EF26C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf in Resources */,
@@ -2124,6 +2246,8 @@
 				EF766F2326C84315003ED499 /* GetOrderDetailUseCase.swift in Sources */,
 				EF95766027F36D9D00E59E12 /* SelectCurrentLocationViewController.swift in Sources */,
 				EF95768327F3762200E59E12 /* GetPlaceDetailUseCase.swift in Sources */,
+				EFC39BF827F89E0400F54C89 /* CustomerPointViewController.swift in Sources */,
+				EFC39C0527F8B5C500F54C89 /* MyRewardPointTableViewCell.swift in Sources */,
 				EF0D542C26C1451D009FD5F0 /* Decoder+Extension.swift in Sources */,
 				EF0D54D926C1AFE8009FD5F0 /* ProductCartViewController.swift in Sources */,
 				EF0D542926C1451D009FD5F0 /* ImageBase64+Extension.swift in Sources */,
@@ -2142,16 +2266,18 @@
 				EFD9F03B27061DC60072A3B1 /* ProductDetailViewController.swift in Sources */,
 				EF314BBC26CABA95002B201C /* ChatViewController.swift in Sources */,
 				EF0D54AC26C1A1F6009FD5F0 /* GetProductTypeUseCase.swift in Sources */,
-				EFF4174227F4E80600ACF712 /* LabelCustomClass.swift in Sources */,
+				EFF4174227F4E80600ACF712 /* UILabelCustomClass.swift in Sources */,
 				EF0D546B26C16D6F009FD5F0 /* HistoryViewController.swift in Sources */,
 				EF0D543C26C1452F009FD5F0 /* AnyKey.swift in Sources */,
 				EFF4174527F4EDC800ACF712 /* ManageProfileViewModel.swift in Sources */,
 				EF0D545726C1464C009FD5F0 /* ToolbarPickerView.swift in Sources */,
 				EF309E6626DA215900CB7353 /* GetMessageRequest.swift in Sources */,
 				EF0D544F26C14628009FD5F0 /* KeyboardListener.swift in Sources */,
+				EFC39BFC27F8A3E200F54C89 /* UIButtonCustomClass.swift in Sources */,
 				EF0D54B626C1A243009FD5F0 /* ProductRepository.swift in Sources */,
 				EF0D548A26C18EF1009FD5F0 /* PostLogoutUseCase.swift in Sources */,
 				EF9E299327F1FD3F008FBE5D /* RegisterViewModel.swift in Sources */,
+				EF9BA37427F8CC6D0039D5CB /* GetCollectiblesForUserRequest.swift in Sources */,
 				EFF4172F27F4BDA900ACF712 /* PostRegisterCustomerUseCase.swift in Sources */,
 				EF0D542226C1451D009FD5F0 /* UIFont+Extension.swift in Sources */,
 				EF95764327F354FF00E59E12 /* UIApplication+Extension.swift in Sources */,
@@ -2174,6 +2300,7 @@
 				EF0D549126C19136009FD5F0 /* ToastManager.swift in Sources */,
 				EF0D53F826C1450F009FD5F0 /* MoyaProvider+Combine.swift in Sources */,
 				EF95768427F3762200E59E12 /* GetPlaceAutoCompleteUseCase.swift in Sources */,
+				EF9BA36827F8C3970039D5CB /* CollectibleExchangeViewController.swift in Sources */,
 				EF0D548226C18DB6009FD5F0 /* PostAuthenticateResponse.swift in Sources */,
 				EF0D541B26C1451D009FD5F0 /* SocketMarkerMapResponse.swift in Sources */,
 				EFF4173527F4E2C100ACF712 /* PointRepository.swift in Sources */,
@@ -2185,6 +2312,7 @@
 				EF0FE84A26C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift in Sources */,
 				EF309E6826DA216100CB7353 /* GetMessageResponse.swift in Sources */,
 				EF7443FA2709678300D18F60 /* UIScrollView+Extension.swift in Sources */,
+				EF9BA36F27F8CC210039D5CB /* CollectiblesRepository.swift in Sources */,
 				EF0D547B26C18CCA009FD5F0 /* AuthCustomerAPI.swift in Sources */,
 				EF95766527F3747700E59E12 /* SearchResultTableViewCell.swift in Sources */,
 				EF0D54C426C1A284009FD5F0 /* PostProductResponse.swift in Sources */,
@@ -2198,6 +2326,7 @@
 				EFC8183327F7574A00CD64C8 /* PutUpdateProfileUseCase.swift in Sources */,
 				EF0D544D26C145E4009FD5F0 /* IntroViewController.swift in Sources */,
 				EF0D546126C169F5009FD5F0 /* HomeViewController.swift in Sources */,
+				EF9BA37627F8CC780039D5CB /* GetCollectiblesForUserResponse.swift in Sources */,
 				EF0D547226C17796009FD5F0 /* UISearchBar+Extension.swift in Sources */,
 				EF0D54C526C1A284009FD5F0 /* GetProductRequest.swift in Sources */,
 				EF0D542B26C1451D009FD5F0 /* UIViewController+Extension.swift in Sources */,
@@ -2214,7 +2343,7 @@
 				EF0D54A226C1A1BD009FD5F0 /* ProductTypeRepository.swift in Sources */,
 				EF97F894270B107700B2E2C7 /* PostMessageResponse.swift in Sources */,
 				EF97F88E270B06F800B2E2C7 /* GetRoomChatCustomerResponse.swift in Sources */,
-				EFF4174027F4E7DE00ACF712 /* TextFieldCustomClass.swift in Sources */,
+				EFF4174027F4E7DE00ACF712 /* UITextFieldCustomClass.swift in Sources */,
 				EF0D548526C18E6D009FD5F0 /* AuthCustomerRepository.swift in Sources */,
 				EFF4173927F4E30A00ACF712 /* GetCustomerPointResponse.swift in Sources */,
 				EF95767C27F3759200E59E12 /* SelectCurrentLocationViewModel.swift in Sources */,
@@ -2270,17 +2399,19 @@
 				EF0FE84826C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift in Sources */,
 				EF0FE83A26C9074000DFCED4 /* CustomerAPI.swift in Sources */,
 				EF0D54B926C1A269009FD5F0 /* ProductAPI.swift in Sources */,
+				EFC39BFA27F8A33600F54C89 /* UIViewCustomClass.swift in Sources */,
 				EF7443F827095C6A00D18F60 /* GetProductDescForUserUseCase.swift in Sources */,
 				EFF4173227F4E12400ACF712 /* PointAPI.swift in Sources */,
 				EFC1C58826C2BB1100ED64B1 /* OrderAPI.swift in Sources */,
 				EF95767227F374F700E59E12 /* GetPlaceDirectionResponse.swift in Sources */,
 				EF0D541D26C1451D009FD5F0 /* SoketDashboardResponse.swift in Sources */,
+				EFC39C0127F8AD7D00F54C89 /* CustomerPointViewModel.swift in Sources */,
 				EF0D54C926C1A2B9009FD5F0 /* MetaObject.swift in Sources */,
+				EF9BA36C27F8CB050039D5CB /* CollectiblesAPI.swift in Sources */,
 				EFBD71AC26C3190E0044216D /* MarkerMapView.swift in Sources */,
 				EF0D543326C1451D009FD5F0 /* UITextField+Extension.swift in Sources */,
 				EF0D542426C1451D009FD5F0 /* NSUIColor+Hex.swift in Sources */,
 				EF0D539A26C12F2B009FD5F0 /* AppDelegate.swift in Sources */,
-				EF95765527F35E1300E59E12 /* HeadTitleTFLabel.swift in Sources */,
 				EF0FE84426C9086500DFCED4 /* GetCustomerMyUserUseCase.swift in Sources */,
 				EFB47C0726C3D5D500170CD0 /* EmployeeTableViewCell.swift in Sources */,
 				EF0D542026C1451D009FD5F0 /* SocketManager.swift in Sources */,
@@ -2298,6 +2429,7 @@
 				EFC1C58F26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift in Sources */,
 				EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */,
 				EFC1C58D26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift in Sources */,
+				EFC39BFE27F8A9A000F54C89 /* GetMyRewardPointResponse.swift in Sources */,
 				EF0D546626C16D58009FD5F0 /* OrderViewController.swift in Sources */,
 				EFF4173E27F4E60E00ACF712 /* ManageProfileViewController.swift in Sources */,
 			);
