@@ -11,8 +11,9 @@ import Combine
 
 protocol HomeProtocolInput {
     func getCategory()
-    func getProduct(productTypeId: Int?)
+    func getProduct()
     
+    func editingSearch(_ search: String)
     
     func didSelectItemAt(_ collectionView: UICollectionView, indexPath: IndexPath, type: TypeUserCollectionType)
     func didSelectCategory(index: Int)
@@ -67,6 +68,8 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     
     fileprivate var listCategory: [ProductType]? = []
     fileprivate var listProduct: [ProductItems]? = []
+    public var searchText: String?
+    public var productTypeId: Int?
     
     func getCategory() {
         listCategory?.removeAll()
@@ -83,12 +86,13 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
         }.store(in: &self.anyCancellable)
     }
     
-    func getProduct(productTypeId: Int?) {
+    func getProduct() {
         listProduct?.removeAll()
         self.homeViewController.startLoding()
         var request: GetProductRequest = GetProductRequest()
         request.compId = 1
-        request.productTypeId = productTypeId
+        request.productTypeId = self.productTypeId
+        request.search = self.searchText
         self.getProductUseCase.execute(request: request).sink { completion in
             debugPrint("getProduct \(completion)")
             self.homeViewController.stopLoding()
@@ -104,11 +108,13 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
         self.selectedIndex = index
         switch index {
         case 0:
-            getProduct(productTypeId: nil)
+            self.productTypeId = nil
+            getProduct()
             break
         default:
-            let productTypeId = self.listCategory?[index - 1].productTypeId
-            getProduct(productTypeId: productTypeId)
+            let id = self.listCategory?[index - 1].productTypeId
+            self.productTypeId = id
+            getProduct()
         }
     }
     
@@ -161,17 +167,8 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
     }
     
     func didSelectProduct(index: Int) {
-
-//        NavigationManager.instance.pushVC(to: .productDetailBottomSheet(
-//                                            item: listProduct?[index],
-//                                            delegate: self),
-//                                          presentation: .BottomSheet(completion: {
-//                                            }, height: 665))
-//
         NavigationManager.instance.pushVC(to: .productDetail(item: listProduct?[index], delegate: self), presentation: .ModalNoNav(completion: {
-            
         }))
-        
     }
     
     func getTitleCategory(indexPath: IndexPath) -> String {
@@ -184,6 +181,16 @@ class HomeViewModel: HomeProtocol, HomeProtocolOutput {
             guard let items = self.listCategory, items.count != 0 else { return "" }
             let item = items[indexPath.item - 1]
             return item.productTypeName ?? ""
+        }
+    }
+    
+    
+    func editingSearch(_ search: String) {
+        if search.isEmpty {
+            self.searchText = nil
+            self.getProduct()
+        } else {
+            self.searchText = search
         }
     }
     

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dialog Message View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="DialogMessageViewController" customModule="TMS_USER" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P16-Oh-mIf">
+                                <rect key="frame" x="20" y="-30" width="374" height="966"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-O9-RhS">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="966"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVP-6E-8M7" customClass="AcceptDialogView" customModule="TMS_USER" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="350"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="350" id="4UR-Cp-5Tu"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4X3-bR-v1o" customClass="ErrorDialogView" customModule="TMS_USER" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="350" width="374" height="300"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="210-gu-2Im"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rM-VL-dza" customClass="SuccessDialogView" customModule="TMS_USER" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="650" width="374" height="316"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="316" id="TwS-bi-WiS"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hGe-O9-RhS" firstAttribute="top" secondItem="P16-Oh-mIf" secondAttribute="top" id="LYw-3n-SjH"/>
+                                    <constraint firstAttribute="bottom" secondItem="hGe-O9-RhS" secondAttribute="bottom" id="MF4-Lz-Psc"/>
+                                    <constraint firstItem="hGe-O9-RhS" firstAttribute="leading" secondItem="P16-Oh-mIf" secondAttribute="leading" id="VGl-bS-Li7"/>
+                                    <constraint firstAttribute="trailing" secondItem="hGe-O9-RhS" secondAttribute="trailing" id="XHL-Rb-Oo9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P16-Oh-mIf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="DOw-On-fZE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P16-Oh-mIf" secondAttribute="trailing" constant="20" id="hl9-k1-Cdw"/>
+                            <constraint firstItem="P16-Oh-mIf" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="jCY-sm-eaD"/>
+                            <constraint firstItem="P16-Oh-mIf" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="jwd-Qk-ezP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="acceptDialogView" destination="DVP-6E-8M7" id="b8D-xb-QzH"/>
+                        <outlet property="errorDialogView" destination="4X3-bR-v1o" id="hfc-UL-EQa"/>
+                        <outlet property="successDialogView" destination="0rM-VL-dza" id="3cU-s3-iGs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="53.571428571428569"/>
+        </scene>
+    </scenes>
+</document>

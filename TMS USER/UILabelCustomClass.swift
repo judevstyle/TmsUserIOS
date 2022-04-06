@@ -78,3 +78,77 @@ class TextValuePoint: UILabel {
         self.text = "0"
     }
 }
+
+// MARK: - Share Data
+
+class TextBold32: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryBold(size: 32)
+        self.textColor = .darkGray
+    }
+}
+
+class TextBold24: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryBold(size: 24)
+        self.textColor = .darkGray
+    }
+}
+
+class TextBold18: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryBold(size: 18)
+        self.textColor = .darkGray
+    }
+}
+
+class TextBold16: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryBold(size: 16)
+        self.textColor = .darkGray
+    }
+}
+
+class TextBold14: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryBold(size: 14)
+        self.textColor = .darkGray
+    }
+}
+
+class Text24: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryText(size: 24)
+        self.textColor = .darkGray
+    }
+}
+
+class Text18: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryText(size: 18)
+        self.textColor = .darkGray
+    }
+}
+
+class Text16: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryText(size: 16)
+        self.textColor = .darkGray
+    }
+}
+
+class Text14: UILabel {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.font = .PrimaryText(size: 14)
+        self.textColor = .darkGray
+    }
+}

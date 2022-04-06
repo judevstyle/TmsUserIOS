@@ -44,10 +44,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnD-du-RQH">
-                        <rect key="frame" x="98" y="71" width="79" height="21"/>
+                        <rect key="frame" x="98" y="71" width="76" height="21"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BO9-rD-LbJ">
-                                <rect key="frame" x="29" y="0.0" width="42" height="21"/>
+                                <rect key="frame" x="26" y="0.0" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -69,15 +69,15 @@
                             <constraint firstAttribute="bottom" secondItem="BO9-rD-LbJ" secondAttribute="bottom" id="D9D-CO-ca2"/>
                             <constraint firstAttribute="trailing" secondItem="BO9-rD-LbJ" secondAttribute="trailing" constant="8" id="FyB-L1-A4u"/>
                             <constraint firstItem="poK-cJ-ybb" firstAttribute="top" secondItem="qnD-du-RQH" secondAttribute="top" id="Paa-jr-nZQ"/>
-                            <constraint firstItem="BO9-rD-LbJ" firstAttribute="leading" secondItem="poK-cJ-ybb" secondAttribute="trailing" constant="8" id="T34-JK-Dw5"/>
+                            <constraint firstItem="BO9-rD-LbJ" firstAttribute="leading" secondItem="poK-cJ-ybb" secondAttribute="trailing" constant="5" id="T34-JK-Dw5"/>
                             <constraint firstItem="BO9-rD-LbJ" firstAttribute="top" secondItem="qnD-du-RQH" secondAttribute="top" id="Tsd-R1-B3j"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fh1-aP-fv5">
-                        <rect key="frame" x="327" y="96" width="79" height="21"/>
+                        <rect key="frame" x="330" y="96" width="76" height="21"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-n9-z2r" customClass="TextDescCellDarkGray" customModule="TMS_USER" customModuleProvider="target">
-                                <rect key="frame" x="29" y="0.0" width="42" height="21"/>
+                                <rect key="frame" x="26" y="0.0" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                             <constraint firstAttribute="bottom" secondItem="wuK-NE-UTg" secondAttribute="bottom" id="0gS-CK-za6"/>
                             <constraint firstItem="wuK-NE-UTg" firstAttribute="top" secondItem="fh1-aP-fv5" secondAttribute="top" id="7H4-Ze-h9L"/>
                             <constraint firstItem="wuK-NE-UTg" firstAttribute="leading" secondItem="fh1-aP-fv5" secondAttribute="leading" id="C4s-Sp-PI3"/>
-                            <constraint firstItem="Qgl-n9-z2r" firstAttribute="leading" secondItem="wuK-NE-UTg" secondAttribute="trailing" constant="8" id="FMl-j6-AqL"/>
+                            <constraint firstItem="Qgl-n9-z2r" firstAttribute="leading" secondItem="wuK-NE-UTg" secondAttribute="trailing" constant="5" id="FMl-j6-AqL"/>
                             <constraint firstAttribute="height" constant="21" id="XO8-E9-jzp"/>
                             <constraint firstItem="Qgl-n9-z2r" firstAttribute="top" secondItem="fh1-aP-fv5" secondAttribute="top" id="Yp6-E1-4Ce"/>
                             <constraint firstAttribute="trailing" secondItem="Qgl-n9-z2r" secondAttribute="trailing" constant="8" id="snZ-DK-JF1"/>

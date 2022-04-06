@@ -199,6 +199,9 @@ extension OrderTrackingViewController {
         orderTitleNoText.text = viewModel.output.getOrderNo()
         orderAllSumText.text = "฿\(viewModel.output.getSumAllPrice())"
         countOrderItemText.text = "จำนวน Item \(viewModel.output.getCountOrder()) ชนิด"
+        orderTitleNoText.sizeToFit()
+        orderAllSumText.sizeToFit()
+        countOrderItemText.sizeToFit()
     }
     
     private func setImage(url: String?) {

@@ -12,6 +12,7 @@ import Moya
 protocol PointRepository {
     func customerPoint() -> AnyPublisher<GetCustomerPointResponse, Error>
     func myRewardPoint() -> AnyPublisher<GetMyRewardPointResponse, Error>
+    func rewardPoint(_ clbId: Int) -> AnyPublisher<PostRewardPointResponse, Error>
 }
 
 final class PointRepositoryImpl: TMS_USER.PointRepository {
@@ -29,5 +30,12 @@ final class PointRepositoryImpl: TMS_USER.PointRepository {
             .cb
             .request(.myRewardPoint)
             .map(GetMyRewardPointResponse.self)
+    }
+    
+    func rewardPoint(_ clbId: Int) -> AnyPublisher<PostRewardPointResponse, Error> {
+        return self.provider
+            .cb
+            .request(.rewardPoint(clbId))
+            .map(PostRewardPointResponse.self)
     }
 }

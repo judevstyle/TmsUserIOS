@@ -18,10 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l0J-B2-Ae9">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l0J-B2-Ae9">
+                                <rect key="frame" x="16" y="44" width="398" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSj-BN-KuE" customClass="TextEmptyData" customModule="TMS_USER" customModuleProvider="target">
+                                <rect key="frame" x="186" y="442.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Jm-58-9Ip">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="backgroundColor" name="Primary"/>
@@ -33,13 +39,19 @@
                             <constraint firstAttribute="trailing" secondItem="1Jm-58-9Ip" secondAttribute="trailing" id="IKj-VN-XYa"/>
                             <constraint firstItem="l0J-B2-Ae9" firstAttribute="top" secondItem="1Jm-58-9Ip" secondAttribute="bottom" id="Lmp-Qe-Hih"/>
                             <constraint firstItem="l0J-B2-Ae9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="M8r-en-sqt"/>
+                            <constraint firstItem="dSj-BN-KuE" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="RgX-Ni-2YA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="l0J-B2-Ae9" secondAttribute="trailing" id="Vkz-ht-5M4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="l0J-B2-Ae9" secondAttribute="bottom" id="eFL-cL-ShJ"/>
+                            <constraint firstItem="dSj-BN-KuE" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="fTH-bP-RgY"/>
                             <constraint firstItem="1Jm-58-9Ip" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="itM-cn-dPe"/>
-                            <constraint firstItem="l0J-B2-Ae9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="scv-nF-khI"/>
+                            <constraint firstItem="l0J-B2-Ae9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="scv-nF-khI"/>
                             <constraint firstItem="1Jm-58-9Ip" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="uIb-ri-JSf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="l0J-B2-Ae9" id="5DJ-7S-yTF"/>
+                        <outlet property="textEmptyData" destination="dSj-BN-KuE" id="NsR-Co-zEh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -24,6 +24,8 @@ protocol CustomerPointProtocolOutput: class {
     func getNumberOfProfile(_ tableView: UITableView, section: Int) -> Int
     func getItemViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
     func getItemViewCellHeight() -> CGFloat
+    
+    func getCustomerPoint() -> Int
 }
 
 protocol CustomerPointProtocol: CustomerPointProtocolInput, CustomerPointProtocolOutput {
@@ -56,11 +58,12 @@ class CustomerPointViewModel: CustomerPointProtocol, CustomerPointProtocolOutput
     var didGetMyRewardPointSuccess: (() -> Void)?
     
     private var listMyRewardPoint: [RewardPointItem]?
+    private var customerPoint: Int = 0
     
     func getMyRewardPoint() {
         vc.stopLoding()
         self.pointRepository.myRewardPoint().sink { completion in
-            debugPrint("customerPoint \(completion)")
+            debugPrint("getMyRewardPoint \(completion)")
             self.vc.stopLoding()
         } receiveValue: { resp in
             self.listMyRewardPoint = resp.data
@@ -71,10 +74,11 @@ class CustomerPointViewModel: CustomerPointProtocol, CustomerPointProtocolOutput
     func getCustomerPoint() {
         vc.stopLoding()
         self.pointRepository.customerPoint().sink { completion in
-            debugPrint("customerPoint \(completion)")
+            debugPrint("getCustomerPoint \(completion)")
             self.vc.stopLoding()
         } receiveValue: { resp in
             let balancePoint = resp.data?.balancePoint ?? 0
+            self.customerPoint = balancePoint
             self.didGetCustomerPointSuccess?(balancePoint)
         }.store(in: &self.anyCancellable)
     }
@@ -92,7 +96,6 @@ class CustomerPointViewModel: CustomerPointProtocol, CustomerPointProtocolOutput
         let cell = tableView.dequeueReusableCell(withIdentifier: MyRewardPointTableViewCell.identifier, for: indexPath) as! MyRewardPointTableViewCell
         cell.selectionStyle = .none
         cell.item = listMyRewardPoint?[indexPath.item]
-//        cell.title = listMenu[indexPath.item].title
         return cell
     }
     
@@ -102,6 +105,10 @@ class CustomerPointViewModel: CustomerPointProtocol, CustomerPointProtocolOutput
     
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath) {
 
+    }
+    
+    func getCustomerPoint() -> Int {
+        self.customerPoint
     }
 
 }

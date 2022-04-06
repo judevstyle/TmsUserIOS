@@ -12,12 +12,13 @@ import UIKit
 public enum PointAPI {
     case customerPoint
     case myRewardPoint
+    case rewardPoint(_ clbId: Int)
 }
 
 extension PointAPI: TargetType {
     public var baseURL: URL {
         switch self {
-        case .customerPoint, .myRewardPoint:
+        case .customerPoint, .myRewardPoint, .rewardPoint:
             return DomainNameConfig.point.url
         }
     }
@@ -28,6 +29,8 @@ extension PointAPI: TargetType {
             return "/customerPoint"
         case .myRewardPoint:
             return "/myRewardPoint"
+        case .rewardPoint:
+            return "/rewardPoint"
         }
     }
     
@@ -35,6 +38,8 @@ extension PointAPI: TargetType {
         switch self {
         case .customerPoint, .myRewardPoint:
             return .get
+        case .rewardPoint:
+            return .post
         }
     }
     
@@ -46,6 +51,11 @@ extension PointAPI: TargetType {
         switch self {
         case .customerPoint, .myRewardPoint:
             return .requestPlain
+        case .rewardPoint(let clbId):
+            let body: [String: Any] = [
+                "clb_id": clbId
+            ]
+            return .requestCompositeParameters(bodyParameters: body, bodyEncoding: JSONEncoding.default, urlParameters: [:])
         }
     }
     

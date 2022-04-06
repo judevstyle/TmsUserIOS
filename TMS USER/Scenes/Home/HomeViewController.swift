@@ -193,9 +193,13 @@ extension HomeViewController {
 }
 
 extension HomeViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.input.editingSearch(searchText)
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        debugPrint("searchBarSearchButtonClicked")
-        self.searchBar.text = ""
+        viewModel.input.getProduct()
         self.searchBar.endEditing(true)
     }
 }

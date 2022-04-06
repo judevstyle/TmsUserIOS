@@ -15,6 +15,7 @@ protocol IntroProtocolInput {
 
 protocol IntroProtocolOutput: class {
     var didAuthSuccess: (() -> Void)? { get set }
+    var didAuthFail: (() -> Void)? { get set }
 }
 
 protocol IntroProtocol: IntroProtocolInput, IntroProtocolOutput {
@@ -29,17 +30,17 @@ class IntroViewModel: IntroProtocol, IntroProtocolOutput {
     // MARK: - Properties
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
-    private var introViewController: IntroViewController
+    private var vc: IntroViewController
     
     init(
-        introViewController: IntroViewController
+        vc: IntroViewController
     ) {
-        self.introViewController = introViewController
+        self.vc = vc
     }
     
     // MARK - Data-binding OutPut
     var didAuthSuccess: (() -> Void)?
-    
+    var didAuthFail: (() -> Void)?
     
     func checkAuth() {
 //        introViewController.startLoding()
@@ -47,15 +48,19 @@ class IntroViewModel: IntroProtocol, IntroProtocolOutput {
 //            self.introViewController.stopLoding()
 //            self.didAuthSuccess?()
 //        }
-        
+        vc.startLoding()
         if let accessToken = UserDefaultsKey.AccessToken.string, accessToken != "",
            let expireAccessToken = UserDefaultsKey.ExpireAccessToken.string, expireAccessToken != "",
            let expireDate = expireAccessToken.convertToDate(),
            Date() < expireDate {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.didAuthSuccess?()
+                debugPrint("AccessToken \(accessToken)")
+                self.vc.stopLoding()
             }
-            debugPrint("AccessToken \(accessToken)")
+        } else {
+            self.didAuthFail?()
+            vc.stopLoding()
         }
     }
 }

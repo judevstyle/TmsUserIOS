@@ -57,10 +57,16 @@ class MyRewardPointTableViewCell: UITableViewCell {
         
         setImage(url: item?.collectibles?.clbImg)
         if let createDate = item?.createDate  {
-            self.dateText.text = createDate.convertToDate()?.getFormattedDate(format: "dd/MM/yyyy") ?? ""
+            self.dateText.text = createDate.convertToDate()?.getFormattedDate(format: "dd/MM/yyyy HH:mm") ?? ""
         } else {
             self.dateText.text = ""
         }
+        
+        self.titleText.sizeToFit()
+        self.dateText.sizeToFit()
+        self.statusText.sizeToFit()
+        self.pointText.sizeToFit()
+        self.dateText.sizeToFit()
     }
     
     private func setImage(url: String?) {

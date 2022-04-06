@@ -25,12 +25,15 @@ class CustomerPointViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        viewModel.input.getCustomerPoint()
-        viewModel.input.getMyRewardPoint()
         setupUI()
     }
     
     func setupUI() {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.input.getCustomerPoint()
+        viewModel.input.getMyRewardPoint()
     }
     
     func configure(_ interface: CustomerPointProtocol) {
@@ -46,7 +49,8 @@ class CustomerPointViewController: UIViewController {
         tableView.registerCell(identifier: MyRewardPointTableViewCell.identifier)
     }
     @IBAction func handleButtonCoin(_ sender: Any) {
-        NavigationManager.instance.pushVC(to: .collectibleExchange)
+        let point = self.viewModel.output.getCustomerPoint()
+        NavigationManager.instance.pushVC(to: .collectibleExchange(point))
     }
     
 }

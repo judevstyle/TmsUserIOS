@@ -17,7 +17,7 @@ class IntroViewController: UIViewController {
     
     // ViewModel
     lazy var viewModel: IntroProtocol = {
-        let vm = IntroViewModel(introViewController: self)
+        let vm = IntroViewModel(vc: self)
         self.configure(vm)
         self.bindToViewModel()
         return vm
@@ -40,12 +40,19 @@ extension IntroViewController {
     
     func bindToViewModel() {
         viewModel.output.didAuthSuccess = didAuthSuccess()
+        viewModel.output.didAuthFail = didAuthFail()
     }
     
     func didAuthSuccess() -> (() -> Void) {
         return { [weak self] in
-            guard let weakSelf = self else { return }
+            guard let self = self else { return }
             NavigationManager.instance.setRootViewController(rootView: .mainApp, withNav: false, isTranslucent: true)
+        }
+    }
+    
+    func didAuthFail() -> (() -> Void) {
+        return { [weak self] in
+            guard let self = self else { return }
         }
     }
 }

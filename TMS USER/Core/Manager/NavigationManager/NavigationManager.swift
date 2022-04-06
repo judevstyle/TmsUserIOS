@@ -45,7 +45,15 @@ public enum NavigationOpeningSender {
     
     case customerPoint
     
-    case collectibleExchange
+    case collectibleExchange(_ point: Int)
+    
+    case modalAccept
+    
+    case dialogMessage(delegate: DialogMessageViewControllerDelegate,
+                       _ type: DialogMessageType,
+                       msgAccept: AcceptDialogMsg? = nil,
+                       msgError: ErrorDialogMsg? = nil,
+                       msgSuccess: SuccessDialogMsg? = nil)
     
     public var storyboardName: String {
         switch self {
@@ -89,6 +97,10 @@ public enum NavigationOpeningSender {
             return "CustomerPoint"
         case .collectibleExchange:
             return "CollectibleExchange"
+        case .modalAccept:
+            return "ModalAccept"
+        case .dialogMessage:
+            return "DialogMessage"
         }
     }
     
@@ -134,6 +146,10 @@ public enum NavigationOpeningSender {
             return "CustomerPointViewController"
         case .collectibleExchange:
             return "CollectibleExchangeViewController"
+        case .modalAccept:
+            return "ModalAcceptViewController"
+        case .dialogMessage:
+            return "DialogMessageViewController"
         }
     }
     
@@ -259,6 +275,7 @@ class NavigationManager {
         case PopupSheet(completion: (() -> Void)?)
         case presentFullScreen(completion: (() -> Void)?)
         case switchTabbar(index: Int)
+        case ModalFullScreen(completion: (() -> Void)?)
         
     }
     
@@ -360,6 +377,20 @@ class NavigationManager {
                 className.delegate = delegate
                 viewController = className
             }
+        case .collectibleExchange(let point):
+            if let className = storyboard.instantiateInitialViewController() as? CollectibleExchangeViewController {
+                className.viewModel.input.setCustomerPoint(point)
+                viewController = className
+            }
+        case .dialogMessage(let delegate, let type, let msgAccept, let msgError, let msgSuccess):
+            if let className = storyboard.instantiateInitialViewController() as? DialogMessageViewController {
+                className.delegate = delegate
+                className.dialogMessageType = type
+                className.msgAccept = msgAccept
+                className.msgError = msgError
+                className.msgSuccess = msgSuccess
+                viewController = className
+            }
         default:
             viewController = storyboard.instantiateInitialViewController() ?? to.viewController
         }
@@ -417,6 +448,11 @@ class NavigationManager {
             topVC?.present(nav, animated: true, completion: completion)
         case .switchTabbar(index: let index):
             self.mainTabBarController.selectedIndex = index
+        case .ModalFullScreen(let completion):
+            let topVC = UIApplication.getTopViewController()
+            viewController.modalPresentationStyle = .overFullScreen
+            viewController.modalTransitionStyle = .crossDissolve
+            topVC?.present(viewController, animated: true, completion: completion)
         }
         self.currentPresentation = presentation
     }

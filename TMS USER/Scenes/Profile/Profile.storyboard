@@ -76,7 +76,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 คะแนน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kct-LX-DU8">
-                                                        <rect key="frame" x="29" y="0.0" width="272" height="21"/>
+                                                        <rect key="frame" x="26" y="0.0" width="275" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="OQB-Sv-8tb"/>
                                                         </constraints>
@@ -89,7 +89,7 @@
                                                 <constraints>
                                                     <constraint firstItem="qLC-1T-MfG" firstAttribute="leading" secondItem="DVc-Oc-8Zk" secondAttribute="leading" id="5gA-hy-tyT"/>
                                                     <constraint firstItem="qLC-1T-MfG" firstAttribute="top" secondItem="DVc-Oc-8Zk" secondAttribute="top" id="Jce-hu-wXZ"/>
-                                                    <constraint firstItem="kct-LX-DU8" firstAttribute="leading" secondItem="qLC-1T-MfG" secondAttribute="trailing" constant="8" id="oP4-5a-AHy"/>
+                                                    <constraint firstItem="kct-LX-DU8" firstAttribute="leading" secondItem="qLC-1T-MfG" secondAttribute="trailing" constant="5" id="oP4-5a-AHy"/>
                                                     <constraint firstAttribute="bottom" secondItem="qLC-1T-MfG" secondAttribute="bottom" id="r0s-LR-HUY"/>
                                                     <constraint firstAttribute="height" constant="21" id="vFf-EC-TBm"/>
                                                     <constraint firstAttribute="bottom" secondItem="kct-LX-DU8" secondAttribute="bottom" id="x0r-EC-Sym"/>

@@ -17,3 +17,11 @@ class ViewBGPoint: UIView {
         self.setShadowBoxView(shadowOpacity: 0.5, shadowRadius: 3)
     }
 }
+
+class ViewRoundedShadow: UIView {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setRounded(rounded: 8)
+        self.setShadowBoxView(shadowOpacity: 0.3, shadowRadius: 3)
+    }
+}

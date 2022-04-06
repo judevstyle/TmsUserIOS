@@ -10,6 +10,9 @@
 		4521D602D74E44D354FDBE75 /* Pods_TMS_USERTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F6324BD0C8BAEA24EE3DED /* Pods_TMS_USERTests.framework */; };
 		495BCDB6F97BBFE8F5CF35C5 /* Pods_TMS_USER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8B3E628FBE339F32B12A46 /* Pods_TMS_USER.framework */; };
 		C8BBD89E195E81FDE13D2957 /* Pods_TMS_USER_TMS_USERUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4E124EE6B7947264EAA532 /* Pods_TMS_USER_TMS_USERUITests.framework */; };
+		EF06ED8327FB66690097F67A /* CollectibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF06ED8127FB66690097F67A /* CollectibleTableViewCell.swift */; };
+		EF06ED8427FB66690097F67A /* CollectibleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF06ED8227FB66690097F67A /* CollectibleTableViewCell.xib */; };
+		EF06ED8727FB684D0097F67A /* CollectibleExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF06ED8627FB684D0097F67A /* CollectibleExchangeViewModel.swift */; };
 		EF0D539A26C12F2B009FD5F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D539926C12F2B009FD5F0 /* AppDelegate.swift */; };
 		EF0D53A426C12F2B009FD5F0 /* TMS_USER.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF0D53A226C12F2B009FD5F0 /* TMS_USER.xcdatamodeld */; };
 		EF0D53A626C12F2E009FD5F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0D53A526C12F2E009FD5F0 /* Assets.xcassets */; };
@@ -22,10 +25,8 @@
 		EF0D53D726C13EBB009FD5F0 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = EF0D53D626C13EBB009FD5F0 /* NVActivityIndicatorViewExtended */; };
 		EF0D53E126C13F6A009FD5F0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D53E026C13F6A009FD5F0 /* SplashViewController.swift */; };
 		EF0D53E326C13F73009FD5F0 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF0D53E226C13F73009FD5F0 /* Splash.storyboard */; };
-		EF0D53EB26C13FC3009FD5F0 /* SukhumvitSet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF0D53E526C13FC3009FD5F0 /* SukhumvitSet-Light.ttf */; };
 		EF0D53EC26C13FC3009FD5F0 /* SukhumvitSet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF0D53E626C13FC3009FD5F0 /* SukhumvitSet-Bold.ttf */; };
 		EF0D53ED26C13FC3009FD5F0 /* SukhumvitSet-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF0D53E726C13FC3009FD5F0 /* SukhumvitSet-Thin.ttf */; };
-		EF0D53EE26C13FC3009FD5F0 /* SukhumvitSet-Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF0D53E826C13FC3009FD5F0 /* SukhumvitSet-Text.ttf */; };
 		EF0D53EF26C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF0D53E926C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf */; };
 		EF0D53F026C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF0D53EA26C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf */; };
 		EF0D53F726C1450F009FD5F0 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0D53F526C1450F009FD5F0 /* Combine.swift */; };
@@ -140,6 +141,17 @@
 		EF309E6E26DA237200CB7353 /* GetMessageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF309E6D26DA237200CB7353 /* GetMessageUseCase.swift */; };
 		EF314BBC26CABA95002B201C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF314BBB26CABA95002B201C /* ChatViewController.swift */; };
 		EF314BBE26CABA9B002B201C /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF314BBD26CABA9B002B201C /* Chat.storyboard */; };
+		EF4B545027FD8A9000446FF7 /* DialogMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B544F27FD8A9000446FF7 /* DialogMessageViewController.swift */; };
+		EF4B545227FD8A9700446FF7 /* DialogMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4B545127FD8A9700446FF7 /* DialogMessage.storyboard */; };
+		EF4B545327FD925E00446FF7 /* SukhumvitSet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF4B545527FD925E00446FF7 /* SukhumvitSet-Light.ttf */; };
+		EF4B545627FD926A00446FF7 /* SukhumvitSet-Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF4B545827FD926A00446FF7 /* SukhumvitSet-Text.ttf */; };
+		EF4B545E27FD99BC00446FF7 /* AcceptDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B545D27FD99BC00446FF7 /* AcceptDialogView.swift */; };
+		EF4B546027FD99C300446FF7 /* AcceptDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4B545F27FD99C300446FF7 /* AcceptDialogView.xib */; };
+		EF4B546327FDB20F00446FF7 /* ErrorDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B546227FDB20F00446FF7 /* ErrorDialogView.swift */; };
+		EF4B546527FDB21700446FF7 /* ErrorDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4B546427FDB21700446FF7 /* ErrorDialogView.xib */; };
+		EF4B546727FE050E00446FF7 /* PostRewardPointResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B546627FE050E00446FF7 /* PostRewardPointResponse.swift */; };
+		EF4B546A27FE07DE00446FF7 /* SuccessDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4B546927FE07DE00446FF7 /* SuccessDialogView.xib */; };
+		EF4B546C27FE07E600446FF7 /* SuccessDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4B546B27FE07E600446FF7 /* SuccessDialogView.swift */; };
 		EF7443F827095C6A00D18F60 /* GetProductDescForUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7443F727095C6A00D18F60 /* GetProductDescForUserUseCase.swift */; };
 		EF7443FA2709678300D18F60 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7443F92709678300D18F60 /* UIScrollView+Extension.swift */; };
 		EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2026C841FA003ED499 /* GetOrderDetailResponse.swift */; };
@@ -278,6 +290,9 @@
 		CB4E124EE6B7947264EAA532 /* Pods_TMS_USER_TMS_USERUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMS_USER_TMS_USERUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6008B9604AB65D2102F2772 /* Pods-TMS USER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USER.debug.xcconfig"; path = "Target Support Files/Pods-TMS USER/Pods-TMS USER.debug.xcconfig"; sourceTree = "<group>"; };
 		DE7627F79062D774BEADD4AC /* Pods-TMS USERTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USERTests.debug.xcconfig"; path = "Target Support Files/Pods-TMS USERTests/Pods-TMS USERTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF06ED8127FB66690097F67A /* CollectibleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleTableViewCell.swift; sourceTree = "<group>"; };
+		EF06ED8227FB66690097F67A /* CollectibleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectibleTableViewCell.xib; sourceTree = "<group>"; };
+		EF06ED8627FB684D0097F67A /* CollectibleExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleExchangeViewModel.swift; sourceTree = "<group>"; };
 		EF0D539626C12F2B009FD5F0 /* TMS USER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMS USER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0D539926C12F2B009FD5F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF0D53A326C12F2B009FD5F0 /* TMS_USER.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TMS_USER.xcdatamodel; sourceTree = "<group>"; };
@@ -292,10 +307,8 @@
 		EF0D53C026C12F2E009FD5F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF0D53E026C13F6A009FD5F0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		EF0D53E226C13F73009FD5F0 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
-		EF0D53E526C13FC3009FD5F0 /* SukhumvitSet-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Light.ttf"; sourceTree = "<group>"; };
 		EF0D53E626C13FC3009FD5F0 /* SukhumvitSet-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Bold.ttf"; sourceTree = "<group>"; };
 		EF0D53E726C13FC3009FD5F0 /* SukhumvitSet-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Thin.ttf"; sourceTree = "<group>"; };
-		EF0D53E826C13FC3009FD5F0 /* SukhumvitSet-Text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Text.ttf"; sourceTree = "<group>"; };
 		EF0D53E926C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-Medium.ttf"; sourceTree = "<group>"; };
 		EF0D53EA26C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SukhumvitSet-SemiBold.ttf"; sourceTree = "<group>"; };
 		EF0D53F526C1450F009FD5F0 /* Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combine.swift; sourceTree = "<group>"; };
@@ -410,6 +423,17 @@
 		EF309E6D26DA237200CB7353 /* GetMessageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageUseCase.swift; sourceTree = "<group>"; };
 		EF314BBB26CABA95002B201C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		EF314BBD26CABA9B002B201C /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		EF4B544F27FD8A9000446FF7 /* DialogMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogMessageViewController.swift; sourceTree = "<group>"; };
+		EF4B545127FD8A9700446FF7 /* DialogMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DialogMessage.storyboard; sourceTree = "<group>"; };
+		EF4B545427FD925E00446FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/SukhumvitSet-Light.ttf"; sourceTree = "<group>"; };
+		EF4B545727FD926A00446FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/SukhumvitSet-Text.ttf"; sourceTree = "<group>"; };
+		EF4B545D27FD99BC00446FF7 /* AcceptDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDialogView.swift; sourceTree = "<group>"; };
+		EF4B545F27FD99C300446FF7 /* AcceptDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptDialogView.xib; sourceTree = "<group>"; };
+		EF4B546227FDB20F00446FF7 /* ErrorDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDialogView.swift; sourceTree = "<group>"; };
+		EF4B546427FDB21700446FF7 /* ErrorDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorDialogView.xib; sourceTree = "<group>"; };
+		EF4B546627FE050E00446FF7 /* PostRewardPointResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRewardPointResponse.swift; sourceTree = "<group>"; };
+		EF4B546927FE07DE00446FF7 /* SuccessDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessDialogView.xib; sourceTree = "<group>"; };
+		EF4B546B27FE07E600446FF7 /* SuccessDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessDialogView.swift; sourceTree = "<group>"; };
 		EF7443F727095C6A00D18F60 /* GetProductDescForUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDescForUserUseCase.swift; sourceTree = "<group>"; };
 		EF7443F92709678300D18F60 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		EF766F2026C841FA003ED499 /* GetOrderDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDetailResponse.swift; sourceTree = "<group>"; };
@@ -580,6 +604,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EF06ED8527FB683C0097F67A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF06ED8627FB684D0097F67A /* CollectibleExchangeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EF0D538D26C12F2B009FD5F0 = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +672,7 @@
 		EF0D53D826C13EEC009FD5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EF4B544E27FD8A6B00446FF7 /* DialogMessage */,
 				EF9BA36427F8C3660039D5CB /* CollectibleExchange */,
 				EFC39BF427F89DE700F54C89 /* CustomerPoint */,
 				EFF4173A27F4E5EE00ACF712 /* ManageProfile */,
@@ -678,6 +711,7 @@
 		EF0D53DA26C13EFF009FD5F0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				EF4B545927FD997900446FF7 /* DialogView */,
 				EFB47C0926C3DA8400170CD0 /* CellHeader */,
 				EFBD71A326C319040044216D /* Components */,
 				EF0D54CA26C1A3DF009FD5F0 /* Cell */,
@@ -726,10 +760,10 @@
 		EF0D53E426C13FC3009FD5F0 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				EF0D53E526C13FC3009FD5F0 /* SukhumvitSet-Light.ttf */,
+				EF4B545527FD925E00446FF7 /* SukhumvitSet-Light.ttf */,
 				EF0D53E626C13FC3009FD5F0 /* SukhumvitSet-Bold.ttf */,
 				EF0D53E726C13FC3009FD5F0 /* SukhumvitSet-Thin.ttf */,
-				EF0D53E826C13FC3009FD5F0 /* SukhumvitSet-Text.ttf */,
+				EF4B545827FD926A00446FF7 /* SukhumvitSet-Text.ttf */,
 				EF0D53E926C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf */,
 				EF0D53EA26C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf */,
 			);
@@ -1412,6 +1446,52 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		EF4B544E27FD8A6B00446FF7 /* DialogMessage */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B544F27FD8A9000446FF7 /* DialogMessageViewController.swift */,
+				EF4B545127FD8A9700446FF7 /* DialogMessage.storyboard */,
+			);
+			path = DialogMessage;
+			sourceTree = "<group>";
+		};
+		EF4B545927FD997900446FF7 /* DialogView */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B546827FE07CE00446FF7 /* SuccessDialog */,
+				EF4B546127FDB1F400446FF7 /* ErrorDialog */,
+				EF4B545A27FD998800446FF7 /* AcceptDialog */,
+			);
+			path = DialogView;
+			sourceTree = "<group>";
+		};
+		EF4B545A27FD998800446FF7 /* AcceptDialog */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B545D27FD99BC00446FF7 /* AcceptDialogView.swift */,
+				EF4B545F27FD99C300446FF7 /* AcceptDialogView.xib */,
+			);
+			path = AcceptDialog;
+			sourceTree = "<group>";
+		};
+		EF4B546127FDB1F400446FF7 /* ErrorDialog */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B546227FDB20F00446FF7 /* ErrorDialogView.swift */,
+				EF4B546427FDB21700446FF7 /* ErrorDialogView.xib */,
+			);
+			path = ErrorDialog;
+			sourceTree = "<group>";
+		};
+		EF4B546827FE07CE00446FF7 /* SuccessDialog */ = {
+			isa = PBXGroup;
+			children = (
+				EF4B546927FE07DE00446FF7 /* SuccessDialogView.xib */,
+				EF4B546B27FE07E600446FF7 /* SuccessDialogView.swift */,
+			);
+			path = SuccessDialog;
+			sourceTree = "<group>";
+		};
 		EF95765127F35B4E00E59E12 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1513,6 +1593,7 @@
 		EF9BA36427F8C3660039D5CB /* CollectibleExchange */ = {
 			isa = PBXGroup;
 			children = (
+				EF06ED8527FB683C0097F67A /* ViewModel */,
 				EF9BA36527F8C3850039D5CB /* CollectibleExchange.storyboard */,
 				EF9BA36727F8C3970039D5CB /* CollectibleExchangeViewController.swift */,
 			);
@@ -1522,6 +1603,8 @@
 		EF9BA36927F8CA7C0039D5CB /* CollectibleTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				EF06ED8127FB66690097F67A /* CollectibleTableViewCell.swift */,
+				EF06ED8227FB66690097F67A /* CollectibleTableViewCell.xib */,
 			);
 			path = CollectibleTableViewCell;
 			sourceTree = "<group>";
@@ -1892,6 +1975,7 @@
 			children = (
 				EFF4173827F4E30A00ACF712 /* GetCustomerPointResponse.swift */,
 				EFC39BFD27F8A9A000F54C89 /* GetMyRewardPointResponse.swift */,
+				EF4B546627FE050E00446FF7 /* PostRewardPointResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -2043,12 +2127,14 @@
 			files = (
 				EF9BA36627F8C3850039D5CB /* CollectibleExchange.storyboard in Resources */,
 				EF0D53A926C12F2E009FD5F0 /* LaunchScreen.storyboard in Resources */,
+				EF4B546A27FE07DE00446FF7 /* SuccessDialogView.xib in Resources */,
 				EFC1C58326C2AE4E00ED64B1 /* OrderTableViewCell.xib in Resources */,
 				EF0D53ED26C13FC3009FD5F0 /* SukhumvitSet-Thin.ttf in Resources */,
 				EFD9F03927061DB50072A3B1 /* ProductDetail.storyboard in Resources */,
 				EFC1C57826C2A26E00ED64B1 /* ProductDetailBottomSheet.storyboard in Resources */,
 				EF0D54D326C1A408009FD5F0 /* ProductCollectionViewCell.xib in Resources */,
 				EFBD71AD26C3190E0044216D /* MarkerMapView.xib in Resources */,
+				EF4B545227FD8A9700446FF7 /* DialogMessage.storyboard in Resources */,
 				EF314BBE26CABA9B002B201C /* Chat.storyboard in Resources */,
 				EF0D54DE26C1B094009FD5F0 /* ProductCartTableViewCell.xib in Resources */,
 				EFC39C0627F8B5C500F54C89 /* MyRewardPointTableViewCell.xib in Resources */,
@@ -2059,8 +2145,9 @@
 				EF95765E27F36D9000E59E12 /* SelectCurrentLocation.storyboard in Resources */,
 				EFBD719826C313320044216D /* OrderDetail.storyboard in Resources */,
 				EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */,
+				EF06ED8427FB66690097F67A /* CollectibleTableViewCell.xib in Resources */,
 				EFC39BF627F89DFA00F54C89 /* CustomerPoint.storyboard in Resources */,
-				EF0D53EB26C13FC3009FD5F0 /* SukhumvitSet-Light.ttf in Resources */,
+				EF4B545327FD925E00446FF7 /* SukhumvitSet-Light.ttf in Resources */,
 				EFF4173C27F4E60500ACF712 /* ManageProfile.storyboard in Resources */,
 				EF0D53EF26C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf in Resources */,
 				EF0D53F026C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf in Resources */,
@@ -2072,13 +2159,15 @@
 				EF0D544B26C145DD009FD5F0 /* Intro.storyboard in Resources */,
 				EF0D546426C16D51009FD5F0 /* Order.storyboard in Resources */,
 				EFB47C0826C3D5D500170CD0 /* EmployeeTableViewCell.xib in Resources */,
-				EF0D53EE26C13FC3009FD5F0 /* SukhumvitSet-Text.ttf in Resources */,
+				EF4B545627FD926A00446FF7 /* SukhumvitSet-Text.ttf in Resources */,
 				EFBD719D26C3181C0044216D /* OrderTracking.storyboard in Resources */,
 				EF0D54E726C1BE9E009FD5F0 /* ProfileTableViewCell.xib in Resources */,
 				EF0D54D726C1AFDF009FD5F0 /* ProductCart.storyboard in Resources */,
 				EFBD71AB26C3190E0044216D /* PopupMarkerMapView.xib in Resources */,
+				EF4B546027FD99C300446FF7 /* AcceptDialogView.xib in Resources */,
 				EF0D54CE26C1A3EB009FD5F0 /* ProductCategoryCollectionViewCell.xib in Resources */,
 				EFC1C59A26C2C45E00ED64B1 /* HistoryTableViewCell.xib in Resources */,
+				EF4B546527FDB21700446FF7 /* ErrorDialogView.xib in Resources */,
 				EF0D545A26C1694A009FD5F0 /* MainApp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2248,6 +2337,7 @@
 				EF95768327F3762200E59E12 /* GetPlaceDetailUseCase.swift in Sources */,
 				EFC39BF827F89E0400F54C89 /* CustomerPointViewController.swift in Sources */,
 				EFC39C0527F8B5C500F54C89 /* MyRewardPointTableViewCell.swift in Sources */,
+				EF4B546727FE050E00446FF7 /* PostRewardPointResponse.swift in Sources */,
 				EF0D542C26C1451D009FD5F0 /* Decoder+Extension.swift in Sources */,
 				EF0D54D926C1AFE8009FD5F0 /* ProductCartViewController.swift in Sources */,
 				EF0D542926C1451D009FD5F0 /* ImageBase64+Extension.swift in Sources */,
@@ -2286,6 +2376,8 @@
 				EF766F2526C84DCF003ED499 /* GetReOrderCustomerResponse.swift in Sources */,
 				EF0D54D426C1A408009FD5F0 /* ProductCollectionViewCell.swift in Sources */,
 				EFBAF6A826CA2A190008DDF4 /* GetOrderDescriptionResponse.swift in Sources */,
+				EF4B546327FDB20F00446FF7 /* ErrorDialogView.swift in Sources */,
+				EF06ED8727FB684D0097F67A /* CollectibleExchangeViewModel.swift in Sources */,
 				EF0D549F26C1A19D009FD5F0 /* ProductTypeAPI.swift in Sources */,
 				EF0D542A26C1451D009FD5F0 /* Encodable+Extension.swift in Sources */,
 				EF95768827F3762F00E59E12 /* GoogleMapRepository.swift in Sources */,
@@ -2308,6 +2400,7 @@
 				EF309E6B26DA231100CB7353 /* ConversationRepository.swift in Sources */,
 				EF0D54EB26C1BF11009FD5F0 /* ProfileViewModel.swift in Sources */,
 				EF309E6E26DA237200CB7353 /* GetMessageUseCase.swift in Sources */,
+				EF4B546C27FE07E600446FF7 /* SuccessDialogView.swift in Sources */,
 				EF0D54E626C1BE9E009FD5F0 /* ProfileTableViewCell.swift in Sources */,
 				EF0FE84A26C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift in Sources */,
 				EF309E6826DA216100CB7353 /* GetMessageResponse.swift in Sources */,
@@ -2399,8 +2492,10 @@
 				EF0FE84826C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift in Sources */,
 				EF0FE83A26C9074000DFCED4 /* CustomerAPI.swift in Sources */,
 				EF0D54B926C1A269009FD5F0 /* ProductAPI.swift in Sources */,
+				EF06ED8327FB66690097F67A /* CollectibleTableViewCell.swift in Sources */,
 				EFC39BFA27F8A33600F54C89 /* UIViewCustomClass.swift in Sources */,
 				EF7443F827095C6A00D18F60 /* GetProductDescForUserUseCase.swift in Sources */,
+				EF4B545E27FD99BC00446FF7 /* AcceptDialogView.swift in Sources */,
 				EFF4173227F4E12400ACF712 /* PointAPI.swift in Sources */,
 				EFC1C58826C2BB1100ED64B1 /* OrderAPI.swift in Sources */,
 				EF95767227F374F700E59E12 /* GetPlaceDirectionResponse.swift in Sources */,
@@ -2422,6 +2517,7 @@
 				EF0D543226C1451D009FD5F0 /* Dictionary+Extension.swift in Sources */,
 				EFB47C1A26C4492000170CD0 /* DBLocal.swift in Sources */,
 				EF95767827F374F700E59E12 /* GetPlaceDetailRequest.swift in Sources */,
+				EF4B545027FD8A9000446FF7 /* DialogMessageViewController.swift in Sources */,
 				EF0D543426C1451D009FD5F0 /* UITableView+Extension.swift in Sources */,
 				EFBD71A226C318770044216D /* OrderTrackingViewModel.swift in Sources */,
 				EFB47C0F26C3DAC300170CD0 /* OrderDetailViewModel.swift in Sources */,
@@ -2473,6 +2569,22 @@
 				EF0D53A826C12F2E009FD5F0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EF4B545527FD925E00446FF7 /* SukhumvitSet-Light.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF4B545427FD925E00446FF7 /* Base */,
+			);
+			name = "SukhumvitSet-Light.ttf";
+			sourceTree = "<group>";
+		};
+		EF4B545827FD926A00446FF7 /* SukhumvitSet-Text.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF4B545727FD926A00446FF7 /* Base */,
+			);
+			name = "SukhumvitSet-Text.ttf";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

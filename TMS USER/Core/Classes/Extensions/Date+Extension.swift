@@ -7,6 +7,12 @@
 
 import Foundation
 import UIKit
+
+public enum DateFormaType: String {
+    case yyyyMMddTHHmmssSSSZ = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    case yyyyMMdd = "yyyy-MM-dd"
+}
+
 extension Date {
     
    func getFormattedDate(format: String) -> String {
@@ -18,11 +24,11 @@ extension Date {
 
 
 extension String {
-    func convertToDate() -> Date? {
+    func convertToDate(_ dateFormat: DateFormaType = .yyyyMMddTHHmmssSSSZ) -> Date? {
         let formatter = Foundation.DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = TimeZone(secondsFromGMT: 7)
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.dateFormat = dateFormat.rawValue
         let date = formatter.date(from: self)
         return date
     }

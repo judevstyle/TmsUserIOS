@@ -92,7 +92,7 @@ extension UIView {
           case leftToRight
           case rightToLeft
       }
-      
+
     func applyGradient(colors: [Any]?, locations: [NSNumber]? = [0.0, 1.0], direction: Direction = .topToBottom, cornerRadius: CGFloat) {
           
           let gradientLayer = CAGradientLayer()
