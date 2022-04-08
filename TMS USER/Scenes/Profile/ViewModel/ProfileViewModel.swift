@@ -115,6 +115,8 @@ class ProfileViewModel: ProfileProtocol, ProfileProtocolOutput {
             NavigationManager.instance.pushVC(to: .manageProfile)
         case .pointAndReward:
             NavigationManager.instance.pushVC(to: .customerPoint)
+        case .historyOrder:
+            NavigationManager.instance.pushVC(to: .profileHistory)
         case .logout:
             vc.showAlertComfirm(titleText: "คุณต้องการออกจากระบบ\nใช่หรือไม่ ?", messageText: "", dismissAction: {
             }, confirmAction: {

@@ -55,6 +55,8 @@ public enum NavigationOpeningSender {
                        msgError: ErrorDialogMsg? = nil,
                        msgSuccess: SuccessDialogMsg? = nil)
     
+    case profileHistory
+    
     public var storyboardName: String {
         switch self {
         case .splash:
@@ -101,6 +103,8 @@ public enum NavigationOpeningSender {
             return "ModalAccept"
         case .dialogMessage:
             return "DialogMessage"
+        case .profileHistory:
+            return "ProfileHistory"
         }
     }
     
@@ -150,6 +154,8 @@ public enum NavigationOpeningSender {
             return "ModalAcceptViewController"
         case .dialogMessage:
             return "DialogMessageViewController"
+        case .profileHistory:
+            return "ProfileHistoryViewController"
         }
     }
     
@@ -180,6 +186,8 @@ public enum NavigationOpeningSender {
             return "เหรียญสะสม"
         case .collectibleExchange:
             return "ของสะสม"
+        case .profileHistory:
+            return "รายการสั่งซื้อ"
         default:
             return ""
         }

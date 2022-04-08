@@ -224,6 +224,12 @@
 		EFBD71AB26C3190E0044216D /* PopupMarkerMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBD71A626C3190E0044216D /* PopupMarkerMapView.xib */; };
 		EFBD71AC26C3190E0044216D /* MarkerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBD71A826C3190E0044216D /* MarkerMapView.swift */; };
 		EFBD71AD26C3190E0044216D /* MarkerMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFBD71A926C3190E0044216D /* MarkerMapView.xib */; };
+		EFC0C62A27FF3BC90080B7D8 /* ProfileHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC0C62927FF3BC90080B7D8 /* ProfileHistory.storyboard */; };
+		EFC0C62C27FF3BD60080B7D8 /* ProfileHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0C62B27FF3BD60080B7D8 /* ProfileHistoryViewController.swift */; };
+		EFC0C63227FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0C63027FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.swift */; };
+		EFC0C63327FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFC0C63127FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.xib */; };
+		EFC0C63627FF47EA0080B7D8 /* ProfileHistoryCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0C63527FF47EA0080B7D8 /* ProfileHistoryCollectionViewCellViewModel.swift */; };
+		EFC0C63827FF48A30080B7D8 /* ProfileHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0C63727FF48A30080B7D8 /* ProfileHistoryViewModel.swift */; };
 		EFC1C57826C2A26E00ED64B1 /* ProductDetailBottomSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC1C57726C2A26E00ED64B1 /* ProductDetailBottomSheet.storyboard */; };
 		EFC1C57A26C2A27D00ED64B1 /* ProductDetailBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C57926C2A27D00ED64B1 /* ProductDetailBottomSheetViewController.swift */; };
 		EFC1C57D26C2A57000ED64B1 /* ProductDetailBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C57C26C2A57000ED64B1 /* ProductDetailBottomSheetViewModel.swift */; };
@@ -501,6 +507,12 @@
 		EFBD71A626C3190E0044216D /* PopupMarkerMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupMarkerMapView.xib; sourceTree = "<group>"; };
 		EFBD71A826C3190E0044216D /* MarkerMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerMapView.swift; sourceTree = "<group>"; };
 		EFBD71A926C3190E0044216D /* MarkerMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerMapView.xib; sourceTree = "<group>"; };
+		EFC0C62927FF3BC90080B7D8 /* ProfileHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileHistory.storyboard; sourceTree = "<group>"; };
+		EFC0C62B27FF3BD60080B7D8 /* ProfileHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHistoryViewController.swift; sourceTree = "<group>"; };
+		EFC0C63027FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		EFC0C63127FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		EFC0C63527FF47EA0080B7D8 /* ProfileHistoryCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHistoryCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EFC0C63727FF48A30080B7D8 /* ProfileHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHistoryViewModel.swift; sourceTree = "<group>"; };
 		EFC1C57726C2A26E00ED64B1 /* ProductDetailBottomSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetailBottomSheet.storyboard; sourceTree = "<group>"; };
 		EFC1C57926C2A27D00ED64B1 /* ProductDetailBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailBottomSheetViewController.swift; sourceTree = "<group>"; };
 		EFC1C57C26C2A57000ED64B1 /* ProductDetailBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailBottomSheetViewModel.swift; sourceTree = "<group>"; };
@@ -672,6 +684,7 @@
 		EF0D53D826C13EEC009FD5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EFC0C62827FF3BA60080B7D8 /* ProfileHistory */,
 				EF4B544E27FD8A6B00446FF7 /* DialogMessage */,
 				EF9BA36427F8C3660039D5CB /* CollectibleExchange */,
 				EFC39BF427F89DE700F54C89 /* CustomerPoint */,
@@ -1789,6 +1802,51 @@
 			path = MarkerMapCustom;
 			sourceTree = "<group>";
 		};
+		EFC0C62827FF3BA60080B7D8 /* ProfileHistory */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0C62E27FF42250080B7D8 /* View */,
+				EFC0C62D27FF421F0080B7D8 /* ViewModel */,
+				EFC0C62927FF3BC90080B7D8 /* ProfileHistory.storyboard */,
+				EFC0C62B27FF3BD60080B7D8 /* ProfileHistoryViewController.swift */,
+			);
+			path = ProfileHistory;
+			sourceTree = "<group>";
+		};
+		EFC0C62D27FF421F0080B7D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0C63727FF48A30080B7D8 /* ProfileHistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFC0C62E27FF42250080B7D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0C62F27FF47B00080B7D8 /* ProfileHistoryCollectionViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFC0C62F27FF47B00080B7D8 /* ProfileHistoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0C63427FF47DF0080B7D8 /* ViewModel */,
+				EFC0C63027FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.swift */,
+				EFC0C63127FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.xib */,
+			);
+			path = ProfileHistoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		EFC0C63427FF47DF0080B7D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0C63527FF47EA0080B7D8 /* ProfileHistoryCollectionViewCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EFC1C57626C2A23000ED64B1 /* ProductDetailBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -2152,6 +2210,7 @@
 				EF0D53EF26C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf in Resources */,
 				EF0D53F026C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf in Resources */,
 				EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */,
+				EFC0C63327FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.xib in Resources */,
 				EF0D546926C16D67009FD5F0 /* History.storyboard in Resources */,
 				EF0D53EC26C13FC3009FD5F0 /* SukhumvitSet-Bold.ttf in Resources */,
 				EF0D546E26C16D7A009FD5F0 /* Profile.storyboard in Resources */,
@@ -2166,6 +2225,7 @@
 				EFBD71AB26C3190E0044216D /* PopupMarkerMapView.xib in Resources */,
 				EF4B546027FD99C300446FF7 /* AcceptDialogView.xib in Resources */,
 				EF0D54CE26C1A3EB009FD5F0 /* ProductCategoryCollectionViewCell.xib in Resources */,
+				EFC0C62A27FF3BC90080B7D8 /* ProfileHistory.storyboard in Resources */,
 				EFC1C59A26C2C45E00ED64B1 /* HistoryTableViewCell.xib in Resources */,
 				EF4B546527FDB21700446FF7 /* ErrorDialogView.xib in Resources */,
 				EF0D545A26C1694A009FD5F0 /* MainApp.storyboard in Resources */,
@@ -2333,8 +2393,10 @@
 				EFC1C57A26C2A27D00ED64B1 /* ProductDetailBottomSheetViewController.swift in Sources */,
 				EF0D543F26C1452F009FD5F0 /* CustomTapGestureRecognizer.swift in Sources */,
 				EF766F2326C84315003ED499 /* GetOrderDetailUseCase.swift in Sources */,
+				EFC0C63227FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.swift in Sources */,
 				EF95766027F36D9D00E59E12 /* SelectCurrentLocationViewController.swift in Sources */,
 				EF95768327F3762200E59E12 /* GetPlaceDetailUseCase.swift in Sources */,
+				EFC0C63627FF47EA0080B7D8 /* ProfileHistoryCollectionViewCellViewModel.swift in Sources */,
 				EFC39BF827F89E0400F54C89 /* CustomerPointViewController.swift in Sources */,
 				EFC39C0527F8B5C500F54C89 /* MyRewardPointTableViewCell.swift in Sources */,
 				EF4B546727FE050E00446FF7 /* PostRewardPointResponse.swift in Sources */,
@@ -2349,6 +2411,7 @@
 				EFC8183127F7570100CD64C8 /* PutUpdateProfileResponse.swift in Sources */,
 				EFC1C59926C2C45E00ED64B1 /* HistoryTableViewCell.swift in Sources */,
 				EF766F2726C84E37003ED499 /* GetReOrderCustomerUseCase.swift in Sources */,
+				EFC0C63827FF48A30080B7D8 /* ProfileHistoryViewModel.swift in Sources */,
 				EF0D54C226C1A284009FD5F0 /* GetProductDetailResponse.swift in Sources */,
 				EF95768F27F37D1100E59E12 /* GetGeocodePlaceUseCase.swift in Sources */,
 				EF0D542526C1451D009FD5F0 /* UILabel+Extension.swift in Sources */,
@@ -2462,6 +2525,7 @@
 				EF0D541C26C1451D009FD5F0 /* User.swift in Sources */,
 				EF0D545126C1462D009FD5F0 /* NavigationManager.swift in Sources */,
 				EF0D541A26C1451D009FD5F0 /* SocketMarkerMapRequest.swift in Sources */,
+				EFC0C62C27FF3BD60080B7D8 /* ProfileHistoryViewController.swift in Sources */,
 				EF0D544226C1453F009FD5F0 /* DomainNameConfig.swift in Sources */,
 				EF0D54B226C1A22A009FD5F0 /* PostProductUseCase.swift in Sources */,
 				EF0D542326C1451D009FD5F0 /* UIColor+Extension.swift in Sources */,
