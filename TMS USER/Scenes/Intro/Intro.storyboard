@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,34 +35,39 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDG-AU-gTB">
                                 <rect key="frame" x="0.0" y="651.5" width="414" height="244.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-eu-B6t">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-eu-B6t">
                                         <rect key="frame" x="174" y="16" width="66.5" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jd-mm-Vxh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jd-mm-Vxh">
                                         <rect key="frame" x="20" y="56" width="374" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" name="Primary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="b0h-MB-kXq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                         <state key="normal" title="สมัครสมาชิก">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKR-OM-9gf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKR-OM-9gf">
                                         <rect key="frame" x="20" y="117" width="374" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="pMg-mI-3yE"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                         <state key="normal" title="เข้าสู่ระบบ">
                                             <color key="titleColor" name="Primary"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By singing up your view be agreenin on our team and confition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgq-mX-QvG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By singing up your view be agreenin on our team and confition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgq-mX-QvG">
                                         <rect key="frame" x="84.5" y="170" width="245" height="44.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="245" id="2Ho-xf-y2w"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -70,7 +75,18 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="6jd-mm-Vxh" firstAttribute="top" secondItem="Ceb-eu-B6t" secondAttribute="bottom" constant="8" id="3e0-zw-Q3A"/>
+                                    <constraint firstAttribute="trailing" secondItem="BKR-OM-9gf" secondAttribute="trailing" constant="20" id="I7D-Qj-9HY"/>
                                     <constraint firstAttribute="height" constant="244.5" id="Noj-O6-HIh"/>
+                                    <constraint firstItem="hgq-mX-QvG" firstAttribute="centerX" secondItem="kDG-AU-gTB" secondAttribute="centerX" id="ZSg-Io-zOu"/>
+                                    <constraint firstItem="BKR-OM-9gf" firstAttribute="top" secondItem="6jd-mm-Vxh" secondAttribute="bottom" constant="16" id="aSW-Fu-4Vo"/>
+                                    <constraint firstItem="Ceb-eu-B6t" firstAttribute="centerX" secondItem="kDG-AU-gTB" secondAttribute="centerX" id="cKX-QJ-eBy"/>
+                                    <constraint firstAttribute="trailing" secondItem="6jd-mm-Vxh" secondAttribute="trailing" constant="20" id="gyP-sK-eUX"/>
+                                    <constraint firstItem="6jd-mm-Vxh" firstAttribute="leading" secondItem="kDG-AU-gTB" secondAttribute="leading" constant="20" id="oSW-C4-SSo"/>
+                                    <constraint firstItem="BKR-OM-9gf" firstAttribute="leading" secondItem="kDG-AU-gTB" secondAttribute="leading" constant="20" id="r8D-Wt-kcm"/>
+                                    <constraint firstItem="hgq-mX-QvG" firstAttribute="top" secondItem="BKR-OM-9gf" secondAttribute="bottom" constant="8" id="slg-rT-vYb"/>
+                                    <constraint firstItem="6jd-mm-Vxh" firstAttribute="top" secondItem="Ceb-eu-B6t" secondAttribute="bottom" constant="8" id="teh-Kl-H37"/>
+                                    <constraint firstItem="Ceb-eu-B6t" firstAttribute="top" secondItem="kDG-AU-gTB" secondAttribute="top" constant="16" id="ui0-XI-ha5"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hoc-al-x7W">

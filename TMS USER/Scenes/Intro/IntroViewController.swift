@@ -65,8 +65,9 @@ extension IntroViewController {
         topView.roundCorners(.topRight, radius: 20)
         topView.roundCorners(.bottomRight, radius: 20)
         
-        bottomView.roundedTop(radius: 20)
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            self.bottomView.roundedTop(radius: 20)
+        }
         
         btnLogin.setRounded(rounded: 8)
         btnLogin.setBorder(width: 1.0, color: UIColor.Primary)

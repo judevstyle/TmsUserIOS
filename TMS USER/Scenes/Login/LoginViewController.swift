@@ -66,7 +66,9 @@ extension LoginViewController {
     func setupUI() {
         topView.roundCorners(.bottomLeft, radius: 20)
         
-        bottomView.roundedTop(radius: 20)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            self.bottomView.roundedTop(radius: 20)
+        }
         
         btnLogin.setRounded(rounded: 8)
         inputPhone.setRounded(rounded: 8)

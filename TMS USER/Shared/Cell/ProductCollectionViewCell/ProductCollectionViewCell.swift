@@ -41,8 +41,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         self.setRounded(rounded: 8)
         bgView.setRounded(rounded: 8)
         bgView.setShadowBoxView()
-//        imageThumbnail.setRounded(rounded: 8)
-        imageThumbnail.roundedTop(radius: 8)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            self.imageThumbnail.roundedTop(radius: 8)
+        }
     }
     
     func setupValueProduct() {

@@ -9,7 +9,6 @@ target 'TMS USER' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'HMSegmentedControl'
-  pod 'Charts'
   pod 'MaterialComponents/BottomSheet'
   pod 'MessageKit'
   pod 'Toast-Swift'
