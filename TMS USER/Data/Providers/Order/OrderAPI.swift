@@ -12,6 +12,10 @@ import UIKit
 public enum OrderAPI {
     case getApprovedOrderCustomer
     case getFinishOrderCustomer
+    case getWaitApproveOrderCustomer
+    case getRejectOrderCustomer
+    case getCancelOrderCustomer
+ 
     case getOrderDetail(orderId: Int)
     case getReOrderCustomer(orderId: Int)
     case getOrderDescription(orderId: Int)
@@ -23,7 +27,7 @@ public enum OrderAPI {
 extension OrderAPI: TargetType {
     public var baseURL: URL {
         switch self {
-        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail, .getReOrderCustomer, .createOrderByUser, .getOrderDescription:
+        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail, .getReOrderCustomer, .createOrderByUser, .getOrderDescription, .getWaitApproveOrderCustomer, .getRejectOrderCustomer, .getCancelOrderCustomer:
             return DomainNameConfig.order.url
         }
     }
@@ -34,6 +38,12 @@ extension OrderAPI: TargetType {
             return "/approved-order"
         case .getFinishOrderCustomer:
             return "/finish-order"
+        case .getWaitApproveOrderCustomer:
+            return "/wait-approve-order"
+        case .getRejectOrderCustomer:
+            return "/rejected-order"
+        case .getCancelOrderCustomer:
+            return "/cancel-order"
         case .getOrderDetail(let orderId):
             return "/\(orderId)"
         case .getReOrderCustomer(let orderId):
@@ -47,7 +57,7 @@ extension OrderAPI: TargetType {
     
     public var method: Moya.Method {
         switch self {
-        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail(_), .getOrderDescription(_):
+        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail(_), .getOrderDescription(_), .getWaitApproveOrderCustomer, .getRejectOrderCustomer, .getCancelOrderCustomer:
             return .get
         case .getReOrderCustomer(_):
             return .put
@@ -62,7 +72,7 @@ extension OrderAPI: TargetType {
     
     public var task: Task {
         switch self {
-        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail(_), .getReOrderCustomer(_), .getOrderDescription(_):
+        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail(_), .getReOrderCustomer(_), .getOrderDescription(_), .getWaitApproveOrderCustomer, .getRejectOrderCustomer, .getCancelOrderCustomer:
             return .requestPlain
         case .createOrderByUser(let request):
             return .requestCompositeParameters(bodyParameters: request.toJSON(), bodyEncoding: JSONEncoding.default, urlParameters: [:])
@@ -71,12 +81,7 @@ extension OrderAPI: TargetType {
     
     public var headers: [String : String]? {
         var authenToken = ""
-        switch self {
-        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail(_), .getReOrderCustomer(_), .createOrderByUser(_), .getOrderDescription(_):
-            authenToken = UserDefaultsKey.AccessToken.string ?? ""
-        default:
-            authenToken = UserDefaultsKey.AccessToken.string ?? ""
-        }
+        authenToken = UserDefaultsKey.AccessToken.string ?? ""
         
         if authenToken.isEmpty {
             return ["Content-Type": "application/json"]

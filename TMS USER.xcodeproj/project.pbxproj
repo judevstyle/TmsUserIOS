@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6924D864E8F7CC9192B126D5 /* Pods_TMS_USER_TMS_USERUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E6A29A81F43EE789959671 /* Pods_TMS_USER_TMS_USERUITests.framework */; };
+		C4DFA8CB2804362E00A63FFF /* OrderProfileHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DFA8C92804362E00A63FFF /* OrderProfileHistoryTableViewCell.swift */; };
+		C4DFA8CC2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DFA8CA2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib */; };
+		C4DFA8D02804365000A63FFF /* OrderWaitShippingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DFA8CE2804365000A63FFF /* OrderWaitShippingTableViewCell.swift */; };
+		C4DFA8D12804365000A63FFF /* OrderWaitShippingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DFA8CF2804365000A63FFF /* OrderWaitShippingTableViewCell.xib */; };
 		EF06ED8327FB66690097F67A /* CollectibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF06ED8127FB66690097F67A /* CollectibleTableViewCell.swift */; };
 		EF06ED8427FB66690097F67A /* CollectibleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF06ED8227FB66690097F67A /* CollectibleTableViewCell.xib */; };
 		EF06ED8727FB684D0097F67A /* CollectibleExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF06ED8627FB684D0097F67A /* CollectibleExchangeViewModel.swift */; };
@@ -294,6 +298,10 @@
 		98A30B54B33C439C2EDF6ED4 /* Pods-TMS USER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USER.debug.xcconfig"; path = "Target Support Files/Pods-TMS USER/Pods-TMS USER.debug.xcconfig"; sourceTree = "<group>"; };
 		B32B374D3DACFF44ECA8460B /* Pods-TMS USERTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMS USERTests.debug.xcconfig"; path = "Target Support Files/Pods-TMS USERTests/Pods-TMS USERTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C18A938163B85A9812617AA4 /* Pods_TMS_USERTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMS_USERTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4DFA8C92804362E00A63FFF /* OrderProfileHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProfileHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		C4DFA8CA2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProfileHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		C4DFA8CE2804365000A63FFF /* OrderWaitShippingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderWaitShippingTableViewCell.swift; sourceTree = "<group>"; };
+		C4DFA8CF2804365000A63FFF /* OrderWaitShippingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderWaitShippingTableViewCell.xib; sourceTree = "<group>"; };
 		E6E6A29A81F43EE789959671 /* Pods_TMS_USER_TMS_USERUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMS_USER_TMS_USERUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF06ED8127FB66690097F67A /* CollectibleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleTableViewCell.swift; sourceTree = "<group>"; };
 		EF06ED8227FB66690097F67A /* CollectibleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectibleTableViewCell.xib; sourceTree = "<group>"; };
@@ -612,6 +620,33 @@
 				C18A938163B85A9812617AA4 /* Pods_TMS_USERTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4DFA8C72804359300A63FFF /* ProfileHistory */ = {
+			isa = PBXGroup;
+			children = (
+				C4DFA8CD2804363800A63FFF /* OrderWaitShippingTableViewCell */,
+				C4DFA8C82804360F00A63FFF /* OrderProfileHistoryTableViewCell */,
+			);
+			path = ProfileHistory;
+			sourceTree = "<group>";
+		};
+		C4DFA8C82804360F00A63FFF /* OrderProfileHistoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4DFA8C92804362E00A63FFF /* OrderProfileHistoryTableViewCell.swift */,
+				C4DFA8CA2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib */,
+			);
+			path = OrderProfileHistoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		C4DFA8CD2804363800A63FFF /* OrderWaitShippingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4DFA8CE2804365000A63FFF /* OrderWaitShippingTableViewCell.swift */,
+				C4DFA8CF2804365000A63FFF /* OrderWaitShippingTableViewCell.xib */,
+			);
+			path = OrderWaitShippingTableViewCell;
 			sourceTree = "<group>";
 		};
 		EF06ED8527FB683C0097F67A /* ViewModel */ = {
@@ -1258,6 +1293,7 @@
 		EF0D54CA26C1A3DF009FD5F0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C4DFA8C72804359300A63FFF /* ProfileHistory */,
 				EF9BA36927F8CA7C0039D5CB /* CollectibleTableViewCell */,
 				EFC39C0227F8B5A300F54C89 /* MyRewardPointTableViewCell */,
 				EFB47C0426C3D5BC00170CD0 /* EmployeeTableViewCell */,
@@ -2193,6 +2229,7 @@
 				EF314BBE26CABA9B002B201C /* Chat.storyboard in Resources */,
 				EF0D54DE26C1B094009FD5F0 /* ProductCartTableViewCell.xib in Resources */,
 				EFC39C0627F8B5C500F54C89 /* MyRewardPointTableViewCell.xib in Resources */,
+				C4DFA8D12804365000A63FFF /* OrderWaitShippingTableViewCell.xib in Resources */,
 				EF0D545F26C169EE009FD5F0 /* Home.storyboard in Resources */,
 				EF0D53A626C12F2E009FD5F0 /* Assets.xcassets in Resources */,
 				EF95766427F3747700E59E12 /* SearchResultTableViewCell.xib in Resources */,
@@ -2207,6 +2244,7 @@
 				EF0D53EF26C13FC3009FD5F0 /* SukhumvitSet-Medium.ttf in Resources */,
 				EF0D53F026C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf in Resources */,
 				EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */,
+				C4DFA8CC2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib in Resources */,
 				EFC0C63327FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.xib in Resources */,
 				EF0D546926C16D67009FD5F0 /* History.storyboard in Resources */,
 				EF0D53EC26C13FC3009FD5F0 /* SukhumvitSet-Bold.ttf in Resources */,
@@ -2436,6 +2474,7 @@
 				EF766F2526C84DCF003ED499 /* GetReOrderCustomerResponse.swift in Sources */,
 				EF0D54D426C1A408009FD5F0 /* ProductCollectionViewCell.swift in Sources */,
 				EFBAF6A826CA2A190008DDF4 /* GetOrderDescriptionResponse.swift in Sources */,
+				C4DFA8CB2804362E00A63FFF /* OrderProfileHistoryTableViewCell.swift in Sources */,
 				EF4B546327FDB20F00446FF7 /* ErrorDialogView.swift in Sources */,
 				EF06ED8727FB684D0097F67A /* CollectibleExchangeViewModel.swift in Sources */,
 				EF0D549F26C1A19D009FD5F0 /* ProductTypeAPI.swift in Sources */,
@@ -2581,6 +2620,7 @@
 				EF0D543426C1451D009FD5F0 /* UITableView+Extension.swift in Sources */,
 				EFBD71A226C318770044216D /* OrderTrackingViewModel.swift in Sources */,
 				EFB47C0F26C3DAC300170CD0 /* OrderDetailViewModel.swift in Sources */,
+				C4DFA8D02804365000A63FFF /* OrderWaitShippingTableViewCell.swift in Sources */,
 				EF97F892270B0FF900B2E2C7 /* PostMessageRequest.swift in Sources */,
 				EFC1C58F26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift in Sources */,
 				EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */,
