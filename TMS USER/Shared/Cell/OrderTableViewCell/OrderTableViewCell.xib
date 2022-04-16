@@ -28,7 +28,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIo-Po-gCy">
-                        <rect key="frame" x="16" y="8" width="382" height="124"/>
+                        <rect key="frame" x="8" y="4" width="398" height="132"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_shopping" translatesAutoresizingMaskIntoConstraints="NO" id="e9g-6F-RP0">
                                 <rect key="frame" x="8" y="8" width="50" height="50"/>
@@ -37,27 +37,27 @@
                                     <constraint firstAttribute="height" constant="50" id="hf0-ho-gWb"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGG-r3-1nR">
-                                <rect key="frame" x="0.0" y="66" width="382" height="0.5"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGG-r3-1nR">
+                                <rect key="frame" x="0.0" y="66" width="398" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="Of7-hy-VBY"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RJq-eK-A9p">
-                                <rect key="frame" x="8" y="71.5" width="366" height="47.5"/>
+                                <rect key="frame" x="8" y="71.5" width="382" height="55.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-Sb-NSJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="55.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="จำนวนสินค้า" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06S-PZ-Rve">
-                                                <rect key="frame" x="0.0" y="5" width="114" height="19"/>
+                                                <rect key="frame" x="0.0" y="5" width="119.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6t-3S-Tdy">
-                                                <rect key="frame" x="0.0" y="24" width="114" height="24"/>
+                                                <rect key="frame" x="0.0" y="24" width="119.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -74,16 +74,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VL-7X-pbf">
-                                        <rect key="frame" x="126" y="0.0" width="114" height="47.5"/>
+                                        <rect key="frame" x="131.5" y="0.0" width="119" height="55.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ยอดชำระ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoR-11-rme">
-                                                <rect key="frame" x="0.0" y="5" width="114" height="19"/>
+                                                <rect key="frame" x="0.0" y="5" width="119" height="19"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEu-W1-YY3">
-                                                <rect key="frame" x="0.0" y="24" width="114" height="24"/>
+                                                <rect key="frame" x="0.0" y="24" width="119" height="24"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -100,16 +100,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8iS-lS-0N0">
-                                        <rect key="frame" x="252" y="0.0" width="114" height="47.5"/>
+                                        <rect key="frame" x="262.5" y="0.0" width="119.5" height="55.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สถานะ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k08-zv-QUb">
-                                                <rect key="frame" x="0.0" y="5" width="114" height="19"/>
+                                                <rect key="frame" x="0.0" y="5" width="119.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รอการจัดส่ง" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCK-aK-Ja2">
-                                                <rect key="frame" x="0.0" y="24" width="114" height="24"/>
+                                                <rect key="frame" x="0.0" y="24" width="119.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="15"/>
                                                 <color key="textColor" systemColor="systemGreenColor"/>
                                                 <nil key="highlightedColor"/>
@@ -142,7 +142,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-wR-6wP">
-                                <rect key="frame" x="81" y="33.5" width="293" height="19"/>
+                                <rect key="frame" x="81" y="33.5" width="309" height="19"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -170,10 +170,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="gIo-Po-gCy" secondAttribute="trailing" constant="16" id="S8J-7J-eKQ"/>
-                    <constraint firstItem="gIo-Po-gCy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="SOl-VA-kdH"/>
-                    <constraint firstItem="gIo-Po-gCy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="XUy-yW-rs1"/>
-                    <constraint firstAttribute="bottom" secondItem="gIo-Po-gCy" secondAttribute="bottom" constant="8" id="hMa-aV-CZJ"/>
+                    <constraint firstAttribute="trailing" secondItem="gIo-Po-gCy" secondAttribute="trailing" constant="8" id="S8J-7J-eKQ"/>
+                    <constraint firstItem="gIo-Po-gCy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="SOl-VA-kdH"/>
+                    <constraint firstItem="gIo-Po-gCy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="XUy-yW-rs1"/>
+                    <constraint firstAttribute="bottom" secondItem="gIo-Po-gCy" secondAttribute="bottom" constant="4" id="hMa-aV-CZJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

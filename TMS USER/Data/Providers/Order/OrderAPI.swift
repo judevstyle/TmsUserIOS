@@ -10,15 +10,18 @@ import Moya
 import UIKit
 
 public enum OrderAPI {
-    case getApprovedOrderCustomer
-    case getFinishOrderCustomer
-    case getWaitApproveOrderCustomer
-    case getRejectOrderCustomer
-    case getCancelOrderCustomer
+    case getApprovedOrderCustomer(request: GetOrderCustomerRequest)
+    case getFinishOrderCustomer(request: GetOrderCustomerRequest)
+    case getWaitApproveOrderCustomer(request: GetOrderCustomerRequest)
+    case getRejectOrderCustomer(request: GetOrderCustomerRequest)
+    case getCancelOrderCustomer(request: GetOrderCustomerRequest)
  
     case getOrderDetail(orderId: Int)
-    case getReOrderCustomer(orderId: Int)
     case getOrderDescription(orderId: Int)
+    
+    //Put
+    case putReOrderCustomer(orderId: Int)
+    case putCancelOrder(orderId: Int)
     
     //Post
     case createOrderByUser(request: PostCreateOrderByUserRequest)
@@ -27,7 +30,7 @@ public enum OrderAPI {
 extension OrderAPI: TargetType {
     public var baseURL: URL {
         switch self {
-        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail, .getReOrderCustomer, .createOrderByUser, .getOrderDescription, .getWaitApproveOrderCustomer, .getRejectOrderCustomer, .getCancelOrderCustomer:
+        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail, .putReOrderCustomer, .createOrderByUser, .getOrderDescription, .getWaitApproveOrderCustomer, .getRejectOrderCustomer, .getCancelOrderCustomer, .putCancelOrder:
             return DomainNameConfig.order.url
         }
     }
@@ -46,12 +49,14 @@ extension OrderAPI: TargetType {
             return "/cancel-order"
         case .getOrderDetail(let orderId):
             return "/\(orderId)"
-        case .getReOrderCustomer(let orderId):
+        case .putReOrderCustomer(let orderId):
             return "/reorder/\(orderId)"
         case .createOrderByUser:
             return "/create-by-user"
         case .getOrderDescription(let orderId):
             return "/order-description/\(orderId)"
+        case .putCancelOrder(let orderId):
+            return "/cancelOrder/\(orderId)"
         }
     }
     
@@ -59,7 +64,7 @@ extension OrderAPI: TargetType {
         switch self {
         case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail(_), .getOrderDescription(_), .getWaitApproveOrderCustomer, .getRejectOrderCustomer, .getCancelOrderCustomer:
             return .get
-        case .getReOrderCustomer(_):
+        case .putReOrderCustomer(_), .putCancelOrder(_):
             return .put
         case .createOrderByUser(_):
             return .post
@@ -72,7 +77,9 @@ extension OrderAPI: TargetType {
     
     public var task: Task {
         switch self {
-        case .getApprovedOrderCustomer, .getFinishOrderCustomer, .getOrderDetail(_), .getReOrderCustomer(_), .getOrderDescription(_), .getWaitApproveOrderCustomer, .getRejectOrderCustomer, .getCancelOrderCustomer:
+        case .getApprovedOrderCustomer(let request), .getFinishOrderCustomer(let request), .getWaitApproveOrderCustomer(let request), .getRejectOrderCustomer(let request), .getCancelOrderCustomer(let request):
+            return .requestParameters(parameters: request.toJSON(), encoding: URLEncoding.queryString)
+        case .getOrderDetail(_), .putReOrderCustomer, .getOrderDescription(_), .putCancelOrder:
             return .requestPlain
         case .createOrderByUser(let request):
             return .requestCompositeParameters(bodyParameters: request.toJSON(), bodyEncoding: JSONEncoding.default, urlParameters: [:])

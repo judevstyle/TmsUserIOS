@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+public struct GetOrderCustomerRequest: Codable, Hashable {
+    
+    public var page: Int = 1
+    
+    public init() {}
+    
+    enum CodingKeys: String, CodingKey {
+        case page = "page"
+    }
+}

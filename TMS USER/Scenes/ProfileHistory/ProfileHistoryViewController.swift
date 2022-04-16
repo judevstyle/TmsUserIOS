@@ -8,19 +8,10 @@
 import UIKit
 import HMSegmentedControl
 
-public enum TopNavProfileHistoryType: String {
-    case waitApprove = "รอการอนุมัติ"
-    case waitShipping = "รอการจัดส่ง"
-    case success = "สำเร็จ"
-    case reject = "โดนปฏิเสธ"
-    case calcel = "ยกเลิก"
-}
-
 class ProfileHistoryViewController: UIViewController {
 
     @IBOutlet var topNav: UIView!
     let segmentedControl = HMSegmentedControl()
-    var currentPage: Int = 0
     
     @IBOutlet var pageCollectionView: UICollectionView!
     
@@ -85,6 +76,7 @@ extension ProfileHistoryViewController {
         let selectedSegmentIndex = segmentedControl.selectedSegmentIndex
         let selectedIndexPath = IndexPath(item: Int(selectedSegmentIndex), section: 0)
         pageCollectionView.scrollToItem(at: selectedIndexPath, at: .bottom, animated: true)
+        didPageChange(index: Int(selectedSegmentIndex))
     }
 }
 
@@ -132,5 +124,10 @@ extension ProfileHistoryViewController: UICollectionViewDelegate, UICollectionVi
         let pageWidth = view.frame.width
         let currentPage = UInt(pageCollectionView.contentOffset.x/pageWidth)
         segmentedControl.setSelectedSegmentIndex(currentPage, animated: true)
+        didPageChange(index: Int(currentPage))
+    }
+    
+    func didPageChange(index: Int) {
+        viewModel.input.didPageChange(index, self.pageCollectionView)
     }
 }

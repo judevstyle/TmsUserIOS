@@ -1,13 +1,13 @@
 //
-//  GetApprovedOrderCustomerResponse.swift
+//  GetOrderCustomerResponse.swift
 //  TMS USER
 //
-//  Created by Nontawat Kanboon on 8/10/21.
+//  Created by Nontawat Kanboon on 15/4/2565 BE.
 //
 
 import Foundation
 
-public struct GetApprovedOrderCustomerResponse: Codable, Hashable  {
+public struct GetOrderCustomerResponse: Codable, Hashable  {
     
     public var statusCode: Int?
     public var success: Bool = false
@@ -59,6 +59,7 @@ public struct OrderItems: Codable, Hashable  {
     public var customerAvatar: String?
     public var totalItem: Int?
     public var totalPrice: Int?
+    public var statusRemark: String?
 
     public init() {}
     
@@ -85,6 +86,7 @@ public struct OrderItems: Codable, Hashable  {
         try customerAvatar      <- decoder["customer_avatar"]
         try totalItem           <- decoder["total_item"]
         try totalPrice          <- decoder["total_price"]
+        try statusRemark        <- decoder["status_remark"]
     }
 }
 

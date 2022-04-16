@@ -42,7 +42,7 @@ class ProductDetailViewModel: ProductDetailProtocol, ProductDetailProtocolOutput
     var output: ProductDetailProtocolOutput { return self }
     
     // MARK: - UseCase
-    private var getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase
+    private var orderRepository: OrderRepository
     private var getProductDescForUserUseCase: GetProductDescForUserUseCase
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
@@ -53,11 +53,11 @@ class ProductDetailViewModel: ProductDetailProtocol, ProductDetailProtocolOutput
     
     init(
         productDetailViewController: ProductDetailViewController,
-        getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase = GetFinishOrderCustomerUseCaseImpl(),
+        orderRepository: OrderRepository = OrderRepositoryImpl(),
         getProductDescForUserUseCase: GetProductDescForUserUseCase = GetProductDescForUserUseCaseImpl()
     ) {
         self.productDetailViewController = productDetailViewController
-        self.getFinishOrderCustomerUseCase = getFinishOrderCustomerUseCase
+        self.orderRepository = orderRepository
         self.getProductDescForUserUseCase = getProductDescForUserUseCase
     }
     

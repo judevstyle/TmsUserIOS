@@ -1,17 +1,17 @@
 //
-//  GetFinishOrderCustomerResponse.swift
+//  PutCancelOrderResponse.swift
 //  TMS USER
 //
-//  Created by Nontawat Kanboon on 8/11/21.
+//  Created by Nontawat Kanboon on 16/4/2565 BE.
 //
 
 import Foundation
 
-public struct GetFinishOrderCustomerResponse: Codable, Hashable  {
+public struct PutCancelOrderResponse: Codable, Hashable  {
     
     public var statusCode: Int?
     public var success: Bool = false
-    public var data: OrderData?
+    public var data: OrderItems?
     
     public init() {}
     

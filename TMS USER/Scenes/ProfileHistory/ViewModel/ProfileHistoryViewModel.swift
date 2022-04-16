@@ -10,6 +10,7 @@ import UIKit
 import Combine
 
 protocol ProfileHistoryProtocolInput {
+    func didPageChange(_ index: Int, _ collectionView: UICollectionView)
 }
 
 protocol ProfileHistoryProtocolOutput: class {
@@ -39,10 +40,41 @@ class ProfileHistoryViewModel: ProfileHistoryProtocol, ProfileHistoryProtocolOut
     // MARK - Data-binding OutPut
     func getCellForItemAt(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileHistoryCollectionViewCell.identifier, for: indexPath) as! ProfileHistoryCollectionViewCell
+        let profileHistoryType = IndexProfileHistoryType(rawValue: indexPath.item)
+        cell.viewModel.setUp(vc: self.vc, type: profileHistoryType, delegate: self)
         return cell
     }
 
     func getNumberOfItemsInSection(_ collectionView: UICollectionView, section: Int) -> Int {
         return 5
     }
+    
+    func didPageChange(_ index: Int, _ collectionView: UICollectionView) {
+        let profileHistoryType = IndexProfileHistoryType(rawValue: index)
+        let indexPath = IndexPath(item: index, section: 0)
+        if let cell = collectionView.cellForItem(at: indexPath) as? ProfileHistoryCollectionViewCell {
+            cell.viewModel.setUp(vc: self.vc, type: profileHistoryType, delegate: self)
+        }
+    }
+}
+
+extension ProfileHistoryViewModel: ProfileHistoryCollectionViewModelDelegate {
+    func didCancelOrder(orderId: Int) {
+    }
+}
+
+public enum IndexProfileHistoryType: Int {
+    case waitApprove = 0
+    case waitShipping = 1
+    case success = 2
+    case reject = 3
+    case calcel = 4
+}
+
+public enum TopNavProfileHistoryType: String {
+    case waitApprove = "รอการอนุมัติ"
+    case waitShipping = "รอการจัดส่ง"
+    case success = "สำเร็จ"
+    case reject = "โดนปฏิเสธ"
+    case calcel = "ยกเลิก"
 }

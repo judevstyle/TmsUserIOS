@@ -102,7 +102,7 @@
                 <outlet property="orderNoText" destination="Y1U-KC-5Xe" id="9hs-L2-Hsk"/>
                 <outlet property="priceOrder" destination="Gdx-CA-3Ob" id="5ww-2u-7bP"/>
             </connections>
-            <point key="canvasLocation" x="132" y="83"/>
+            <point key="canvasLocation" x="131.8840579710145" y="82.03125"/>
         </tableViewCell>
     </objects>
     <resources>

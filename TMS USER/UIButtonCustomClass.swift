@@ -64,3 +64,47 @@ class ButtonOutlineColor: UIButton {
         self.setTitleColor(.Primary, for: .normal)
     }
 }
+
+// MARK: - OrderList
+class ButtonCancelOrder: UIButton {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setRounded(rounded: 5)
+        self.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
+                                     locations: [0.5, 1.0],
+                                     direction: .leftToRight,
+                                     cornerRadius: 5)
+        self.setTitle("ยกเลิกคำสั่งซื้อ", for: .normal)
+        self.titleLabel?.font = .PrimaryMedium(size: 14)
+        self.setTitleColor(.white, for: .normal)
+    }
+}
+
+class ButtonReviewOrder: UIButton {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setRounded(rounded: 5)
+        self.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
+                                     locations: [0.5, 1.0],
+                                     direction: .leftToRight,
+                                     cornerRadius: 5)
+        self.setTitle("ให้คะแนน", for: .normal)
+        self.titleLabel?.font = .PrimaryMedium(size: 14)
+        self.setTitleColor(.white, for: .normal)
+    }
+}
+
+class ButtonReOrder: UIButton {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setRounded(rounded: 5)
+        self.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
+                                     locations: [0.5, 1.0],
+                                     direction: .leftToRight,
+                                     cornerRadius: 5)
+        self.setTitle("สั่งซื้ออีกครั้ง", for: .normal)
+        self.titleLabel?.font = .PrimaryMedium(size: 14)
+        self.setTitleColor(.white, for: .normal)
+    }
+}
+

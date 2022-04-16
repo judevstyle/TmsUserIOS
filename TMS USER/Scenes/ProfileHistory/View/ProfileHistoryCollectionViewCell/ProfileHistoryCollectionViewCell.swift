@@ -29,16 +29,20 @@ class ProfileHistoryCollectionViewCell: UICollectionViewCell {
         // Initialization code
         setupUI()
         setupTableView()
-        self.textEmptyData.isHidden = false
-        self.tableView.isHidden = true
+//        self.textEmptyData.isHidden = false
+//        self.tableView.isHidden = true
     }
     
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        
-//        tableView.registerCell(identifier: ContentTableViewCell.identifier)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.registerCell(identifier: OrderProfileHistoryTableViewCell.identifier)
+        tableView.registerCell(identifier: OrderSendingTableViewCell.identifier)
     }
     
     func setupUI() {
@@ -55,19 +59,27 @@ class ProfileHistoryCollectionViewCell: UICollectionViewCell {
 extension ProfileHistoryCollectionViewCell {
 
     func bindToViewModel() {
-//        viewModel.output.didGetInformationSuccess = didGetInformationSuccess()
+        viewModel.output.didGetCellSuccess = didGetCellSuccess()
     }
 
-    func didGetInformationSuccess() -> (() -> Void) {
+    func didGetCellSuccess() -> (() -> Void) {
         return { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.tableView.reloadData()
+            guard let self = self else { return }
+            if let countItems = self.viewModel.output.getItemOrder()?.count, countItems > 0 {
+                self.tableView.reloadData()
+                self.textEmptyData.isHidden = true
+                self.tableView.isHidden = false
+            } else {
+                self.textEmptyData.isHidden = false
+                self.tableView.isHidden = true
+            }
         }
     }
 }
 
 extension ProfileHistoryCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.input.didSelectRowAt(tableView, indexPath: indexPath)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,8 +89,14 @@ extension ProfileHistoryCollectionViewCell: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return viewModel.output.getItemViewCell(tableView, indexPath: indexPath)
     }
-
+    
+    // UITableViewAutomaticDimension calculates height of label contents/text
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel.output.getItemViewCellHeight()
+        return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
 }

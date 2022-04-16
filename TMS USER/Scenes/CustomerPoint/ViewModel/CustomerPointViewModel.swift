@@ -104,7 +104,7 @@ class CustomerPointViewModel: CustomerPointProtocol, CustomerPointProtocolOutput
     }
     
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath) {
-
+        debugPrint("didSelectRowAt \(indexPath.item)")
     }
     
     func getCustomerPoint() -> Int {

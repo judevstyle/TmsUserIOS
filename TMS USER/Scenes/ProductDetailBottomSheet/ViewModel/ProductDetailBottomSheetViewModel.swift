@@ -40,7 +40,6 @@ class ProductDetailBottomSheetViewModel: ProductDetailBottomSheetProtocol, Produ
     var output: ProductDetailBottomSheetProtocolOutput { return self }
     
     // MARK: - UseCase
-    private var getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     // MARK: - Properties
@@ -49,11 +48,9 @@ class ProductDetailBottomSheetViewModel: ProductDetailBottomSheetProtocol, Produ
     public var delegate: ProductDetailBottomSheetViewModelDelegate!
     
     init(
-        productDetailBottomSheetViewController: ProductDetailBottomSheetViewController,
-        getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase = GetFinishOrderCustomerUseCaseImpl()
+        productDetailBottomSheetViewController: ProductDetailBottomSheetViewController
     ) {
         self.productDetailBottomSheetViewController = productDetailBottomSheetViewController
-        self.getFinishOrderCustomerUseCase = getFinishOrderCustomerUseCase
     }
     
     // MARK - Data-binding OutPut

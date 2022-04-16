@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol GetReOrderCustomerUseCase {
+protocol PutReOrderCustomerUseCase {
     func execute(orderId: Int) -> AnyPublisher<[ReOrderCustomer]?, Error>
 }
 
-struct GetReOrderCustomerUseCaseImpl: GetReOrderCustomerUseCase {
+struct PutReOrderCustomerUseCaseImpl: PutReOrderCustomerUseCase {
     
     private let repository: OrderRepository
     
@@ -22,7 +22,7 @@ struct GetReOrderCustomerUseCaseImpl: GetReOrderCustomerUseCase {
     
     func execute(orderId: Int) -> AnyPublisher<[ReOrderCustomer]?, Error> {
         return self.repository
-            .getReOrderCustomer(orderId: orderId)
+            .putReOrderCustomer(orderId: orderId)
             .map { $0.data }
             .eraseToAnyPublisher()
     }

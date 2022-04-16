@@ -10,43 +10,67 @@ import Combine
 import Moya
 
 protocol OrderRepository {
-    func getApprovedOrderCustomer() -> AnyPublisher<GetApprovedOrderCustomerResponse, Error>
-    func getFinishOrderCustomer() -> AnyPublisher<GetFinishOrderCustomerResponse, Error>
+    func getApprovedOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error>
+    func getFinishOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error>
+    func getWaitApproveOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error>
+    func getRejectOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error>
+    func getCancelOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error>
+    
+    
     func getOrderDetail(orderId: Int) -> AnyPublisher<GetOrderDetailResponse, Error>
-    func getReOrderCustomer(orderId: Int) -> AnyPublisher<GetReOrderCustomerResponse, Error>
     func createOrderByUser(request: PostCreateOrderByUserRequest) -> AnyPublisher<PostCreateOrderByUserResponse, Error>
     func getOrderDescription(orderId: Int) -> AnyPublisher<GetOrderDescriptionResponse, Error>
+    
+    func putReOrderCustomer(orderId: Int) -> AnyPublisher<GetReOrderCustomerResponse, Error>
+    func putCancelOrder(orderId: Int) -> AnyPublisher<PutCancelOrderResponse, Error>
 }
 
 final class OrderRepositoryImpl: TMS_USER.OrderRepository {
     private let provider: MoyaProvider<OrderAPI> = MoyaProvider<OrderAPI>()
     
-    func getApprovedOrderCustomer() -> AnyPublisher<GetApprovedOrderCustomerResponse, Error> {
+    func getApprovedOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error> {
         return self.provider
             .cb
-            .request(.getApprovedOrderCustomer)
-            .map(GetApprovedOrderCustomerResponse.self)
+            .request(.getApprovedOrderCustomer(request: request))
+            .map(GetOrderCustomerResponse.self)
     }
     
-    func getFinishOrderCustomer() -> AnyPublisher<GetFinishOrderCustomerResponse, Error> {
+    func getFinishOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error> {
         return self.provider
             .cb
-            .request(.getFinishOrderCustomer)
-            .map(GetFinishOrderCustomerResponse.self)
+            .request(.getFinishOrderCustomer(request: request))
+            .map(GetOrderCustomerResponse.self)
     }
+    
+    func getWaitApproveOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error> {
+        return self.provider
+            .cb
+            .request(.getWaitApproveOrderCustomer(request: request))
+            .map(GetOrderCustomerResponse.self)
+    }
+    
+    func getRejectOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error> {
+        return self.provider
+            .cb
+            .request(.getRejectOrderCustomer(request: request))
+            .map(GetOrderCustomerResponse.self)
+    }
+    
+    func getCancelOrderCustomer(request: GetOrderCustomerRequest) -> AnyPublisher<GetOrderCustomerResponse, Error> {
+        return self.provider
+            .cb
+            .request(.getCancelOrderCustomer(request: request))
+            .map(GetOrderCustomerResponse.self)
+    }
+    
+    
+    // MARK: - BY ORDER ID
     
     func getOrderDetail(orderId: Int) -> AnyPublisher<GetOrderDetailResponse, Error> {
         return self.provider
             .cb
             .request(.getOrderDetail(orderId: orderId))
             .map(GetOrderDetailResponse.self)
-    }
-    
-    func getReOrderCustomer(orderId: Int) -> AnyPublisher<GetReOrderCustomerResponse, Error> {
-        return self.provider
-            .cb
-            .request(.getReOrderCustomer(orderId: orderId))
-            .map(GetReOrderCustomerResponse.self)
     }
     
     func createOrderByUser(request: PostCreateOrderByUserRequest) -> AnyPublisher<PostCreateOrderByUserResponse, Error> {
@@ -61,5 +85,20 @@ final class OrderRepositoryImpl: TMS_USER.OrderRepository {
             .cb
             .request(.getOrderDescription(orderId: orderId))
             .map(GetOrderDescriptionResponse.self)
+    }
+    
+    // MARK: - PUT
+    func putCancelOrder(orderId: Int) -> AnyPublisher<PutCancelOrderResponse, Error> {
+        return self.provider
+            .cb
+            .request(.putCancelOrder(orderId: orderId))
+            .map(PutCancelOrderResponse.self)
+    }
+    
+    func putReOrderCustomer(orderId: Int) -> AnyPublisher<GetReOrderCustomerResponse, Error> {
+        return self.provider
+            .cb
+            .request(.putReOrderCustomer(orderId: orderId))
+            .map(GetReOrderCustomerResponse.self)
     }
 }

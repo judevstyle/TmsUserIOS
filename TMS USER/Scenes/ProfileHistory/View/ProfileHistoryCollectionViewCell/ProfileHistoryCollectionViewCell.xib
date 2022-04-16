@@ -19,15 +19,8 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q7p-LJ-A0K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="860"/>
+                        <rect key="frame" x="0.0" y="8" width="414" height="852"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <label key="tableHeaderView" hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HaQ-FT-3Tj" customClass="TextEmptyData" customModule="TMS_USER" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </tableView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nU1-8Z-vOU" customClass="TextEmptyData" customModule="TMS_USER" customModuleProvider="target">
                         <rect key="frame" x="186" y="419" width="41.5" height="20.5"/>
@@ -40,7 +33,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="nU1-8Z-vOU" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="FDG-nm-I3g"/>
-                <constraint firstItem="Q7p-LJ-A0K" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KV0-1v-qpy"/>
+                <constraint firstItem="Q7p-LJ-A0K" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="KV0-1v-qpy"/>
                 <constraint firstAttribute="trailing" secondItem="Q7p-LJ-A0K" secondAttribute="trailing" id="aZf-id-YJu"/>
                 <constraint firstItem="nU1-8Z-vOU" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="cja-tp-mrL"/>
                 <constraint firstAttribute="bottom" secondItem="Q7p-LJ-A0K" secondAttribute="bottom" id="eRw-jZ-k49"/>

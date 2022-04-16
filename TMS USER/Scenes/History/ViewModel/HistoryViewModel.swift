@@ -34,8 +34,8 @@ class HistoryViewModel: HistoryProtocol, HistoryProtocolOutput {
     var output: HistoryProtocolOutput { return self }
     
     // MARK: - UseCase
-    private var getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase
-    private var getReOrderCustomerUseCase: GetReOrderCustomerUseCase
+    private var orderRepository: OrderRepository
+    private var putReOrderCustomerUseCase: PutReOrderCustomerUseCase
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     // MARK: - Properties
@@ -43,12 +43,12 @@ class HistoryViewModel: HistoryProtocol, HistoryProtocolOutput {
     
     init(
         historyViewController: HistoryViewController,
-        getFinishOrderCustomerUseCase: GetFinishOrderCustomerUseCase = GetFinishOrderCustomerUseCaseImpl(),
-        getReOrderCustomerUseCase: GetReOrderCustomerUseCase = GetReOrderCustomerUseCaseImpl()
+        orderRepository: OrderRepository = OrderRepositoryImpl(),
+        putReOrderCustomerUseCase: PutReOrderCustomerUseCase = PutReOrderCustomerUseCaseImpl()
     ) {
         self.historyViewController = historyViewController
-        self.getFinishOrderCustomerUseCase = getFinishOrderCustomerUseCase
-        self.getReOrderCustomerUseCase = getReOrderCustomerUseCase
+        self.orderRepository = orderRepository
+        self.putReOrderCustomerUseCase = putReOrderCustomerUseCase
     }
     
     // MARK - Data-binding OutPut
@@ -59,11 +59,12 @@ class HistoryViewModel: HistoryProtocol, HistoryProtocolOutput {
     
     func getHistory() {
         self.historyViewController.startLoding()
-        self.getFinishOrderCustomerUseCase.execute().sink { completion in
+        let request = GetOrderCustomerRequest()
+        self.orderRepository.getFinishOrderCustomer(request: request).sink { completion in
             debugPrint("getFinishOrderCustomer \(completion)")
             self.historyViewController.stopLoding()
         } receiveValue: { resp in
-            if let items = resp?.items {
+            if let items = resp.data?.items {
                 self.listOrder = items
             }
             self.didGetHistorySuccess?()
@@ -114,7 +115,7 @@ extension HistoryViewModel: HistoryTableViewCellDelegate {
     }
     
     func addOrderToProductCart(index: Int?) {
-        getReOrderCsutomer(index: index) { items in
+        getReOrderCustomer(index: index) { items in
             items.enumerated().forEach({ (index, item) in
                 if let itemProduct = item.product,
                    let qty = item.qty {
@@ -129,13 +130,13 @@ extension HistoryViewModel: HistoryTableViewCellDelegate {
         }
     }
     
-    func getReOrderCsutomer(index: Int?, completion: @escaping ([ReOrderCustomer]) -> Void) {
+    func getReOrderCustomer(index: Int?, completion: @escaping ([ReOrderCustomer]) -> Void) {
         guard let index = index,
               let orderId = self.listOrder?[index].orderId else { return }
         
         self.historyViewController.startLoding()
-        self.getReOrderCustomerUseCase.execute(orderId: orderId).sink { completion in
-            debugPrint("GetReOrderCustomer \(completion)")
+        self.putReOrderCustomerUseCase.execute(orderId: orderId).sink { completion in
+            debugPrint("putReOrderCustomerUseCase \(completion)")
             self.historyViewController.stopLoding()
         } receiveValue: { resp in
             if let items = resp {

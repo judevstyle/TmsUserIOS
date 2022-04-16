@@ -10,8 +10,6 @@
 		6924D864E8F7CC9192B126D5 /* Pods_TMS_USER_TMS_USERUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E6A29A81F43EE789959671 /* Pods_TMS_USER_TMS_USERUITests.framework */; };
 		C4DFA8CB2804362E00A63FFF /* OrderProfileHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DFA8C92804362E00A63FFF /* OrderProfileHistoryTableViewCell.swift */; };
 		C4DFA8CC2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DFA8CA2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib */; };
-		C4DFA8D02804365000A63FFF /* OrderWaitShippingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DFA8CE2804365000A63FFF /* OrderWaitShippingTableViewCell.swift */; };
-		C4DFA8D12804365000A63FFF /* OrderWaitShippingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DFA8CF2804365000A63FFF /* OrderWaitShippingTableViewCell.xib */; };
 		EF06ED8327FB66690097F67A /* CollectibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF06ED8127FB66690097F67A /* CollectibleTableViewCell.swift */; };
 		EF06ED8427FB66690097F67A /* CollectibleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF06ED8227FB66690097F67A /* CollectibleTableViewCell.xib */; };
 		EF06ED8727FB684D0097F67A /* CollectibleExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF06ED8627FB684D0097F67A /* CollectibleExchangeViewModel.swift */; };
@@ -203,6 +201,9 @@
 		EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E298D27F1FD1E008FBE5D /* Register.storyboard */; };
 		EF9E299027F1FD2E008FBE5D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */; };
 		EF9E299327F1FD3F008FBE5D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */; };
+		EFA03C8C280ACAF9006128BF /* PutCancelOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA03C8B280ACAF9006128BF /* PutCancelOrderResponse.swift */; };
+		EFA03C90280B0498006128BF /* OrderSendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA03C8E280B0498006128BF /* OrderSendingTableViewCell.swift */; };
+		EFA03C91280B0498006128BF /* OrderSendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA03C8F280B0498006128BF /* OrderSendingTableViewCell.xib */; };
 		EFB47C0226C3D5A400170CD0 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */; };
 		EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */; };
 		EFB47C0726C3D5D500170CD0 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */; };
@@ -214,8 +215,6 @@
 		EFB47C1A26C4492000170CD0 /* DBLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C1926C4492000170CD0 /* DBLocal.swift */; };
 		EFBAF6A826CA2A190008DDF4 /* GetOrderDescriptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBAF6A726CA2A190008DDF4 /* GetOrderDescriptionResponse.swift */; };
 		EFBAF6AA26CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBAF6A926CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift */; };
-		EFBD719326C3064B0044216D /* GetFinishOrderCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBD719226C3064B0044216D /* GetFinishOrderCustomerResponse.swift */; };
-		EFBD719526C307D90044216D /* GetFinishOrderCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBD719426C307D90044216D /* GetFinishOrderCustomerUseCase.swift */; };
 		EFBD719826C313320044216D /* OrderDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBD719726C313320044216D /* OrderDetail.storyboard */; };
 		EFBD719A26C313420044216D /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBD719926C313420044216D /* OrderDetailViewController.swift */; };
 		EFBD719D26C3181C0044216D /* OrderTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBD719C26C3181C0044216D /* OrderTracking.storyboard */; };
@@ -239,12 +238,11 @@
 		EFC1C58526C2B07900ED64B1 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C58426C2B07900ED64B1 /* OrderViewModel.swift */; };
 		EFC1C58826C2BB1100ED64B1 /* OrderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C58726C2BB1100ED64B1 /* OrderAPI.swift */; };
 		EFC1C58D26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C58C26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift */; };
-		EFC1C58F26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C58E26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift */; };
 		EFC1C59226C2BE6F00ED64B1 /* OrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59126C2BE6F00ED64B1 /* OrderRepository.swift */; };
-		EFC1C59526C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59426C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift */; };
 		EFC1C59926C2C45E00ED64B1 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59726C2C45E00ED64B1 /* HistoryTableViewCell.swift */; };
 		EFC1C59A26C2C45E00ED64B1 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFC1C59826C2C45E00ED64B1 /* HistoryTableViewCell.xib */; };
 		EFC1C59D26C2C46F00ED64B1 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1C59C26C2C46F00ED64B1 /* HistoryViewModel.swift */; };
+		EFC266DE280934D100BD765E /* GetOrderCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC266DD280934D100BD765E /* GetOrderCustomerResponse.swift */; };
 		EFC39BF627F89DFA00F54C89 /* CustomerPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC39BF527F89DFA00F54C89 /* CustomerPoint.storyboard */; };
 		EFC39BF827F89E0400F54C89 /* CustomerPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC39BF727F89E0400F54C89 /* CustomerPointViewController.swift */; };
 		EFC39BFA27F8A33600F54C89 /* UIViewCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC39BF927F8A33600F54C89 /* UIViewCustomClass.swift */; };
@@ -300,8 +298,6 @@
 		C18A938163B85A9812617AA4 /* Pods_TMS_USERTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMS_USERTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DFA8C92804362E00A63FFF /* OrderProfileHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProfileHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C4DFA8CA2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProfileHistoryTableViewCell.xib; sourceTree = "<group>"; };
-		C4DFA8CE2804365000A63FFF /* OrderWaitShippingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderWaitShippingTableViewCell.swift; sourceTree = "<group>"; };
-		C4DFA8CF2804365000A63FFF /* OrderWaitShippingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderWaitShippingTableViewCell.xib; sourceTree = "<group>"; };
 		E6E6A29A81F43EE789959671 /* Pods_TMS_USER_TMS_USERUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMS_USER_TMS_USERUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF06ED8127FB66690097F67A /* CollectibleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleTableViewCell.swift; sourceTree = "<group>"; };
 		EF06ED8227FB66690097F67A /* CollectibleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectibleTableViewCell.xib; sourceTree = "<group>"; };
@@ -491,6 +487,9 @@
 		EF9E298D27F1FD1E008FBE5D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		EFA03C8B280ACAF9006128BF /* PutCancelOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutCancelOrderResponse.swift; sourceTree = "<group>"; };
+		EFA03C8E280B0498006128BF /* OrderSendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSendingTableViewCell.swift; sourceTree = "<group>"; };
+		EFA03C8F280B0498006128BF /* OrderSendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderSendingTableViewCell.xib; sourceTree = "<group>"; };
 		EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
 		EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
@@ -502,8 +501,6 @@
 		EFB47C1926C4492000170CD0 /* DBLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBLocal.swift; sourceTree = "<group>"; };
 		EFBAF6A726CA2A190008DDF4 /* GetOrderDescriptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDescriptionResponse.swift; sourceTree = "<group>"; };
 		EFBAF6A926CA2AA80008DDF4 /* GetOrderDescriptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDescriptionUseCase.swift; sourceTree = "<group>"; };
-		EFBD719226C3064B0044216D /* GetFinishOrderCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFinishOrderCustomerResponse.swift; sourceTree = "<group>"; };
-		EFBD719426C307D90044216D /* GetFinishOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFinishOrderCustomerUseCase.swift; sourceTree = "<group>"; };
 		EFBD719726C313320044216D /* OrderDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderDetail.storyboard; sourceTree = "<group>"; };
 		EFBD719926C313420044216D /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		EFBD719C26C3181C0044216D /* OrderTracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderTracking.storyboard; sourceTree = "<group>"; };
@@ -527,12 +524,11 @@
 		EFC1C58426C2B07900ED64B1 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		EFC1C58726C2BB1100ED64B1 /* OrderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAPI.swift; sourceTree = "<group>"; };
 		EFC1C58C26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApprovedOrderCustomerRequest.swift; sourceTree = "<group>"; };
-		EFC1C58E26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApprovedOrderCustomerResponse.swift; sourceTree = "<group>"; };
 		EFC1C59126C2BE6F00ED64B1 /* OrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepository.swift; sourceTree = "<group>"; };
-		EFC1C59426C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApprovedOrderCustomerUseCase.swift; sourceTree = "<group>"; };
 		EFC1C59726C2C45E00ED64B1 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		EFC1C59826C2C45E00ED64B1 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		EFC1C59C26C2C46F00ED64B1 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		EFC266DD280934D100BD765E /* GetOrderCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderCustomerResponse.swift; sourceTree = "<group>"; };
 		EFC39BF527F89DFA00F54C89 /* CustomerPoint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerPoint.storyboard; sourceTree = "<group>"; };
 		EFC39BF727F89E0400F54C89 /* CustomerPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerPointViewController.swift; sourceTree = "<group>"; };
 		EFC39BF927F8A33600F54C89 /* UIViewCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCustomClass.swift; sourceTree = "<group>"; };
@@ -625,7 +621,7 @@
 		C4DFA8C72804359300A63FFF /* ProfileHistory */ = {
 			isa = PBXGroup;
 			children = (
-				C4DFA8CD2804363800A63FFF /* OrderWaitShippingTableViewCell */,
+				EFA03C8D280B0476006128BF /* OrderSendingTableViewCell */,
 				C4DFA8C82804360F00A63FFF /* OrderProfileHistoryTableViewCell */,
 			);
 			path = ProfileHistory;
@@ -638,15 +634,6 @@
 				C4DFA8CA2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib */,
 			);
 			path = OrderProfileHistoryTableViewCell;
-			sourceTree = "<group>";
-		};
-		C4DFA8CD2804363800A63FFF /* OrderWaitShippingTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				C4DFA8CE2804365000A63FFF /* OrderWaitShippingTableViewCell.swift */,
-				C4DFA8CF2804365000A63FFF /* OrderWaitShippingTableViewCell.xib */,
-			);
-			path = OrderWaitShippingTableViewCell;
 			sourceTree = "<group>";
 		};
 		EF06ED8527FB683C0097F67A /* ViewModel */ = {
@@ -1722,6 +1709,15 @@
 			path = NavigationManager;
 			sourceTree = "<group>";
 		};
+		EFA03C8D280B0476006128BF /* OrderSendingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFA03C8E280B0498006128BF /* OrderSendingTableViewCell.swift */,
+				EFA03C8F280B0498006128BF /* OrderSendingTableViewCell.xib */,
+			);
+			path = OrderSendingTableViewCell;
+			sourceTree = "<group>";
+		};
 		EFB47BFF26C3D57E00170CD0 /* ProductListTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1944,12 +1940,12 @@
 		EFC1C58B26C2BBE000ED64B1 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				EFC1C58E26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift */,
-				EFBD719226C3064B0044216D /* GetFinishOrderCustomerResponse.swift */,
 				EF766F2026C841FA003ED499 /* GetOrderDetailResponse.swift */,
 				EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */,
 				EF0FE84726C90FE100DFCED4 /* PostCreateOrderByUserResponse.swift */,
 				EFBAF6A726CA2A190008DDF4 /* GetOrderDescriptionResponse.swift */,
+				EFC266DD280934D100BD765E /* GetOrderCustomerResponse.swift */,
+				EFA03C8B280ACAF9006128BF /* PutCancelOrderResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1965,8 +1961,6 @@
 		EFC1C59326C2BEA900ED64B1 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				EFC1C59426C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift */,
-				EFBD719426C307D90044216D /* GetFinishOrderCustomerUseCase.swift */,
 				EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */,
 				EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */,
 				EF0FE84926C9106F00DFCED4 /* PostCreateOrderByUserUseCase.swift */,
@@ -2221,6 +2215,7 @@
 				EF4B546A27FE07DE00446FF7 /* SuccessDialogView.xib in Resources */,
 				EFC1C58326C2AE4E00ED64B1 /* OrderTableViewCell.xib in Resources */,
 				EF0D53ED26C13FC3009FD5F0 /* SukhumvitSet-Thin.ttf in Resources */,
+				EFA03C91280B0498006128BF /* OrderSendingTableViewCell.xib in Resources */,
 				EFD9F03927061DB50072A3B1 /* ProductDetail.storyboard in Resources */,
 				EFC1C57826C2A26E00ED64B1 /* ProductDetailBottomSheet.storyboard in Resources */,
 				EF0D54D326C1A408009FD5F0 /* ProductCollectionViewCell.xib in Resources */,
@@ -2229,7 +2224,6 @@
 				EF314BBE26CABA9B002B201C /* Chat.storyboard in Resources */,
 				EF0D54DE26C1B094009FD5F0 /* ProductCartTableViewCell.xib in Resources */,
 				EFC39C0627F8B5C500F54C89 /* MyRewardPointTableViewCell.xib in Resources */,
-				C4DFA8D12804365000A63FFF /* OrderWaitShippingTableViewCell.xib in Resources */,
 				EF0D545F26C169EE009FD5F0 /* Home.storyboard in Resources */,
 				EF0D53A626C12F2E009FD5F0 /* Assets.xcassets in Resources */,
 				EF95766427F3747700E59E12 /* SearchResultTableViewCell.xib in Resources */,
@@ -2459,6 +2453,7 @@
 				EF0D543C26C1452F009FD5F0 /* AnyKey.swift in Sources */,
 				EFF4174527F4EDC800ACF712 /* ManageProfileViewModel.swift in Sources */,
 				EF0D545726C1464C009FD5F0 /* ToolbarPickerView.swift in Sources */,
+				EFA03C90280B0498006128BF /* OrderSendingTableViewCell.swift in Sources */,
 				EF309E6626DA215900CB7353 /* GetMessageRequest.swift in Sources */,
 				EF0D544F26C14628009FD5F0 /* KeyboardListener.swift in Sources */,
 				EFC39BFC27F8A3E200F54C89 /* UIButtonCustomClass.swift in Sources */,
@@ -2481,8 +2476,6 @@
 				EF0D542A26C1451D009FD5F0 /* Encodable+Extension.swift in Sources */,
 				EF95768827F3762F00E59E12 /* GoogleMapRepository.swift in Sources */,
 				EF2DD4D8270B4DC200756D96 /* SocketChatResponse.swift in Sources */,
-				EFC1C59526C2BEB700ED64B1 /* GetApprovedOrderCustomerUseCase.swift in Sources */,
-				EFBD719526C307D90044216D /* GetFinishOrderCustomerUseCase.swift in Sources */,
 				EF0D549726C19841009FD5F0 /* Date+Extension.swift in Sources */,
 				EF0D548026C18DAC009FD5F0 /* PostAuthenticateRequest.swift in Sources */,
 				EF0D542E26C1451D009FD5F0 /* UICollectionView+Extension.swift in Sources */,
@@ -2552,11 +2545,11 @@
 				EF0D54C626C1A284009FD5F0 /* PostProductRequest.swift in Sources */,
 				EF95765727F35FF400E59E12 /* BorderLineTextView.swift in Sources */,
 				EF0FE84626C90D1D00DFCED4 /* PostCreateOrderByUserRequest.swift in Sources */,
-				EFBD719326C3064B0044216D /* GetFinishOrderCustomerResponse.swift in Sources */,
 				EF0D541F26C1451D009FD5F0 /* SocketDashboardRequest.swift in Sources */,
 				EF95765927F3614300E59E12 /* ButtonCustomColor.swift in Sources */,
 				EF0D53F726C1450F009FD5F0 /* Combine.swift in Sources */,
 				EFB47C0226C3D5A400170CD0 /* ProductListTableViewCell.swift in Sources */,
+				EFA03C8C280ACAF9006128BF /* PutCancelOrderResponse.swift in Sources */,
 				EF0D549B26C1A09E009FD5F0 /* HomeViewModel.swift in Sources */,
 				EF0D541C26C1451D009FD5F0 /* User.swift in Sources */,
 				EF0D545126C1462D009FD5F0 /* NavigationManager.swift in Sources */,
@@ -2576,6 +2569,7 @@
 				EF0D543026C1451D009FD5F0 /* Notification+Extension.swift in Sources */,
 				EF95767727F374F700E59E12 /* GetPlaceAutoCompleteRequest.swift in Sources */,
 				EF95767327F374F700E59E12 /* GetGeocodePlaceResponse.swift in Sources */,
+				EFC266DE280934D100BD765E /* GetOrderCustomerResponse.swift in Sources */,
 				EF0D542826C1451D009FD5F0 /* UIImageView+Kingfisher.swift in Sources */,
 				EF0D549526C196CD009FD5F0 /* IntroViewModel.swift in Sources */,
 				EF0D542726C1451D009FD5F0 /* UIView+Extension.swift in Sources */,
@@ -2620,9 +2614,7 @@
 				EF0D543426C1451D009FD5F0 /* UITableView+Extension.swift in Sources */,
 				EFBD71A226C318770044216D /* OrderTrackingViewModel.swift in Sources */,
 				EFB47C0F26C3DAC300170CD0 /* OrderDetailViewModel.swift in Sources */,
-				C4DFA8D02804365000A63FFF /* OrderWaitShippingTableViewCell.swift in Sources */,
 				EF97F892270B0FF900B2E2C7 /* PostMessageRequest.swift in Sources */,
-				EFC1C58F26C2BC0300ED64B1 /* GetApprovedOrderCustomerResponse.swift in Sources */,
 				EF766F2126C841FA003ED499 /* GetOrderDetailResponse.swift in Sources */,
 				EFC1C58D26C2BBF700ED64B1 /* GetApprovedOrderCustomerRequest.swift in Sources */,
 				EFC39BFE27F8A9A000F54C89 /* GetMyRewardPointResponse.swift in Sources */,

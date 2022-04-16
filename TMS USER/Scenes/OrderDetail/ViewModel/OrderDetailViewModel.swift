@@ -45,7 +45,7 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     
     // MARK: - UseCase
     private var getOrderDetailUseCase: GetOrderDetailUseCase
-    private var getReOrderCustomerUseCase: GetReOrderCustomerUseCase
+    private var putReOrderCustomerUseCase: PutReOrderCustomerUseCase
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     // MARK: - Properties
@@ -54,11 +54,11 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     init(
         orderDetailViewController: OrderDetailViewController,
         getOrderDetailUseCase: GetOrderDetailUseCase = GetOrderDetailUseCaseImpl(),
-        getReOrderCustomerUseCase: GetReOrderCustomerUseCase = GetReOrderCustomerUseCaseImpl()
+        putReOrderCustomerUseCase: PutReOrderCustomerUseCase = PutReOrderCustomerUseCaseImpl()
     ) {
         self.orderDetailViewController = orderDetailViewController
         self.getOrderDetailUseCase = getOrderDetailUseCase
-        self.getReOrderCustomerUseCase = getReOrderCustomerUseCase
+        self.putReOrderCustomerUseCase = putReOrderCustomerUseCase
     }
     
     // MARK - Data-binding OutPut
@@ -177,7 +177,7 @@ extension OrderDetailViewModel {
     }
     
     func addOrderToProductCart() {
-        getReOrderCsutomer { items in
+        putReOrderCustomer { items in
             items.enumerated().forEach({ (index, item) in
                 if let itemProduct = item.product,
                    let qty = item.qty {
@@ -192,10 +192,10 @@ extension OrderDetailViewModel {
         }
     }
     
-    func getReOrderCsutomer(completion: @escaping ([ReOrderCustomer]) -> Void) {
+    func putReOrderCustomer(completion: @escaping ([ReOrderCustomer]) -> Void) {
         guard let orderId = self.orderId else { return }
         self.orderDetailViewController.startLoding()
-        self.getReOrderCustomerUseCase.execute(orderId: orderId).sink { completion in
+        self.putReOrderCustomerUseCase.execute(orderId: orderId).sink { completion in
             debugPrint("GetReOrderCustomer \(completion)")
             self.orderDetailViewController.stopLoding()
         } receiveValue: { resp in

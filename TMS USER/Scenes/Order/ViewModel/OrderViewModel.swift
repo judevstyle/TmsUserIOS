@@ -33,7 +33,7 @@ class OrderViewModel: OrderProtocol, OrderProtocolOutput {
     var output: OrderProtocolOutput { return self }
     
     // MARK: - UseCase
-    private var getApprovedOrderCustomerUseCase: GetApprovedOrderCustomerUseCase
+    private var orderRepository: OrderRepository
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     // MARK: - Properties
@@ -41,10 +41,10 @@ class OrderViewModel: OrderProtocol, OrderProtocolOutput {
 
     init(
         orderViewController: OrderViewController,
-        getApprovedOrderCustomerUseCase: GetApprovedOrderCustomerUseCase = GetApprovedOrderCustomerUseCaseImpl()
+        orderRepository: OrderRepository = OrderRepositoryImpl()
     ) {
         self.orderViewController = orderViewController
-        self.getApprovedOrderCustomerUseCase = getApprovedOrderCustomerUseCase
+        self.orderRepository = orderRepository
     }
     
     // MARK - Data-binding OutPut
@@ -54,7 +54,8 @@ class OrderViewModel: OrderProtocol, OrderProtocolOutput {
     
     func getOrder() {
         self.orderViewController.startLoding()
-        self.getApprovedOrderCustomerUseCase.execute().sink { completion in
+        let request = GetOrderCustomerRequest()
+        self.orderRepository.getApprovedOrderCustomer(request: request).sink { completion in
             debugPrint("getApprovedOrderCustomer \(completion)")
             self.orderViewController.stopLoding()
             switch completion {
@@ -64,7 +65,7 @@ class OrderViewModel: OrderProtocol, OrderProtocolOutput {
                 break
             }
         } receiveValue: { resp in
-            if let items = resp?.items {
+            if let items = resp.data?.items {
                 self.listOrder = items
             }
             self.didGetOrderSuccess?()
@@ -87,7 +88,7 @@ class OrderViewModel: OrderProtocol, OrderProtocolOutput {
     }
     
     func getItemViewCellHeight() -> CGFloat {
-        return 140
+        return 132
     }
     
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath) {

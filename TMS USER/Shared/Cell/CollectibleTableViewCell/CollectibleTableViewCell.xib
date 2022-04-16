@@ -26,25 +26,25 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH4-rd-348" customClass="TextTitleCellBlack" customModule="TMS_USER" customModuleProvider="target">
-                        <rect key="frame" x="98" y="8" width="42" height="21"/>
+                        <rect key="frame" x="98" y="8" width="308" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUe-iJ-iKU" customClass="TextDescCellDarkGray" customModule="TMS_USER" customModuleProvider="target">
-                        <rect key="frame" x="98" y="29" width="42" height="21"/>
+                        <rect key="frame" x="98" y="29" width="308" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaM-Lf-zu3" customClass="TextDescCellDarkGray" customModule="TMS_USER" customModuleProvider="target">
-                        <rect key="frame" x="98" y="50" width="42" height="21"/>
+                        <rect key="frame" x="98" y="50" width="308" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vf-S7-rfN" customClass="TextDescCellDarkGray" customModule="TMS_USER" customModuleProvider="target">
-                        <rect key="frame" x="98" y="71" width="42" height="20.5"/>
+                        <rect key="frame" x="98" y="71" width="205" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -95,16 +95,20 @@
                 <constraints>
                     <constraint firstItem="3vf-S7-rfN" firstAttribute="leading" secondItem="n31-SV-ldX" secondAttribute="trailing" constant="8" id="5t9-SF-y0f"/>
                     <constraint firstItem="tH4-rd-348" firstAttribute="leading" secondItem="n31-SV-ldX" secondAttribute="trailing" constant="8" id="6ns-jF-bhm"/>
+                    <constraint firstItem="fBH-zD-a9F" firstAttribute="leading" secondItem="3vf-S7-rfN" secondAttribute="trailing" constant="8" id="Cee-qv-EcP"/>
                     <constraint firstItem="AUe-iJ-iKU" firstAttribute="top" secondItem="tH4-rd-348" secondAttribute="bottom" id="Ehi-hL-QDd"/>
                     <constraint firstItem="n31-SV-ldX" firstAttribute="leading" secondItem="RGg-YA-T9z" secondAttribute="leading" id="Gsc-Pi-3ao"/>
                     <constraint firstItem="AUe-iJ-iKU" firstAttribute="leading" secondItem="n31-SV-ldX" secondAttribute="trailing" constant="8" id="Kf6-6Z-fBd"/>
+                    <constraint firstAttribute="trailing" secondItem="AUe-iJ-iKU" secondAttribute="trailing" constant="8" id="Toh-gv-PuZ"/>
                     <constraint firstAttribute="bottom" secondItem="fBH-zD-a9F" secondAttribute="bottom" constant="8" id="Wgl-Jc-p2P"/>
                     <constraint firstItem="3vf-S7-rfN" firstAttribute="top" secondItem="PaM-Lf-zu3" secondAttribute="bottom" id="ZVq-Hs-amp"/>
+                    <constraint firstAttribute="trailing" secondItem="PaM-Lf-zu3" secondAttribute="trailing" constant="8" id="ZuU-3W-pUO"/>
                     <constraint firstItem="tH4-rd-348" firstAttribute="top" secondItem="n31-SV-ldX" secondAttribute="top" id="kYa-c3-V0M"/>
                     <constraint firstItem="r2c-fT-gpd" firstAttribute="leading" secondItem="n31-SV-ldX" secondAttribute="trailing" constant="8" id="oj2-Xm-JKf"/>
                     <constraint firstItem="PaM-Lf-zu3" firstAttribute="leading" secondItem="n31-SV-ldX" secondAttribute="trailing" constant="8" id="rIj-Nu-TE4"/>
                     <constraint firstItem="r2c-fT-gpd" firstAttribute="top" secondItem="3vf-S7-rfN" secondAttribute="bottom" id="rnT-Nk-gU5"/>
                     <constraint firstAttribute="trailing" secondItem="fBH-zD-a9F" secondAttribute="trailing" constant="8" id="tQj-aa-SdF"/>
+                    <constraint firstAttribute="trailing" secondItem="tH4-rd-348" secondAttribute="trailing" constant="8" id="uTw-rX-Zvu"/>
                     <constraint firstItem="n31-SV-ldX" firstAttribute="top" secondItem="RGg-YA-T9z" secondAttribute="top" constant="8" id="y4Y-gb-5cX"/>
                     <constraint firstItem="PaM-Lf-zu3" firstAttribute="top" secondItem="AUe-iJ-iKU" secondAttribute="bottom" id="yGq-yr-9Xt"/>
                 </constraints>
