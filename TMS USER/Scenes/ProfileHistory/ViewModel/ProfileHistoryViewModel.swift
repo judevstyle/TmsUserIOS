@@ -59,6 +59,10 @@ class ProfileHistoryViewModel: ProfileHistoryProtocol, ProfileHistoryProtocolOut
 }
 
 extension ProfileHistoryViewModel: ProfileHistoryCollectionViewModelDelegate {
+    func didTapOrderDatail(orderId: Int) {
+        NavigationManager.instance.pushVC(to: .orderHistoryDetail(orderId: orderId))
+    }
+    
     func didCancelOrder(orderId: Int) {
     }
 }

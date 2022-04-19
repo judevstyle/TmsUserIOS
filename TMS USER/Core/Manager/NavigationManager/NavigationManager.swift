@@ -31,6 +31,7 @@ public enum NavigationOpeningSender {
     
     //OrderDetail
     case orderDetail(orderId: Int?)
+    case orderHistoryDetail(orderId: Int?)
     
     //OrderTracking
     case orderTracking(orderId: Int?)
@@ -81,7 +82,7 @@ public enum NavigationOpeningSender {
             return "ProductCart"
         case .productDetailBottomSheet:
             return "ProductDetailBottomSheet"
-        case .orderDetail:
+        case .orderDetail, .orderHistoryDetail:
             return "OrderDetail"
         case .orderTracking:
             return "OrderTracking"
@@ -122,7 +123,7 @@ public enum NavigationOpeningSender {
             return "MainAppViewController"
         case .home:
             return "HomeViewController"
-        case .order:
+        case .order, .orderHistoryDetail:
             return "OrderViewController"
         case .history:
             return "HistoryViewController"
@@ -174,6 +175,8 @@ public enum NavigationOpeningSender {
             return "ตะกร้าสินค้า"
         case .orderDetail:
             return "รายละเอียดการสั่งซื้อ"
+        case .orderHistoryDetail:
+            return "Order"
         case .orderTracking:
             return "ติดตามคำสั่งซื้อ"
         case .selectCurrentLocation:
@@ -360,7 +363,12 @@ class NavigationManager {
             }
         case .orderDetail(let orderId):
             if let className = storyboard.instantiateInitialViewController() as? OrderDetailViewController {
-                className.viewModel.input.setOrderId(orderId: orderId)
+                className.viewModel.input.setUp(orderId: orderId, orderDetailType: .orderDetail)
+                viewController = className
+            }
+        case .orderHistoryDetail(let orderId):
+            if let className = storyboard.instantiateInitialViewController() as? OrderDetailViewController {
+                className.viewModel.input.setUp(orderId: orderId, orderDetailType: .orderHistoryDetail)
                 viewController = className
             }
         case .orderTracking(let orderId):

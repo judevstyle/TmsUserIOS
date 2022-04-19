@@ -7,6 +7,11 @@
 
 import UIKit
 
+public enum OrderDetailType {
+    case orderDetail
+    case orderHistoryDetail
+}
+
 class OrderDetailViewController: UIViewController {
     
     @IBOutlet var orderIdText: UILabel!
@@ -14,10 +19,16 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet var priceAllText: UILabel!
     @IBOutlet var priceDiscountText: UILabel!
     @IBOutlet var priceOverAllText: UILabel!
+    
+    
+    @IBOutlet var bgCreateOrder: UIView!
     @IBOutlet var btnCreateOrder: UIButton!
     
+    @IBOutlet var bgReview: UIView!
+    @IBOutlet var btnReview: UIButton!
+    
     lazy var viewModel: OrderDetailProtocol = {
-        let vm = OrderDetailViewModel(orderDetailViewController: self)
+        let vm = OrderDetailViewModel(vc: self)
         self.configure(vm)
         self.bindToViewModel()
         return vm
@@ -45,6 +56,7 @@ extension OrderDetailViewController {
     
     func bindToViewModel() {
         viewModel.output.didGetOrderDetailSuccess = didGetOrderDetailSuccess()
+        
     }
     
     func didGetOrderDetailSuccess() -> (() -> Void) {
@@ -59,12 +71,36 @@ extension OrderDetailViewController {
 
 extension OrderDetailViewController {
     func setupUI(){
-        btnCreateOrder.setRounded(rounded: 8)
-        btnCreateOrder.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
-                                     locations: [0.5, 1.0],
-                                     direction: .leftToRight,
-                                     cornerRadius: 5)
-        btnCreateOrder.addTarget(self, action: #selector(didTapCreateOrder), for: .touchUpInside)
+        
+        bgCreateOrder.isHidden = true
+        bgReview.isHidden = true
+        if viewModel.output.getOrderDetailType() == .orderDetail {
+            bgCreateOrder.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                self.btnCreateOrder.setRounded(rounded: 8)
+                self.btnCreateOrder.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
+                                             locations: [0.5, 1.0],
+                                             direction: .leftToRight,
+                                             cornerRadius: 8)
+                self.btnCreateOrder.setTitle("สั่งซื้ออีกครั้ง", for: .normal)
+                self.btnCreateOrder.setTitleColor(.white, for: .normal)
+                self.btnCreateOrder.titleLabel?.textColor = .white
+                self.btnCreateOrder.addTarget(self, action: #selector(self.didTapCreateOrder), for: .touchUpInside)
+            }
+        } else if viewModel.output.getOrderDetailType() == .orderHistoryDetail {
+            bgReview.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                self.btnReview.setRounded(rounded: 8)
+                self.btnReview.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
+                                             locations: [0.5, 1.0],
+                                             direction: .leftToRight,
+                                             cornerRadius: 8)
+                self.btnReview.setTitle("ให้คะแนน", for: .normal)
+                self.btnReview.setTitleColor(.white, for: .normal)
+                self.btnReview.titleLabel?.textColor = .white
+                self.btnReview.addTarget(self, action: #selector(self.didTapReviewOrder), for: .touchUpInside)
+            }
+        }
     }
     
     
@@ -84,10 +120,17 @@ extension OrderDetailViewController {
     
     func setupValueOrder() {
         orderIdText.text = "Order ID : \(viewModel.output.getOrderNo())"
+        priceAllText.text = "\(viewModel.output.getSumPrice())"
+        priceDiscountText.text = "\(viewModel.output.getDiscountPrice())"
+        priceOverAllText.text = "\(viewModel.output.getOverAllPrice())"
     }
     
     @objc func didTapCreateOrder() {
         viewModel.input.didCreateOrder()
+    }
+    
+    @objc func didTapReviewOrder() {
+
     }
 }
 

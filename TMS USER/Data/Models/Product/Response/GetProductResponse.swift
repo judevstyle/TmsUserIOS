@@ -64,7 +64,9 @@ public struct ProductItems: Codable, Hashable  {
     public var isPromotion: Bool = false
     public var promotion: [PromotionItems]? = nil
     
-    public init() {}
+    public init() {
+        
+    }
     
     enum CodingKeys: String, CodingKey {
         case productId = "product_id"

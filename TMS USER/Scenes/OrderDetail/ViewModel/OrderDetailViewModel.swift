@@ -11,9 +11,8 @@ import Combine
 
 protocol OrderDetailProtocolInput {
     func getOrderDetail()
-    func setOrderId(orderId: Int?)
+    func setUp(orderId: Int?, orderDetailType: OrderDetailType?)
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath)
-    
     
     func didCreateOrder()
 }
@@ -26,12 +25,18 @@ protocol OrderDetailProtocolOutput: class {
     func getItemViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
     func getItemViewCellHeight(indexPath: IndexPath) -> CGFloat
     
+    func getOrderDetailType() -> OrderDetailType?
+    
     //Header
     func getHeightSectionView(section: Int) -> CGFloat
     func getHeaderViewCell(_ tableView: UITableView, section: Int) -> UIView?
     
     //OrderNo
     func getOrderNo() -> String
+    //AllSum
+    func getSumPrice() -> Int
+    func getDiscountPrice() -> Int
+    func getOverAllPrice() -> Int
 }
 
 protocol OrderDetailProtocol: OrderDetailProtocolInput, OrderDetailProtocolOutput {
@@ -49,14 +54,16 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     // MARK: - Properties
-    private var orderDetailViewController: OrderDetailViewController
+    private var vc: OrderDetailViewController
+    
+    public var orderDetailType: OrderDetailType? = .orderDetail
     
     init(
-        orderDetailViewController: OrderDetailViewController,
+        vc: OrderDetailViewController,
         getOrderDetailUseCase: GetOrderDetailUseCase = GetOrderDetailUseCaseImpl(),
         putReOrderCustomerUseCase: PutReOrderCustomerUseCase = PutReOrderCustomerUseCaseImpl()
     ) {
-        self.orderDetailViewController = orderDetailViewController
+        self.vc = vc
         self.getOrderDetailUseCase = getOrderDetailUseCase
         self.putReOrderCustomerUseCase = putReOrderCustomerUseCase
     }
@@ -69,16 +76,17 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     public var listCustomer: [CustomerItems]? = []
     public var orderId: Int? = nil
     
-    func setOrderId(orderId: Int?) {
+    func setUp(orderId: Int?, orderDetailType: OrderDetailType?) {
         self.orderId = orderId
+        self.orderDetailType = orderDetailType
     }
     
     func getOrderDetail() {
         guard let orderId = orderId else { return }
-        self.orderDetailViewController.startLoding()
+        self.vc.startLoding()
         self.getOrderDetailUseCase.execute(orderId: orderId).sink { completion in
             debugPrint("getOrderDetail \(completion)")
-            self.orderDetailViewController.stopLoding()
+            self.vc.stopLoding()
         } receiveValue: { resp in
             
             if let item = resp {
@@ -87,6 +95,7 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
             
             if let items = resp?.orderD {
                 self.listOrderD = items
+                debugPrint("listOrderD \(items)")
             }
             
             if let items = resp?.customer {
@@ -98,26 +107,46 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     }
     
     func getNumberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func getNumberOfRowsInSection(_ tableView: UITableView, section: Int) -> Int {
-        switch section {
-        case 0:
-            return self.listCustomer?.count ?? 0
-        default:
-            return self.listOrderD?.count ?? 0
+        if self.orderDetailType == .orderDetail {
+            return 2
+        } else {
+            return 1
         }
     }
     
+    func getOrderDetailType() -> OrderDetailType? {
+        return self.orderDetailType
+    }
+    
+    func getNumberOfRowsInSection(_ tableView: UITableView, section: Int) -> Int {
+        if self.orderDetailType == .orderDetail {
+            switch section {
+            case 0:
+                return self.listCustomer?.count ?? 0
+            default:
+                return self.listOrderD?.count ?? 0
+            }
+        } else {
+            return self.listOrderD?.count ?? 0
+        }
+
+    }
+    
     func getItemViewCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: EmployeeTableViewCell.identifier, for: indexPath) as! EmployeeTableViewCell
-            cell.selectionStyle = .none
-            cell.item = listCustomer?[indexPath.item]
-            return cell
-        default:
+        if self.orderDetailType == .orderDetail {
+            switch indexPath.section {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: EmployeeTableViewCell.identifier, for: indexPath) as! EmployeeTableViewCell
+                cell.selectionStyle = .none
+                cell.item = listCustomer?[indexPath.item]
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: ProductListTableViewCell.identifier, for: indexPath) as! ProductListTableViewCell
+                cell.orderD = listOrderD?[indexPath.item]
+                cell.selectionStyle = .none
+                return cell
+            }
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductListTableViewCell.identifier, for: indexPath) as! ProductListTableViewCell
             cell.orderD = listOrderD?[indexPath.item]
             cell.selectionStyle = .none
@@ -126,10 +155,15 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     }
     
     func getItemViewCellHeight(indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 83
-        default:
+        
+        if self.orderDetailType == .orderDetail {
+            switch indexPath.section {
+            case 0:
+                return 83
+            default:
+                return 105
+            }
+        } else {
             return 105
         }
     }
@@ -145,10 +179,15 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     func getHeaderViewCell(_ tableView: UITableView, section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderLabelTableViewCell.identifier)
         if let header = header as? HeaderLabelTableViewCell {
-            switch section {
-            case 0:
-                header.render(title: "จัดส่งโดย")
-            default:
+            
+            if self.orderDetailType == .orderDetail {
+                switch section {
+                case 0:
+                    header.render(title: "จัดส่งโดย")
+                default:
+                    header.render(title: "รายการสินค้า")
+                }
+            } else {
                 header.render(title: "รายการสินค้า")
             }
         }
@@ -158,6 +197,55 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     func getOrderNo() -> String {
         return self.orderDetailData?.orderNo ?? ""
     }
+    
+    func getSumPrice() -> Int {
+        var sumPrice: Int = 0
+        
+        self.listOrderD?.forEach({ item in
+            if let qty = item.qty {
+                sumPrice += (qty * (item.price ?? 0))
+            }
+        })
+        return sumPrice
+    }
+    
+    func getDiscountPrice() -> Int {
+//        var discountPrice: Int = 0
+//        self.listProductCart?.forEach({ item in
+//            if let discount = item.productDiscount,
+//               let newPrice = discount.newPrice,
+//               let productPrice = item.productPrice,
+//               let qty = item.productCartQty,
+//               newPrice < productPrice {
+//                let discount = (productPrice - newPrice)
+//                discountPrice += (qty * discount)
+//            }
+//
+//            if let promotions = item.promotion,
+//               let qty = item.productCartQty,
+//               let productPrice = item.productPrice {
+//                for promotion in promotions {
+//                    if qty >= promotion.qty ?? 0 {
+//                        let discount = (productPrice - (promotion.itemPrice ?? 0))
+//                        discountPrice += (qty * discount)
+//                        break
+//                    }
+//                }
+//            }
+//
+//        })
+        return 0
+    }
+    
+    func getOverAllPrice() -> Int {
+        var overAllPrice: Int = 0
+        self.listOrderD?.forEach({ item in
+            if let qty = item.qty {
+                overAllPrice += (qty * (item.price ?? 0))
+            }
+        })
+        return overAllPrice
+    }
 }
 
 extension OrderDetailViewModel {
@@ -165,7 +253,7 @@ extension OrderDetailViewModel {
     func didCreateOrder() {
         let objs = OrderCartManager.sharedInstance.getProductCart()
         if let objs = objs, objs.count > 0 {
-            orderDetailViewController.showAlertComfirm(titleText: "คุณต้องการเปลี่ยนแปลง\nตะกร้าสินค้า ใช่หรือไม่ ?", messageText: "", dismissAction: {
+            vc.showAlertComfirm(titleText: "คุณต้องการเปลี่ยนแปลง\nตะกร้าสินค้า ใช่หรือไม่ ?", messageText: "", dismissAction: {
             }, confirmAction: {
                 OrderCartManager.sharedInstance.clearProductCart {
                     self.addOrderToProductCart()
@@ -194,10 +282,10 @@ extension OrderDetailViewModel {
     
     func putReOrderCustomer(completion: @escaping ([ReOrderCustomer]) -> Void) {
         guard let orderId = self.orderId else { return }
-        self.orderDetailViewController.startLoding()
+        self.vc.startLoding()
         self.putReOrderCustomerUseCase.execute(orderId: orderId).sink { completion in
             debugPrint("GetReOrderCustomer \(completion)")
-            self.orderDetailViewController.stopLoding()
+            self.vc.stopLoding()
         } receiveValue: { resp in
             if let items = resp {
                 completion(items)

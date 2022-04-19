@@ -73,7 +73,7 @@ public struct OrderD: Codable, Hashable  {
     public var price: Int?
     public var qty: Int?
     public var discountState: Bool = false
-    public var product: ProductItems?
+    public var product: OrderProductItems?
 
     public init() {}
     
@@ -85,6 +85,7 @@ public struct OrderD: Codable, Hashable  {
         case productId = "product_id"
         case qty = "qty"
         case price = "price"
+        case product = "product"
     }
     
     public init(from decoder: Decoder) throws {
@@ -95,5 +96,22 @@ public struct OrderD: Codable, Hashable  {
         try qty          <- decoder["qty"]
         try discountState <- decoder["discount_state"]
         try product      <- decoder["product"]
+    }
+}
+
+public struct OrderProductItems: Codable, Hashable  {
+    
+    public var productId: Int?
+    public var productImg: String?
+    public var productName: String?
+    public var productDesc: String?
+    
+    public init() {}
+    
+    public init(from decoder: Decoder) throws {
+        try productId   <- decoder["product_id"]
+        try productImg  <- decoder["product_img"]
+        try productName <- decoder["product_name"]
+        try productDesc <- decoder["product_desc"]
     }
 }

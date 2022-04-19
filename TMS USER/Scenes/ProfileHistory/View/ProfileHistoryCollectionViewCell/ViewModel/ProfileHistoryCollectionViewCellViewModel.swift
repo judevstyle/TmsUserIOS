@@ -11,6 +11,7 @@ import Combine
 
 protocol ProfileHistoryCollectionViewModelDelegate {
     func didCancelOrder(orderId: Int)
+    func didTapOrderDatail(orderId: Int)
 }
 
 protocol ProfileHistoryCollectionProtocolInput {
@@ -112,7 +113,9 @@ class ProfileHistoryCollectionViewModel: ProfileHistoryCollectionProtocol, Profi
     }
     
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath) {
-        debugPrint("didSelectRowAt \(indexPath.item)")
+        if let orderId = self.listOrder?[indexPath.item].orderId, self.profileHistoryType != .waitShipping {
+            self.delegate?.didTapOrderDatail(orderId: orderId)
+        }
     }
     
     func clearItemList() {
