@@ -56,9 +56,6 @@ class ProductListTableViewCell: UITableViewCell {
         
         priceAllText.text = "รวม ฿\((orderD?.qty ?? 1) * (orderD?.price ?? 0))"
         
-        debugPrint("Order ID \(orderD?.orderId)")
-        debugPrint("HOST : \(DomainNameConfig.imagePath.urlString)")
-        debugPrint("Path : \(orderD?.product?.productImg)")
         setImage(url: orderD?.product?.productImg)
     }
     

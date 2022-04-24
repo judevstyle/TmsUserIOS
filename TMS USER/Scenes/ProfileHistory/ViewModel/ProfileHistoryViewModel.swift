@@ -59,11 +59,19 @@ class ProfileHistoryViewModel: ProfileHistoryProtocol, ProfileHistoryProtocolOut
 }
 
 extension ProfileHistoryViewModel: ProfileHistoryCollectionViewModelDelegate {
-    func didTapOrderDatail(orderId: Int) {
-        NavigationManager.instance.pushVC(to: .orderHistoryDetail(orderId: orderId))
+    func didReviewOrder(orderId: Int) {
+        NavigationManager.instance.pushVC(to: .customerReview(orderId: orderId))
+    }
+    
+    func didTapOrderDatail(orderId: Int, orderItem: OrderItems?) {
+        NavigationManager.instance.pushVC(to: .orderHistoryDetail(orderId: orderId, orderItem: orderItem))
     }
     
     func didCancelOrder(orderId: Int) {
+    }
+    
+    func didTapWaitShipping(orderId: Int) {
+        NavigationManager.instance.pushVC(to: .orderTracking(orderId: orderId))
     }
 }
 
@@ -72,7 +80,7 @@ public enum IndexProfileHistoryType: Int {
     case waitShipping = 1
     case success = 2
     case reject = 3
-    case calcel = 4
+    case cancel = 4
 }
 
 public enum TopNavProfileHistoryType: String {
@@ -80,5 +88,5 @@ public enum TopNavProfileHistoryType: String {
     case waitShipping = "รอการจัดส่ง"
     case success = "สำเร็จ"
     case reject = "โดนปฏิเสธ"
-    case calcel = "ยกเลิก"
+    case cancel = "ยกเลิก"
 }

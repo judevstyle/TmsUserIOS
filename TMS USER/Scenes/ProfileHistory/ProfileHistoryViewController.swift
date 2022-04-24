@@ -34,6 +34,10 @@ class ProfileHistoryViewController: UIViewController {
         self.viewModel = interface
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.pageCollectionView.reloadData()
+    }
+    
     func setupUI() {
     }
     
@@ -44,7 +48,7 @@ class ProfileHistoryViewController: UIViewController {
             TopNavProfileHistoryType.waitShipping.rawValue,
             TopNavProfileHistoryType.success.rawValue,
             TopNavProfileHistoryType.reject.rawValue,
-            TopNavProfileHistoryType.calcel.rawValue,
+            TopNavProfileHistoryType.cancel.rawValue,
         ]
         
         segmentedControl.frame = CGRect(x: 0, y: 12, width: topNav.frame.width, height: 38)

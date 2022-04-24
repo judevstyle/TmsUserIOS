@@ -31,7 +31,7 @@ public enum NavigationOpeningSender {
     
     //OrderDetail
     case orderDetail(orderId: Int?)
-    case orderHistoryDetail(orderId: Int?)
+    case orderHistoryDetail(orderId: Int?, orderItem: OrderItems?)
     
     //OrderTracking
     case orderTracking(orderId: Int?)
@@ -57,6 +57,8 @@ public enum NavigationOpeningSender {
                        msgSuccess: SuccessDialogMsg? = nil)
     
     case profileHistory
+    
+    case customerReview(orderId: Int?)
     
     public var storyboardName: String {
         switch self {
@@ -106,6 +108,8 @@ public enum NavigationOpeningSender {
             return "DialogMessage"
         case .profileHistory:
             return "ProfileHistory"
+        case .customerReview:
+            return "CustomerReview"
         }
     }
     
@@ -157,6 +161,8 @@ public enum NavigationOpeningSender {
             return "DialogMessageViewController"
         case .profileHistory:
             return "ProfileHistoryViewController"
+        case .customerReview:
+            return "CustomerReviewViewController"
         }
     }
     
@@ -191,6 +197,8 @@ public enum NavigationOpeningSender {
             return "ของสะสม"
         case .profileHistory:
             return "รายการสั่งซื้อ"
+        case .customerReview:
+            return "รีวิว"
         default:
             return ""
         }
@@ -249,7 +257,7 @@ public enum NavigationOpeningSender {
     
     public var navColor: UIColor {
         switch self {
-        case .splash, .selectCurrentLocation, .updateProfile, .customerPoint:
+        case .splash, .selectCurrentLocation, .updateProfile, .customerPoint, .orderHistoryDetail, .customerReview, .orderTracking:
             return .Primary
         default:
             return .clear
@@ -363,12 +371,12 @@ class NavigationManager {
             }
         case .orderDetail(let orderId):
             if let className = storyboard.instantiateInitialViewController() as? OrderDetailViewController {
-                className.viewModel.input.setUp(orderId: orderId, orderDetailType: .orderDetail)
+                className.viewModel.input.setUp(orderId: orderId, orderDetailType: .orderDetail, orderItem: nil)
                 viewController = className
             }
-        case .orderHistoryDetail(let orderId):
+        case .orderHistoryDetail(let orderId, let orderItem):
             if let className = storyboard.instantiateInitialViewController() as? OrderDetailViewController {
-                className.viewModel.input.setUp(orderId: orderId, orderDetailType: .orderHistoryDetail)
+                className.viewModel.input.setUp(orderId: orderId, orderDetailType: .orderHistoryDetail, orderItem: orderItem)
                 viewController = className
             }
         case .orderTracking(let orderId):
@@ -405,6 +413,11 @@ class NavigationManager {
                 className.msgAccept = msgAccept
                 className.msgError = msgError
                 className.msgSuccess = msgSuccess
+                viewController = className
+            }
+        case .customerReview(let orderId):
+            if let className = storyboard.instantiateInitialViewController() as? CustomerReviewViewController {
+                className.viewModel.input.setup(orderId: orderId)
                 viewController = className
             }
         default:
@@ -496,7 +509,7 @@ class NavigationManager {
             nav.navigationBar.tintColor = to.tintColorBackButton
             
             switch to {
-            case .updateProfile:
+            case .updateProfile, .orderHistoryDetail, .customerReview, .orderTracking:
                 nav.setBarTintColor(color: .Primary, complete: {
                     nav.pushViewController(vc, animated: animated)
                 })
@@ -510,7 +523,7 @@ class NavigationManager {
             self.navigationController.navigationBar.tintColor = to.tintColorBackButton
             
             switch to {
-            case .updateProfile:
+            case .updateProfile, .orderHistoryDetail, .customerReview, .orderTracking:
                 self.navigationController?.setBarTintColor(color: .Primary, complete: {
                     self.navigationController.pushViewController(vc, animated: animated)
                 })

@@ -20,6 +20,7 @@ public enum DomainNameConfig {
     case googleMap
     case point
     case collectibles
+    case feedback
 }
 
 extension DomainNameConfig {
@@ -54,6 +55,8 @@ extension DomainNameConfig {
             return "\(HostURL)/point"
         case .collectibles:
             return "\(HostURL)/collectibles"
+        case .feedback:
+            return "\(HostURL)/feedback"
         }
     }
     

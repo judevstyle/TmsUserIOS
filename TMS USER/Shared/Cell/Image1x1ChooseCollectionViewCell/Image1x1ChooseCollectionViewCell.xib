@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="Image1x1ChooseCollectionViewCell" customModule="TMS_USER" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPJ-KV-oz0">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-6X-jcI">
+                                <rect key="frame" x="16" y="8.5" width="118" height="103"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มรูป" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECy-zb-fp0">
+                                <rect key="frame" x="16" y="121" width="118" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VfO-ng-pzW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ECy-zb-fp0" secondAttribute="trailing" constant="16" id="VIE-uV-nXQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Dga-6X-jcI" secondAttribute="trailing" constant="16" id="Y6S-cW-0by"/>
+                            <constraint firstItem="Dga-6X-jcI" firstAttribute="top" secondItem="XPJ-KV-oz0" secondAttribute="top" constant="8" id="d4p-n5-mgJ"/>
+                            <constraint firstAttribute="bottom" secondItem="ECy-zb-fp0" secondAttribute="bottom" constant="8" id="iP1-G0-fpB"/>
+                            <constraint firstItem="ECy-zb-fp0" firstAttribute="top" secondItem="Dga-6X-jcI" secondAttribute="bottom" constant="8" id="nxd-re-VQ1"/>
+                            <constraint firstItem="Dga-6X-jcI" firstAttribute="leading" secondItem="XPJ-KV-oz0" secondAttribute="leading" constant="16" id="oY2-14-3kd"/>
+                            <constraint firstItem="ECy-zb-fp0" firstAttribute="leading" secondItem="XPJ-KV-oz0" secondAttribute="leading" constant="16" id="v5E-ng-jbu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="XPJ-KV-oz0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ffk-XB-iFC"/>
+                <constraint firstAttribute="trailing" secondItem="XPJ-KV-oz0" secondAttribute="trailing" id="Hqa-6d-pIr"/>
+                <constraint firstItem="XPJ-KV-oz0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eEB-lq-2k1"/>
+                <constraint firstAttribute="bottom" secondItem="XPJ-KV-oz0" secondAttribute="bottom" id="xE1-ku-NZN"/>
+            </constraints>
+            <connections>
+                <outlet property="bgView" destination="XPJ-KV-oz0" id="nLU-rc-eDO"/>
+            </connections>
+            <point key="canvasLocation" x="131.15942028985509" y="87.388392857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+    </resources>
+</document>

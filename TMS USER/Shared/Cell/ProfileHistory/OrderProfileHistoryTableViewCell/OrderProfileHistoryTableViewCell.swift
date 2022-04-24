@@ -10,6 +10,7 @@ import UIKit
 protocol OrderProfileHistoryTableViewCellDelegate {
     func didCancelOrder(orderId: Int)
     func didReOrder(orderId: Int)
+    func didReviewOrder(orderId: Int)
 }
 
 class OrderProfileHistoryTableViewCell: UITableViewCell {
@@ -59,17 +60,6 @@ class OrderProfileHistoryTableViewCell: UITableViewCell {
     func setupUI() {
         bgView.setRounded(rounded: 8)
         bgView.setShadowBoxView()
-//        btnCreateOrder.setRounded(rounded: 5)
-//        btnCreateOrder.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
-//                                     locations: [0.5, 1.0],
-//                                     direction: .leftToRight,
-//                                     cornerRadius: 5)
-//
-//        btnCreateOrder.addTarget(self, action: #selector(didCreateOrder), for: .touchUpInside)
-    }
-    
-    @objc func didCreateOrder() {
-//        self.delegate.didCreateOrder(index: self.index)
     }
     
     func setupValue(item: OrderItems?, type: IndexProfileHistoryType?) {
@@ -132,7 +122,7 @@ class OrderProfileHistoryTableViewCell: UITableViewCell {
             }
             self.dateRejectAndCancel.sizeToFit()
             break
-        case .calcel:
+        case .cancel:
             bgRejectAndCancel.isHidden = false
             statusRejectAndCancel.text = item?.statusRemark ?? ""
             statusRejectAndCancel.isHidden = item?.statusRemark?.isEmpty == true ? true : false
@@ -157,6 +147,9 @@ class OrderProfileHistoryTableViewCell: UITableViewCell {
     }
     
     @IBAction func handleReviewOrder(_ sender: Any) {
+        if let orderId = orderItem?.orderId {
+            self.delegate?.didReviewOrder(orderId: orderId)
+        }
     }
     
     @IBAction func handleReOrder(_ sender: Any) {

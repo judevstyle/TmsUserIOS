@@ -46,35 +46,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa6-Yw-LoA" customClass="ButtonExchangePoint" customModule="TMS_USER" customModuleProvider="target">
-                                        <rect key="frame" x="102" y="190" width="170" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2C5-wV-FoK"/>
-                                            <constraint firstAttribute="width" constant="170" id="CfG-Ly-SOo"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonCoin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fO1-Ul-rw8"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="W75-IO-WkZ" secondAttribute="trailing" constant="16" id="1yL-Mf-ilh"/>
-                                    <constraint firstItem="Xa6-Yw-LoA" firstAttribute="centerX" secondItem="U39-my-VQ7" secondAttribute="centerX" id="8ju-yg-TaS"/>
                                     <constraint firstItem="W75-IO-WkZ" firstAttribute="leading" secondItem="U39-my-VQ7" secondAttribute="leading" constant="16" id="Ddo-dM-Hgi"/>
                                     <constraint firstItem="QeX-1X-5Kd" firstAttribute="top" secondItem="5aP-Me-4b0" secondAttribute="bottom" constant="10" id="N1U-Wv-EVv"/>
                                     <constraint firstItem="W75-IO-WkZ" firstAttribute="top" secondItem="U39-my-VQ7" secondAttribute="top" constant="16" id="Rf7-l2-N5O"/>
                                     <constraint firstItem="5aP-Me-4b0" firstAttribute="leading" secondItem="U39-my-VQ7" secondAttribute="leading" constant="16" id="UCJ-2J-GOU"/>
                                     <constraint firstAttribute="trailing" secondItem="5aP-Me-4b0" secondAttribute="trailing" constant="16" id="Yzt-7x-JDP"/>
+                                    <constraint firstAttribute="bottom" secondItem="QeX-1X-5Kd" secondAttribute="bottom" constant="36" id="aZP-Ps-by9"/>
                                     <constraint firstItem="QeX-1X-5Kd" firstAttribute="leading" secondItem="U39-my-VQ7" secondAttribute="leading" constant="16" id="aq0-gO-Eqk"/>
-                                    <constraint firstItem="Xa6-Yw-LoA" firstAttribute="top" secondItem="QeX-1X-5Kd" secondAttribute="bottom" constant="16" id="gLk-wb-H93"/>
                                     <constraint firstAttribute="trailing" secondItem="QeX-1X-5Kd" secondAttribute="trailing" constant="16" id="gUo-xb-oZr"/>
                                     <constraint firstItem="5aP-Me-4b0" firstAttribute="top" secondItem="W75-IO-WkZ" secondAttribute="bottom" constant="16" id="uj2-8y-WIj"/>
-                                    <constraint firstAttribute="bottom" secondItem="Xa6-Yw-LoA" secondAttribute="bottom" constant="-30" id="z5y-C7-8EX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bK-Ja-bVC">
@@ -91,10 +75,27 @@
                                 <rect key="frame" x="16" y="349" width="398" height="513"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa6-Yw-LoA" customClass="ButtonExchangePoint" customModule="TMS_USER" customModuleProvider="target">
+                                <rect key="frame" x="122" y="249" width="170" height="50"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2C5-wV-FoK"/>
+                                    <constraint firstAttribute="width" constant="170" id="CfG-Ly-SOo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="แลกของสะสมเดี๋ยวนี้">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleButtonCoin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fO1-Ul-rw8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hf0-KY-RDg" firstAttribute="top" secondItem="U39-my-VQ7" secondAttribute="bottom" constant="46" id="069-yq-f0Q"/>
                             <constraint firstItem="U39-my-VQ7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="3WR-XX-tJ0"/>
                             <constraint firstItem="OKV-1z-Bs7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="7YV-Rq-VmJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OKV-1z-Bs7" secondAttribute="trailing" id="Bzd-if-fTz"/>
@@ -103,18 +104,19 @@
                             <constraint firstItem="9bK-Ja-bVC" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Ilg-Yt-r5l"/>
                             <constraint firstItem="6Kv-fj-UTV" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="KoV-qW-E87"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OKV-1z-Bs7" secondAttribute="bottom" id="RGN-Ui-wcW"/>
+                            <constraint firstItem="Xa6-Yw-LoA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="SQR-W5-n9H"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="U39-my-VQ7" secondAttribute="trailing" constant="20" id="SRc-dM-Tqn"/>
+                            <constraint firstItem="Xa6-Yw-LoA" firstAttribute="bottom" secondItem="U39-my-VQ7" secondAttribute="bottom" constant="25" id="Vtv-bE-hJ9"/>
                             <constraint firstItem="6Kv-fj-UTV" firstAttribute="top" secondItem="9bK-Ja-bVC" secondAttribute="bottom" id="XuL-Jq-Not"/>
                             <constraint firstAttribute="trailing" secondItem="9bK-Ja-bVC" secondAttribute="trailing" id="iGe-CD-eQz"/>
                             <constraint firstItem="6Kv-fj-UTV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jXe-ar-GJQ"/>
                             <constraint firstItem="hf0-KY-RDg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="lW1-jF-P9j"/>
-                            <constraint firstItem="hf0-KY-RDg" firstAttribute="top" secondItem="Xa6-Yw-LoA" secondAttribute="bottom" constant="16" id="oJU-Uh-PUZ"/>
                             <constraint firstItem="6Kv-fj-UTV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="oRE-HS-Igl"/>
                             <constraint firstItem="OKV-1z-Bs7" firstAttribute="top" secondItem="hf0-KY-RDg" secondAttribute="bottom" constant="8" id="q6C-gl-EPe"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnExchangeCoin" destination="Xa6-Yw-LoA" id="LpD-A7-nBf"/>
+                        <outlet property="btnExchangeCoin" destination="Xa6-Yw-LoA" id="Atu-My-X2s"/>
                         <outlet property="pointText" destination="QeX-1X-5Kd" id="46r-H4-PMi"/>
                         <outlet property="tableView" destination="OKV-1z-Bs7" id="SxT-ov-fdC"/>
                     </connections>

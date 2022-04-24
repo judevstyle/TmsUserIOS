@@ -21,11 +21,15 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet var priceOverAllText: UILabel!
     
     
-    @IBOutlet var bgCreateOrder: UIView!
-    @IBOutlet var btnCreateOrder: UIButton!
+    @IBOutlet var bgReOrder: UIView!
+    @IBOutlet var btnReOrder: UIButton!
     
-    @IBOutlet var bgReview: UIView!
-    @IBOutlet var btnReview: UIButton!
+    @IBOutlet var bgReviewOrder: UIView!
+    @IBOutlet var btnReviewOrder: UIButton!
+    
+    
+    @IBOutlet var bgCancelOrder: UIView!
+    @IBOutlet var btnCancelOrder: UIButton!
     
     lazy var viewModel: OrderDetailProtocol = {
         let vm = OrderDetailViewModel(vc: self)
@@ -36,7 +40,9 @@ class OrderDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        bgReOrder.isHidden = true
+        bgReviewOrder.isHidden = true
+        bgCancelOrder.isHidden = true
         registerCell()
     }
     
@@ -61,45 +67,56 @@ extension OrderDetailViewController {
     
     func didGetOrderDetailSuccess() -> (() -> Void) {
         return { [weak self] in
-            guard let weakSelf = self else { return }
-            weakSelf.tableView.reloadData()
-            weakSelf.setupValueOrder()
+            guard let self = self else { return }
+            self.setupUI()
+            self.tableView.reloadData()
+            self.setupValueOrder()
         }
     }
 }
 
 
 extension OrderDetailViewController {
+    
     func setupUI(){
-        
-        bgCreateOrder.isHidden = true
-        bgReview.isHidden = true
+        bgReOrder.isHidden = true
+        bgReviewOrder.isHidden = true
+        bgCancelOrder.isHidden = true
         if viewModel.output.getOrderDetailType() == .orderDetail {
-            bgCreateOrder.isHidden = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                self.btnCreateOrder.setRounded(rounded: 8)
-                self.btnCreateOrder.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
-                                             locations: [0.5, 1.0],
-                                             direction: .leftToRight,
-                                             cornerRadius: 8)
-                self.btnCreateOrder.setTitle("สั่งซื้ออีกครั้ง", for: .normal)
-                self.btnCreateOrder.setTitleColor(.white, for: .normal)
-                self.btnCreateOrder.titleLabel?.textColor = .white
-                self.btnCreateOrder.addTarget(self, action: #selector(self.didTapCreateOrder), for: .touchUpInside)
-            }
+            bgReOrder.isHidden = false
+            self.setupButtonOrder(button: self.btnReOrder, title: "สั่งซื้ออีกครั้ง", action: #selector(self.didTapReOrder))
         } else if viewModel.output.getOrderDetailType() == .orderHistoryDetail {
-            bgReview.isHidden = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                self.btnReview.setRounded(rounded: 8)
-                self.btnReview.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
-                                             locations: [0.5, 1.0],
-                                             direction: .leftToRight,
-                                             cornerRadius: 8)
-                self.btnReview.setTitle("ให้คะแนน", for: .normal)
-                self.btnReview.setTitleColor(.white, for: .normal)
-                self.btnReview.titleLabel?.textColor = .white
-                self.btnReview.addTarget(self, action: #selector(self.didTapReviewOrder), for: .touchUpInside)
+            
+            switch viewModel.output.getOrderDetailButtonType() {
+            case .reOrder:
+                bgReOrder.isHidden = false
+                self.setupButtonOrder(button: self.btnReOrder, title: "สั่งซื้ออีกครั้ง", action: #selector(self.didTapReOrder))
+                    break
+            case .reviewOrder:
+                bgReviewOrder.isHidden = false
+                self.setupButtonOrder(button: self.btnReviewOrder, title: "ให้คะแนน", action: #selector(self.didTapReviewOrder))
+                    break
+            case .cancelOrder:
+                bgCancelOrder.isHidden = false
+                self.setupButtonOrder(button: self.btnCancelOrder, title: "ยกเลิกคำสั่งซื้อ", action: #selector(self.didTapCancelOrder))
+                    break
+            default:
+                break
             }
+        }
+    }
+    
+    private func setupButtonOrder(button: UIButton, title: String, action: Selector) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            button.setRounded(rounded: 8)
+            button.applyGradient(colors: [UIColor.Primary.cgColor, UIColor.PrimaryAlpha.cgColor],
+                                         locations: [0.5, 1.0],
+                                         direction: .leftToRight,
+                                         cornerRadius: 8)
+            button.setTitle(title, for: .normal)
+            button.setTitleColor(.white, for: .normal)
+            button.titleLabel?.textColor = .white
+            button.addTarget(self, action: action, for: .touchUpInside)
         }
     }
     
@@ -125,12 +142,17 @@ extension OrderDetailViewController {
         priceOverAllText.text = "\(viewModel.output.getOverAllPrice())"
     }
     
-    @objc func didTapCreateOrder() {
+    @objc func didTapReOrder() {
         viewModel.input.didCreateOrder()
     }
     
     @objc func didTapReviewOrder() {
-
+        guard let orderId = viewModel.output.getOrderId() else { return }
+        NavigationManager.instance.pushVC(to: .customerReview(orderId: orderId))
+    }
+    
+    @objc func didTapCancelOrder() {
+        viewModel.input.didCancelOrder()
     }
 }
 

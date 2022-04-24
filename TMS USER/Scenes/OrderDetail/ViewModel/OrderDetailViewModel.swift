@@ -11,10 +11,11 @@ import Combine
 
 protocol OrderDetailProtocolInput {
     func getOrderDetail()
-    func setUp(orderId: Int?, orderDetailType: OrderDetailType?)
+    func setUp(orderId: Int?, orderDetailType: OrderDetailType?, orderItem: OrderItems?)
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath)
     
     func didCreateOrder()
+    func didCancelOrder()
 }
 
 protocol OrderDetailProtocolOutput: class {
@@ -27,9 +28,13 @@ protocol OrderDetailProtocolOutput: class {
     
     func getOrderDetailType() -> OrderDetailType?
     
+    func getOrderDetailButtonType() -> OrderDetailButtonType?
+    
     //Header
     func getHeightSectionView(section: Int) -> CGFloat
     func getHeaderViewCell(_ tableView: UITableView, section: Int) -> UIView?
+    
+    func getOrderId() -> Int?
     
     //OrderNo
     func getOrderNo() -> String
@@ -49,6 +54,7 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     var output: OrderDetailProtocolOutput { return self }
     
     // MARK: - UseCase
+    private var orderRepository: OrderRepository
     private var getOrderDetailUseCase: GetOrderDetailUseCase
     private var putReOrderCustomerUseCase: PutReOrderCustomerUseCase
     private var anyCancellable: Set<AnyCancellable> = Set<AnyCancellable>()
@@ -61,11 +67,13 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     init(
         vc: OrderDetailViewController,
         getOrderDetailUseCase: GetOrderDetailUseCase = GetOrderDetailUseCaseImpl(),
-        putReOrderCustomerUseCase: PutReOrderCustomerUseCase = PutReOrderCustomerUseCaseImpl()
+        putReOrderCustomerUseCase: PutReOrderCustomerUseCase = PutReOrderCustomerUseCaseImpl(),
+        orderRepository: OrderRepository = OrderRepositoryImpl()
     ) {
         self.vc = vc
         self.getOrderDetailUseCase = getOrderDetailUseCase
         self.putReOrderCustomerUseCase = putReOrderCustomerUseCase
+        self.orderRepository = orderRepository
     }
     
     // MARK - Data-binding OutPut
@@ -75,10 +83,12 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     public var listOrderD: [OrderD]? = []
     public var listCustomer: [CustomerItems]? = []
     public var orderId: Int? = nil
+    public var orderItem: OrderItems? = nil
     
-    func setUp(orderId: Int?, orderDetailType: OrderDetailType?) {
+    func setUp(orderId: Int?, orderDetailType: OrderDetailType?, orderItem: OrderItems?) {
         self.orderId = orderId
         self.orderDetailType = orderDetailType
+        self.orderItem = orderItem
     }
     
     func getOrderDetail() {
@@ -95,7 +105,6 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
             
             if let items = resp?.orderD {
                 self.listOrderD = items
-                debugPrint("listOrderD \(items)")
             }
             
             if let items = resp?.customer {
@@ -116,6 +125,24 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
     
     func getOrderDetailType() -> OrderDetailType? {
         return self.orderDetailType
+    }
+    
+    func getOrderDetailButtonType() -> OrderDetailButtonType? {
+        switch self.orderDetailData?.status {
+        case "R":
+            return .cancelOrder
+        case "F":
+            if self.orderItem?.haveFeedback == true {
+                return .reOrder
+            } else {
+                return .reviewOrder
+            }
+            break
+        case "RJ", "X":
+            return .reOrder
+        default:
+            return nil
+        }
     }
     
     func getNumberOfRowsInSection(_ tableView: UITableView, section: Int) -> Int {
@@ -192,6 +219,10 @@ class OrderDetailViewModel: OrderDetailProtocol, OrderDetailProtocolOutput {
             }
         }
         return header
+    }
+    
+    func getOrderId() -> Int? {
+        return self.orderId
     }
     
     func getOrderNo() -> String {
@@ -292,4 +323,26 @@ extension OrderDetailViewModel {
             }
         }.store(in: &self.anyCancellable)
     }
+    
+    func didCancelOrder() {
+        guard let orderId = self.orderId else { return }
+        self.vc.showAlertComfirm(titleText: "คุณต้องการยกเลิกคำสั่งซื้อใช่หรือไม่ ?", messageText: "", dismissAction: {
+        }, confirmAction: {
+            self.orderRepository.putCancelOrder(orderId: orderId).sink { completion in
+                debugPrint("putCancelOrder \(completion)")
+                self.vc.stopLoding()
+            } receiveValue: { resp in
+                if resp.success == true {
+                    self.vc.navigationController?.popViewController(animated: true)
+                }
+            }.store(in: &self.anyCancellable)
+        })
+    }
+    
+}
+
+public enum OrderDetailButtonType: String {
+    case reviewOrder = "ให้คะแนน"
+    case reOrder = "สั่งซื้ออีกครั้ง"
+    case cancelOrder = "ยกเลิกคำสั่งซื้อ"
 }

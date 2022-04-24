@@ -33,11 +33,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sKk-4Z-pIV">
-                                <rect key="frame" x="0.0" y="77.5" width="414" height="549.5"/>
+                                <rect key="frame" x="0.0" y="77.5" width="414" height="488.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Not-yJ-rcg">
-                                <rect key="frame" x="0.0" y="635" width="414" height="227"/>
+                                <rect key="frame" x="0.0" y="574" width="414" height="288"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpo-4f-oRu">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
@@ -227,6 +227,46 @@
                                             <constraint firstItem="L70-Z0-NKP" firstAttribute="top" secondItem="9ec-TG-HYm" secondAttribute="top" constant="8" id="iYB-zK-SEr"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h05-EQ-ofR">
+                                        <rect key="frame" x="0.0" y="227" width="414" height="61"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yi7-0S-YQV">
+                                                <rect key="frame" x="8" y="8" width="398" height="45"/>
+                                                <color key="backgroundColor" name="Primary"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="PKM-Vk-5KI"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="ให้คะแนน">
+                                                            <attributes>
+                                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="18" name="SukhumvitSet-Medium"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="ยกเลิกคำสั่งซื้อ">
+                                                            <attributes>
+                                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="18" name="SukhumvitSet-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="yi7-0S-YQV" secondAttribute="bottom" constant="8" id="Nhv-tb-vmH"/>
+                                            <constraint firstItem="yi7-0S-YQV" firstAttribute="leading" secondItem="h05-EQ-ofR" secondAttribute="leading" constant="8" id="TWk-i2-We9"/>
+                                            <constraint firstItem="yi7-0S-YQV" firstAttribute="top" secondItem="h05-EQ-ofR" secondAttribute="top" constant="8" id="prK-YW-mX4"/>
+                                            <constraint firstAttribute="trailing" secondItem="yi7-0S-YQV" secondAttribute="trailing" constant="8" id="vza-hF-9Ka"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -246,10 +286,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bgCreateOrder" destination="SII-0G-66S" id="BJt-xY-STR"/>
-                        <outlet property="bgReview" destination="9ec-TG-HYm" id="2zA-uF-IDo"/>
-                        <outlet property="btnCreateOrder" destination="hYG-G2-Jjl" id="BrX-gH-xhT"/>
-                        <outlet property="btnReview" destination="L70-Z0-NKP" id="vrn-7P-u7l"/>
+                        <outlet property="bgCancelOrder" destination="h05-EQ-ofR" id="0UP-Wf-auw"/>
+                        <outlet property="bgReOrder" destination="SII-0G-66S" id="BvP-bV-ufN"/>
+                        <outlet property="bgReviewOrder" destination="9ec-TG-HYm" id="c6n-0T-Cqh"/>
+                        <outlet property="btnCancelOrder" destination="yi7-0S-YQV" id="vKW-vx-W2f"/>
+                        <outlet property="btnReOrder" destination="hYG-G2-Jjl" id="FGy-O1-zD0"/>
+                        <outlet property="btnReviewOrder" destination="L70-Z0-NKP" id="Nys-4X-Snf"/>
                         <outlet property="orderIdText" destination="PRV-OA-xRw" id="CpN-1y-vsA"/>
                         <outlet property="priceAllText" destination="de5-bH-f0M" id="0LI-uf-qjH"/>
                         <outlet property="priceDiscountText" destination="Etp-Ly-Ez3" id="9Yh-An-bHT"/>

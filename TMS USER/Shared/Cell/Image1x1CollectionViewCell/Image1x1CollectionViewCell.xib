@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="Image1x1CollectionViewCell" customModule="TMS_USER" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgd-aA-8eP">
+                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="JRY-wz-nMX">
+                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfE-EL-W0G">
+                                <rect key="frame" x="47" y="5" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="flV-St-a3I"/>
+                                    <constraint firstAttribute="height" constant="23" id="gbO-WL-fw2"/>
+                                </constraints>
+                                <state key="normal" image="cancel"/>
+                                <connections>
+                                    <action selector="deleteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="FwW-A2-phT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bfE-EL-W0G" secondAttribute="trailing" constant="5" id="35Q-xo-co8"/>
+                            <constraint firstItem="JRY-wz-nMX" firstAttribute="top" secondItem="Fgd-aA-8eP" secondAttribute="top" id="JZE-ol-Y8f"/>
+                            <constraint firstItem="JRY-wz-nMX" firstAttribute="leading" secondItem="Fgd-aA-8eP" secondAttribute="leading" id="Quv-8S-YQA"/>
+                            <constraint firstItem="bfE-EL-W0G" firstAttribute="top" secondItem="Fgd-aA-8eP" secondAttribute="top" constant="5" id="YYE-SU-qEw"/>
+                            <constraint firstAttribute="bottom" secondItem="JRY-wz-nMX" secondAttribute="bottom" id="ZMa-96-fbY"/>
+                            <constraint firstAttribute="trailing" secondItem="JRY-wz-nMX" secondAttribute="trailing" id="xld-Ql-CN9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Fgd-aA-8eP" secondAttribute="bottom" id="Ag5-dL-gIb"/>
+                <constraint firstAttribute="trailing" secondItem="Fgd-aA-8eP" secondAttribute="trailing" id="nJg-Ew-HDw"/>
+                <constraint firstItem="Fgd-aA-8eP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nhJ-7q-hm6"/>
+                <constraint firstItem="Fgd-aA-8eP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uZT-ql-G91"/>
+            </constraints>
+            <connections>
+                <outlet property="bgView" destination="Fgd-aA-8eP" id="eEO-z9-hcg"/>
+                <outlet property="deleteButton" destination="bfE-EL-W0G" id="hN6-jx-N83"/>
+                <outlet property="imageView" destination="JRY-wz-nMX" id="ajH-Iq-yUK"/>
+            </connections>
+            <point key="canvasLocation" x="131.15942028985509" y="87.388392857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cancel" width="64" height="64"/>
+        <image name="placeholder" width="1280" height="960"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

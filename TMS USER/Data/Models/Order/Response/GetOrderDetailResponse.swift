@@ -41,6 +41,7 @@ public struct OrderDetailData: Codable, Hashable  {
     public var creditStatus: String?
     public var sendDateStamp: String?
     public var shipments: [ShipmentItems]?
+    public var shipmentsDetail: ShipmentItems?
     
     public init() {}
     
@@ -62,6 +63,7 @@ public struct OrderDetailData: Codable, Hashable  {
         try creditStatus        <- decoder["credit_status"]
         try sendDateStamp       <- decoder["send_date_stamp"]
         try shipments           <- decoder["shipments"]
+        try shipmentsDetail     <- decoder["shipments"]
     }
 }
 

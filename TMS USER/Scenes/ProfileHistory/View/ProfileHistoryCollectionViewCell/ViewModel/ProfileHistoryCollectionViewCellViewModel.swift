@@ -11,7 +11,9 @@ import Combine
 
 protocol ProfileHistoryCollectionViewModelDelegate {
     func didCancelOrder(orderId: Int)
-    func didTapOrderDatail(orderId: Int)
+    func didTapOrderDatail(orderId: Int, orderItem: OrderItems?)
+    func didReviewOrder(orderId: Int)
+    func didTapWaitShipping(orderId: Int)
 }
 
 protocol ProfileHistoryCollectionProtocolInput {
@@ -80,7 +82,7 @@ class ProfileHistoryCollectionViewModel: ProfileHistoryCollectionProtocol, Profi
             self.getFinishOrder()
         case .reject:
             self.getRejectOrder()
-        case .calcel:
+        case .cancel:
             self.getCancelOrder()
         default:
             self.clearItemList()
@@ -113,8 +115,10 @@ class ProfileHistoryCollectionViewModel: ProfileHistoryCollectionProtocol, Profi
     }
     
     func didSelectRowAt(_ tableView: UITableView, indexPath: IndexPath) {
-        if let orderId = self.listOrder?[indexPath.item].orderId, self.profileHistoryType != .waitShipping {
-            self.delegate?.didTapOrderDatail(orderId: orderId)
+        if let order = self.listOrder?[indexPath.item], let orderId = order.orderId, self.profileHistoryType != .waitShipping {
+            self.delegate?.didTapOrderDatail(orderId: orderId, orderItem: order)
+        } else if let orderId = self.listOrder?[indexPath.item].orderId, self.profileHistoryType == .waitShipping {
+            self.delegate?.didTapWaitShipping(orderId: orderId)
         }
     }
     
@@ -204,6 +208,11 @@ extension ProfileHistoryCollectionViewModel {
 
 
 extension ProfileHistoryCollectionViewModel: OrderProfileHistoryTableViewCellDelegate {
+    
+    func didReviewOrder(orderId: Int) {
+        self.delegate?.didReviewOrder(orderId: orderId)
+    }
+    
     func didCancelOrder(orderId: Int) {
         self.vc?.showAlertComfirm(titleText: "คุณต้องการยกเลิกคำสั่งซื้อใช่หรือไม่ ?", messageText: "", dismissAction: {
         }, confirmAction: {
