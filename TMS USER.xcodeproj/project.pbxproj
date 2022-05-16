@@ -157,6 +157,7 @@
 		EF766F2326C84315003ED499 /* GetOrderDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */; };
 		EF766F2526C84DCF003ED499 /* GetReOrderCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */; };
 		EF766F2726C84E37003ED499 /* GetReOrderCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */; };
+		EF907F1D28321B940015F219 /* ThaibulkSMSRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF907F1C28321B940015F219 /* ThaibulkSMSRepository.swift */; };
 		EF95764327F354FF00E59E12 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF95764227F354FF00E59E12 /* UIApplication+Extension.swift */; };
 		EF95764627F3596800E59E12 /* SPPermissionsCamera in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764527F3596800E59E12 /* SPPermissionsCamera */; };
 		EF95764827F3596800E59E12 /* SPPermissionsLocationAlways in Frameworks */ = {isa = PBXBuildFile; productRef = EF95764727F3596800E59E12 /* SPPermissionsLocationAlways */; };
@@ -205,9 +206,15 @@
 		EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9E298D27F1FD1E008FBE5D /* Register.storyboard */; };
 		EF9E299027F1FD2E008FBE5D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */; };
 		EF9E299327F1FD3F008FBE5D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */; };
+		EF9F56C128300832003C3610 /* ConfirmOTP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9F56C028300832003C3610 /* ConfirmOTP.storyboard */; };
+		EF9F56C328300842003C3610 /* ConfirmOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F56C228300842003C3610 /* ConfirmOTPViewController.swift */; };
+		EF9F56C6283012D0003C3610 /* ConfirmOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F56C5283012D0003C3610 /* ConfirmOTPViewModel.swift */; };
 		EFA03C8C280ACAF9006128BF /* PutCancelOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA03C8B280ACAF9006128BF /* PutCancelOrderResponse.swift */; };
 		EFA03C90280B0498006128BF /* OrderSendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA03C8E280B0498006128BF /* OrderSendingTableViewCell.swift */; };
 		EFA03C91280B0498006128BF /* OrderSendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA03C8F280B0498006128BF /* OrderSendingTableViewCell.xib */; };
+		EFA757E52831691800D9816B /* ThaibulkSMSAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA757E42831691800D9816B /* ThaibulkSMSAPI.swift */; };
+		EFA757E92831698500D9816B /* OTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA757E82831698500D9816B /* OTPRequest.swift */; };
+		EFA757EC2831699800D9816B /* OTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA757EB2831699800D9816B /* OTPResponse.swift */; };
 		EFB47C0226C3D5A400170CD0 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */; };
 		EFB47C0326C3D5A400170CD0 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */; };
 		EFB47C0726C3D5D500170CD0 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */; };
@@ -459,6 +466,7 @@
 		EF766F2226C84315003ED499 /* GetOrderDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderDetailUseCase.swift; sourceTree = "<group>"; };
 		EF766F2426C84DCF003ED499 /* GetReOrderCustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerResponse.swift; sourceTree = "<group>"; };
 		EF766F2626C84E37003ED499 /* GetReOrderCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReOrderCustomerUseCase.swift; sourceTree = "<group>"; };
+		EF907F1C28321B940015F219 /* ThaibulkSMSRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaibulkSMSRepository.swift; sourceTree = "<group>"; };
 		EF95764227F354FF00E59E12 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		EF95764F27F359E700E59E12 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		EF95765627F35FF400E59E12 /* BorderLineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLineTextView.swift; sourceTree = "<group>"; };
@@ -502,9 +510,15 @@
 		EF9E298D27F1FD1E008FBE5D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		EF9E298F27F1FD2E008FBE5D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EF9E299227F1FD3F008FBE5D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		EF9F56C028300832003C3610 /* ConfirmOTP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmOTP.storyboard; sourceTree = "<group>"; };
+		EF9F56C228300842003C3610 /* ConfirmOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOTPViewController.swift; sourceTree = "<group>"; };
+		EF9F56C5283012D0003C3610 /* ConfirmOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOTPViewModel.swift; sourceTree = "<group>"; };
 		EFA03C8B280ACAF9006128BF /* PutCancelOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutCancelOrderResponse.swift; sourceTree = "<group>"; };
 		EFA03C8E280B0498006128BF /* OrderSendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSendingTableViewCell.swift; sourceTree = "<group>"; };
 		EFA03C8F280B0498006128BF /* OrderSendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderSendingTableViewCell.xib; sourceTree = "<group>"; };
+		EFA757E42831691800D9816B /* ThaibulkSMSAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaibulkSMSAPI.swift; sourceTree = "<group>"; };
+		EFA757E82831698500D9816B /* OTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRequest.swift; sourceTree = "<group>"; };
+		EFA757EB2831699800D9816B /* OTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponse.swift; sourceTree = "<group>"; };
 		EFB47C0026C3D5A400170CD0 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		EFB47C0126C3D5A400170CD0 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
 		EFB47C0526C3D5D500170CD0 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
@@ -726,6 +740,7 @@
 		EF0D53D826C13EEC009FD5F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EF9F56BF28300822003C3610 /* ConfirmOTP */,
 				EFF8C7DC281433C100BD5E7E /* CustomerReview */,
 				EFC0C62827FF3BA60080B7D8 /* ProfileHistory */,
 				EF4B544E27FD8A6B00446FF7 /* DialogMessage */,
@@ -1033,6 +1048,7 @@
 		EF0D547526C18AB3009FD5F0 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				EFA757E3283168FB00D9816B /* ThaibulkSMS */,
 				EF9BEB4E28157F9500D08381 /* Feedback */,
 				EF9BA36A27F8CAF60039D5CB /* Collectibles */,
 				EFF4173027F4E11800ACF712 /* Point */,
@@ -1050,6 +1066,7 @@
 		EF0D547626C18AB9009FD5F0 /* Repositorys */ = {
 			isa = PBXGroup;
 			children = (
+				EF907F1B28321B830015F219 /* ThaibulkSMS */,
 				EF9BEB582815825200D08381 /* Feedback */,
 				EF9BA36D27F8CC140039D5CB /* Collectibles */,
 				EFF4173327F4E2AE00ACF712 /* Point */,
@@ -1081,6 +1098,7 @@
 		EF0D547826C18ACA009FD5F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EFA757E62831696800D9816B /* ThaibulkSMS */,
 				EF9BEB5128157FF100D08381 /* Feedback */,
 				EF9BA37027F8CC490039D5CB /* Collectibles */,
 				EFF4173627F4E2EE00ACF712 /* Point */,
@@ -1553,6 +1571,14 @@
 			path = SuccessDialog;
 			sourceTree = "<group>";
 		};
+		EF907F1B28321B830015F219 /* ThaibulkSMS */ = {
+			isa = PBXGroup;
+			children = (
+				EF907F1C28321B940015F219 /* ThaibulkSMSRepository.swift */,
+			);
+			path = ThaibulkSMS;
+			sourceTree = "<group>";
+		};
 		EF95765127F35B4E00E59E12 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1778,6 +1804,24 @@
 			path = NavigationManager;
 			sourceTree = "<group>";
 		};
+		EF9F56BF28300822003C3610 /* ConfirmOTP */ = {
+			isa = PBXGroup;
+			children = (
+				EF9F56C4283012C1003C3610 /* ViewModel */,
+				EF9F56C028300832003C3610 /* ConfirmOTP.storyboard */,
+				EF9F56C228300842003C3610 /* ConfirmOTPViewController.swift */,
+			);
+			path = ConfirmOTP;
+			sourceTree = "<group>";
+		};
+		EF9F56C4283012C1003C3610 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF9F56C5283012D0003C3610 /* ConfirmOTPViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EFA03C8D280B0476006128BF /* OrderSendingTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1785,6 +1829,39 @@
 				EFA03C8F280B0498006128BF /* OrderSendingTableViewCell.xib */,
 			);
 			path = OrderSendingTableViewCell;
+			sourceTree = "<group>";
+		};
+		EFA757E3283168FB00D9816B /* ThaibulkSMS */ = {
+			isa = PBXGroup;
+			children = (
+				EFA757E42831691800D9816B /* ThaibulkSMSAPI.swift */,
+			);
+			path = ThaibulkSMS;
+			sourceTree = "<group>";
+		};
+		EFA757E62831696800D9816B /* ThaibulkSMS */ = {
+			isa = PBXGroup;
+			children = (
+				EFA757EA2831698C00D9816B /* Response */,
+				EFA757E72831696E00D9816B /* Request */,
+			);
+			path = ThaibulkSMS;
+			sourceTree = "<group>";
+		};
+		EFA757E72831696E00D9816B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EFA757E82831698500D9816B /* OTPRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		EFA757EA2831698C00D9816B /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				EFA757EB2831699800D9816B /* OTPResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		EFB47BFF26C3D57E00170CD0 /* ProductListTableViewCell */ = {
@@ -2344,6 +2421,7 @@
 				EF0D53F026C13FC3009FD5F0 /* SukhumvitSet-SemiBold.ttf in Resources */,
 				EF9E298E27F1FD1E008FBE5D /* Register.storyboard in Resources */,
 				C4DFA8CC2804362E00A63FFF /* OrderProfileHistoryTableViewCell.xib in Resources */,
+				EF9F56C128300832003C3610 /* ConfirmOTP.storyboard in Resources */,
 				EFC0C63327FF47DC0080B7D8 /* ProfileHistoryCollectionViewCell.xib in Resources */,
 				EF0D546926C16D67009FD5F0 /* History.storyboard in Resources */,
 				EF0D53EC26C13FC3009FD5F0 /* SukhumvitSet-Bold.ttf in Resources */,
@@ -2556,6 +2634,7 @@
 				EFD9F03B27061DC60072A3B1 /* ProductDetailViewController.swift in Sources */,
 				EF314BBC26CABA95002B201C /* ChatViewController.swift in Sources */,
 				EF0D54AC26C1A1F6009FD5F0 /* GetProductTypeUseCase.swift in Sources */,
+				EF9F56C6283012D0003C3610 /* ConfirmOTPViewModel.swift in Sources */,
 				EFF4174227F4E80600ACF712 /* UILabelCustomClass.swift in Sources */,
 				EF0D546B26C16D6F009FD5F0 /* HistoryViewController.swift in Sources */,
 				EF0D543C26C1452F009FD5F0 /* AnyKey.swift in Sources */,
@@ -2599,6 +2678,7 @@
 				EF0D541B26C1451D009FD5F0 /* SocketMarkerMapResponse.swift in Sources */,
 				EFF4173527F4E2C100ACF712 /* PointRepository.swift in Sources */,
 				EF309E5E26DA1F4200CB7353 /* ChatViewModel.swift in Sources */,
+				EF907F1D28321B940015F219 /* ThaibulkSMSRepository.swift in Sources */,
 				EF309E6B26DA231100CB7353 /* ConversationRepository.swift in Sources */,
 				EF0D54EB26C1BF11009FD5F0 /* ProfileViewModel.swift in Sources */,
 				EF309E6E26DA237200CB7353 /* GetMessageUseCase.swift in Sources */,
@@ -2644,6 +2724,7 @@
 				EFF4173927F4E30A00ACF712 /* GetCustomerPointResponse.swift in Sources */,
 				EFF8C7E0281433F100BD5E7E /* CustomerReviewViewController.swift in Sources */,
 				EF95767C27F3759200E59E12 /* SelectCurrentLocationViewModel.swift in Sources */,
+				EF9F56C328300842003C3610 /* ConfirmOTPViewController.swift in Sources */,
 				EF0D545326C14633009FD5F0 /* DefaultsManager.swift in Sources */,
 				EF0D545526C14639009FD5F0 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				EFB47C1226C3E15600170CD0 /* OrderCartManager.swift in Sources */,
@@ -2705,6 +2786,7 @@
 				EF06ED8327FB66690097F67A /* CollectibleTableViewCell.swift in Sources */,
 				EFC39BFA27F8A33600F54C89 /* UIViewCustomClass.swift in Sources */,
 				EF7443F827095C6A00D18F60 /* GetProductDescForUserUseCase.swift in Sources */,
+				EFA757E52831691800D9816B /* ThaibulkSMSAPI.swift in Sources */,
 				EF4B545E27FD99BC00446FF7 /* AcceptDialogView.swift in Sources */,
 				EFF4173227F4E12400ACF712 /* PointAPI.swift in Sources */,
 				EFC1C58826C2BB1100ED64B1 /* OrderAPI.swift in Sources */,
@@ -2724,9 +2806,11 @@
 				EF0D548826C18EE4009FD5F0 /* PostAuthenticateUseCase.swift in Sources */,
 				EF0D53A426C12F2B009FD5F0 /* TMS_USER.xcdatamodeld in Sources */,
 				EF0D543226C1451D009FD5F0 /* Dictionary+Extension.swift in Sources */,
+				EFA757EC2831699800D9816B /* OTPResponse.swift in Sources */,
 				EFB47C1A26C4492000170CD0 /* DBLocal.swift in Sources */,
 				EF95767827F374F700E59E12 /* GetPlaceDetailRequest.swift in Sources */,
 				EF4B545027FD8A9000446FF7 /* DialogMessageViewController.swift in Sources */,
+				EFA757E92831698500D9816B /* OTPRequest.swift in Sources */,
 				EF0D543426C1451D009FD5F0 /* UITableView+Extension.swift in Sources */,
 				EFBD71A226C318770044216D /* OrderTrackingViewModel.swift in Sources */,
 				EFB47C0F26C3DAC300170CD0 /* OrderDetailViewModel.swift in Sources */,

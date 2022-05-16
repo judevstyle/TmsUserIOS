@@ -12,9 +12,10 @@ import Moya
 protocol AuthCustomerRepository {
     func authenticate(request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse, Error>
     func logout() -> AnyPublisher<PostAuthenticateResponse, Error>
-    func checkTel(_ request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse, Error>
+    func checkTelRegister(_ request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse, Error>
     func registerCustomer(_ request: PostRegisterCustomerRequest) -> AnyPublisher<PostAuthenticateResponse, Error>
     func updateProfile(_ request: PostRegisterCustomerRequest) -> AnyPublisher<PutUpdateProfileResponse, Error>
+    func checkTelLogin(_ request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse, Error>
 }
 
 final class AuthCustomerRepositoryImpl: TMS_USER.AuthCustomerRepository {
@@ -34,10 +35,10 @@ final class AuthCustomerRepositoryImpl: TMS_USER.AuthCustomerRepository {
             .map(PostAuthenticateResponse.self)
     }
     
-    func checkTel(_ request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse, Error> {
+    func checkTelRegister(_ request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse, Error> {
         return self.provider
             .cb
-            .request(.checkTel(request))
+            .request(.checkTelRegister(request))
             .map(PostAuthenticateResponse.self)
     }
     
@@ -53,5 +54,12 @@ final class AuthCustomerRepositoryImpl: TMS_USER.AuthCustomerRepository {
             .cb
             .request(.updateProfile(request))
             .map(PutUpdateProfileResponse.self)
+    }
+    
+    func checkTelLogin(_ request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse, Error> {
+        return self.provider
+            .cb
+            .request(.checkTelLogin(request))
+            .map(PostAuthenticateResponse.self)
     }
 }

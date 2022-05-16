@@ -28,7 +28,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         registerKeyboardObserver()
-
     }
     
     func configure(_ interface: LoginProtocol) {
@@ -45,7 +44,6 @@ extension LoginViewController {
     
     func bindToViewModel() {
         viewModel.output.didLoginSuccess = didLoginSuccess()
-        viewModel.output.didLoginError = didLoginError()
     }
     
     func didLoginSuccess() -> (() -> Void) {
@@ -54,12 +52,7 @@ extension LoginViewController {
             NavigationManager.instance.setRootViewController(rootView: .mainApp, withNav: false, isTranslucent: true)
         }
     }
-    
-    func didLoginError() -> (() -> Void) {
-        return { [weak self] in
-            guard let weakSelf = self else { return }
-        }
-    }
+
 }
 
 extension LoginViewController {
@@ -76,7 +69,7 @@ extension LoginViewController {
         
         btnLogin.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         
-        inputPhone.text = "0910000003"
+        inputPhone.text = "0626532245"
     }
 }
 
@@ -85,15 +78,9 @@ extension LoginViewController {
         guard let tel = self.inputPhone.text, tel != "" else { return }
         var request: PostAuthenticateRequest = PostAuthenticateRequest()
         request.tel = tel
-        viewModel.input.authLogin(request: request)
+        viewModel.input.checkTel(request: request)
     }
-    
-    @objc func handleRegister() {
-        guard let tel = self.inputPhone.text, tel != "" else { return }
-        var request: PostAuthenticateRequest = PostAuthenticateRequest()
-        request.tel = tel
-        viewModel.input.authLogin(request: request)
-    }
+
 }
 
 extension LoginViewController : KeyboardListener {

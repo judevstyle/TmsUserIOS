@@ -22,7 +22,7 @@ struct PostCheckTelUseCaseImpl: PostCheckTelUseCase {
     
     func execute(request: PostAuthenticateRequest) -> AnyPublisher<PostAuthenticateResponse?, Error> {
         return repository
-            .checkTel(request)
+            .checkTelRegister(request)
             .map { $0 }
             .eraseToAnyPublisher()
     }

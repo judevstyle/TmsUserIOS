@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Cosmos
 import Foundation
 
 class CustomerReviewViewController: UIViewController {

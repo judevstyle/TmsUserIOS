@@ -12,15 +12,16 @@ import UIKit
 public enum AuthCustomerAPI {
     case authenticate(request: PostAuthenticateRequest)
     case logout
-    case checkTel(_ request: PostAuthenticateRequest)
+    case checkTelRegister(_ request: PostAuthenticateRequest)
     case registerCustomer(_ request: PostRegisterCustomerRequest)
     case updateProfile(_ request: PostRegisterCustomerRequest)
+    case checkTelLogin(_ request: PostAuthenticateRequest)
 }
 
 extension AuthCustomerAPI: TargetType {
     public var baseURL: URL {
         switch self {
-        case .authenticate(_), .logout, .checkTel, .registerCustomer, .updateProfile:
+        case .authenticate(_), .logout, .checkTelRegister, .registerCustomer, .updateProfile, .checkTelLogin:
             return DomainNameConfig.authCustomer.url
         }
     }
@@ -31,7 +32,7 @@ extension AuthCustomerAPI: TargetType {
             return "/loginCustomer"
         case .logout:
             return "/logoutCustomer"
-        case .checkTel(let request):
+        case .checkTelRegister(let request), .checkTelLogin(let request):
             return "/check-tel/\(request.tel ?? "")"
         case .registerCustomer:
             return "/registerCustomer"
@@ -42,7 +43,9 @@ extension AuthCustomerAPI: TargetType {
     
     public var method: Moya.Method {
         switch self {
-        case .authenticate, .logout, .checkTel, .registerCustomer:
+        case .checkTelLogin:
+            return .get
+        case .authenticate, .logout, .checkTelRegister, .registerCustomer:
             return .post
         case .updateProfile:
             return .put
@@ -59,7 +62,7 @@ extension AuthCustomerAPI: TargetType {
             return .requestCompositeParameters(bodyParameters: request.toJSON(), bodyEncoding: JSONEncoding.default, urlParameters: [:])
         case .logout:
             return .requestPlain
-        case .checkTel:
+        case .checkTelRegister, .checkTelLogin:
             return .requestPlain
         case let .registerCustomer(request):
             return .requestCompositeParameters(bodyParameters: request.toJSON(), bodyEncoding: JSONEncoding.default, urlParameters: [:])

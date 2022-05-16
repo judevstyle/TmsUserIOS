@@ -65,6 +65,8 @@ class RegisterViewModel: RegisterProtocol, RegisterProtocolOutput {
     
     public var contentUpdateProfile: CustomerItems? = nil
     
+    private var requestRegister: PostRegisterCustomerRequest? = nil
+    
     var didGetGeoCodeSuccess: ((String?) -> Void)?
     var didPostCheckTelSuccess: (() -> Void)?
     var didRegisterSuccess: (() -> Void)?
@@ -90,7 +92,8 @@ class RegisterViewModel: RegisterProtocol, RegisterProtocolOutput {
             self.updateProfile(request: request)
         } else {
             self.checkTel(tel: tel, completion: {
-                self.registerCustomer(request: request)
+                self.requestRegister = request
+                NavigationManager.instance.pushVC(to: .confirmOTPView(delegate: self, phone: tel), presentation: .ModalNoNav(completion: nil))
             })
         }
     }
@@ -122,6 +125,7 @@ class RegisterViewModel: RegisterProtocol, RegisterProtocolOutput {
         self.postRegisterCustomerUseCase.execute(request: request).sink { completion in
             debugPrint("postRegisterCustomerUseCase \(completion)")
             self.vc.stopLoding()
+            self.requestRegister = nil
         } receiveValue: { resp in
             if let item = resp,
                item.success == true,
@@ -212,5 +216,12 @@ extension RegisterViewModel {
                 self.didGetGeoCodeSuccess?(title)
             }
         }.store(in: &self.anyCancellable)
+    }
+}
+
+extension RegisterViewModel: ConfirmOTPViewModelDelegate {
+    func didConfirmOTPSuccess() {
+        guard let request = self.requestRegister else { return }
+        self.registerCustomer(request: request)
     }
 }

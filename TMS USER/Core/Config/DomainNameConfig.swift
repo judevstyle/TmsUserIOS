@@ -21,6 +21,7 @@ public enum DomainNameConfig {
     case point
     case collectibles
     case feedback
+    case thaibulkOTP
 }
 
 extension DomainNameConfig {
@@ -28,7 +29,8 @@ extension DomainNameConfig {
     public var urlString: String {
         
         let HostURL = "http://185.78.165.78:3010"
-        let googleMapURL: String = "https://maps.googleapis.com/maps/api"
+        let googleMapURL = "https://maps.googleapis.com/maps/api"
+        let thaibulksmsURL = "https://otp.thaibulksms.com/v2"
         
         switch self {
         case .dashboard:
@@ -57,6 +59,8 @@ extension DomainNameConfig {
             return "\(HostURL)/collectibles"
         case .feedback:
             return "\(HostURL)/feedback"
+        case .thaibulkOTP:
+            return "\(thaibulksmsURL)/otp"
         }
     }
     

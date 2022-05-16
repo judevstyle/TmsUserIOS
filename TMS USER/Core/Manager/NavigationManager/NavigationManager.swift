@@ -60,6 +60,8 @@ public enum NavigationOpeningSender {
     
     case customerReview(orderId: Int?)
     
+    case confirmOTPView(delegate: ConfirmOTPViewModelDelegate, phone: String)
+    
     public var storyboardName: String {
         switch self {
         case .splash:
@@ -110,6 +112,8 @@ public enum NavigationOpeningSender {
             return "ProfileHistory"
         case .customerReview:
             return "CustomerReview"
+        case .confirmOTPView:
+            return "ConfirmOTP"
         }
     }
     
@@ -163,6 +167,8 @@ public enum NavigationOpeningSender {
             return "ProfileHistoryViewController"
         case .customerReview:
             return "CustomerReviewViewController"
+        case .confirmOTPView:
+            return "ConfirmOTPViewController"
         }
     }
     
@@ -420,6 +426,11 @@ class NavigationManager {
                 className.viewModel.input.setup(orderId: orderId)
                 viewController = className
             }
+        case .confirmOTPView(let delegate, let phone):
+            if let className = storyboard.instantiateInitialViewController() as? ConfirmOTPViewController {
+                className.viewModel.input.setup(delegate, phone)
+                viewController = className
+            }
         default:
             viewController = storyboard.instantiateInitialViewController() ?? to.viewController
         }
@@ -449,7 +460,8 @@ class NavigationManager {
             appDelegate.window?.makeKeyAndVisible()
         case .ModalNoNav(let completion):
             let vc: UIViewController = viewController
-            self.navigationController.present(vc, animated: true, completion: completion)
+            let topVC = UIApplication.getTopViewController()
+            topVC?.present(vc, animated: true, completion: completion)
         case .Replace:
             var viewControllers = Array(self.navigationController.viewControllers.dropLast())
             viewControllers.append(viewController)
