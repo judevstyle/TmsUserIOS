@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.overrideUserInterfaceStyle = .light
         }
         
-        GMSServices.provideAPIKey("AIzaSyDg-bwviwDVeAhD_JPJt4mdCidS9dK4uvA")
-        GMSPlacesClient.provideAPIKey("AIzaSyDg-bwviwDVeAhD_JPJt4mdCidS9dK4uvA")
+        GMSServices.provideAPIKey("AIzaSyAXqmq0UGiG6YUx0rNAHNv8dXJ8jXs4Fbk")
+        GMSPlacesClient.provideAPIKey("AIzaSyAXqmq0UGiG6YUx0rNAHNv8dXJ8jXs4Fbk")
         
         let config = Realm.Configuration(
             schemaVersion: 1,
